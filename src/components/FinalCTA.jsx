@@ -12,8 +12,8 @@ export default function FinalCTA() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="mx-auto flex max-w-[1360px] flex-col overflow-hidden rounded-[24px] shadow-[0px_0px_25px_rgba(0,0,0,0.25)] md:flex-row"
       >
-        <div className="relative h-[300px] w-full md:h-[480px] md:w-[582px]">
-          <img src={runnerPhoto} alt="" className="h-full w-full object-cover" />
+        <div className="relative h-[300px] w-full md:h-auto md:w-[582px] md:self-stretch">
+          <img src={runnerPhoto} alt="" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute bottom-7 left-6 flex gap-2">
             <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-base font-bold text-white">62%</span>
             <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-base font-bold text-white">8 markers</span>

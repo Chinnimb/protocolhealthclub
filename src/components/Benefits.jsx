@@ -63,7 +63,7 @@ export default function Benefits() {
         <span className="text-xl text-orange">BENEFITS</span>
         <Reveal delay={0.05} className="mt-2 max-w-2xl">
           <h2 className="text-4xl font-bold leading-tight text-black md:text-[56px]">
-            Protocols designed to unlock your best life
+            Protocols designed to unlock your best life.
           </h2>
           <FadeIn as="p" className="text-gradient-orange font-serif text-3xl md:text-[56px]" delay={0.25}>
             Engineered around your labs, symptoms and goals

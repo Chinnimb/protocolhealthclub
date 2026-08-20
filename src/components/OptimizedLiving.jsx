@@ -29,7 +29,7 @@ export default function OptimizedLiving() {
             <FadeIn as="p" className="text-gradient-orange font-serif text-3xl md:text-[48px]" delay={0.2}>
               Optimized Living
             </FadeIn>
-            <h2 className="mt-2 text-4xl font-extrabold text-[#233038] md:text-[56px]">Built From Your Labs &amp; Consultation</h2>
+            <h2 className="mt-2 text-4xl font-extrabold text-[#233038] md:text-[56px]">Built From Your Labs &amp; Consultation.</h2>
           </Reveal>
           <Reveal delay={0.15} as="p" className="mt-6 max-w-[525px] text-lg leading-relaxed text-[#47474d]">
             Every plan is built individually, no guesswork, no generic solutions. We analyze your labs and goals,
