@@ -42,11 +42,13 @@ export default function NormalGap() {
         </div>
 
         <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-6 shadow-[0px_0px_12px_rgba(242,122,46,0.67)] md:p-10">
-          <div className="flex items-center justify-between px-2 text-center md:px-16">
+          <div className="relative h-[64px] md:h-[74px]">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 2.0 }}
+              style={{ left: '37.17%' }}
+              className="absolute top-0 w-max max-w-[190px] -translate-x-1/2 text-center"
             >
               <p className="text-lg font-bold text-[#233038] md:text-[22px]">Still &ldquo;In Range&rdquo;</p>
               <p className="text-sm text-[#9a8878] md:text-base">Tired, Foggy, Flat</p>
@@ -55,13 +57,15 @@ export default function NormalGap() {
               initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 3.2 }}
+              style={{ left: '77.34%' }}
+              className="absolute top-0 w-max max-w-[220px] -translate-x-1/2 text-center"
             >
               <p className="text-lg font-bold text-[#233038] md:text-[22px]">Optimal</p>
               <p className="text-sm text-[#9a8878] md:text-base">Sharp, Strong, Energized</p>
             </motion.div>
           </div>
 
-          <div className="relative mt-6">
+          <div className="relative mt-2">
             <div className="overflow-hidden rounded-full">
               <motion.div
                 initial={{ clipPath: 'inset(0 100% 0 0)' }}
