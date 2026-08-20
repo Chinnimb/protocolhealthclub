@@ -2,8 +2,8 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
+import RangeArrow from './RangeArrow'
 import rangeBarTrack from '../assets/figma/range-bar-track.svg'
-import arrowImg from '../assets/figma/range-arrow.png'
 import normalLine from '../assets/figma/range-normal-line.svg'
 import optimalLine from '../assets/figma/range-optimal-line.svg'
 
@@ -96,12 +96,9 @@ export default function NormalGap() {
               className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white bg-white/10"
             />
 
-            <motion.img
-              src={arrowImg}
-              alt=""
-              initial={{ opacity: 0, x: -12 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 2.6 }}
+            <RangeArrow
+              inView={inView}
+              delay={2.6}
               className="pointer-events-none absolute left-[38%] top-[-58px] w-[36%]"
             />
 
