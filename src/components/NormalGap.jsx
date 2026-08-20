@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
-import rangeBar from '../assets/figma/range-bar.svg'
+import rangeBarTrack from '../assets/figma/range-bar-track.svg'
 import arrowImg from '../assets/figma/range-arrow.png'
 import normalLine from '../assets/figma/range-normal-line.svg'
 import optimalLine from '../assets/figma/range-optimal-line.svg'
@@ -43,26 +43,58 @@ export default function NormalGap() {
 
         <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-6 shadow-[0px_0px_12px_rgba(242,122,46,0.67)] md:p-10">
           <div className="flex items-center justify-between px-2 text-center md:px-16">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: 1.1 }}
+            >
               <p className="text-lg font-bold text-[#233038] md:text-[22px]">Still &ldquo;In Range&rdquo;</p>
               <p className="text-sm text-[#9a8878] md:text-base">Tired, Foggy, Flat</p>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: 1.9 }}
+            >
               <p className="text-lg font-bold text-[#233038] md:text-[22px]">Optimal</p>
               <p className="text-sm text-[#9a8878] md:text-base">Sharp, Strong, Energized</p>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="relative mt-6">
-            <img src={rangeBar} alt="" className="w-full" />
+          <div className="relative mt-6 overflow-hidden rounded-full">
+            <motion.div
+              initial={{ clipPath: 'inset(0 100% 0 0)' }}
+              animate={inView ? { clipPath: 'inset(0 0% 0 0)' } : {}}
+              transition={{ duration: 1.1, ease: [0.65, 0, 0.35, 1] }}
+            >
+              <img src={rangeBarTrack} alt="" className="w-full" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.3 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.35, delay: 1.1, ease: 'backOut' }}
+              style={{ left: '37.17%', width: '2.3%' }}
+              className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white bg-white/10"
+            />
+
             <motion.img
               src={arrowImg}
               alt=""
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              initial={{ opacity: 0, x: -12 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: 1.5 }}
               className="pointer-events-none absolute left-[38%] top-[-58px] w-[36%]"
             />
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.3 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.35, delay: 1.9, ease: 'backOut' }}
+              style={{ left: '77.34%', width: '2.3%' }}
+              className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white"
+            />
+
             <img src={normalLine} alt="" className="pointer-events-none absolute left-[10%] top-[52px] w-[76%] opacity-70" />
           </div>
 
