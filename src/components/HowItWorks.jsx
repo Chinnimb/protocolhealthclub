@@ -80,8 +80,8 @@ export default function HowItWorks() {
                 onFocus={() => setActive(i)}
                 layout
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative flex h-[330px] flex-col justify-between overflow-hidden rounded-[26px] border p-4 text-left backdrop-blur-md md:h-[460px] ${
-                  isActive ? 'border-white/90 md:flex-[2.2] md:p-0' : 'border-orange md:flex-1'
+                className={`relative flex h-[330px] flex-col overflow-hidden rounded-[26px] border p-4 text-left backdrop-blur-md md:h-[460px] ${
+                  isActive ? 'justify-end border-white/90 md:flex-[2.2] md:p-0' : 'justify-between border-orange md:flex-1'
                 }`}
                 style={
                   isActive
