@@ -46,7 +46,7 @@ export default function NormalGap() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 1.1 }}
+              transition={{ duration: 0.4, delay: 2.0 }}
             >
               <p className="text-lg font-bold text-[#233038] md:text-[22px]">Still &ldquo;In Range&rdquo;</p>
               <p className="text-sm text-[#9a8878] md:text-base">Tired, Foggy, Flat</p>
@@ -54,26 +54,40 @@ export default function NormalGap() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 1.9 }}
+              transition={{ duration: 0.4, delay: 3.2 }}
             >
               <p className="text-lg font-bold text-[#233038] md:text-[22px]">Optimal</p>
               <p className="text-sm text-[#9a8878] md:text-base">Sharp, Strong, Energized</p>
             </motion.div>
           </div>
 
-          <div className="relative mt-6 overflow-hidden rounded-full">
-            <motion.div
-              initial={{ clipPath: 'inset(0 100% 0 0)' }}
-              animate={inView ? { clipPath: 'inset(0 0% 0 0)' } : {}}
-              transition={{ duration: 1.1, ease: [0.65, 0, 0.35, 1] }}
-            >
-              <img src={rangeBarTrack} alt="" className="w-full" />
-            </motion.div>
+          <div className="relative mt-6">
+            <div className="overflow-hidden rounded-full">
+              <motion.div
+                initial={{ clipPath: 'inset(0 100% 0 0)' }}
+                animate={inView ? { clipPath: 'inset(0 0% 0 0)' } : {}}
+                transition={{ duration: 2.2, ease: [0.45, 0.05, 0.15, 1] }}
+              >
+                <img src={rangeBarTrack} alt="" className="w-full" />
+              </motion.div>
+
+              {/* soft glowing edge that sweeps along with the fill, for a smoother "loading" feel */}
+              <motion.div
+                initial={{ left: '0%', opacity: 0 }}
+                animate={
+                  inView
+                    ? { left: '100%', opacity: [0, 1, 1, 0] }
+                    : {}
+                }
+                transition={{ duration: 2.2, ease: [0.45, 0.05, 0.15, 1], times: [0, 0.08, 0.85, 1] }}
+                className="pointer-events-none absolute top-0 h-full w-16 -translate-x-1/2 bg-gradient-to-r from-transparent via-white/70 to-transparent blur-md"
+              />
+            </div>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.3 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.35, delay: 1.1, ease: 'backOut' }}
+              transition={{ duration: 0.35, delay: 2.0, ease: 'backOut' }}
               style={{ left: '37.17%', width: '2.3%' }}
               className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white bg-white/10"
             />
@@ -83,19 +97,26 @@ export default function NormalGap() {
               alt=""
               initial={{ opacity: 0, x: -12 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 1.5 }}
+              transition={{ duration: 0.5, delay: 2.6 }}
               className="pointer-events-none absolute left-[38%] top-[-58px] w-[36%]"
             />
 
             <motion.div
               initial={{ opacity: 0, scale: 0.3 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.35, delay: 1.9, ease: 'backOut' }}
+              transition={{ duration: 0.35, delay: 3.2, ease: 'backOut' }}
               style={{ left: '77.34%', width: '2.3%' }}
               className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white"
             />
 
-            <img src={normalLine} alt="" className="pointer-events-none absolute left-[10%] top-[52px] w-[76%] opacity-70" />
+            <motion.img
+              src={normalLine}
+              alt=""
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 0.7 } : {}}
+              transition={{ duration: 0.6, delay: 2.2 }}
+              className="pointer-events-none absolute left-[10%] top-[52px] w-[76%]"
+            />
           </div>
 
           <p className="mt-3 text-center text-sm uppercase tracking-[2px] text-[#9a8878]">
