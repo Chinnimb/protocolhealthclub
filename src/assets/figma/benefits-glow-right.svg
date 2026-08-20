@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="463.5" height="1099" viewBox="0 0 463.5 1099" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="cream glass glow" filter="url(#filter0_f_0_26)">
+<path d="M343.5 120C314.15 120 285.087 131.109 257.97 152.694C230.854 174.278 206.216 205.915 185.462 245.798C164.708 285.68 148.245 333.028 137.013 385.137C125.781 437.247 120 493.097 120 549.5C120 605.903 125.781 661.753 137.013 713.863C148.245 765.972 164.708 813.32 185.462 853.202C206.216 893.085 230.854 924.722 257.97 946.306C285.087 967.891 314.15 979 343.5 979L343.5 549.5L343.5 120Z" fill="url(#paint0_radial_0_26)"/>
+</g>
+<defs>
+<filter id="filter0_f_0_26" x="0" y="0" width="463.5" height="1099" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur_0_26"/>
+</filter>
+<radialGradient id="paint0_radial_0_26" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(343.5 549.5) rotate(90) scale(429.5 223.5)">
+<stop offset="0.716346" stop-color="white"/>
+</radialGradient>
+</defs>
+</svg>
