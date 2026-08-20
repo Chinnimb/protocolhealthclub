@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Reveal from './Reveal'
+import { useGetStarted } from '../context/GetStartedContext'
 
 import fatlossSemaglutide from '../assets/figma/protocols/fatloss-semaglutide.png'
 import fatlossTirzepatide from '../assets/figma/protocols/fatloss-tirzepatide.png'
@@ -162,6 +163,7 @@ const categories = [
 ]
 
 export default function ExploreProtocols() {
+  const openGetStarted = useGetStarted()
   const [selected, setSelected] = useState(0)
   const activeCategory = categories[selected]
 
@@ -243,14 +245,15 @@ export default function ExploreProtocols() {
         </div>
 
         <Reveal delay={0.1}>
-          <motion.a
-            href="#get-started"
+          <motion.button
+            type="button"
+            onClick={openGetStarted}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             className="bg-gradient-orange inline-block rounded-full border-2 border-white px-12 py-4 text-base font-bold tracking-[1.28px] text-white"
           >
             Get Started
-          </motion.a>
+          </motion.button>
         </Reveal>
       </div>
     </section>

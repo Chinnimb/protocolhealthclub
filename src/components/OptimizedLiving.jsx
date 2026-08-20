@@ -3,8 +3,11 @@ import Reveal from './Reveal'
 import FadeIn from './FadeIn'
 import consultPhoto from '../assets/figma/optimized-living-photo.png'
 import glow from '../assets/figma/optimized-living-glow.svg'
+import { useGetStarted } from '../context/GetStartedContext'
 
 export default function OptimizedLiving() {
+  const openGetStarted = useGetStarted()
+
   return (
     <section className="relative bg-cream px-6 py-16 md:px-[117px]">
       <img src={glow} alt="" className="pointer-events-none absolute left-0 top-0 w-[40%] max-w-[636px] opacity-70" />
@@ -36,14 +39,15 @@ export default function OptimizedLiving() {
             deliver your products fast, and stay connected with you to track progress and refine your path forward.
           </Reveal>
           <Reveal delay={0.25}>
-            <motion.a
-              href="#get-started"
+            <motion.button
+              type="button"
+              onClick={openGetStarted}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
               className="bg-gradient-orange mt-8 inline-block rounded-full px-10 py-4 text-2xl font-bold text-white"
             >
               Start Today
-            </motion.a>
+            </motion.button>
           </Reveal>
         </div>
       </div>

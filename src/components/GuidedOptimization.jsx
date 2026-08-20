@@ -6,8 +6,11 @@ import rightCircle from '../assets/figma/venn-right-circle.svg'
 import glow from '../assets/figma/venn-glow.svg'
 import activityIcon from '../assets/figma/venn-activity-icon.svg'
 import infinityIcon from '../assets/figma/venn-infinity-icon.svg'
+import { useGetStarted } from '../context/GetStartedContext'
 
 export default function GuidedOptimization() {
+  const openGetStarted = useGetStarted()
+
   return (
     <section className="bg-cream px-6 py-16 md:px-14">
       <div className="mx-auto max-w-[1412px]">
@@ -101,14 +104,15 @@ export default function GuidedOptimization() {
         </div>
 
         <Reveal delay={0.1} className="mt-10 flex justify-center">
-          <motion.a
-            href="#get-started"
+          <motion.button
+            type="button"
+            onClick={openGetStarted}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             className="bg-gradient-orange rounded-full px-10 py-4 text-2xl font-bold text-white"
           >
             Start Today
-          </motion.a>
+          </motion.button>
         </Reveal>
       </div>
     </section>

@@ -10,23 +10,26 @@ import Testimonial from './components/Testimonial'
 import FAQ from './components/FAQ'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
+import { GetStartedProvider } from './context/GetStartedContext'
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-cream text-ink">
-      <Hero />
-      <TrustBar />
-      <NormalGap />
-      <GuidedOptimization />
-      <HowItWorks />
-      <OptimizedLiving />
-      <Benefits />
-      <ExploreProtocols />
-      <Testimonial />
-      <FAQ />
-      <FinalCTA />
-      <Footer />
-    </div>
+    <GetStartedProvider>
+      <div className="relative min-h-screen bg-cream text-ink">
+        <Hero />
+        <TrustBar />
+        <NormalGap />
+        <GuidedOptimization />
+        <HowItWorks />
+        <OptimizedLiving />
+        <Benefits />
+        <ExploreProtocols />
+        <Testimonial />
+        <FAQ />
+        <FinalCTA />
+        <Footer />
+      </div>
+    </GetStartedProvider>
   )
 }
 

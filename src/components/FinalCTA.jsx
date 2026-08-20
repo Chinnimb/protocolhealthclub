@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import runnerPhoto from '../assets/figma/final-cta-photo.png'
+import { useGetStarted } from '../context/GetStartedContext'
 
 export default function FinalCTA() {
+  const openGetStarted = useGetStarted()
+
   return (
     <section className="px-6 pb-8 pt-4">
       <motion.div
@@ -43,14 +46,15 @@ export default function FinalCTA() {
           </Reveal>
 
           <Reveal delay={0.3}>
-            <motion.a
-              href="#get-started"
+            <motion.button
+              type="button"
+              onClick={openGetStarted}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
               className="mt-9 inline-block rounded-full bg-[#233038] px-7 py-3.5 text-lg font-semibold text-white"
             >
               Start your Protocol
-            </motion.a>
+            </motion.button>
           </Reveal>
         </div>
       </motion.div>
