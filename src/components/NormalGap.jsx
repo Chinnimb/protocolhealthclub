@@ -12,12 +12,13 @@ export default function NormalGap() {
   const inView = useInView(barRef, { once: true, amount: 0.6 })
 
   return (
-    <section className="flex flex-col items-center gap-8 bg-cream pb-24 pt-14 px-6">
-      <Reveal as="p" className="text-center text-xl font-bold uppercase tracking-[3.6px] text-orange-3">
+    <section className="bg-cream px-6 pb-24 pt-14">
+      <div className="mx-auto max-w-[1434px]">
+      <Reveal as="p" className="text-xl font-bold uppercase tracking-[3.6px] text-orange-3">
         Normal Is not optimal
       </Reveal>
 
-      <Reveal delay={0.05} className="max-w-5xl px-2 text-center">
+      <Reveal delay={0.05} className="mt-6 max-w-5xl">
         <h2 className="whitespace-nowrap text-3xl font-bold leading-tight text-black sm:text-4xl md:text-[56px]">
           Today&rsquo;s &ldquo;normal&rdquo; is far from optimal.
         </h2>
@@ -28,7 +29,7 @@ export default function NormalGap() {
 
       <Reveal
         delay={0.15}
-        className="mt-4 w-full max-w-[1434px] rounded-[28px] border-2 border-[#fcf0ec] p-8 shadow-[0px_0px_4px_0px_#f4ac63] md:p-14"
+        className="mt-10 w-full rounded-[28px] border-2 border-[#fcf0ec] p-8 shadow-[0px_0px_4px_0px_#f4ac63] md:p-14"
       >
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 text-center text-[#b08060]">
           <p className="text-lg font-bold tracking-[2.5px] md:text-xl">
@@ -77,6 +78,7 @@ export default function NormalGap() {
           </div>
         </div>
       </Reveal>
+      </div>
     </section>
   )
 }
