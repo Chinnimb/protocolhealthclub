@@ -12,7 +12,7 @@ export default function OptimizedLiving() {
     <section className="relative bg-cream px-6 py-16 md:px-[117px]">
       <img src={glow} alt="" className="pointer-events-none absolute left-0 top-0 w-[40%] max-w-[636px] opacity-70" />
 
-      <div className="relative mx-auto grid max-w-[1412px] items-center gap-12 md:grid-cols-2">
+      <div className="relative grid w-full items-center gap-12 md:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}

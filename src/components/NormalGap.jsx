@@ -12,7 +12,7 @@ export default function NormalGap() {
 
   return (
     <section className="bg-cream px-6 pb-24 pt-14">
-      <div className="mx-auto max-w-[1434px]">
+      <div className="w-full">
       <Typewriter
         as="p"
         triggerOnView

@@ -14,7 +14,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 px-10 py-6">
-        <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-3 text-xs text-white/80 md:flex-row">
+        <div className="flex w-full flex-col items-center justify-between gap-3 text-xs text-white/80 md:flex-row">
           <p className="uppercase tracking-[1px]">© Copyright Protocol Health 2026, All Rights Reserved</p>
           <div className="flex items-center gap-6">
             <a href="#" className="transition-colors hover:text-white">Terms Of Use</a>

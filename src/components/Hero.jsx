@@ -30,7 +30,7 @@ export default function Hero() {
 
         <Header />
 
-        <div className="relative z-10 mx-auto flex min-h-[860px] max-w-[1280px] flex-col justify-center px-10 pb-16 pt-28 md:pt-32">
+        <div className="relative z-10 flex min-h-[860px] w-full flex-col justify-center px-10 pb-16 pt-28 md:pt-32">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}

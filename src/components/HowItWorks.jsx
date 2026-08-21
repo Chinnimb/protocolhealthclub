@@ -49,7 +49,7 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="bg-cream px-6 py-16 md:px-[82px]">
-      <div className="mx-auto max-w-[1420px]">
+      <div className="w-full">
         <Typewriter
           as="p"
           triggerOnView

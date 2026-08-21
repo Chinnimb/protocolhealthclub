@@ -68,7 +68,7 @@ export default function FAQ() {
 
   return (
     <section className="bg-cream px-6 py-16 md:px-10">
-      <div className="mx-auto grid max-w-[1320px] gap-16 md:grid-cols-[380px_1fr]">
+      <div className="grid w-full gap-16 md:grid-cols-[380px_1fr]">
         <div>
           <Typewriter
             triggerOnView

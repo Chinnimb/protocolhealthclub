@@ -16,7 +16,7 @@ export default function Header() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="absolute top-0 left-0 right-0 z-30 bg-white/25 backdrop-blur-sm"
     >
-      <div className="max-w-[1280px] mx-auto flex items-center justify-between px-10 py-6">
+      <div className="flex w-full items-center justify-between px-10 py-6">
         <div className="relative h-[23px] w-[128px]">
           <img src={logoPart1} alt="" className="absolute left-0 top-0 h-[23px]" />
           <img src={logoPart2} alt="protocol" className="absolute left-[33px] top-0 h-[23px]" />

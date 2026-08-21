@@ -14,7 +14,7 @@ export default function GuidedOptimization() {
 
   return (
     <section className="bg-cream px-6 py-16 md:px-14">
-      <div className="mx-auto max-w-[1412px]">
+      <div className="w-full">
         <Typewriter
           as="p"
           triggerOnView

@@ -202,7 +202,7 @@ export default function ExploreProtocols() {
 
   return (
     <section className="bg-cream px-6 py-16 md:px-20">
-      <div className="mx-auto flex max-w-[1372px] flex-col items-center gap-12">
+      <div className="flex w-full flex-col items-center gap-12">
         <div className="flex w-full min-w-0 flex-col items-center gap-6">
           <Reveal className="flex items-baseline gap-3">
             <span className="text-4xl font-bold text-[#161b1f] md:text-[56px]">Explore</span>
