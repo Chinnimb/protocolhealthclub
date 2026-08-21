@@ -66,7 +66,7 @@ export default function Benefits() {
           startDelay={150}
           speed={35}
           text="BENEFITS"
-          className="text-xl text-orange"
+          className="text-xl font-bold text-orange"
         />
         <Reveal delay={0.05} className="mt-2 max-w-2xl">
           <h2 className="text-4xl font-bold leading-tight text-black md:text-[56px]">

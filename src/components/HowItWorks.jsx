@@ -56,7 +56,7 @@ export default function HowItWorks() {
           startDelay={150}
           speed={35}
           text="How it works"
-          className="text-xl uppercase tracking-[2.2px] text-orange-4"
+          className="text-xl font-bold uppercase tracking-[2.2px] text-orange-4"
         />
 
         <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">

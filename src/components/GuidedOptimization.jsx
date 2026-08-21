@@ -21,7 +21,7 @@ export default function GuidedOptimization() {
           startDelay={150}
           speed={35}
           text="GUIDED OPTIMIZATION"
-          className="text-xl tracking-[3.6px] text-orange-3"
+          className="text-xl font-bold tracking-[3.6px] text-orange-3"
         />
 
         <Reveal delay={0.08} className="mt-6 max-w-3xl">
