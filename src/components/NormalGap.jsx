@@ -5,7 +5,6 @@ import FadeIn from './FadeIn'
 import RangeArrow from './RangeArrow'
 import rangeBarTrack from '../assets/figma/range-bar-track.svg'
 import normalLine from '../assets/figma/range-normal-line.svg'
-import optimalLine from '../assets/figma/range-optimal-line.svg'
 
 export default function NormalGap() {
   const barRef = useRef(null)
@@ -41,7 +40,7 @@ export default function NormalGap() {
           <p className="text-xl font-extrabold text-[#461d0e] md:text-2xl">Normal is a low bar for your health.</p>
         </div>
 
-        <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-6 shadow-[0px_0px_12px_rgba(242,122,46,0.67)] md:p-10">
+        <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-6 md:p-10">
           <div className="relative h-[64px] md:h-[74px]">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -125,10 +124,13 @@ export default function NormalGap() {
           </p>
 
           <div className="relative mt-2 h-6">
-            <div className="absolute right-[3%] flex items-center gap-2 md:right-[6%]">
-              <img src={optimalLine} alt="" className="w-16" />
-              <span className="text-sm font-bold uppercase tracking-[2px] text-orange-3">Optimal</span>
-            </div>
+            <div style={{ left: '67.59%', width: '19.51%' }} className="absolute top-1/2 h-[2px] -translate-y-1/2 rounded-full bg-orange-3" />
+            <span
+              style={{ left: 'calc(67.59% + 19.51% + 10px)' }}
+              className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-bold uppercase tracking-[2px] text-orange-3"
+            >
+              Optimal
+            </span>
           </div>
         </div>
       </Reveal>

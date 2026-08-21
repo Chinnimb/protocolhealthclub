@@ -57,14 +57,26 @@ export default function RangeArrow({ inView, delay = 0, className = '' }) {
         transition={{ duration: 0.75, delay, ease: [0.45, 0.05, 0.15, 1] }}
       />
 
-      {/* arrowhead */}
+      {/* arrowhead: white halo underneath for contrast against any background */}
       <motion.path
         d={headD}
-        stroke="url(#rangeArrowGradient)"
-        strokeWidth="2"
+        stroke="#ffffff"
+        strokeWidth="4.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        filter="url(#rangeArrowGlowOrange)"
+        filter="url(#rangeArrowGlowWhite)"
+        initial={{ opacity: 0, scale: 0.6 }}
+        animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.6 }}
+        transition={{ duration: 0.25, delay: delay + 0.65 }}
+        style={{ transformOrigin: '452px 26px' }}
+      />
+      {/* arrowhead: solid crisp tip (not gradient-sampled, so it stays visible at any position) */}
+      <motion.path
+        d={headD}
+        stroke="#e2521a"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         initial={{ opacity: 0, scale: 0.6 }}
         animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.6 }}
         transition={{ duration: 0.25, delay: delay + 0.65 }}
