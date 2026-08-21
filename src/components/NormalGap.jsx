@@ -2,7 +2,6 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
-import RangeArrow from './RangeArrow'
 import rangeBarTrack from '../assets/figma/range-bar-track.svg'
 import normalLine from '../assets/figma/range-normal-line.svg'
 
@@ -52,7 +51,7 @@ export default function NormalGap() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 3.2 }}
+              transition={{ duration: 0.4, delay: 2.5 }}
               style={{ left: '77.34%' }}
               className="absolute top-0 w-max max-w-[220px] -translate-x-1/2 text-center"
             >
@@ -98,22 +97,16 @@ export default function NormalGap() {
               />
             </motion.div>
 
-            <RangeArrow
-              inView={inView}
-              delay={2.6}
-              className="pointer-events-none absolute left-[36.3%] top-[-20px] w-[43.4%]"
-            />
-
             <motion.div
               initial={{ opacity: 0, scale: 0.3 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.35, delay: 3.2, ease: 'backOut' }}
+              transition={{ duration: 0.35, delay: 2.5, ease: 'backOut' }}
               style={{ left: '77.34%', width: '2.3%' }}
               className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2"
             >
               <motion.div
                 animate={inView ? { scale: [1, 1.18, 1] } : {}}
-                transition={{ duration: 1.7, repeat: Infinity, ease: 'easeInOut', delay: 3.55 }}
+                transition={{ duration: 1.7, repeat: Infinity, ease: 'easeInOut', delay: 2.85 }}
                 className="h-full w-full rounded-full border-[3px] border-white"
               />
             </motion.div>
