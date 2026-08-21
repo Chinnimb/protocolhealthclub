@@ -2,13 +2,10 @@ import { motion } from 'framer-motion'
 import logoPart1 from '../assets/figma/logo-part1.svg'
 import logoPart2 from '../assets/figma/logo-part2.svg'
 import logoPart3 from '../assets/figma/logo-part3.svg'
-import { useGetStarted } from '../context/GetStartedContext'
 
 const links = ['How it works', 'Biomarkers', 'Protocols', 'Members']
 
 export default function Header() {
-  const openGetStarted = useGetStarted()
-
   return (
     <motion.div
       initial={{ y: -40, opacity: 0 }}
@@ -35,15 +32,14 @@ export default function Header() {
           ))}
         </nav>
 
-        <motion.button
-          type="button"
-          onClick={openGetStarted}
+        <motion.a
+          href="/get-started"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           className="rounded-[20px] bg-[#180f0d] px-4 py-2 text-sm font-medium text-[#fdf9f4]"
         >
           Get Started
-        </motion.button>
+        </motion.a>
       </div>
     </motion.div>
   )
