@@ -176,9 +176,10 @@ export default function ExploreProtocols() {
             <span className="font-serif text-4xl italic text-orange-2 md:text-[56px]">protocols</span>
           </Reveal>
 
+          <div className="relative w-full max-w-full">
           <Reveal
             delay={0.1}
-            className="flex w-full max-w-full gap-3 overflow-x-auto px-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-center"
+            className="flex w-full max-w-full gap-3 overflow-x-auto px-6 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {categories.map((c, i) => {
               const isSelected = selected === i
@@ -198,6 +199,9 @@ export default function ExploreProtocols() {
               )
             })}
           </Reveal>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-cream to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-cream to-transparent" />
+          </div>
           <p className="text-[11px] text-[#999]">Swipe to see all categories</p>
         </div>
 
