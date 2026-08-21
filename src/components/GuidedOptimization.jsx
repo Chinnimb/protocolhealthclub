@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
+import Typewriter from './Typewriter'
 import leftCircle from '../assets/figma/venn-left-circle.svg'
 import rightCircle from '../assets/figma/venn-right-circle.svg'
 import glow from '../assets/figma/venn-glow.svg'
@@ -14,9 +15,14 @@ export default function GuidedOptimization() {
   return (
     <section className="bg-cream px-6 py-16 md:px-14">
       <div className="mx-auto max-w-[1412px]">
-        <Reveal as="p" className="text-xl tracking-[3.6px] text-orange-3">
-          GUIDED OPTIMIZATION
-        </Reveal>
+        <Typewriter
+          as="p"
+          triggerOnView
+          startDelay={150}
+          speed={35}
+          text="GUIDED OPTIMIZATION"
+          className="text-xl tracking-[3.6px] text-orange-3"
+        />
 
         <Reveal delay={0.08} className="mt-6 max-w-3xl">
           <h2 className="text-4xl font-extrabold text-[#171f21] md:text-[56px]">

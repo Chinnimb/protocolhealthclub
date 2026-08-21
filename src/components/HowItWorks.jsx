@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
+import Typewriter from './Typewriter'
 import step1Photo from '../assets/figma/step1-active-photo.jpg'
 import step2Photo from '../assets/figma/step2-active-photo.png'
 import step3Photo from '../assets/figma/step3-active-photo.png'
@@ -49,9 +50,14 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="bg-cream px-6 py-16 md:px-[82px]">
       <div className="mx-auto max-w-[1420px]">
-        <Reveal as="p" className="text-xl uppercase tracking-[2.2px] text-orange-4">
-          How it works
-        </Reveal>
+        <Typewriter
+          as="p"
+          triggerOnView
+          startDelay={150}
+          speed={35}
+          text="How it works"
+          className="text-xl uppercase tracking-[2.2px] text-orange-4"
+        />
 
         <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <Reveal>

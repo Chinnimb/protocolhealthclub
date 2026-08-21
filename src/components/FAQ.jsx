@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import Reveal from './Reveal'
+import Typewriter from './Typewriter'
 import chevronIcon from '../assets/figma/faq-chevron-icon.svg'
 
 const questions = [
@@ -69,7 +70,13 @@ export default function FAQ() {
     <section className="bg-cream px-6 py-16 md:px-10">
       <div className="mx-auto grid max-w-[1320px] gap-16 md:grid-cols-[380px_1fr]">
         <div>
-          <Reveal className="text-lg font-bold uppercase tracking-[2.2px] text-orange-4">FAQ&rsquo;S</Reveal>
+          <Typewriter
+            triggerOnView
+            startDelay={150}
+            speed={35}
+            text="FAQ’S"
+            className="text-lg font-bold uppercase tracking-[2.2px] text-orange-4"
+          />
           <Reveal delay={0.05} as="h2" className="mt-4 font-serif text-4xl font-medium tracking-[-1.2px] text-[#161b1f] md:text-[56px]">
             Got Questions?
           </Reveal>

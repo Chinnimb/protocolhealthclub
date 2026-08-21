@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
+import Typewriter from './Typewriter'
 import glowLeft from '../assets/figma/benefits-glow-left.svg'
 import glowRight from '../assets/figma/benefits-glow-right.svg'
 
@@ -60,7 +61,13 @@ export default function Benefits() {
       <img src={glowRight} alt="" className="pointer-events-none absolute left-0 top-[30%] w-[28%] max-w-[447px]" />
 
       <div className="relative mx-auto max-w-[1376px] px-6">
-        <span className="text-xl text-orange">BENEFITS</span>
+        <Typewriter
+          triggerOnView
+          startDelay={150}
+          speed={35}
+          text="BENEFITS"
+          className="text-xl text-orange"
+        />
         <Reveal delay={0.05} className="mt-2 max-w-2xl">
           <h2 className="text-4xl font-bold leading-tight text-black md:text-[56px]">
             Protocols designed to unlock your best life.

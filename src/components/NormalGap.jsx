@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
+import Typewriter from './Typewriter'
 import rangeBarTrack from '../assets/figma/range-bar-track.svg'
 import normalLine from '../assets/figma/range-normal-line.svg'
 
@@ -12,9 +13,14 @@ export default function NormalGap() {
   return (
     <section className="bg-cream px-6 pb-24 pt-14">
       <div className="mx-auto max-w-[1434px]">
-      <Reveal as="p" className="text-xl font-bold uppercase tracking-[3.6px] text-orange-3">
-        Normal Is not optimal
-      </Reveal>
+      <Typewriter
+        as="p"
+        triggerOnView
+        startDelay={150}
+        speed={35}
+        text="Normal Is not optimal"
+        className="text-xl font-bold uppercase tracking-[3.6px] text-orange-3"
+      />
 
       <Reveal delay={0.05} className="mt-6 max-w-5xl">
         <h2 className="whitespace-nowrap text-3xl font-bold leading-tight text-black sm:text-4xl md:text-[56px]">
