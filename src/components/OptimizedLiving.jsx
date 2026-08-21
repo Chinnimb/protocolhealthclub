@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
+import Typewriter from './Typewriter'
 import consultPhoto from '../assets/figma/optimized-living-photo.png'
 import glow from '../assets/figma/optimized-living-glow.svg'
 
@@ -25,7 +26,15 @@ export default function OptimizedLiving() {
         </motion.div>
 
         <div>
-          <Reveal>
+          <Typewriter
+            as="p"
+            triggerOnView
+            startDelay={150}
+            speed={35}
+            text="WE COACH YOU"
+            className="text-xl font-bold uppercase tracking-[3.6px] text-orange-3"
+          />
+          <Reveal className="mt-2">
             <FadeIn as="p" className="font-sans text-3xl font-extrabold text-[#233038] md:text-[48px]" delay={0.2}>
               Optimized Living
             </FadeIn>
