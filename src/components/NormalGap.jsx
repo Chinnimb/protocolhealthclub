@@ -101,7 +101,7 @@ export default function NormalGap() {
             <RangeArrow
               inView={inView}
               delay={2.6}
-              className="pointer-events-none absolute left-[36.3%] top-[-36px] w-[43.4%]"
+              className="pointer-events-none absolute left-[36.3%] top-[-20px] w-[43.4%]"
             />
 
             <motion.div
