@@ -7,7 +7,7 @@ export default function FinalCTA() {
   const openGetStarted = useGetStarted()
 
   return (
-    <section className="px-6 pb-8 pt-4">
+    <section className="px-6 pb-8 pt-4 md:px-10">
       <motion.div
         initial={{ opacity: 0, scale: 0.97 }}
         whileInView={{ opacity: 1, scale: 1 }}

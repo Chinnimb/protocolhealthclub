@@ -60,7 +60,7 @@ export default function Benefits() {
       <img src={glowLeft} alt="" className="pointer-events-none absolute right-0 top-[30%] w-[28%] max-w-[435px]" />
       <img src={glowRight} alt="" className="pointer-events-none absolute left-0 top-[30%] w-[28%] max-w-[447px]" />
 
-      <div className="relative w-full px-6">
+      <div className="relative w-full px-6 md:px-10">
         <Typewriter
           triggerOnView
           startDelay={150}
@@ -84,7 +84,7 @@ export default function Benefits() {
       <div className="relative mt-14">
         <div
           ref={scrollerRef}
-          className="flex gap-4 overflow-x-auto scroll-smooth px-6 py-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-4 overflow-x-auto scroll-smooth px-6 py-10 [scrollbar-width:none] md:px-10 [&::-webkit-scrollbar]:hidden"
         >
         {cards.map((c, i) => (
           <motion.div
