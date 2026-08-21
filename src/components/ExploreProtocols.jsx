@@ -176,7 +176,10 @@ export default function ExploreProtocols() {
             <span className="font-serif text-4xl italic text-orange-2 md:text-[56px]">protocols</span>
           </Reveal>
 
-          <Reveal delay={0.1} className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+          <Reveal
+            delay={0.1}
+            className="flex w-full max-w-full gap-3 overflow-x-auto px-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-center"
+          >
             {categories.map((c, i) => {
               const isSelected = selected === i
               return (
@@ -186,7 +189,7 @@ export default function ExploreProtocols() {
                   onClick={() => setSelected(i)}
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
-                  className={`rounded-full px-[18px] py-[9px] text-center text-base font-medium tracking-[0.96px] transition-colors ${
+                  className={`shrink-0 whitespace-nowrap rounded-full px-[18px] py-[9px] text-base font-medium tracking-[0.96px] transition-colors ${
                     isSelected ? 'bg-orange-2 font-bold text-white' : 'border border-[#c8c8c8] text-[#2d2d2d]'
                   }`}
                 >
@@ -195,6 +198,7 @@ export default function ExploreProtocols() {
               )
             })}
           </Reveal>
+          <p className="text-[11px] text-[#999]">Swipe to see all categories</p>
         </div>
 
         <div className="flex w-full flex-col items-center gap-6">
