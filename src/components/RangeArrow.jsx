@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 
 export default function RangeArrow({ inView, delay = 0, className = '' }) {
-  const pathD = 'M10,40 C140,4 340,4 452,26'
-  const headD = 'M444,16 L463,28 L442,38'
+  const pathD = 'M10,52 C130,-14 348,-14 452,30'
+  const headD = 'M443,18 L465,31 L441,44'
 
   return (
-    <svg viewBox="0 0 478 46" fill="none" className={className} style={{ overflow: 'visible' }}>
+    <svg viewBox="0 0 478 58" fill="none" className={className} style={{ overflow: 'visible' }}>
       <defs>
         <linearGradient id="rangeArrowGradient" x1="0" y1="0" x2="478" y2="0" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="#ff7a3d" />
@@ -68,7 +68,7 @@ export default function RangeArrow({ inView, delay = 0, className = '' }) {
         initial={{ opacity: 0, scale: 0.6 }}
         animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.6 }}
         transition={{ duration: 0.25, delay: delay + 0.65 }}
-        style={{ transformOrigin: '452px 26px' }}
+        style={{ transformOrigin: '452px 30px' }}
       />
       {/* arrowhead: solid crisp tip (not gradient-sampled, so it stays visible at any position) */}
       <motion.path
@@ -80,7 +80,7 @@ export default function RangeArrow({ inView, delay = 0, className = '' }) {
         initial={{ opacity: 0, scale: 0.6 }}
         animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.6 }}
         transition={{ duration: 0.25, delay: delay + 0.65 }}
-        style={{ transformOrigin: '452px 26px' }}
+        style={{ transformOrigin: '452px 30px' }}
       />
     </svg>
   )

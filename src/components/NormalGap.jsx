@@ -26,10 +26,7 @@ export default function NormalGap() {
         </FadeIn>
       </Reveal>
 
-      <Reveal
-        delay={0.15}
-        className="mt-10 w-full rounded-[28px] border-2 border-[#fcf0ec] p-8 shadow-[0px_0px_4px_0px_#f4ac63] md:p-14"
-      >
+      <Reveal delay={0.15} className="mt-10 w-full rounded-[28px] p-8 md:p-14">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 text-center text-[#b08060]">
           <p className="text-lg font-bold tracking-[2.5px] md:text-xl">
             Normal in America today is sedentary, metabolically unhealthy, and on a list of different prescriptions.
@@ -40,7 +37,7 @@ export default function NormalGap() {
           <p className="text-xl font-extrabold text-[#461d0e] md:text-2xl">Normal is a low bar for your health.</p>
         </div>
 
-        <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-6 md:p-10">
+        <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-6 shadow-[0px_0px_12px_rgba(242,122,46,0.67)] md:p-10">
           <div className="relative h-[64px] md:h-[74px]">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -92,13 +89,19 @@ export default function NormalGap() {
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.35, delay: 2.0, ease: 'backOut' }}
               style={{ left: '37.17%', width: '2.3%' }}
-              className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white bg-white/10"
-            />
+              className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2"
+            >
+              <motion.div
+                animate={inView ? { scale: [1, 1.18, 1] } : {}}
+                transition={{ duration: 1.7, repeat: Infinity, ease: 'easeInOut', delay: 2.35 }}
+                className="h-full w-full rounded-full border-[3px] border-white bg-white/10"
+              />
+            </motion.div>
 
             <RangeArrow
               inView={inView}
               delay={2.6}
-              className="pointer-events-none absolute left-[40%] top-[-30px] w-[32%]"
+              className="pointer-events-none absolute left-[40%] top-[-46px] w-[32%]"
             />
 
             <motion.div
@@ -106,8 +109,14 @@ export default function NormalGap() {
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.35, delay: 3.2, ease: 'backOut' }}
               style={{ left: '77.34%', width: '2.3%' }}
-              className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white"
-            />
+              className="absolute top-1/2 aspect-square -translate-x-1/2 -translate-y-1/2"
+            >
+              <motion.div
+                animate={inView ? { scale: [1, 1.18, 1] } : {}}
+                transition={{ duration: 1.7, repeat: Infinity, ease: 'easeInOut', delay: 3.55 }}
+                className="h-full w-full rounded-full border-[3px] border-white"
+              />
+            </motion.div>
 
             <motion.img
               src={normalLine}
