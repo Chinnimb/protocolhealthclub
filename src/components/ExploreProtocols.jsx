@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Reveal from './Reveal'
 import { useGetStarted } from '../context/GetStartedContext'
 
@@ -167,6 +167,39 @@ export default function ExploreProtocols() {
   const [selected, setSelected] = useState(0)
   const activeCategory = categories[selected]
 
+  const scrollRef = useRef(null)
+  const dragState = useRef({ dragging: false, moved: false, startX: 0, startScrollLeft: 0 })
+
+  const handlePointerDown = (e) => {
+    const el = scrollRef.current
+    if (!el) return
+    dragState.current = {
+      dragging: true,
+      moved: false,
+      startX: e.pageX,
+      startScrollLeft: el.scrollLeft,
+    }
+    el.setPointerCapture?.(e.pointerId)
+  }
+
+  const handlePointerMove = (e) => {
+    const el = scrollRef.current
+    const state = dragState.current
+    if (!el || !state.dragging) return
+    const delta = e.pageX - state.startX
+    if (Math.abs(delta) > 3) state.moved = true
+    el.scrollLeft = state.startScrollLeft - delta
+  }
+
+  const endDrag = () => {
+    dragState.current.dragging = false
+  }
+
+  const handleCategoryClick = (i) => {
+    if (dragState.current.moved) return
+    setSelected(i)
+  }
+
   return (
     <section className="bg-cream px-6 py-16 md:px-20">
       <div className="mx-auto flex max-w-[1372px] flex-col items-center gap-12">
@@ -178,8 +211,13 @@ export default function ExploreProtocols() {
 
           <div className="relative w-full max-w-full">
           <Reveal
+            ref={scrollRef}
             delay={0.1}
-            className="flex w-full max-w-full gap-3 overflow-x-auto px-6 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={endDrag}
+            onPointerLeave={endDrag}
+            className="flex w-full max-w-full cursor-grab gap-3 overflow-x-auto px-6 py-2 active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {categories.map((c, i) => {
               const isSelected = selected === i
@@ -187,10 +225,10 @@ export default function ExploreProtocols() {
                 <motion.button
                   key={c.name}
                   type="button"
-                  onClick={() => setSelected(i)}
+                  onClick={() => handleCategoryClick(i)}
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
-                  className={`shrink-0 whitespace-nowrap rounded-full px-[18px] py-[9px] text-base font-medium tracking-[0.96px] transition-colors ${
+                  className={`shrink-0 select-none whitespace-nowrap rounded-full px-[18px] py-[9px] text-base font-medium tracking-[0.96px] transition-colors ${
                     isSelected ? 'bg-orange-2 font-bold text-white' : 'border border-[#c8c8c8] text-[#2d2d2d]'
                   }`}
                 >
