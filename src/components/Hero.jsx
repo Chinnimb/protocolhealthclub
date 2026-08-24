@@ -43,7 +43,7 @@ export default function Hero() {
             className="absolute inset-0"
             initial={{ scale: 1 }}
             animate={{ scale: 1.07 }}
-            transition={{ duration: 10, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
           >
             <motion.img
               src={heroPhoto}
@@ -51,7 +51,7 @@ export default function Hero() {
               style={{ y }}
               initial={{ scale: 1 }}
               animate={{ scale: [1, 1.07, 1], x: [0, -10, 0] }}
-              transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut', delay: 10 }}
+              transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
               className="absolute inset-0 h-[130%] w-full object-cover"
             />
           </motion.div>
@@ -62,7 +62,7 @@ export default function Hero() {
             style={{ y: glowY }}
             initial={{ opacity: 0.1, scale: 0.8 }}
             animate={{ opacity: 0.55, scale: 1.05 }}
-            transition={{ duration: 10, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
             className="pointer-events-none absolute inset-0 mix-blend-screen"
           >
             {/* gentle ongoing breath once the sun has "risen" */}
@@ -70,7 +70,7 @@ export default function Hero() {
               className="h-full w-full"
               initial={{ scale: 1 }}
               animate={{ scale: [1, 1.15, 1] }}
-              transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 10 }}
+              transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
               style={{
                 background:
                   'radial-gradient(38% 32% at 68% 42%, rgba(255,186,110,0.6) 0%, rgba(255,150,60,0.25) 35%, rgba(255,150,60,0) 70%)',
@@ -83,7 +83,7 @@ export default function Hero() {
             aria-hidden
             initial={{ opacity: 0.4 }}
             animate={{ opacity: 0 }}
-            transition={{ duration: 10, ease: 'easeOut' }}
+            transition={{ duration: 4, ease: 'easeOut' }}
             className="pointer-events-none absolute inset-0 bg-[#1a1410]"
           />
 
