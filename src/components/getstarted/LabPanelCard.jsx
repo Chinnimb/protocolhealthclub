@@ -46,10 +46,10 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
         }`}
       >
       <div className="flex flex-col gap-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-start justify-between gap-3">
           <p className="text-2xl font-bold uppercase tracking-[1.5px] text-orange-2">{panel.title}</p>
           {panel.badge && (
-            <span className="rounded-full bg-orange-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-white">
+            <span className="shrink-0 whitespace-nowrap rounded-full bg-orange-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-white">
               {panel.badge}
             </span>
           )}
@@ -74,7 +74,9 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
         {panel.mobileSummary && (
           <div className="md:hidden">
             <p className="mb-3 text-[11px] font-extrabold tracking-[1px] text-orange-2">{panel.mobileSummary.label}</p>
-            <p className="mb-4 text-base font-extrabold text-[#e91e8c]">{panel.mobileSummary.count}</p>
+            <p className="mb-4 bg-gradient-to-r from-orange-2 to-[#e91e8c] bg-clip-text text-base font-extrabold text-transparent">
+              {panel.mobileSummary.count}
+            </p>
             <div className="flex flex-col gap-2.5">
               {panel.mobileSummary.items.map((item) => (
                 <div key={item} className="flex items-center gap-2">
