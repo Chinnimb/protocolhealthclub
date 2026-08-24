@@ -82,7 +82,7 @@ export default function GuidedOptimization() {
               alt=""
               animate={{ scale: [1, 1.35, 1], opacity: [0.75, 1, 0.75] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="pointer-events-none absolute left-1/2 top-[13%] w-[36%] -translate-x-1/2 sm:w-[30%] md:w-[26%]"
+              className="pointer-events-none absolute left-1/2 top-[8%] h-[84%] w-[34%] -translate-x-1/2 sm:top-[13%] sm:h-auto sm:w-[30%] md:w-[26%]"
             />
 
             <div className="absolute left-[20%] top-[13%] flex flex-col items-center gap-1 text-center">
@@ -104,7 +104,7 @@ export default function GuidedOptimization() {
               <p className="font-platypi text-lg italic sm:text-4xl md:text-[44px]">Living</p>
             </motion.div>
 
-            <div className="absolute left-[6%] top-[61%] max-w-[38%] text-left md:left-[9%] md:top-[36%] md:max-w-[270px]">
+            <div className="absolute left-[6%] top-[36%] max-w-[33%] text-left md:left-[9%] md:max-w-[270px]">
               <p className="bg-gradient-orange bg-clip-text text-sm font-bold leading-tight text-transparent md:text-[36px]">
                 PERFORMANCE
               </p>
@@ -112,7 +112,7 @@ export default function GuidedOptimization() {
                 Energy, strength, sleep, focus, libido — how well you&apos;re living right now.
               </p>
             </div>
-            <div className="absolute right-[5%] top-[61%] max-w-[36%] text-left md:right-[7%] md:top-[37%] md:max-w-[240px]">
+            <div className="absolute right-[5%] top-[37%] max-w-[33%] text-left md:right-[7%] md:max-w-[240px]">
               <p className="bg-gradient-to-r from-orange-3 to-orange-light bg-clip-text text-sm font-bold leading-tight text-transparent md:text-[36px]">
                 LONGEVITY
               </p>
