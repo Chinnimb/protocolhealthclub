@@ -62,9 +62,10 @@ export default function HowItWorks() {
         <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <Reveal>
             <h2 className="text-4xl leading-tight text-[#141c1f] md:text-[56px]">
-              <span className="font-extrabold">We turn data into a</span>{' '}
-              <FadeIn as="span" className="text-gradient-orange font-serif font-normal" delay={0.3}>
-                guided protocol.
+              <span className="font-extrabold">We turn data into a</span>
+              <br />
+              <FadeIn as="span" className="text-gradient-orange whitespace-nowrap font-serif font-normal" delay={0.3}>
+                Guided Protocol.
               </FadeIn>
               <br />
               <span className="font-serif italic text-3xl text-[#5e5e62] md:text-[48px]">4 steps process</span>
