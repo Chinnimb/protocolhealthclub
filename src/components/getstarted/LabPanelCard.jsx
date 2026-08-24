@@ -35,16 +35,16 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
   )
 
   return (
-    <div className="relative">
+    <div className="relative isolate w-full">
       {/* pulsing heartbeat glow behind the card, matching the venn circles' effect */}
       <motion.div
         aria-hidden
         animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }}
         transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-        className="pointer-events-none absolute -inset-6 -z-10 rounded-[32px] blur-2xl"
+        className="pointer-events-none absolute -inset-3 -z-10 rounded-[28px] blur-xl"
         style={{
           backgroundImage:
-            'radial-gradient(65% 65% at 50% 42%, rgba(244,95,43,0.75) 0%, rgba(244,172,99,0.45) 55%, rgba(244,172,99,0) 78%)',
+            'radial-gradient(65% 65% at 50% 42%, rgba(244,95,43,0.85) 0%, rgba(244,172,99,0.5) 55%, rgba(244,172,99,0) 78%)',
         }}
       />
 
