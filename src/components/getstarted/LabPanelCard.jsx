@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { motion, useInView } from 'framer-motion'
 import lineImg from '../../assets/figma/getstarted/lab-panel-line.svg'
 import checkSm from '../../assets/figma/getstarted/lab-panel-check-sm.svg'
 import checkMd from '../../assets/figma/getstarted/lab-panel-check-md.svg'
@@ -8,6 +8,8 @@ const PREVIEW_COUNT = 3
 
 export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, delay = 0 }) {
   const [expanded, setExpanded] = useState(false)
+  const cardRef = useRef(null)
+  const inView = useInView(cardRef, { once: true, amount: 0.2 })
   const checkIcon = size === 'sm' ? checkSm : checkMd
   const preview = panel.categories.slice(0, PREVIEW_COUNT)
   const rest = panel.categories.slice(PREVIEW_COUNT)
@@ -34,9 +36,9 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
 
   return (
     <motion.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       transition={{ duration: 0.5, delay }}
       onClick={() => onSelect?.()}
       className={`flex w-full cursor-pointer flex-col justify-between rounded-[20px] border bg-white p-8 shadow-[0px_16px_32px_rgba(0,0,0,0.08)] transition-colors ${

@@ -1,15 +1,19 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 import Reveal from './Reveal'
 import MotionLink from './MotionLink'
 import runnerPhoto from '../assets/figma/final-cta-photo.png'
 
 export default function FinalCTA() {
+  const cardRef = useRef(null)
+  const inView = useInView(cardRef, { once: true, amount: 0.3 })
+
   return (
     <section className="px-6 pb-8 pt-4 md:px-10">
       <motion.div
+        ref={cardRef}
         initial={{ opacity: 0, scale: 0.97 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.97 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="mx-auto flex max-w-[1360px] flex-col overflow-hidden rounded-[24px] shadow-[0px_0px_25px_rgba(0,0,0,0.25)] md:flex-row"
       >

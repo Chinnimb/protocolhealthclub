@@ -29,9 +29,11 @@ const steps = [
   },
 ]
 
+const TIMELINE_DONE_AT = 1.6
+
 export default function WhatHappensNext() {
   const timelineRef = useRef(null)
-  const inView = useInView(timelineRef, { once: true, amount: 0.6 })
+  const inView = useInView(timelineRef, { once: true, amount: 0.3 })
 
   return (
     <section className="bg-white px-6 py-16 md:px-[120px] md:py-20">
@@ -83,9 +85,19 @@ export default function WhatHappensNext() {
           </div>
         </div>
 
-        <div className="drop-shadow-[0px_4px_2px_rgba(244,172,99,0.21)] grid w-full gap-6 md:grid-cols-3">
+        <div
+          className="drop-shadow-[0px_4px_2px_rgba(244,172,99,0.21)] grid w-full gap-6 md:grid-cols-3"
+          style={{ perspective: 1200 }}
+        >
           {steps.map((s, i) => (
-            <Reveal key={s.title} delay={0.1 + i * 0.1} className="h-full">
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, rotateX: -90 }}
+              animate={inView ? { opacity: 1, rotateX: 0 } : {}}
+              transition={{ duration: 0.65, delay: TIMELINE_DONE_AT + i * 0.18, ease: [0.22, 1, 0.36, 1] }}
+              style={{ transformOrigin: 'top center', transformStyle: 'preserve-3d' }}
+              className="h-full"
+            >
               <div className="flex h-full flex-col gap-5 rounded-2xl border border-[#f4ac63] bg-white p-8 shadow-[0px_12px_16px_rgba(245,79,43,0.04)]">
                 <p className="text-xl font-bold tracking-[-0.5px] text-[#1c1c1e]">
                   <span className="font-extrabold text-orange-2">{s.n} </span>
@@ -102,7 +114,7 @@ export default function WhatHappensNext() {
                   ))}
                 </div>
               </div>
-            </Reveal>
+            </motion.div>
           ))}
         </div>
 

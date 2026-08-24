@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
 import Typewriter from './Typewriter'
@@ -7,15 +8,18 @@ import consultPhoto from '../assets/figma/optimized-living-photo.png'
 import glow from '../assets/figma/optimized-living-glow.svg'
 
 export default function OptimizedLiving() {
+  const photoRef = useRef(null)
+  const photoInView = useInView(photoRef, { once: true, amount: 0.3 })
+
   return (
     <section className="relative bg-cream px-6 py-16 md:px-[117px]">
       <img src={glow} alt="" className="pointer-events-none absolute left-0 top-0 w-[40%] max-w-[636px] opacity-70" />
 
       <div className="relative grid w-full items-center gap-12 md:grid-cols-2">
         <motion.div
+          ref={photoRef}
           initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          animate={photoInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.96 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="overflow-hidden rounded-[22px] border-4 border-[#fcf0ec]"
         >

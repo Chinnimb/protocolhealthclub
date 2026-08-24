@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 
 export default function FadeIn({
   children,
@@ -10,13 +11,15 @@ export default function FadeIn({
   amount = 0.4,
 }) {
   const Comp = motion[as] ?? motion.span
+  const ref = useRef(null)
+  const inView = useInView(ref, { once, amount })
 
   return (
     <Comp
+      ref={ref}
       className={className}
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once, amount }}
+      animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration, delay, ease: 'easeOut' }}
     >
       {children}

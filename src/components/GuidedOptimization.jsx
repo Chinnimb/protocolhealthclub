@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
 import Typewriter from './Typewriter'
@@ -10,6 +11,9 @@ import activityIcon from '../assets/figma/venn-activity-icon.svg'
 import infinityIcon from '../assets/figma/venn-infinity-icon.svg'
 
 export default function GuidedOptimization() {
+  const diagramRef = useRef(null)
+  const diagramInView = useInView(diagramRef, { once: true, amount: 0.4 })
+
   return (
     <section className="bg-cream px-6 py-16 md:px-14">
       <div className="w-full">
@@ -35,13 +39,12 @@ export default function GuidedOptimization() {
           </p>
         </Reveal>
 
-        <div className="relative mx-auto mt-16 flex h-[420px] max-w-[1033px] items-center justify-center md:h-[561px]">
+        <div ref={diagramRef} className="relative mx-auto mt-16 flex h-[420px] max-w-[1033px] items-center justify-center md:h-[561px]">
           <motion.img
             src={leftCircle}
             alt=""
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 360 }}
-            viewport={{ once: true, amount: 0.4 }}
+            animate={diagramInView ? { opacity: 1, x: 0, rotate: 360 } : { opacity: 0, x: -20, rotate: 0 }}
             transition={{
               opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
               x: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
@@ -53,8 +56,7 @@ export default function GuidedOptimization() {
             src={rightCircle}
             alt=""
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0, rotate: -360 }}
-            viewport={{ once: true, amount: 0.4 }}
+            animate={diagramInView ? { opacity: 1, x: 0, rotate: -360 } : { opacity: 0, x: 20, rotate: 0 }}
             transition={{
               opacity: { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
               x: { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
@@ -81,8 +83,7 @@ export default function GuidedOptimization() {
 
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
+            animate={diagramInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
             transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-10 flex flex-col items-center gap-1 text-center text-white"
           >

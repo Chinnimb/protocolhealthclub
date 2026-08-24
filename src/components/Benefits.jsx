@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Reveal from './Reveal'
@@ -48,6 +48,43 @@ const cards = [
   { title: 'Cognitive Focus', icon: iconBrain, image: cardCognitiveFocus, products: 'Semax, Dihexa, Tesofensine' },
 ]
 
+function BenefitCard({ card, delay }) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, amount: 0.2 })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+      transition={{ duration: 0.5, delay }}
+      whileHover={{ y: -6 }}
+      className="group relative h-[480px] w-[320px] shrink-0 overflow-hidden rounded-[24px] border border-white/10 shadow-[0px_12px_24px_0px_rgba(22,32,37,0.08)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,95,43,0.35)]"
+    >
+      <img
+        src={card.image}
+        alt={card.title}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.75) 85%, rgba(0,0,0,0.85) 100%)',
+        }}
+      />
+      <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3">
+        <img src={card.icon} alt="" className="h-8 w-8" />
+        <p className="text-3xl font-extrabold text-white">{card.title}</p>
+        <div>
+          <p className="line-clamp-2 text-[13px] text-white/80">{card.products}</p>
+          <p className="mt-1 text-xs font-extrabold text-orange-2">AND MORE</p>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function Benefits() {
   const scrollerRef = useRef(null) // eslint-disable-line
 
@@ -87,36 +124,7 @@ export default function Benefits() {
           className="flex gap-4 overflow-x-auto scroll-smooth px-6 py-10 [scrollbar-width:none] md:px-10 [&::-webkit-scrollbar]:hidden"
         >
         {cards.map((c, i) => (
-          <motion.div
-            key={c.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: (i % 6) * 0.06 }}
-            whileHover={{ y: -6 }}
-            className="group relative h-[480px] w-[320px] shrink-0 overflow-hidden rounded-[24px] border border-white/10 shadow-[0px_12px_24px_0px_rgba(22,32,37,0.08)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,95,43,0.35)]"
-          >
-            <img
-              src={c.image}
-              alt={c.title}
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage:
-                  'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.75) 85%, rgba(0,0,0,0.85) 100%)',
-              }}
-            />
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3">
-              <img src={c.icon} alt="" className="h-8 w-8" />
-              <p className="text-3xl font-extrabold text-white">{c.title}</p>
-              <div>
-                <p className="line-clamp-2 text-[13px] text-white/80">{c.products}</p>
-                <p className="mt-1 text-xs font-extrabold text-orange-2">AND MORE</p>
-              </div>
-            </div>
-          </motion.div>
+          <BenefitCard key={c.title} card={c} delay={(i % 6) * 0.06} />
         ))}
         </div>
 
