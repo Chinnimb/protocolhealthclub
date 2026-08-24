@@ -11,27 +11,27 @@ export default function QuoteWhy() {
 
   return (
     <section ref={ref} className="px-6 py-6 md:px-10">
-      <div className="relative mx-auto h-[660px] max-w-[1536px] overflow-hidden rounded-[20px]">
+      <div className="relative mx-auto h-[420px] max-w-[1536px] overflow-hidden rounded-[20px] sm:h-[520px] md:h-[660px]">
         <motion.img src={quotePhoto} alt="" style={{ y }} className="absolute inset-0 h-[120%] w-full object-cover" />
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 flex h-full items-center justify-center px-6 py-16">
-          <div className="flex w-full max-w-[1412px] flex-col items-center gap-12 rounded-[20px] bg-black/10 px-6 py-16 text-center backdrop-blur-[2px] md:px-12">
-            <div className="flex flex-col items-center gap-4">
+        <div className="relative z-10 flex h-full items-center justify-center px-6 py-8 md:py-16">
+          <div className="flex w-full max-w-[1412px] flex-col items-center gap-6 rounded-[20px] bg-black/10 px-6 py-8 text-center backdrop-blur-[2px] md:gap-12 md:px-12 md:py-16">
+            <div className="flex flex-col items-center gap-2 md:gap-4">
               <Typewriter
                 as="p"
                 triggerOnView
                 startDelay={150}
                 speed={35}
                 text="THE WHY"
-                className="text-base font-extrabold uppercase tracking-[2.2px] text-[#ffb76a]"
+                className="text-xs font-extrabold uppercase tracking-[2.2px] text-[#ffb76a] md:text-base"
               />
               <Reveal delay={0.1}>
-                <h2 className="font-serif text-4xl font-medium leading-tight text-white md:whitespace-nowrap md:text-[64px]">
+                <h2 className="font-serif text-2xl font-medium leading-tight text-white md:whitespace-nowrap md:text-[64px]">
                   Labs are the baseline we optimize from.
                 </h2>
               </Reveal>
-              <Reveal delay={0.2} as="p" className="w-full text-sm font-medium uppercase leading-relaxed text-[#ffc98a] md:text-lg">
+              <Reveal delay={0.2} as="p" className="w-full text-[11px] font-medium uppercase leading-relaxed text-[#ffc98a] md:text-lg">
                 This route is for people who need current data before starting. It reduces guesswork and makes
                 <br />
                 the consult more specific.
@@ -43,7 +43,7 @@ export default function QuoteWhy() {
                 href="#choose-lab-panel"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.96 }}
-                className="bg-gradient-orange inline-block rounded-full px-9 py-[18px] text-xl font-bold text-white"
+                className="bg-gradient-orange inline-block rounded-full px-7 py-3 text-base font-bold text-white md:px-9 md:py-[18px] md:text-xl"
               >
                 View Bio markers
               </motion.a>

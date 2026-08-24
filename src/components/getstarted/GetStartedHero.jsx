@@ -22,7 +22,7 @@ export default function GetStartedHero() {
             initial={{ scale: 1 }}
             animate={{ scale: [1, 1.06, 1], x: [0, 10, 0] }}
             transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-[62%_35%] sm:object-center"
           />
         </motion.div>
 
