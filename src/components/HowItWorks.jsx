@@ -83,12 +83,15 @@ export default function HowItWorks() {
               <motion.button
                 key={s.n}
                 type="button"
+                onClick={() => setActive(i)}
                 onMouseEnter={() => setActive(i)}
                 onFocus={() => setActive(i)}
                 layout
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative flex h-[330px] flex-col overflow-hidden rounded-[26px] border p-4 text-left backdrop-blur-md md:h-[460px] ${
-                  isActive ? 'justify-end border-white/90 md:flex-[2.2] md:p-0' : 'justify-between border-orange md:flex-1'
+                className={`relative flex overflow-hidden rounded-[26px] border text-left backdrop-blur-md ${
+                  isActive
+                    ? 'h-[330px] flex-col justify-end border-white/90 p-4 md:h-[460px] md:flex-[2.2] md:p-0'
+                    : 'h-16 flex-row items-center gap-3 border-orange px-5 md:h-[460px] md:flex-1 md:flex-col md:items-stretch md:justify-between md:gap-4 md:px-4 md:py-4'
                 }`}
                 style={
                   isActive
@@ -117,28 +120,31 @@ export default function HowItWorks() {
                 )}
 
                 <span
-                  className={`relative z-10 text-4xl font-bold md:text-[52px] ${
-                    isActive ? 'p-4 text-white md:absolute md:right-2 md:top-2' : 'text-gradient-orange'
+                  className={`relative z-10 shrink-0 font-bold ${
+                    isActive
+                      ? 'p-4 text-4xl text-white md:absolute md:right-2 md:top-2 md:text-[52px]'
+                      : 'text-2xl text-gradient-orange md:text-[52px]'
                   }`}
                 >
                   {s.n}
                 </span>
 
-                <div className={`relative z-10 flex flex-col gap-4 ${isActive ? 'p-4 md:p-8' : ''}`}>
-                  <img src={s.icon} alt="" className="h-10 w-10" />
-                  <div>
-                    <p
-                      className={`font-bold ${
-                        isActive
-                          ? 'text-2xl text-white md:text-[40px]'
-                          : 'min-h-[52px] text-lg text-[#233038] md:min-h-[58px] md:text-[19px]'
-                      }`}
-                    >
+                {isActive ? (
+                  <div className="relative z-10 flex flex-col gap-4 p-4 md:p-8">
+                    <img src={s.icon} alt="" className="h-10 w-10" />
+                    <div>
+                      <p className="text-2xl font-bold text-white md:text-[40px]">{s.title}</p>
+                      <p className="mt-2 max-w-[386px] text-sm font-bold text-white">{s.body}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="relative z-10 flex min-w-0 flex-1 items-center gap-3 md:flex-none md:flex-col md:items-start md:gap-4">
+                    <p className="order-1 min-w-0 flex-1 truncate text-sm font-bold text-[#233038] md:order-2 md:min-h-[58px] md:flex-none md:whitespace-normal md:text-[19px]">
                       {s.title}
                     </p>
-                    {isActive && <p className="mt-2 max-w-[386px] text-sm font-bold text-white">{s.body}</p>}
+                    <img src={s.icon} alt="" className="order-2 h-6 w-6 shrink-0 md:order-1 md:h-10 md:w-10" />
                   </div>
-                </div>
+                )}
               </motion.button>
             )
           })}
