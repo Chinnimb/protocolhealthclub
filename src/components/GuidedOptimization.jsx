@@ -40,7 +40,7 @@ export default function GuidedOptimization() {
         </Reveal>
 
         <div ref={diagramRef} className="relative mx-auto mt-16 max-w-[1033px]">
-          <div className="relative mx-auto flex h-[380px] items-center justify-center overflow-hidden sm:h-[460px] md:h-[561px] md:overflow-visible">
+          <div className="relative mx-auto flex h-[230px] items-center justify-center overflow-hidden sm:h-[380px] md:h-[561px] md:overflow-visible">
             <motion.img
               src={leftCircle}
               alt=""
@@ -70,7 +70,7 @@ export default function GuidedOptimization() {
               alt=""
               animate={{ scale: [1, 1.35, 1], opacity: [0.75, 1, 0.75] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="pointer-events-none absolute left-1/2 top-[13%] w-[26%] -translate-x-1/2"
+              className="pointer-events-none absolute left-1/2 top-[13%] w-[36%] -translate-x-1/2 sm:w-[30%] md:w-[26%]"
             />
 
             <div className="absolute left-[20%] top-[13%] flex flex-col items-center gap-1 text-center">
@@ -88,23 +88,23 @@ export default function GuidedOptimization() {
               transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="relative z-10 flex flex-col items-center gap-1 text-center text-white"
             >
-              <p className="text-xs font-bold tracking-[2px] sm:text-sm sm:tracking-[3.2px]">OPTIMIZED</p>
-              <p className="font-platypi text-2xl italic sm:text-4xl md:text-[44px]">Living</p>
+              <p className="text-[8px] font-bold tracking-[1.2px] sm:text-sm sm:tracking-[3.2px]">OPTIMIZED</p>
+              <p className="font-platypi text-lg italic sm:text-4xl md:text-[44px]">Living</p>
             </motion.div>
 
-            <div className="absolute left-[6%] top-[59%] max-w-[38%] text-left sm:left-[9%] sm:top-[36%] sm:max-w-[270px]">
-              <p className="bg-gradient-orange bg-clip-text text-base font-bold text-transparent sm:text-[36px]">
+            <div className="absolute left-[6%] top-[63%] max-w-[38%] text-left md:left-[9%] md:top-[36%] md:max-w-[270px]">
+              <p className="bg-gradient-orange bg-clip-text text-sm font-bold leading-tight text-transparent md:text-[36px]">
                 PERFORMANCE
               </p>
-              <p className="mt-2 text-[11px] leading-snug text-[#6e5a4e] sm:mt-4 sm:text-base sm:leading-normal">
+              <p className="mt-1 text-[9px] leading-[1.25] text-[#6e5a4e] md:mt-4 md:text-base md:leading-normal">
                 Energy, strength, sleep, focus, libido — how well you&apos;re living right now.
               </p>
             </div>
-            <div className="absolute right-[5%] top-[59%] max-w-[36%] text-left sm:right-[7%] sm:top-[37%] sm:max-w-[240px]">
-              <p className="bg-gradient-to-r from-orange-3 to-orange-light bg-clip-text text-base font-bold text-transparent sm:text-[36px]">
+            <div className="absolute right-[5%] top-[63%] max-w-[36%] text-left md:right-[7%] md:top-[37%] md:max-w-[240px]">
+              <p className="bg-gradient-to-r from-orange-3 to-orange-light bg-clip-text text-sm font-bold leading-tight text-transparent md:text-[36px]">
                 LONGEVITY
               </p>
-              <p className="mt-2 text-[11px] leading-snug text-[#6e5a4e] sm:mt-4 sm:text-base sm:leading-normal">
+              <p className="mt-1 text-[9px] leading-[1.25] text-[#6e5a4e] md:mt-4 md:text-base md:leading-normal">
                 Metabolic, cardiovascular and hormonal trajectory — the decades still ahead of you.
               </p>
             </div>
