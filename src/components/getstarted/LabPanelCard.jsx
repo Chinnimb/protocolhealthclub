@@ -64,13 +64,31 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
             onClick={(e) => e.stopPropagation()}
             className="rounded-full border border-[#99c9d9] px-4 py-2.5 text-sm font-bold text-[#3f6673] transition-colors hover:bg-[#f0f8fa]"
           >
-            View Bio markers
+            <span className="md:hidden">View Markers</span>
+            <span className="hidden md:inline">View Bio markers</span>
           </button>
         </div>
 
         <img src={lineImg} alt="" className="w-full" />
 
-        <div>
+        {panel.mobileSummary && (
+          <div className="md:hidden">
+            <p className="mb-3 text-[11px] font-extrabold tracking-[1px] text-orange-2">{panel.mobileSummary.label}</p>
+            <p className="mb-4 text-base font-extrabold text-[#e91e8c]">{panel.mobileSummary.count}</p>
+            <div className="flex flex-col gap-2.5">
+              {panel.mobileSummary.items.map((item) => (
+                <div key={item} className="flex items-center gap-2">
+                  <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[rgba(245,79,43,0.1)]">
+                    <img src={checkMd} alt="" className="h-[10px] w-[10px]" />
+                  </span>
+                  <p className="flex-1 text-sm text-[#1a1a1a]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="hidden md:block">
           <p className="mb-4 text-[11px] font-extrabold tracking-[1px] text-orange-2">WHAT&rsquo;S TESTED:</p>
 
           <div className="columns-1 gap-6 sm:columns-2">

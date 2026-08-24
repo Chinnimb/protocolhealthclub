@@ -3,6 +3,11 @@ export const performancePanel = {
   price: '$299',
   description:
     'Key hormones, energy, body composition, strength, and recovery. Excellent plan for performance and general stats.',
+  mobileSummary: {
+    label: 'KEY TESTED AREAS:',
+    count: '60+ Biomarkers Total',
+    items: ['Hormones & Sex Health', 'Lipids & Heart Health', 'Liver & Kidney Health', 'Metabolic Markers'],
+  },
   categories: [
     {
       name: 'Inflammation',
@@ -66,6 +71,11 @@ export const pinnaclePanel = {
   badge: 'MOST POPULAR',
   description:
     'Everything in Performance plus comprehensive longevity and metabolic markers for those who want the full picture.',
+  mobileSummary: {
+    label: 'COMPREHENSIVE TESTING INCLUDES:',
+    count: '100+ Biomarkers Total',
+    items: ['Thyroid & Thyroid Antibodies', 'Electrolytes & Fluid Balance', 'Full Longevity Panel'],
+  },
   categories: [
     {
       name: 'Inflammation',
