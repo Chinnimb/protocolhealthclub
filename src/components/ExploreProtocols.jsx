@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import Reveal from './Reveal'
+import MotionLink from './MotionLink'
 
 import fatlossSemaglutide from '../assets/figma/protocols/fatloss-semaglutide.png'
 import fatlossTirzepatide from '../assets/figma/protocols/fatloss-tirzepatide.png'
@@ -289,14 +290,14 @@ export default function ExploreProtocols() {
         </div>
 
         <Reveal delay={0.1}>
-          <motion.a
-            href="/get-started"
+          <MotionLink
+            to="/get-started"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             className="bg-gradient-orange inline-block rounded-full border-2 border-white px-12 py-4 text-2xl font-bold tracking-[1.28px] text-white"
           >
             Get Started
-          </motion.a>
+          </MotionLink>
         </Reveal>
       </div>
     </section>

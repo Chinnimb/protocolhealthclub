@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
 import Typewriter from './Typewriter'
+import MotionLink from './MotionLink'
 import leftCircle from '../assets/figma/venn-left-circle.svg'
 import rightCircle from '../assets/figma/venn-right-circle.svg'
 import glow from '../assets/figma/venn-glow.svg'
@@ -108,14 +109,14 @@ export default function GuidedOptimization() {
         </div>
 
         <Reveal delay={0.1} className="mt-10 flex justify-center">
-          <motion.a
-            href="/get-started"
+          <MotionLink
+            to="/get-started"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             className="bg-gradient-orange rounded-full px-10 py-4 text-2xl font-bold text-white"
           >
             Start Today
-          </motion.a>
+          </MotionLink>
         </Reveal>
       </div>
     </section>

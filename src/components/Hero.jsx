@@ -2,6 +2,7 @@ import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'fram
 import { useRef } from 'react'
 import Header from './Header'
 import Typewriter from './Typewriter'
+import MotionLink from './MotionLink'
 import heroPhoto from '../assets/figma/hero-photo.png'
 import arrowIcon from '../assets/figma/hero-arrow-icon.svg'
 import checkIcon from '../assets/figma/hero-check-icon.svg'
@@ -133,15 +134,15 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="mt-12 flex flex-col items-start gap-5"
           >
-            <motion.a
-              href="/get-started"
+            <MotionLink
+              to="/get-started"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="bg-gradient-orange flex w-full max-w-[420px] items-center justify-center gap-3 rounded-full px-10 py-4 text-xl font-bold text-white shadow-lg shadow-orange/30 sm:w-auto sm:min-w-[300px]"
             >
               Get Started
               <img src={arrowIcon} alt="" className="h-6 w-6" />
-            </motion.a>
+            </MotionLink>
 
             <div className="flex items-center gap-2 pl-1">
               <span className="flex h-[18px] w-[18px] items-center justify-center rounded-full border-[1.5px] border-[#d9d8d7]">

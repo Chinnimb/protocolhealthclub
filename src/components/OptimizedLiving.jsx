@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
 import Typewriter from './Typewriter'
+import MotionLink from './MotionLink'
 import consultPhoto from '../assets/figma/optimized-living-photo.png'
 import glow from '../assets/figma/optimized-living-glow.svg'
 
@@ -45,14 +46,14 @@ export default function OptimizedLiving() {
             deliver your products fast, and stay connected with you to track progress and refine your path forward.
           </Reveal>
           <Reveal delay={0.25}>
-            <motion.a
-              href="/get-started"
+            <MotionLink
+              to="/get-started"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
               className="bg-gradient-orange mt-8 inline-block rounded-full px-10 py-4 text-2xl font-bold text-white"
             >
               Start Today
-            </motion.a>
+            </MotionLink>
           </Reveal>
         </div>
       </div>

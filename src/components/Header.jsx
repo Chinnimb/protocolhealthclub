@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion'
+import MotionLink from './MotionLink'
 import logoPart1 from '../assets/figma/logo-part1.svg'
 import logoPart2 from '../assets/figma/logo-part2.svg'
 import logoPart3 from '../assets/figma/logo-part3.svg'
 
 const links = [
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Biomarkers', href: '#biomarkers' },
-  { label: 'Protocols', href: '#protocols' },
-  { label: 'Members', href: '#members' },
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Biomarkers', href: '/#biomarkers' },
+  { label: 'Protocols', href: '/#protocols' },
+  { label: 'Members', href: '/#members' },
 ]
 
 export default function Header() {
@@ -37,14 +38,14 @@ export default function Header() {
           ))}
         </nav>
 
-        <motion.a
-          href="/get-started"
+        <MotionLink
+          to="/get-started"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           className="bg-gradient-orange rounded-[20px] px-4 py-2 text-sm font-medium text-white"
         >
           Get Started
-        </motion.a>
+        </MotionLink>
       </div>
     </motion.div>
   )
