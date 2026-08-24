@@ -21,7 +21,7 @@ export default function OptimizedLiving() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={photoInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.96 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="overflow-hidden rounded-[22px] border-4 border-[#fcf0ec]"
+          className="order-2 overflow-hidden rounded-[22px] border-4 border-[#fcf0ec] md:order-1"
         >
           <img
             src={consultPhoto}
@@ -30,7 +30,7 @@ export default function OptimizedLiving() {
           />
         </motion.div>
 
-        <div>
+        <div className="order-1 md:order-2">
           <Typewriter
             as="p"
             triggerOnView
@@ -49,7 +49,7 @@ export default function OptimizedLiving() {
             Every plan is built individually, no guesswork, no generic solutions. We analyze your labs and goals,
             deliver your products fast, and stay connected with you to track progress and refine your path forward.
           </Reveal>
-          <Reveal delay={0.25}>
+          <Reveal delay={0.25} className="hidden md:block">
             <MotionLink
               to="/get-started"
               whileHover={{ scale: 1.05 }}
@@ -60,6 +60,17 @@ export default function OptimizedLiving() {
             </MotionLink>
           </Reveal>
         </div>
+
+        <Reveal delay={0.25} className="order-3 flex justify-center md:hidden">
+          <MotionLink
+            to="/get-started"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.96 }}
+            className="bg-gradient-orange inline-block rounded-full px-10 py-4 text-2xl font-bold text-white"
+          >
+            Start Today
+          </MotionLink>
+        </Reveal>
       </div>
     </section>
   )
