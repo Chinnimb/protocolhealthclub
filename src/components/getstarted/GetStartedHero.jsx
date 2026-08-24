@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Header from '../Header'
+import Typewriter from '../Typewriter'
 import arrowIcon from '../../assets/figma/hero-arrow-icon.svg'
 import checkIcon from '../../assets/figma/hero-check-icon.svg'
 import heroPhoto from '../../assets/figma/getstarted/getstarted-hero-photo.jpg'
@@ -30,7 +31,10 @@ export default function GetStartedHero() {
           >
             Start with bloodwork.
             <br />
-            <span className="font-serif italic font-normal">Then we build your protocol.</span>
+            <Typewriter
+              text="Then we build your protocol."
+              className="font-serif italic font-normal"
+            />
           </motion.h1>
 
           <motion.p
