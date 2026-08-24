@@ -16,11 +16,8 @@ export default function GetStartedHero() {
           transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div
-          className="absolute inset-0"
-          style={{ backgroundImage: 'linear-gradient(105deg, rgba(0,0,0,0.8) 12%, rgba(20,10,5,0.5) 42%, rgba(20,10,5,0.15) 70%)' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
 
         <Header />
 
@@ -29,11 +26,11 @@ export default function GetStartedHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-[680px] text-5xl leading-[1.04] text-white md:text-[64px]"
+            className="max-w-[680px] text-5xl font-bold leading-[1.04] text-white md:text-[64px] md:tracking-[-1.8px]"
           >
-            <span className="font-serif font-semibold">Start with bloodwork.</span>
+            Start with bloodwork.
             <br />
-            <span className="font-bold">Then we build your protocol.</span>
+            <span className="font-serif italic font-normal">Then we build your protocol.</span>
           </motion.h1>
 
           <motion.p
