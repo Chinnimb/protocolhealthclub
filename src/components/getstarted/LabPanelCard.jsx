@@ -35,16 +35,29 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
   )
 
   return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-      transition={{ duration: 0.5, delay }}
-      onClick={() => onSelect?.()}
-      className={`flex w-full cursor-pointer flex-col justify-between rounded-[20px] border bg-white p-8 shadow-[0px_16px_32px_rgba(0,0,0,0.08)] transition-colors ${
-        selected ? 'border-orange-2' : 'border-[#f4ac63]'
-      }`}
-    >
+    <div className="relative">
+      {/* pulsing heartbeat glow behind the card, matching the venn circles' effect */}
+      <motion.div
+        aria-hidden
+        animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+        className="pointer-events-none absolute -inset-6 -z-10 rounded-[32px] blur-2xl"
+        style={{
+          backgroundImage:
+            'radial-gradient(65% 65% at 50% 42%, rgba(244,95,43,0.75) 0%, rgba(244,172,99,0.45) 55%, rgba(244,172,99,0) 78%)',
+        }}
+      />
+
+      <motion.div
+        ref={cardRef}
+        initial={{ opacity: 0, y: 24 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+        transition={{ duration: 0.5, delay }}
+        onClick={() => onSelect?.()}
+        className={`relative flex w-full cursor-pointer flex-col justify-between rounded-[20px] border bg-white p-8 shadow-[0px_16px_32px_rgba(0,0,0,0.08)] transition-colors ${
+          selected ? 'border-orange-2' : 'border-[#f4ac63]'
+        }`}
+      >
       <div className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
           <p className="text-2xl font-bold uppercase tracking-[1.5px] text-orange-2">{panel.title}</p>
@@ -127,6 +140,7 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
       >
         {selected ? 'SELECTED ✓' : 'CONFIRM SELECTION'}
       </button>
-    </motion.div>
+      </motion.div>
+    </div>
   )
 }
