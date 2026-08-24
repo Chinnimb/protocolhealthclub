@@ -9,14 +9,43 @@ export default function GetStartedHero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#1a0f08]">
       <div className="relative min-h-[860px] w-full overflow-hidden">
-        <motion.img
-          src={heroPhoto}
-          alt=""
-          initial={{ scale: 1.08 }}
-          animate={{ scale: [1.08, 1.16, 1.08], x: [0, 12, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        {/* one-time cinematic dolly-in: the shot starts a touch further out, then slowly approaches */}
+        <motion.div
+          className="absolute inset-0"
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.06 }}
+          transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.img
+            src={heroPhoto}
+            alt=""
+            initial={{ scale: 1 }}
+            animate={{ scale: [1, 1.06, 1], x: [0, 10, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </motion.div>
+
+        {/* growing orange light, blooming behind her like the light is slowly rising */}
+        <motion.div
+          aria-hidden
+          initial={{ opacity: 0.15, scale: 0.6 }}
+          animate={{ opacity: 0.75, scale: 1 }}
+          transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
+          className="pointer-events-none absolute inset-0 mix-blend-screen"
+        >
+          <motion.div
+            className="h-full w-full"
+            initial={{ scale: 1 }}
+            animate={{ scale: [1, 1.18, 1] }}
+            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+            style={{
+              background:
+                'radial-gradient(32% 40% at 47% 22%, rgba(255,176,90,0.75) 0%, rgba(255,130,40,0.35) 40%, rgba(255,100,20,0) 72%)',
+            }}
+          />
+        </motion.div>
+
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
 

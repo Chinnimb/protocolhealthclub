@@ -20,11 +20,11 @@ export default function Header() {
       className="absolute top-0 left-0 right-0 z-30 bg-white/25 backdrop-blur-sm"
     >
       <div className="flex w-full items-center justify-between px-10 py-6">
-        <div className="relative h-[23px] w-[128px]">
+        <MotionLink to="/" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="relative h-[23px] w-[128px]">
           <img src={logoPart1} alt="" className="absolute left-0 top-0 h-[23px]" />
           <img src={logoPart2} alt="protocol" className="absolute left-[33px] top-0 h-[23px]" />
           <img src={logoPart3} alt="" className="absolute left-[72px] top-0 h-[18px]" />
-        </div>
+        </MotionLink>
 
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
