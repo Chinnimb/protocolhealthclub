@@ -6,6 +6,7 @@ import LabPanelCard from './LabPanelCard'
 import { performancePanel, pinnaclePanel } from './labPanelData'
 import userMale from '../../assets/figma/getstarted/toggle-user-male.svg'
 import userFemale from '../../assets/figma/getstarted/toggle-user-female.svg'
+import glow from '../../assets/figma/venn-glow.svg'
 
 export default function ChooseLabPanel() {
   const [sex, setSex] = useState('male')
@@ -52,16 +53,14 @@ export default function ChooseLabPanel() {
         </Reveal>
 
         <div className="relative isolate grid items-stretch gap-6 md:grid-cols-2">
-          {/* shared pulsing heartbeat glow, radiating from the center point between both cards */}
-          <motion.div
+          {/* shared pulsing glow, radiating from the center point between both cards — same asset & animation as Guided Optimization */}
+          <motion.img
+            src={glow}
+            alt=""
             aria-hidden
-            animate={{ scale: [1, 1.15, 1], opacity: [0.55, 0.95, 0.55] }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl"
-            style={{
-              backgroundImage:
-                'radial-gradient(closest-side, rgba(244,95,43,0.85) 0%, rgba(244,172,99,0.5) 55%, rgba(244,172,99,0) 78%)',
-            }}
+            animate={{ scale: [1, 1.35, 1], opacity: [0.75, 1, 0.75] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 w-[280px] -translate-x-1/2 -translate-y-1/2"
           />
 
           <LabPanelCard
