@@ -115,7 +115,7 @@ export default function NormalGap() {
               <motion.div
                 animate={inView ? { scale: [1, 1.18, 1] } : {}}
                 transition={{ duration: 1.7, repeat: Infinity, ease: 'easeInOut', delay: 2.35 }}
-                className="h-full w-full rounded-full border-[3px] border-white bg-white/10"
+                className="h-full w-full rounded-full border-[3px] border-white bg-white"
               />
             </motion.div>
 
@@ -129,7 +129,7 @@ export default function NormalGap() {
               <motion.div
                 animate={inView ? { scale: [1, 1.18, 1] } : {}}
                 transition={{ duration: 1.7, repeat: Infinity, ease: 'easeInOut', delay: 2.85 }}
-                className="h-full w-full rounded-full border-[3px] border-white"
+                className="h-full w-full rounded-full border-[3px] border-white bg-white"
               />
             </motion.div>
 
@@ -166,14 +166,14 @@ export default function NormalGap() {
             Standard &ldquo;Normal&rdquo; Range
           </p>
 
-          <div className="relative mt-3 h-8 sm:h-6">
+          <div className="relative mt-3 h-6 sm:h-6">
             <div
               style={{ left: '67.59%', width: '19.51%' }}
               className="absolute top-0 h-[2px] rounded-full bg-orange-3 sm:top-1/2 sm:-translate-y-1/2"
             />
             <span
               style={{ left: 'calc(67.59% + 19.51% / 2)' }}
-              className="absolute top-3 -translate-x-1/2 whitespace-nowrap text-[10px] font-bold uppercase tracking-[1px] text-orange-3 sm:hidden"
+              className="absolute top-1.5 -translate-x-1/2 whitespace-nowrap text-[10px] font-bold uppercase tracking-[1px] text-orange-3 sm:hidden"
             >
               Optimal
             </span>
