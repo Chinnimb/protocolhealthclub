@@ -89,7 +89,7 @@ export default function NormalGap() {
                 animate={inView ? { clipPath: 'inset(0 0% 0 0)' } : {}}
                 transition={{ duration: 2.2, ease: [0.45, 0.05, 0.15, 1] }}
               >
-                <img src={rangeBarTrack} alt="" className="w-full" />
+                <img src={rangeBarTrack} alt="" className="h-[14px] w-full sm:h-auto" />
               </motion.div>
 
               {/* soft glowing edge that sweeps along with the fill, for a smoother "loading" feel */}
@@ -137,9 +137,9 @@ export default function NormalGap() {
               src={normalLine}
               alt=""
               initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 0.7 } : {}}
+              animate={inView ? { opacity: 0.85 } : {}}
               transition={{ duration: 0.6, delay: 2.2 }}
-              className="pointer-events-none absolute left-[10%] top-[52px] w-[76%]"
+              className="pointer-events-none absolute left-[10%] top-[22px] h-[6px] w-[76%] sm:top-[52px] sm:h-auto"
             />
 
             {/* ball traveling from "Still In Range" to "Optimal" to show the shift, per client request */}
@@ -162,11 +162,11 @@ export default function NormalGap() {
             />
           </div>
 
-          <p className="mt-3 text-center text-sm uppercase tracking-[2px] text-[#9a8878]">
+          <p className="mt-5 text-center text-[11px] uppercase tracking-[1px] text-[#9a8878] sm:text-sm sm:tracking-[2px]">
             Standard &ldquo;Normal&rdquo; Range
           </p>
 
-          <div className="relative mt-2 h-8 sm:h-6">
+          <div className="relative mt-3 h-8 sm:h-6">
             <div
               style={{ left: '67.59%', width: '19.51%' }}
               className="absolute top-0 h-[2px] rounded-full bg-orange-3 sm:top-1/2 sm:-translate-y-1/2"
