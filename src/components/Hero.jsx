@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import Header from './Header'
 import Typewriter from './Typewriter'
@@ -10,21 +10,64 @@ export default function Hero() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '22%'])
+  const glowY = useTransform(scrollYProgress, [0, 1], ['0%', '10%'])
+
+  // subtle pointer-driven parallax for a sense of depth
+  const pointerX = useMotionValue(0)
+  const pointerY = useMotionValue(0)
+  const parallaxX = useSpring(useTransform(pointerX, [-1, 1], [10, -10]), { stiffness: 60, damping: 20 })
+  const parallaxY = useSpring(useTransform(pointerY, [-1, 1], [6, -6]), { stiffness: 60, damping: 20 })
+
+  const handlePointerMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    pointerX.set(((e.clientX - rect.left) / rect.width) * 2 - 1)
+    pointerY.set(((e.clientY - rect.top) / rect.height) * 2 - 1)
+  }
+  const handlePointerLeave = () => {
+    pointerX.set(0)
+    pointerY.set(0)
+  }
 
   return (
-    <section ref={ref} className="relative isolate overflow-hidden bg-[#15100f]">
+    <section
+      ref={ref}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      className="relative isolate overflow-hidden bg-[#15100f]"
+    >
       <div className="relative min-h-[860px] w-full overflow-hidden">
-        <motion.img
-          src={heroPhoto}
-          alt=""
-          style={{ y }}
-          initial={{ scale: 1.06 }}
-          animate={{ scale: [1.06, 1.14, 1.06], x: [0, -10, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute inset-0 h-[130%] w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+        {/* pointer-driven depth layer: everything inside drifts slightly opposite the cursor */}
+        <motion.div style={{ x: parallaxX, y: parallaxY }} className="absolute inset-[-2%]">
+          <motion.img
+            src={heroPhoto}
+            alt=""
+            style={{ y }}
+            initial={{ scale: 1.06 }}
+            animate={{ scale: [1.06, 1.14, 1.06], x: [0, -10, 0] }}
+            transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute inset-0 h-[130%] w-full object-cover"
+          />
+
+          {/* animated horizon glow, breathing brighter/dimmer over the light she's facing */}
+          <motion.div
+            aria-hidden
+            style={{ y: glowY }}
+            animate={{ opacity: [0.35, 0.75, 0.35], scale: [1, 1.15, 1] }}
+            transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+            className="pointer-events-none absolute inset-0 mix-blend-screen"
+          >
+            <div
+              className="absolute h-full w-full"
+              style={{
+                background:
+                  'radial-gradient(38% 32% at 68% 42%, rgba(255,186,110,0.6) 0%, rgba(255,150,60,0.25) 35%, rgba(255,150,60,0) 70%)',
+              }}
+            />
+          </motion.div>
+
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+        </motion.div>
 
         <Header />
 
