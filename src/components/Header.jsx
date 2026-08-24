@@ -36,7 +36,7 @@ export default function Header() {
           href="/get-started"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
-          className="rounded-[20px] bg-[#180f0d] px-4 py-2 text-sm font-medium text-[#fdf9f4]"
+          className="bg-gradient-orange rounded-[20px] px-4 py-2 text-sm font-medium text-white"
         >
           Get Started
         </motion.a>
