@@ -43,7 +43,7 @@ export default function WhatHappensNext() {
             startDelay={150}
             speed={35}
             text="YOUR BLOODWORK JOURNEY"
-            className="text-base font-bold uppercase tracking-[1.5px] text-orange-2"
+            className="text-base font-bold uppercase tracking-[1.5px] text-orange-3"
           />
           <Reveal delay={0.1}>
             <h2 className="text-4xl font-bold leading-tight text-[#1c1c1e] md:text-[56px]">
