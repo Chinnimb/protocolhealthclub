@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import Reveal from '../Reveal'
 import FadeIn from '../FadeIn'
 import LabPanelCard from './LabPanelCard'
@@ -50,7 +51,19 @@ export default function ChooseLabPanel() {
           </div>
         </Reveal>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="relative isolate grid items-stretch gap-6 md:grid-cols-2">
+          {/* shared pulsing heartbeat glow, radiating from the center point between both cards */}
+          <motion.div
+            aria-hidden
+            animate={{ scale: [1, 1.15, 1], opacity: [0.55, 0.95, 0.55] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl"
+            style={{
+              backgroundImage:
+                'radial-gradient(closest-side, rgba(244,95,43,0.85) 0%, rgba(244,172,99,0.5) 55%, rgba(244,172,99,0) 78%)',
+            }}
+          />
+
           <LabPanelCard
             panel={performancePanel}
             size="sm"

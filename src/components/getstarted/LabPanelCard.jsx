@@ -35,26 +35,13 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
   )
 
   return (
-    <div className="relative isolate w-full">
-      {/* pulsing heartbeat glow behind the card, matching the venn circles' effect */}
-      <motion.div
-        aria-hidden
-        animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }}
-        transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-        className="pointer-events-none absolute -inset-3 -z-10 rounded-[28px] blur-xl"
-        style={{
-          backgroundImage:
-            'radial-gradient(65% 65% at 50% 42%, rgba(244,95,43,0.85) 0%, rgba(244,172,99,0.5) 55%, rgba(244,172,99,0) 78%)',
-        }}
-      />
-
       <motion.div
         ref={cardRef}
         initial={{ opacity: 0, y: 24 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
         transition={{ duration: 0.5, delay }}
         onClick={() => onSelect?.()}
-        className={`relative flex w-full cursor-pointer flex-col justify-between rounded-[20px] border bg-white p-8 shadow-[0px_16px_32px_rgba(0,0,0,0.08)] transition-colors ${
+        className={`relative flex h-full w-full cursor-pointer flex-col justify-between rounded-[20px] border bg-white p-8 shadow-[0px_16px_32px_rgba(0,0,0,0.08)] transition-colors ${
           selected ? 'border-orange-2' : 'border-[#f4ac63]'
         }`}
       >
@@ -141,6 +128,5 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
         {selected ? 'SELECTED ✓' : 'CONFIRM SELECTION'}
       </button>
       </motion.div>
-    </div>
   )
 }
