@@ -178,7 +178,6 @@ export default function ExploreProtocols() {
       startX: e.pageX,
       startScrollLeft: el.scrollLeft,
     }
-    el.setPointerCapture?.(e.pointerId)
   }
 
   const handlePointerMove = (e) => {
@@ -186,7 +185,7 @@ export default function ExploreProtocols() {
     const state = dragState.current
     if (!el || !state.dragging) return
     const delta = e.pageX - state.startX
-    if (Math.abs(delta) > 3) state.moved = true
+    if (Math.abs(delta) > 10) state.moved = true
     el.scrollLeft = state.startScrollLeft - delta
   }
 
