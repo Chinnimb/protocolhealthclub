@@ -46,13 +46,17 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
         }`}
       >
       <div className="flex flex-col gap-6">
-        <div className="flex items-start justify-between gap-3">
-          <p className="text-2xl font-bold uppercase tracking-[1.5px] text-orange-2">{panel.title}</p>
+        <div className="flex flex-col items-start gap-2 md:flex-row md:justify-between md:gap-3">
           {panel.badge && (
-            <span className="shrink-0 whitespace-nowrap rounded-full bg-orange-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-white">
+            <motion.span
+              animate={{ scale: [1, 1.07, 1] }}
+              transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+              className="shrink-0 whitespace-nowrap rounded-full bg-orange-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-white md:order-2"
+            >
               {panel.badge}
-            </span>
+            </motion.span>
           )}
+          <p className="text-2xl font-bold uppercase tracking-[1.5px] text-orange-2 md:order-1">{panel.title}</p>
         </div>
 
         <p className="text-sm leading-relaxed text-[#6e6e6e]">{panel.description}</p>
