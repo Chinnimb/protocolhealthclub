@@ -59,7 +59,7 @@ function BenefitCard({ card, delay }) {
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       transition={{ duration: 0.5, delay }}
       whileHover={{ y: -6 }}
-      className="group relative h-[480px] w-[320px] shrink-0 overflow-hidden rounded-[24px] border border-white/10 shadow-[0px_12px_24px_0px_rgba(22,32,37,0.08)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,95,43,0.35)]"
+      className="group relative h-[420px] w-[260px] shrink-0 snap-center overflow-hidden rounded-[24px] border border-white/10 shadow-[0px_12px_24px_0px_rgba(22,32,37,0.08)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,95,43,0.35)] sm:h-[480px] sm:w-[320px]"
     >
       <img
         src={card.image}
@@ -89,7 +89,11 @@ export default function Benefits() {
   const scrollerRef = useRef(null) // eslint-disable-line
 
   const scrollByCards = (dir) => {
-    scrollerRef.current?.scrollBy({ left: dir * 340, behavior: 'smooth' })
+    const el = scrollerRef.current
+    if (!el) return
+    const card = el.firstElementChild
+    const step = card ? card.getBoundingClientRect().width + 16 : 340
+    el.scrollBy({ left: dir * step, behavior: 'smooth' })
   }
 
   return (
@@ -121,7 +125,7 @@ export default function Benefits() {
       <div className="relative mt-14">
         <div
           ref={scrollerRef}
-          className="flex gap-4 overflow-x-auto scroll-smooth px-6 py-10 [scrollbar-width:none] md:px-10 [&::-webkit-scrollbar]:hidden"
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-[calc(50vw-130px)] py-10 [scrollbar-width:none] sm:px-6 sm:snap-none md:px-10 [&::-webkit-scrollbar]:hidden"
         >
         {cards.map((c, i) => (
           <BenefitCard key={c.title} card={c} delay={(i % 6) * 0.06} />

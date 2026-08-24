@@ -13,7 +13,7 @@ export default function OptimizedLiving() {
 
   return (
     <section className="relative bg-cream px-6 py-16 md:px-[117px]">
-      <img src={glow} alt="" className="pointer-events-none absolute left-0 top-0 w-[40%] max-w-[636px] opacity-70" />
+      <img src={glow} alt="" className="pointer-events-none absolute left-0 top-0 hidden w-[40%] max-w-[636px] opacity-70 md:block" />
 
       <div className="relative grid w-full items-center gap-12 md:grid-cols-2">
         <motion.div
