@@ -38,32 +38,54 @@ export default function Hero() {
       <div className="relative min-h-[860px] w-full overflow-hidden">
         {/* pointer-driven depth layer: everything inside drifts slightly opposite the cursor */}
         <motion.div style={{ x: parallaxX, y: parallaxY }} className="absolute inset-[-2%]">
-          <motion.img
-            src={heroPhoto}
-            alt=""
-            style={{ y }}
-            initial={{ scale: 1.06 }}
-            animate={{ scale: [1.06, 1.14, 1.06], x: [0, -10, 0] }}
-            transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute inset-0 h-[130%] w-full object-cover"
-          />
+          {/* one-time cinematic dolly-in: she starts further away, camera slowly approaches */}
+          <motion.div
+            className="absolute inset-0"
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.07 }}
+            transition={{ duration: 10, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <motion.img
+              src={heroPhoto}
+              alt=""
+              style={{ y }}
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.07, 1], x: [0, -10, 0] }}
+              transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut', delay: 10 }}
+              className="absolute inset-0 h-[130%] w-full object-cover"
+            />
+          </motion.div>
 
-          {/* animated horizon glow, breathing brighter/dimmer over the light she's facing */}
+          {/* sunrise: horizon starts dim, then warms and brightens once as she "arrives" */}
           <motion.div
             aria-hidden
             style={{ y: glowY }}
-            animate={{ opacity: [0.35, 0.75, 0.35], scale: [1, 1.15, 1] }}
-            transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+            initial={{ opacity: 0.1, scale: 0.8 }}
+            animate={{ opacity: 0.55, scale: 1.05 }}
+            transition={{ duration: 10, ease: [0.16, 1, 0.3, 1] }}
             className="pointer-events-none absolute inset-0 mix-blend-screen"
           >
-            <div
-              className="absolute h-full w-full"
+            {/* gentle ongoing breath once the sun has "risen" */}
+            <motion.div
+              className="h-full w-full"
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.15, 1] }}
+              transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 10 }}
               style={{
                 background:
                   'radial-gradient(38% 32% at 68% 42%, rgba(255,186,110,0.6) 0%, rgba(255,150,60,0.25) 35%, rgba(255,150,60,0) 70%)',
               }}
             />
           </motion.div>
+
+          {/* pre-dawn haze that clears as the sun comes up */}
+          <motion.div
+            aria-hidden
+            initial={{ opacity: 0.4 }}
+            animate={{ opacity: 0 }}
+            transition={{ duration: 10, ease: 'easeOut' }}
+            className="pointer-events-none absolute inset-0 bg-[#1a1410]"
+          />
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
