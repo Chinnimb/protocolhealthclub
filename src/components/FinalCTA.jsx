@@ -47,7 +47,7 @@ export default function FinalCTA() {
               href="/get-started"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
-              className="bg-gradient-orange mt-9 inline-block rounded-full border-2 border-white px-7 py-3.5 text-lg font-semibold text-white shadow-[0px_4px_16px_rgba(0,0,0,0.15)]"
+              className="mt-9 inline-block rounded-full bg-[#233038] px-7 py-3.5 text-lg font-semibold text-white"
             >
               Start your Protocol
             </motion.a>

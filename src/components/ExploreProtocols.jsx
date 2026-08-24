@@ -293,7 +293,7 @@ export default function ExploreProtocols() {
             href="/get-started"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
-            className="bg-gradient-orange inline-block rounded-full border-2 border-white px-12 py-4 text-base font-bold tracking-[1.28px] text-white"
+            className="bg-gradient-orange inline-block rounded-full border-2 border-white px-12 py-4 text-2xl font-bold tracking-[1.28px] text-white"
           >
             Get Started
           </motion.a>
