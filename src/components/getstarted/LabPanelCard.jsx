@@ -45,7 +45,7 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
     >
       <div className="flex flex-col gap-6">
         <div className="flex items-center justify-between">
-          <p className="text-2xl font-extrabold uppercase tracking-[1.5px] text-orange-2">{panel.title}</p>
+          <p className="text-2xl font-bold uppercase tracking-[1.5px] text-orange-2">{panel.title}</p>
           {panel.badge && (
             <span className="rounded-full bg-orange-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-white">
               {panel.badge}

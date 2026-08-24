@@ -46,7 +46,7 @@ export default function WhatHappensNext() {
             className="text-base font-bold uppercase tracking-[1.5px] text-orange-2"
           />
           <Reveal delay={0.1}>
-            <h2 className="text-4xl font-extrabold tracking-[-1px] text-[#1c1c1e] md:text-[56px]">
+            <h2 className="text-4xl font-bold leading-tight text-[#1c1c1e] md:text-[56px]">
               What happens <span className="font-serif font-medium text-orange-2">next?</span>
             </h2>
           </Reveal>

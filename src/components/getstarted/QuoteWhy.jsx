@@ -28,7 +28,7 @@ export default function QuoteWhy() {
                 className="text-base font-extrabold uppercase tracking-[2.2px] text-[#ffb76a]"
               />
               <Reveal delay={0.1}>
-                <h2 className="max-w-4xl font-serif text-4xl font-semibold leading-tight text-white md:text-[64px]">
+                <h2 className="max-w-4xl font-serif text-4xl font-medium leading-tight text-white md:text-[64px]">
                   Labs are the baseline we optimize from.
                 </h2>
               </Reveal>
