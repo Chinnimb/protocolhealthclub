@@ -6,10 +6,10 @@ export default function Footer() {
   return (
     <footer className="bg-navy py-4">
       <div className="flex flex-col items-center justify-center px-6 py-6">
-        <div className="relative h-[69px] w-[382px] max-w-full">
-          <img src={footerLogo1} alt="" className="absolute left-0 top-0 h-[69px]" />
-          <img src={footerLogo2} alt="Protocol" className="absolute left-[98px] top-0 h-[69px]" />
-          <img src={footerLogo3} alt="" className="absolute left-[216px] top-0 h-[53px]" />
+        <div className="relative aspect-[382/69] w-full max-w-[280px] sm:max-w-[382px]">
+          <img src={footerLogo1} alt="" className="absolute left-0 top-0 h-full" />
+          <img src={footerLogo2} alt="Protocol" className="absolute left-[25.65%] top-0 h-full" />
+          <img src={footerLogo3} alt="" className="absolute left-[56.54%] top-0 h-[76.81%]" />
         </div>
       </div>
 

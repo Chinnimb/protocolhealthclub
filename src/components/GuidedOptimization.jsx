@@ -27,10 +27,10 @@ export default function GuidedOptimization() {
         />
 
         <Reveal delay={0.08} className="mt-6 max-w-3xl">
-          <h2 className="text-4xl font-extrabold text-[#171f21] md:text-[56px]">
+          <h2 className="text-[32px] font-extrabold text-[#171f21] sm:text-4xl md:text-[56px]">
             What is
             <br />
-            <FadeIn as="span" className="text-gradient-orange whitespace-nowrap font-serif font-normal" delay={0.3}>
+            <FadeIn as="span" className="text-gradient-orange sm:whitespace-nowrap font-serif font-normal" delay={0.3}>
               Guided Optimization?
             </FadeIn>
           </h2>
@@ -39,73 +39,94 @@ export default function GuidedOptimization() {
           </p>
         </Reveal>
 
-        <div ref={diagramRef} className="relative mx-auto mt-16 flex h-[420px] max-w-[1033px] items-center justify-center md:h-[561px]">
-          <motion.img
-            src={leftCircle}
-            alt=""
-            initial={{ opacity: 0, x: -20 }}
-            animate={diagramInView ? { opacity: 1, x: 0, rotate: 360 } : { opacity: 0, x: -20, rotate: 0 }}
-            transition={{
-              opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-              x: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-              rotate: { duration: 18, repeat: Infinity, ease: 'linear' },
-            }}
-            className="absolute left-0 top-0 h-full w-[59%]"
-          />
-          <motion.img
-            src={rightCircle}
-            alt=""
-            initial={{ opacity: 0, x: 20 }}
-            animate={diagramInView ? { opacity: 1, x: 0, rotate: -360 } : { opacity: 0, x: 20, rotate: 0 }}
-            transition={{
-              opacity: { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
-              x: { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
-              rotate: { duration: 22, repeat: Infinity, ease: 'linear' },
-            }}
-            className="absolute right-0 top-0 h-full w-[59%]"
-          />
-          <motion.img
-            src={glow}
-            alt=""
-            animate={{ scale: [1, 1.35, 1], opacity: [0.75, 1, 0.75] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="pointer-events-none absolute left-1/2 top-[13%] w-[26%] -translate-x-1/2"
-          />
+        <div ref={diagramRef} className="relative mx-auto mt-16 max-w-[1033px]">
+          <div className="relative mx-auto flex h-[220px] items-center justify-center sm:h-[300px] md:h-[561px]">
+            <motion.img
+              src={leftCircle}
+              alt=""
+              initial={{ opacity: 0, x: -20 }}
+              animate={diagramInView ? { opacity: 1, x: 0, rotate: 360 } : { opacity: 0, x: -20, rotate: 0 }}
+              transition={{
+                opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                x: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+                rotate: { duration: 18, repeat: Infinity, ease: 'linear' },
+              }}
+              className="absolute left-0 top-0 h-full w-[59%]"
+            />
+            <motion.img
+              src={rightCircle}
+              alt=""
+              initial={{ opacity: 0, x: 20 }}
+              animate={diagramInView ? { opacity: 1, x: 0, rotate: -360 } : { opacity: 0, x: 20, rotate: 0 }}
+              transition={{
+                opacity: { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
+                x: { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
+                rotate: { duration: 22, repeat: Infinity, ease: 'linear' },
+              }}
+              className="absolute right-0 top-0 h-full w-[59%]"
+            />
+            <motion.img
+              src={glow}
+              alt=""
+              animate={{ scale: [1, 1.35, 1], opacity: [0.75, 1, 0.75] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="pointer-events-none absolute left-1/2 top-[13%] w-[26%] -translate-x-1/2"
+            />
 
-          <div className="absolute left-[20%] top-[13%] flex flex-col items-center gap-1 text-center">
-            <img src={activityIcon} alt="" className="h-6 w-6" />
-            <p className="text-sm font-bold tracking-[2.4px] text-[#233038]">PERFORMANCE</p>
-          </div>
-          <div className="absolute right-[18%] top-[12%] flex flex-col items-center gap-1 text-center">
-            <img src={infinityIcon} alt="" className="h-6 w-6" />
-            <p className="text-sm font-bold tracking-[2.4px] text-[#233038]">LONGEVITY</p>
+            <div className="absolute left-[20%] top-[13%] flex flex-col items-center gap-1 text-center">
+              <img src={activityIcon} alt="" className="h-4 w-4 sm:h-6 sm:w-6" />
+              <p className="text-[10px] font-bold tracking-[1px] text-[#233038] sm:text-sm sm:tracking-[2.4px]">PERFORMANCE</p>
+            </div>
+            <div className="absolute right-[18%] top-[12%] flex flex-col items-center gap-1 text-center">
+              <img src={infinityIcon} alt="" className="h-4 w-4 sm:h-6 sm:w-6" />
+              <p className="text-[10px] font-bold tracking-[1px] text-[#233038] sm:text-sm sm:tracking-[2.4px]">LONGEVITY</p>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={diagramInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
+              transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="relative z-10 flex flex-col items-center gap-1 text-center text-white"
+            >
+              <p className="text-xs font-bold tracking-[2px] sm:text-sm sm:tracking-[3.2px]">OPTIMIZED</p>
+              <p className="font-platypi text-2xl italic sm:text-4xl md:text-[44px]">Living</p>
+            </motion.div>
+
+            <div className="absolute left-[9%] top-[36%] hidden max-w-[270px] text-left md:block">
+              <p className="bg-gradient-orange bg-clip-text text-[36px] font-bold text-transparent">
+                PERFORMANCE
+              </p>
+              <p className="mt-4 text-base text-[#6e5a4e]">
+                Energy, strength, sleep, focus, libido — how well you&apos;re living right now.
+              </p>
+            </div>
+            <div className="absolute right-[7%] top-[37%] hidden max-w-[240px] text-left md:block">
+              <p className="bg-gradient-to-r from-orange-3 to-orange-light bg-clip-text text-[36px] font-bold text-transparent">
+                LONGEVITY
+              </p>
+              <p className="mt-4 text-base text-[#6e5a4e]">
+                Metabolic, cardiovascular and hormonal trajectory — the decades still ahead of you.
+              </p>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={diagramInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
-            transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 flex flex-col items-center gap-1 text-center text-white"
-          >
-            <p className="text-sm font-bold tracking-[3.2px]">OPTIMIZED</p>
-            <p className="font-platypi text-4xl italic md:text-[44px]">Living</p>
-          </motion.div>
-
-          <div className="absolute left-[9%] top-[36%] max-w-[270px] text-left">
-            <p className="bg-gradient-orange bg-clip-text text-3xl font-bold text-transparent md:text-[36px]">
-              PERFORMANCE
-            </p>
-            <p className="mt-4 text-base text-[#6e5a4e]">
-              Energy, strength, sleep, focus, libido — how well you&apos;re living right now.
-            </p>
-          </div>
-          <div className="absolute right-[7%] top-[37%] max-w-[240px] text-left">
-            <p className="bg-gradient-to-r from-orange-3 to-orange-light bg-clip-text text-3xl font-bold text-transparent md:text-[36px]">
-              LONGEVITY
-            </p>
-            <p className="mt-4 text-base text-[#6e5a4e]">
-              Metabolic, cardiovascular and hormonal trajectory — the decades still ahead of you.
-            </p>
+          <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 md:hidden">
+            <div className="text-center sm:text-left">
+              <p className="bg-gradient-orange bg-clip-text text-2xl font-bold text-transparent">
+                PERFORMANCE
+              </p>
+              <p className="mt-3 text-base text-[#6e5a4e]">
+                Energy, strength, sleep, focus, libido — how well you&apos;re living right now.
+              </p>
+            </div>
+            <div className="text-center sm:text-left">
+              <p className="bg-gradient-to-r from-orange-3 to-orange-light bg-clip-text text-2xl font-bold text-transparent">
+                LONGEVITY
+              </p>
+              <p className="mt-3 text-base text-[#6e5a4e]">
+                Metabolic, cardiovascular and hormonal trajectory — the decades still ahead of you.
+              </p>
+            </div>
           </div>
         </div>
 

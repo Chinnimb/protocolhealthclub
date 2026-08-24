@@ -94,7 +94,7 @@ export default function Hero() {
 
         <Header />
 
-        <div className="relative z-10 flex min-h-[860px] w-full flex-col justify-center px-10 pb-16 pt-28 md:pt-32">
+        <div className="relative z-10 flex min-h-[860px] w-full flex-col justify-center px-6 pb-16 pt-28 sm:px-10 md:pt-32">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-[880px] text-5xl font-bold leading-[1.02] text-white md:text-[72px] md:tracking-[-1.8px]"
+            className="max-w-[880px] text-4xl font-bold leading-[1.08] text-white sm:text-5xl sm:leading-[1.02] md:text-[72px] md:tracking-[-1.8px]"
           >
             Guided Medical Optimization,
             <br />

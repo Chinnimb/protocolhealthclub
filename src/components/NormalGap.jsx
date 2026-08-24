@@ -23,7 +23,7 @@ export default function NormalGap() {
       />
 
       <Reveal delay={0.05} className="mt-6 max-w-5xl">
-        <h2 className="whitespace-nowrap text-3xl font-bold leading-tight text-black sm:text-4xl md:text-[56px]">
+        <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl md:whitespace-nowrap md:text-[56px]">
           Today&rsquo;s &ldquo;normal&rdquo; is far from optimal.
         </h2>
         <FadeIn as="p" className="text-gradient-orange mt-4 font-serif text-3xl md:text-[48px]" delay={0.3}>
@@ -43,7 +43,23 @@ export default function NormalGap() {
         </div>
 
         <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-6 shadow-[0px_0px_12px_rgba(242,122,46,0.67)] md:p-10">
-          <div className="relative h-[64px] md:h-[74px]">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4, delay: 2.0 }}
+            className="mb-3 flex items-start justify-between gap-2 sm:hidden"
+          >
+            <div className="text-left">
+              <p className="text-xs font-bold text-[#233038]">Still &ldquo;In Range&rdquo;</p>
+              <p className="text-[10px] text-[#9a8878]">Tired, Foggy, Flat</p>
+            </div>
+            <div className="text-right">
+              <p className="text-xs font-bold text-[#233038]">Optimal</p>
+              <p className="text-[10px] text-[#9a8878]">Sharp, Strong, Energized</p>
+            </div>
+          </motion.div>
+
+          <div className="relative hidden sm:block sm:h-[64px] md:h-[74px]">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -150,11 +166,20 @@ export default function NormalGap() {
             Standard &ldquo;Normal&rdquo; Range
           </p>
 
-          <div className="relative mt-2 h-6">
-            <div style={{ left: '67.59%', width: '19.51%' }} className="absolute top-1/2 h-[2px] -translate-y-1/2 rounded-full bg-orange-3" />
+          <div className="relative mt-2 h-8 sm:h-6">
+            <div
+              style={{ left: '67.59%', width: '19.51%' }}
+              className="absolute top-0 h-[2px] rounded-full bg-orange-3 sm:top-1/2 sm:-translate-y-1/2"
+            />
+            <span
+              style={{ left: 'calc(67.59% + 19.51% / 2)' }}
+              className="absolute top-3 -translate-x-1/2 whitespace-nowrap text-[10px] font-bold uppercase tracking-[1px] text-orange-3 sm:hidden"
+            >
+              Optimal
+            </span>
             <span
               style={{ left: 'calc(67.59% + 19.51% + 10px)' }}
-              className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-bold uppercase tracking-[2px] text-orange-3"
+              className="absolute top-1/2 hidden -translate-y-1/2 whitespace-nowrap text-sm font-bold uppercase tracking-[2px] text-orange-3 sm:block"
             >
               Optimal
             </span>
