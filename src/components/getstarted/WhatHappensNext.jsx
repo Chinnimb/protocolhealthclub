@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import Reveal from '../Reveal'
+import FadeIn from '../FadeIn'
 import Typewriter from '../Typewriter'
 import timelineNode from '../../assets/figma/getstarted/timeline-node.svg'
 import stepCheck from '../../assets/figma/getstarted/step-check.svg'
@@ -108,7 +109,10 @@ export default function WhatHappensNext() {
           />
           <Reveal delay={0.1}>
             <h2 className="text-4xl font-bold leading-tight text-[#1c1c1e] md:text-[56px]">
-              What happens <span className="font-serif font-medium text-orange-2">next?</span>
+              What happens{' '}
+              <FadeIn as="span" className="font-serif font-medium text-orange-2" delay={0.3}>
+                next?
+              </FadeIn>
             </h2>
           </Reveal>
         </div>

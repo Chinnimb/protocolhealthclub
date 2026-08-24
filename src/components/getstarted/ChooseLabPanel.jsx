@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Reveal from '../Reveal'
+import FadeIn from '../FadeIn'
 import LabPanelCard from './LabPanelCard'
 import { performancePanel, pinnaclePanel } from './labPanelData'
 import userMale from '../../assets/figma/getstarted/toggle-user-male.svg'
@@ -14,7 +15,10 @@ export default function ChooseLabPanel() {
       <div className="mx-auto flex max-w-[1536px] flex-col gap-12">
         <Reveal className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <h2 className="text-4xl font-bold leading-tight text-[#1a1a1a] md:text-[56px]">
-            <span className="text-gradient-orange font-serif font-medium">Choose</span> your lab panel
+            <FadeIn as="span" className="text-gradient-orange font-serif font-medium" delay={0.3}>
+              Choose
+            </FadeIn>{' '}
+            your lab panel
           </h2>
           <p className="max-w-[500px] text-lg leading-relaxed text-[#6e6e6e]">
             We test markers across muscle health, longevity, metabolism, nutrient levels, and gut health.
@@ -30,7 +34,7 @@ export default function ChooseLabPanel() {
                 sex === 'male' ? 'bg-orange-2 text-white' : 'border border-[#e5e1db] text-[#6e6e6e]'
               }`}
             >
-              <img src={userMale} alt="" className="h-3.5 w-3.5" style={{ filter: sex === 'male' ? 'invert(1)' : 'none' }} />
+              <img src={userMale} alt="" className="h-3.5 w-3.5" style={{ filter: sex === 'male' ? 'none' : 'brightness(0) opacity(0.55)' }} />
               Male
             </button>
             <button
@@ -40,7 +44,7 @@ export default function ChooseLabPanel() {
                 sex === 'female' ? 'bg-orange-2 text-white' : 'border border-[#e5e1db] text-[#6e6e6e]'
               }`}
             >
-              <img src={userFemale} alt="" className="h-3.5 w-3.5" style={{ filter: sex === 'female' ? 'invert(1)' : 'none' }} />
+              <img src={userFemale} alt="" className="h-3.5 w-3.5" style={{ filter: sex === 'female' ? 'brightness(0) invert(1)' : 'none' }} />
               Female
             </button>
           </div>
