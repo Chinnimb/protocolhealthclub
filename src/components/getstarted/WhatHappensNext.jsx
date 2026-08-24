@@ -35,10 +35,11 @@ const DAY_WINDOWS = [
   [0.14, 0.26],
   [0.26, 0.38],
 ]
+// each card flips in right alongside its matching day pin, just a beat behind
 const CARD_WINDOWS = [
-  [0.4, 0.56],
-  [0.5, 0.66],
-  [0.6, 0.76],
+  [0.05, 0.2],
+  [0.17, 0.32],
+  [0.29, 0.44],
 ]
 
 function TimelineDay({ d, scrollYProgress, windowRange }) {
