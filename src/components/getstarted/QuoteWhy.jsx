@@ -45,7 +45,7 @@ export default function QuoteWhy() {
                 whileTap={{ scale: 0.96 }}
                 className="bg-gradient-orange inline-block rounded-full px-9 py-[18px] text-xl font-bold text-white"
               >
-                View Biomarkers
+                View Bio markers
               </motion.a>
             </Reveal>
           </div>

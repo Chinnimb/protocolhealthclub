@@ -6,7 +6,7 @@ import logoPart3 from '../assets/figma/logo-part3.svg'
 
 const links = [
   { label: 'How it works', href: '/#how-it-works' },
-  { label: 'Biomarkers', href: '/#biomarkers' },
+  { label: 'Bio markers', href: '/#biomarkers' },
   { label: 'Protocols', href: '/#protocols' },
   { label: 'Members', href: '/#members' },
 ]

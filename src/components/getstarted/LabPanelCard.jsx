@@ -64,7 +64,7 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
             onClick={(e) => e.stopPropagation()}
             className="rounded-full border border-[#99c9d9] px-4 py-2.5 text-sm font-bold text-[#3f6673] transition-colors hover:bg-[#f0f8fa]"
           >
-            View Biomarkers
+            View Bio markers
           </button>
         </div>
 
