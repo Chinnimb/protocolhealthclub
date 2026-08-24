@@ -32,14 +32,14 @@ export default function NormalGap() {
       </Reveal>
 
       <Reveal delay={0.15} className="mt-10 w-full rounded-[28px] p-4 sm:p-8 md:p-14">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 text-center text-[#b08060]">
-          <p className="text-lg font-bold tracking-[2.5px] md:text-xl">
+        <div className="mx-auto flex w-full max-w-3xl flex-col items-center gap-3 text-center text-[#b08060]">
+          <p className="text-sm font-bold tracking-[1px] sm:text-lg sm:tracking-[2.5px] md:text-xl">
             Normal in America today is sedentary, metabolically unhealthy, and on a list of different prescriptions.
           </p>
-          <p className="text-lg font-extrabold tracking-[2.5px] md:text-xl">
+          <p className="text-sm font-extrabold tracking-[1px] sm:text-lg sm:tracking-[2.5px] md:text-xl">
             Standard lab work is used only to detect disease, not prevent it.
           </p>
-          <p className="text-xl font-extrabold text-[#461d0e] md:text-2xl">Normal is a low bar for your health.</p>
+          <p className="text-base font-extrabold text-[#461d0e] sm:text-xl md:text-2xl">Normal is a low bar for your health.</p>
         </div>
 
         <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-4 shadow-[0px_0px_12px_rgba(242,122,46,0.67)] sm:p-6 md:p-10">
