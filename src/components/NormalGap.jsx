@@ -11,7 +11,7 @@ export default function NormalGap() {
   const inView = useInView(barRef, { once: true, amount: 0.6 })
 
   return (
-    <section id="biomarkers" className="bg-cream px-6 pb-24 pt-14 md:px-10">
+    <section id="biomarkers" className="bg-cream px-4 pb-24 pt-14 sm:px-6 md:px-10">
       <div className="w-full">
       <Typewriter
         as="p"
@@ -31,7 +31,7 @@ export default function NormalGap() {
         </FadeIn>
       </Reveal>
 
-      <Reveal delay={0.15} className="mt-10 w-full rounded-[28px] p-8 md:p-14">
+      <Reveal delay={0.15} className="mt-10 w-full rounded-[28px] p-4 sm:p-8 md:p-14">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 text-center text-[#b08060]">
           <p className="text-lg font-bold tracking-[2.5px] md:text-xl">
             Normal in America today is sedentary, metabolically unhealthy, and on a list of different prescriptions.
@@ -42,7 +42,7 @@ export default function NormalGap() {
           <p className="text-xl font-extrabold text-[#461d0e] md:text-2xl">Normal is a low bar for your health.</p>
         </div>
 
-        <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-6 shadow-[0px_0px_12px_rgba(242,122,46,0.67)] md:p-10">
+        <div ref={barRef} className="mx-auto mt-8 w-full max-w-[1347px] rounded-[20px] bg-white p-4 shadow-[0px_0px_12px_rgba(242,122,46,0.67)] sm:p-6 md:p-10">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -50,12 +50,12 @@ export default function NormalGap() {
             className="mb-3 flex items-start justify-between gap-2 sm:hidden"
           >
             <div className="text-left">
-              <p className="text-xs font-bold text-[#233038]">Still &ldquo;In Range&rdquo;</p>
-              <p className="text-[10px] text-[#9a8878]">Tired, Foggy, Flat</p>
+              <p className="text-sm font-bold text-[#233038]">Still &ldquo;In Range&rdquo;</p>
+              <p className="text-[11px] text-[#9a8878]">Tired, Foggy, Flat</p>
             </div>
             <div className="text-right">
-              <p className="text-xs font-bold text-[#233038]">Optimal</p>
-              <p className="text-[10px] text-[#9a8878]">Sharp, Strong, Energized</p>
+              <p className="text-sm font-bold text-[#233038]">Optimal</p>
+              <p className="text-[11px] text-[#9a8878]">Sharp, Strong, Energized</p>
             </div>
           </motion.div>
 
@@ -89,7 +89,7 @@ export default function NormalGap() {
                 animate={inView ? { clipPath: 'inset(0 0% 0 0)' } : {}}
                 transition={{ duration: 2.2, ease: [0.45, 0.05, 0.15, 1] }}
               >
-                <img src={rangeBarTrack} alt="" className="h-[14px] w-full sm:h-auto" />
+                <img src={rangeBarTrack} alt="" className="h-[18px] w-full sm:h-auto" />
               </motion.div>
 
               {/* soft glowing edge that sweeps along with the fill, for a smoother "loading" feel */}
@@ -139,7 +139,7 @@ export default function NormalGap() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 0.85 } : {}}
               transition={{ duration: 0.6, delay: 2.2 }}
-              className="pointer-events-none absolute left-[10%] top-[22px] h-[6px] w-[76%] sm:top-[52px] sm:h-auto"
+              className="pointer-events-none absolute left-[10%] top-[26px] h-[6px] w-[76%] sm:top-[52px] sm:h-auto"
             />
 
             {/* ball traveling from "Still In Range" to "Optimal" to show the shift, per client request */}
