@@ -125,6 +125,25 @@ export default function NormalGap() {
               transition={{ duration: 0.6, delay: 2.2 }}
               className="pointer-events-none absolute left-[10%] top-[52px] w-[76%]"
             />
+
+            {/* ball traveling from "Still In Range" to "Optimal" to show the shift, per client request */}
+            <motion.div
+              initial={{ left: '37.17%', opacity: 0 }}
+              animate={
+                inView
+                  ? { left: ['37.17%', '37.17%', '77.34%', '77.34%'], opacity: [0, 1, 1, 0] }
+                  : {}
+              }
+              transition={{
+                duration: 2.4,
+                times: [0, 0.15, 0.85, 1],
+                delay: 3.2,
+                repeat: Infinity,
+                repeatDelay: 1,
+                ease: 'easeInOut',
+              }}
+              className="pointer-events-none absolute top-1/2 z-10 h-[14px] w-[14px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-[0_0_10px_3px_rgba(255,255,255,0.9)]"
+            />
           </div>
 
           <p className="mt-3 text-center text-sm uppercase tracking-[2px] text-[#9a8878]">
