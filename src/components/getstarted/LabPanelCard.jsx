@@ -60,7 +60,7 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
           <button
             type="button"
             onClick={(e) => e.stopPropagation()}
-            className="rounded-lg border border-[#99c9d9] px-4 py-2.5 text-sm font-bold text-[#3f6673] transition-colors hover:bg-[#f0f8fa]"
+            className="rounded-full border border-[#99c9d9] px-4 py-2.5 text-sm font-bold text-[#3f6673] transition-colors hover:bg-[#f0f8fa]"
           >
             View Biomarkers
           </button>
@@ -118,7 +118,7 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
           e.stopPropagation()
           onSelect?.()
         }}
-        className={`mt-6 flex items-center justify-center rounded-xl py-4 text-xl font-extrabold tracking-[0.5px] text-white transition-shadow ${
+        className={`mt-6 flex items-center justify-center rounded-full py-4 text-xl font-extrabold tracking-[0.5px] text-white transition-shadow ${
           selected ? 'ring-2 ring-orange-2 ring-offset-2' : ''
         }`}
         style={{ backgroundImage: 'linear-gradient(90deg, rgb(244,95,43) 0%, rgb(244,172,99) 100%)' }}
