@@ -3,7 +3,12 @@ import logoPart1 from '../assets/figma/logo-part1.svg'
 import logoPart2 from '../assets/figma/logo-part2.svg'
 import logoPart3 from '../assets/figma/logo-part3.svg'
 
-const links = ['How it works', 'Biomarkers', 'Protocols', 'Members']
+const links = [
+  { label: 'How it works', href: '#how-it-works' },
+  { label: 'Biomarkers', href: '#biomarkers' },
+  { label: 'Protocols', href: '#protocols' },
+  { label: 'Members', href: '#members' },
+]
 
 export default function Header() {
   return (
@@ -23,11 +28,11 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (
             <a
-              key={l}
-              href="#"
+              key={l.label}
+              href={l.href}
               className="relative text-sm text-[rgba(24,15,13,0.75)] transition-colors hover:text-ink-2 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink-2 after:transition-all after:duration-300 hover:after:w-full"
             >
-              {l}
+              {l.label}
             </a>
           ))}
         </nav>

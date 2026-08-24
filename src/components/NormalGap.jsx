@@ -11,7 +11,7 @@ export default function NormalGap() {
   const inView = useInView(barRef, { once: true, amount: 0.6 })
 
   return (
-    <section className="bg-cream px-6 pb-24 pt-14 md:px-10">
+    <section id="biomarkers" className="bg-cream px-6 pb-24 pt-14 md:px-10">
       <div className="w-full">
       <Typewriter
         as="p"

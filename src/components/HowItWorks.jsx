@@ -125,9 +125,15 @@ export default function HowItWorks() {
                 </span>
 
                 <div className={`relative z-10 flex flex-col gap-4 ${isActive ? 'p-4 md:p-8' : ''}`}>
-                  <img src={s.icon} alt="" className="h-10 w-10" style={isActive ? {} : { filter: 'invert(1)' }} />
+                  <img src={s.icon} alt="" className="h-10 w-10" />
                   <div>
-                    <p className={`font-bold ${isActive ? 'text-2xl text-white md:text-[40px]' : 'text-lg text-[#233038] md:text-[19px]'}`}>
+                    <p
+                      className={`font-bold ${
+                        isActive
+                          ? 'text-2xl text-white md:text-[40px]'
+                          : 'min-h-[52px] text-lg text-[#233038] md:min-h-[58px] md:text-[19px]'
+                      }`}
+                    >
                       {s.title}
                     </p>
                     {isActive && <p className="mt-2 max-w-[386px] text-sm font-bold text-white">{s.body}</p>}

@@ -9,7 +9,7 @@ export default function Testimonial() {
   const y = useTransform(scrollYProgress, [0, 1], ['-8%', '8%'])
 
   return (
-    <section ref={ref} className="relative isolate overflow-hidden px-6 py-6">
+    <section id="members" ref={ref} className="relative isolate overflow-hidden px-6 py-6">
       <div className="relative mx-auto h-[660px] max-w-[1460px] overflow-hidden rounded-[20px]">
         <motion.img src={testimonialPhoto} alt="" style={{ y }} className="absolute inset-0 h-[120%] w-full object-cover" />
         <div className="absolute inset-0 bg-white/10" />
