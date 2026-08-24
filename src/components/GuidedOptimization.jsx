@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
 import Typewriter from './Typewriter'
@@ -13,6 +13,18 @@ import infinityIcon from '../assets/figma/venn-infinity-icon.svg'
 export default function GuidedOptimization() {
   const diagramRef = useRef(null)
   const diagramInView = useInView(diagramRef, { once: true, amount: 0.4 })
+
+  // below md the circles are stretched away from their native aspect ratio to fit
+  // the text inside them; spinning a non-circular shape sweeps a bigger bounding
+  // box than its resting size, which the diagram's overflow-hidden then clips into
+  // a flat edge — so the continuous rotation is only enabled at md and up
+  const [spinEnabled, setSpinEnabled] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 768)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)')
+    const handler = (e) => setSpinEnabled(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   return (
     <section className="bg-cream px-4 py-16 sm:px-6 md:px-14">
@@ -45,11 +57,11 @@ export default function GuidedOptimization() {
               src={leftCircle}
               alt=""
               initial={{ opacity: 0, x: -20 }}
-              animate={diagramInView ? { opacity: 1, x: 0, rotate: 360 } : { opacity: 0, x: -20, rotate: 0 }}
+              animate={diagramInView ? { opacity: 1, x: 0, rotate: spinEnabled ? 360 : 0 } : { opacity: 0, x: -20, rotate: 0 }}
               transition={{
                 opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
                 x: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-                rotate: { duration: 18, repeat: Infinity, ease: 'linear' },
+                rotate: spinEnabled ? { duration: 18, repeat: Infinity, ease: 'linear' } : { duration: 0.7 },
               }}
               className="absolute left-0 top-0 h-full w-[59%]"
             />
@@ -57,11 +69,11 @@ export default function GuidedOptimization() {
               src={rightCircle}
               alt=""
               initial={{ opacity: 0, x: 20 }}
-              animate={diagramInView ? { opacity: 1, x: 0, rotate: -360 } : { opacity: 0, x: 20, rotate: 0 }}
+              animate={diagramInView ? { opacity: 1, x: 0, rotate: spinEnabled ? -360 : 0 } : { opacity: 0, x: 20, rotate: 0 }}
               transition={{
                 opacity: { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
                 x: { duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
-                rotate: { duration: 22, repeat: Infinity, ease: 'linear' },
+                rotate: spinEnabled ? { duration: 22, repeat: Infinity, ease: 'linear' } : { duration: 0.7 },
               }}
               className="absolute right-0 top-0 h-full w-[59%]"
             />
@@ -92,7 +104,7 @@ export default function GuidedOptimization() {
               <p className="font-platypi text-lg italic sm:text-4xl md:text-[44px]">Living</p>
             </motion.div>
 
-            <div className="absolute left-[6%] top-[63%] max-w-[38%] text-left md:left-[9%] md:top-[36%] md:max-w-[270px]">
+            <div className="absolute left-[6%] top-[61%] max-w-[38%] text-left md:left-[9%] md:top-[36%] md:max-w-[270px]">
               <p className="bg-gradient-orange bg-clip-text text-sm font-bold leading-tight text-transparent md:text-[36px]">
                 PERFORMANCE
               </p>
@@ -100,7 +112,7 @@ export default function GuidedOptimization() {
                 Energy, strength, sleep, focus, libido — how well you&apos;re living right now.
               </p>
             </div>
-            <div className="absolute right-[5%] top-[63%] max-w-[36%] text-left md:right-[7%] md:top-[37%] md:max-w-[240px]">
+            <div className="absolute right-[5%] top-[61%] max-w-[36%] text-left md:right-[7%] md:top-[37%] md:max-w-[240px]">
               <p className="bg-gradient-to-r from-orange-3 to-orange-light bg-clip-text text-sm font-bold leading-tight text-transparent md:text-[36px]">
                 LONGEVITY
               </p>
