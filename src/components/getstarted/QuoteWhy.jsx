@@ -16,7 +16,7 @@ export default function QuoteWhy() {
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative z-10 flex h-full items-center justify-center px-3 py-8 md:px-6 md:py-16">
-          <div className="flex w-full max-w-[1412px] flex-col items-center gap-6 rounded-[20px] bg-black/10 px-3 py-8 text-center backdrop-blur-[2px] md:gap-12 md:px-12 md:py-16">
+          <div className="flex w-full max-w-[1412px] flex-col items-center gap-6 rounded-[20px] border border-white/10 bg-black/45 px-3 py-8 text-center shadow-[0px_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-lg md:gap-12 md:px-12 md:py-16">
             <div className="flex flex-col items-center gap-2 md:gap-4">
               <Typewriter
                 as="p"
