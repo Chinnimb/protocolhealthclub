@@ -23,8 +23,9 @@ export default function GuidedOptimization() {
 
         <Reveal delay={0.08} className="mt-6 max-w-3xl">
           <h2 className="text-4xl font-extrabold text-[#171f21] md:text-[56px]">
-            What is{' '}
-            <FadeIn as="span" className="text-gradient-orange font-serif font-normal" delay={0.3}>
+            What is
+            <br />
+            <FadeIn as="span" className="text-gradient-orange whitespace-nowrap font-serif font-normal" delay={0.3}>
               Guided Optimization?
             </FadeIn>
           </h2>
