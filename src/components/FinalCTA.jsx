@@ -47,7 +47,7 @@ export default function FinalCTA() {
             Get your labs, schedule your consult, and make the leap from normal to optimal.
           </Reveal>
 
-          <Reveal delay={0.3}>
+          <Reveal delay={0.3} className="flex justify-center md:block">
             <MotionLink
               to="/get-started"
               whileHover={{ scale: 1.05 }}
