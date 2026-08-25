@@ -27,7 +27,7 @@ export default function QuoteWhy() {
                 className="text-xs font-extrabold uppercase tracking-[2.2px] text-[#ffb76a] md:text-base"
               />
               <Reveal delay={0.1}>
-                <h2 className="font-serif text-xl font-semibold leading-snug text-white md:whitespace-nowrap md:text-[64px]">
+                <h2 className="font-serif text-[28px] font-semibold leading-snug text-white md:whitespace-nowrap md:text-[64px]">
                   <span className="md:hidden">&ldquo;Labs are the baseline we optimize from.&rdquo;</span>
                   <span className="hidden md:inline">Labs are the baseline we optimize from.</span>
                 </h2>
