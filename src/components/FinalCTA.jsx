@@ -26,7 +26,7 @@ export default function FinalCTA() {
         </div>
 
         <div
-          className="flex flex-1 flex-col justify-center px-8 py-10 md:px-16 md:py-14"
+          className="flex flex-1 flex-col justify-center px-5 py-10 sm:px-8 md:px-16 md:py-14"
           style={{
             backgroundImage:
               'linear-gradient(169deg, rgb(252,240,236) 33.5%, rgb(244,172,99) 89%, rgb(244,95,43) 114%)',
@@ -37,9 +37,11 @@ export default function FinalCTA() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <h2 className="max-w-xl text-3xl font-bold leading-tight tracking-[-0.8px] text-[#233038] md:text-[56px]">
+            <h2 className="max-w-xl text-2xl font-bold leading-tight tracking-[-0.8px] text-[#233038] sm:text-3xl md:text-[56px]">
               The Protocol for optimal performance,{' '}
-              <span className="font-script italic text-orange-3">built around your biology.</span>
+              <span className="font-script whitespace-nowrap text-xl italic text-orange-3 sm:text-2xl sm:whitespace-normal md:text-[56px]">
+                built around your biology.
+              </span>
             </h2>
           </Reveal>
 
