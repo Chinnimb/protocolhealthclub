@@ -306,7 +306,7 @@ export default function ExploreProtocols() {
               onClick={() => scrollProductsByCard(-1)}
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.94 }}
-              className="absolute left-1 top-[100px] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md sm:hidden"
+              className="absolute left-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md sm:hidden"
             >
               <ChevronLeft className="h-4 w-4 text-orange-2" strokeWidth={2.5} />
             </motion.button>
@@ -315,7 +315,7 @@ export default function ExploreProtocols() {
               onClick={() => scrollProductsByCard(1)}
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.94 }}
-              className="absolute right-1 top-[100px] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md sm:hidden"
+              className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md sm:hidden"
             >
               <ChevronRight className="h-4 w-4 text-orange-2" strokeWidth={2.5} />
             </motion.button>
