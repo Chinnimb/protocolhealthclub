@@ -13,10 +13,10 @@ export default function QuoteWhy() {
     <section ref={ref} className="px-3 py-6 md:px-10">
       <div className="relative mx-auto h-[420px] max-w-[1536px] overflow-hidden rounded-[20px] sm:h-[520px] md:h-[660px]">
         <motion.img src={quotePhoto} alt="" style={{ y }} className="absolute inset-0 h-[120%] w-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 flex h-full items-center justify-center px-3 py-8 md:px-6 md:py-16">
-          <div className="flex w-full max-w-[1412px] flex-col items-center gap-6 rounded-[20px] border border-white/10 bg-black/45 px-3 py-8 text-center shadow-[0px_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-lg md:gap-12 md:px-12 md:py-16">
+          <div className="flex w-full max-w-[1412px] flex-col items-center gap-6 rounded-[20px] bg-white/10 px-3 py-8 text-center shadow-[0px_0px_4px_0px_#ffffff] backdrop-blur-md md:gap-12 md:px-12 md:py-16">
             <div className="flex flex-col items-center gap-2 md:gap-4">
               <Typewriter
                 as="p"
