@@ -38,10 +38,9 @@ export default function FinalCTA() {
 
           <Reveal delay={0.1}>
             <h2 className="max-w-xl text-2xl font-bold leading-tight tracking-[-0.8px] text-[#233038] sm:text-3xl md:text-[56px]">
-              The Protocol for optimal performance,{' '}
-              <span className="font-script whitespace-nowrap text-xl italic text-orange-3 sm:text-2xl sm:whitespace-normal md:text-[56px]">
-                built around your biology.
-              </span>
+              The Protocol for optimal performance,
+              <br />
+              <span className="font-script block italic text-orange-3">built around your biology.</span>
             </h2>
           </Reveal>
 
