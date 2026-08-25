@@ -17,7 +17,7 @@ export default function ChooseLabPanel() {
       <div className="mx-auto flex max-w-[1536px] flex-col gap-12">
         <Reveal className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <h2 className="text-4xl font-bold leading-tight text-[#1a1a1a] md:text-[56px]">
-            <FadeIn as="span" className="text-gradient-orange font-serif font-medium" delay={0.3}>
+            <FadeIn as="span" className="text-gradient-orange font-serif italic font-semibold" delay={0.3}>
               Choose
             </FadeIn>{' '}
             your lab panel
