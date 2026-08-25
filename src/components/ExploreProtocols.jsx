@@ -258,7 +258,7 @@ export default function ExploreProtocols() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-[calc(50vw-138px)] py-2 [scrollbar-width:none] sm:w-full sm:flex-wrap sm:justify-center sm:gap-6 sm:overflow-visible sm:px-0 sm:py-0 sm:[scrollbar-width:auto] [&::-webkit-scrollbar]:hidden"
+              className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-[calc(50vw-138px)] py-8 [scrollbar-width:none] sm:w-full sm:flex-wrap sm:justify-center sm:gap-6 sm:overflow-visible sm:px-0 sm:py-0 sm:[scrollbar-width:auto] [&::-webkit-scrollbar]:hidden"
             >
               {activeCategory.products.map((p, i) => (
                 <motion.div
