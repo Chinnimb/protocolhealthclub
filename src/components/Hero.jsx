@@ -6,6 +6,9 @@ import MotionLink from './MotionLink'
 import heroPhoto from '../assets/figma/hero-photo.png'
 import arrowIcon from '../assets/figma/hero-arrow-icon.svg'
 import checkIcon from '../assets/figma/hero-check-icon.svg'
+import logoPart1 from '../assets/figma/logo-part1.svg'
+import logoPart2 from '../assets/figma/logo-part2.svg'
+import logoPart3 from '../assets/figma/logo-part3.svg'
 
 export default function Hero() {
   const ref = useRef(null)
@@ -92,7 +95,25 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
         </motion.div>
 
-        <Header />
+        <div className="hidden md:block">
+          <Header />
+        </div>
+
+        <div className="absolute inset-x-4 top-4 z-30 flex items-center justify-between rounded-full border border-white/25 bg-white/15 px-5 py-3 backdrop-blur-md md:hidden">
+          <MotionLink to="/" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="relative h-5 w-[110px]">
+            <img src={logoPart1} alt="" className="absolute left-0 top-0 h-5" />
+            <img src={logoPart2} alt="protocol" className="absolute left-[29px] top-0 h-5" />
+            <img src={logoPart3} alt="" className="absolute left-[63px] top-0 h-4" />
+          </MotionLink>
+          <MotionLink
+            to="/get-started"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="bg-gradient-orange rounded-full px-4 py-2 text-xs font-medium text-white"
+          >
+            Get Started
+          </MotionLink>
+        </div>
 
         <div className="relative z-10 flex min-h-[860px] w-full flex-col justify-center px-6 pb-16 pt-28 sm:px-10 md:pt-32">
           <motion.div
