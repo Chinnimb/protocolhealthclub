@@ -5,6 +5,7 @@ import GetStarted from './pages/GetStarted'
 import TermsOfService from './pages/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RefundPolicy from './pages/RefundPolicy'
+import HealthcareInformedConsent from './pages/HealthcareInformedConsent'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-cancel" element={<RefundPolicy />} />
+        <Route path="/healthcare-informed-consent" element={<HealthcareInformedConsent />} />
       </Routes>
     </BrowserRouter>
   )

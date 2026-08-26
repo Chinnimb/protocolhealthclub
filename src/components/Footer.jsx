@@ -10,7 +10,7 @@ const legalLinks = [
 ]
 
 const consentLinks = [
-  { label: 'Healthcare Informed Consent', href: '#' },
+  { label: 'Healthcare Informed Consent', to: '/healthcare-informed-consent' },
   { label: 'Coaching Consent', href: '#' },
   { label: 'Telemedicine/Telehealth Consultation', href: '#' },
   { label: 'HIPAA Authorization', href: '#' },
@@ -53,11 +53,17 @@ export default function Footer() {
 
             <div className="flex flex-col gap-3">
               <p className="text-[11px] font-bold uppercase tracking-[1.5px] text-white/40">Consent Forms</p>
-              {consentLinks.map((l) => (
-                <a key={l.label} href={l.href} className="transition-colors hover:text-white">
-                  {l.label}
-                </a>
-              ))}
+              {consentLinks.map((l) =>
+                l.to ? (
+                  <Link key={l.label} to={l.to} className="transition-colors hover:text-white">
+                    {l.label}
+                  </Link>
+                ) : (
+                  <a key={l.label} href={l.href} className="transition-colors hover:text-white">
+                    {l.label}
+                  </a>
+                )
+              )}
             </div>
           </div>
         </div>
