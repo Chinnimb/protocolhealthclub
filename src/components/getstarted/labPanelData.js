@@ -84,6 +84,7 @@ export const pinnaclePanel = {
   title: 'Pinnacle Panel',
   price: '$499',
   badge: 'MOST POPULAR',
+  checkoutUrl: 'https://intake.protocolhealthclub.com/pinnacle',
   description:
     'Everything in Performance plus comprehensive longevity and metabolic markers for those who want the full picture.',
   biomarkerGroups: {
