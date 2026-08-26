@@ -102,7 +102,7 @@ export default function HealthcareInformedConsent() {
               begin on the date I agreed to this document and shall remain effective until terminated by me. I
               understand I have the right to withhold/withdraw my consent at any time by submitting a request via
               email to{' '}
-              <a href="mailto:support@protocolhealthclub.com" className="text-orange-2 underline">support@protocolhealthclub.com</a>.
+              <a href="mailto:support@protocolhealthclub.com" className="text-orange-2 underline">support@protocolhealthclub.com</a>
             </p>
             <p>
               I verify I have read all of the information contained in this Consent. I understand I will have the
