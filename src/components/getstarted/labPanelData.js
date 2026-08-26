@@ -1,6 +1,7 @@
 export const performancePanel = {
   title: 'Performance Panel',
   price: '$299',
+  checkoutUrl: 'https://intake.protocolhealthclub.com/general-health-page',
   description:
     'Key hormones, energy, body composition, strength, and recovery. Excellent plan for performance and general stats.',
   mobileSummary: {

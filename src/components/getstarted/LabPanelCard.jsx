@@ -138,19 +138,33 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={(e) => {
-          e.stopPropagation()
-          onSelect?.()
-        }}
-        className={`mt-6 flex items-center justify-center rounded-full py-4 text-xl font-extrabold tracking-[0.5px] text-white transition-shadow ${
-          selected ? 'ring-2 ring-orange-2 ring-offset-2' : ''
-        }`}
-        style={{ backgroundImage: 'linear-gradient(90deg, rgb(244,95,43) 0%, rgb(244,172,99) 100%)' }}
-      >
-        {selected ? 'SELECTED ✓' : 'CONFIRM SELECTION'}
-      </button>
+      {panel.checkoutUrl ? (
+        <a
+          href={panel.checkoutUrl}
+          onClick={(e) => {
+            e.stopPropagation()
+            onSelect?.()
+          }}
+          className="mt-6 flex items-center justify-center rounded-full py-4 text-xl font-extrabold tracking-[0.5px] text-white transition-shadow"
+          style={{ backgroundImage: 'linear-gradient(90deg, rgb(244,95,43) 0%, rgb(244,172,99) 100%)' }}
+        >
+          CONFIRM SELECTION
+        </a>
+      ) : (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation()
+            onSelect?.()
+          }}
+          className={`mt-6 flex items-center justify-center rounded-full py-4 text-xl font-extrabold tracking-[0.5px] text-white transition-shadow ${
+            selected ? 'ring-2 ring-orange-2 ring-offset-2' : ''
+          }`}
+          style={{ backgroundImage: 'linear-gradient(90deg, rgb(244,95,43) 0%, rgb(244,172,99) 100%)' }}
+        >
+          {selected ? 'SELECTED ✓' : 'CONFIRM SELECTION'}
+        </button>
+      )}
       </motion.div>
   )
 }
