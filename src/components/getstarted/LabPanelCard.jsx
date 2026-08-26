@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import BiomarkersModal from './BiomarkersModal'
 import lineImg from '../../assets/figma/getstarted/lab-panel-line.svg'
 import checkSm from '../../assets/figma/getstarted/lab-panel-check-sm.svg'
 import checkMd from '../../assets/figma/getstarted/lab-panel-check-md.svg'
@@ -8,7 +9,17 @@ const PREVIEW_COUNT = 3
 
 export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, delay = 0 }) {
   const [expanded, setExpanded] = useState(false)
+  const [markersModalOpen, setMarkersModalOpen] = useState(false)
   const cardRef = useRef(null)
+
+  const handleModalConfirm = () => {
+    if (panel.checkoutUrl) {
+      window.location.href = panel.checkoutUrl
+      return
+    }
+    onSelect?.()
+    setMarkersModalOpen(false)
+  }
   const inView = useInView(cardRef, { once: true, amount: 0.2 })
   const checkIcon = size === 'sm' ? checkSm : checkMd
   const preview = panel.categories.slice(0, PREVIEW_COUNT)
@@ -35,6 +46,7 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
   )
 
   return (
+    <>
       <motion.div
         ref={cardRef}
         initial={{ opacity: 0, y: 24 }}
@@ -65,7 +77,10 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
           <p className="text-4xl font-extrabold text-orange">{panel.price}</p>
           <button
             type="button"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation()
+              setMarkersModalOpen(true)
+            }}
             className="rounded-full border border-[#99c9d9] px-4 py-2.5 text-sm font-bold text-[#3f6673] transition-colors hover:bg-[#f0f8fa]"
           >
             <span className="md:hidden">View Markers</span>
@@ -166,5 +181,15 @@ export default function LabPanelCard({ panel, size = 'sm', selected, onSelect, d
         </button>
       )}
       </motion.div>
+
+      <BiomarkersModal
+        open={markersModalOpen}
+        onClose={() => setMarkersModalOpen(false)}
+        title={panel.biomarkerGroups.title}
+        subtitle={panel.biomarkerGroups.subtitle}
+        groups={panel.biomarkerGroups.groups}
+        onConfirm={handleModalConfirm}
+      />
+    </>
   )
 }

@@ -1,3 +1,5 @@
+import { Activity, Droplet, Flame, Heart, Shield, Sparkles, Sun, TrendingUp, Zap } from 'lucide-react'
+
 export const performancePanel = {
   title: 'Performance Panel',
   price: '$299',
@@ -8,6 +10,18 @@ export const performancePanel = {
     label: 'KEY TESTED AREAS:',
     count: '60+ Biomarkers Total',
     items: ['Hormones & Sex Health', 'Lipids & Heart Health', 'Liver & Kidney Health', 'Metabolic Markers'],
+  },
+  biomarkerGroups: {
+    title: '60+ Biomarkers Total',
+    subtitle: 'A deeper look at the signals behind energy, metabolism, recovery, and overall health.',
+    groups: [
+      { icon: Sparkles, name: 'Hormones', items: 'DHEA, Testosterone, Estradiol, Cortisol, Thyroid panel & more.' },
+      { icon: Heart, name: 'Lipids & Cholesterol', items: 'LDL, HDL, Triglycerides, Total Cholesterol, ApoB & more.' },
+      { icon: Shield, name: 'Liver & Kidney Function', items: 'ALT, AST, GGT, Bilirubin, Creatinine, BUN & more.' },
+      { icon: Activity, name: 'Metabolic Health', items: 'Glucose, HbA1c, Insulin, HOMA-IR, Uric Acid & more.' },
+      { icon: Sun, name: 'Nutrient Status', items: 'Vitamin D, B12, Folate, Iron, Ferritin, Magnesium & more.' },
+      { icon: Flame, name: 'Inflammation', items: 'CRP, ESR, Homocysteine, IL-6, TNF-alpha & more.' },
+    ],
   },
   categories: [
     {
@@ -72,6 +86,19 @@ export const pinnaclePanel = {
   badge: 'MOST POPULAR',
   description:
     'Everything in Performance plus comprehensive longevity and metabolic markers for those who want the full picture.',
+  biomarkerGroups: {
+    title: '100+ Biomarkers Total',
+    subtitle:
+      'The most comprehensive panel for hormones, metabolism, longevity, inflammation, nutrient status, and long-term health risk.',
+    groups: [
+      { icon: Activity, name: 'Performance Foundations', items: 'Hormones, Lipids & Cholesterol, Liver & Kidney Function, Metabolic Health' },
+      { icon: Shield, name: 'Thyroid & Antibodies', items: 'TSH, Free T3, Free T4, Thyroid Antibodies (TPO, TG)' },
+      { icon: Droplet, name: 'Electrolytes & Fluid Balance', items: 'Sodium, Potassium, Chloride, Bicarbonate, Calcium, Magnesium' },
+      { icon: Zap, name: 'Longevity & Disease Risk', items: 'ApoB, Lp(a), hsCRP, HbA1c, Insulin, Homocysteine, Uric Acid' },
+      { icon: Sun, name: 'Nutrients & Recovery', items: 'Vitamin D, B12, Folate, Iron, Ferritin, Zinc, Omega-3 Index' },
+      { icon: TrendingUp, name: 'Full Longevity Panel', items: 'All biomarkers included — comprehensive longevity & wellness panel' },
+    ],
+  },
   mobileSummary: {
     label: 'COMPREHENSIVE TESTING INCLUDES:',
     count: '100+ Biomarkers Total',
