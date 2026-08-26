@@ -3,26 +3,52 @@ import footerLogo1 from '../assets/figma/footer-logo-part1.svg'
 import footerLogo2 from '../assets/figma/footer-logo-part2.svg'
 import footerLogo3 from '../assets/figma/footer-logo-part3.svg'
 
+const legalLinks = [
+  { label: 'Terms Of Use', to: '/terms-of-service' },
+  { label: 'Privacy Policy', to: '/privacy-policy' },
+  { label: 'Refund Policy', to: '/refund-cancel' },
+]
+
+const consentLinks = [
+  { label: 'Healthcare Informed Consent', href: '#' },
+  { label: 'Coaching Consent', href: '#' },
+  { label: 'Telemedicine/Telehealth Consultation', href: '#' },
+  { label: 'HIPAA Authorization', href: '#' },
+]
+
 export default function Footer() {
   return (
-    <footer className="bg-navy py-4">
-      <div className="flex flex-col items-center justify-center px-6 py-6">
-        <div className="relative aspect-[382/69] w-full max-w-[280px] sm:max-w-[382px]">
+    <footer className="bg-navy px-6 py-10 md:px-10 md:py-14">
+      <div className="mx-auto flex max-w-[1536px] flex-col items-center gap-10 md:flex-row md:items-start md:justify-between">
+        <div className="relative aspect-[382/69] w-full max-w-[240px] sm:max-w-[280px] md:mx-0 md:max-w-[240px]">
           <img src={footerLogo1} alt="" className="absolute left-0 top-0 h-full" />
           <img src={footerLogo2} alt="Protocol" className="absolute left-[25.65%] top-0 h-full" />
           <img src={footerLogo3} alt="" className="absolute left-[56.54%] top-0 h-[76.81%]" />
         </div>
-      </div>
 
-      <div className="border-t border-white/10 px-10 py-6">
-        <div className="flex w-full flex-col items-center justify-between gap-3 text-xs text-white/80 md:flex-row">
-          <p className="uppercase tracking-[1px]">© Copyright Protocol Health 2026, All Rights Reserved</p>
-          <div className="flex items-center gap-6">
-            <Link to="/terms-of-service" className="transition-colors hover:text-white">Terms Of Use</Link>
-            <Link to="/privacy-policy" className="transition-colors hover:text-white">Privacy Policy</Link>
-            <Link to="/refund-cancel" className="transition-colors hover:text-white">Refund Policy</Link>
+        <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 text-xs text-white/80 sm:w-auto sm:flex sm:gap-16 md:text-sm">
+          <div className="flex flex-col gap-3">
+            <p className="text-[11px] font-bold uppercase tracking-[1.5px] text-white/40">Legal</p>
+            {legalLinks.map((l) => (
+              <Link key={l.label} to={l.to} className="transition-colors hover:text-white">
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <p className="text-[11px] font-bold uppercase tracking-[1.5px] text-white/40">Consent Forms</p>
+            {consentLinks.map((l) => (
+              <a key={l.label} href={l.href} className="transition-colors hover:text-white">
+                {l.label}
+              </a>
+            ))}
           </div>
         </div>
+      </div>
+
+      <div className="mx-auto mt-10 max-w-[1536px] border-t border-white/10 pt-6 text-center text-xs uppercase tracking-[1px] text-white/80 md:text-left">
+        © Copyright Protocol Health 2026, All Rights Reserved
       </div>
     </footer>
   )
