@@ -41,7 +41,7 @@ export default function QuoteWhy() {
 
             <Reveal delay={0.3}>
               <motion.a
-                href="/#biomarkers"
+                href="#choose-lab-panel"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.96 }}
                 className="bg-gradient-orange inline-block rounded-full px-7 py-3 text-base font-bold text-white md:px-9 md:py-[18px] md:text-xl"
