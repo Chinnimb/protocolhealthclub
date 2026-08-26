@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { X, ChevronUp, ChevronDown } from 'lucide-react'
 
 function CategoryRow({ icon: Icon, name, items }) {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
 
   return (
     <div className="rounded-xl border border-[#e5e1db] px-4 py-3">
