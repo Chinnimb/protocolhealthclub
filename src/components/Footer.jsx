@@ -20,10 +20,20 @@ export default function Footer() {
   return (
     <footer className="bg-navy px-6 py-10 md:px-10 md:py-14">
       <div className="mx-auto flex max-w-[1536px] flex-col items-center gap-10 md:flex-row md:items-start md:justify-between">
-        <div className="relative aspect-[382/69] w-full max-w-[280px] sm:max-w-[320px] md:mx-0 md:max-w-[300px]">
-          <img src={footerLogo1} alt="" className="absolute left-0 top-0 h-full" />
-          <img src={footerLogo2} alt="Protocol" className="absolute left-[25.65%] top-0 h-full" />
-          <img src={footerLogo3} alt="" className="absolute left-[56.54%] top-0 h-[76.81%]" />
+        <div className="flex flex-col items-center gap-4 md:items-start">
+          <div className="relative aspect-[382/69] w-full max-w-[280px] sm:max-w-[320px] md:mx-0 md:max-w-[300px]">
+            <img src={footerLogo1} alt="" className="absolute left-0 top-0 h-full" />
+            <img src={footerLogo2} alt="Protocol" className="absolute left-[25.65%] top-0 h-full" />
+            <img src={footerLogo3} alt="" className="absolute left-[56.54%] top-0 h-[76.81%]" />
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-2 font-sans text-xs font-medium text-white/60 md:justify-start md:text-sm">
+            <span>Personalized health.</span>
+            <span className="h-1 w-1 rounded-full bg-white/30" />
+            <span>Elevated Standards.</span>
+            <span className="h-1 w-1 rounded-full bg-white/30" />
+            <span>Real Results.</span>
+          </div>
         </div>
 
         <div className="flex w-full items-start gap-10 sm:w-auto md:gap-16">
