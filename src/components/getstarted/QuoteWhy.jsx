@@ -27,7 +27,7 @@ export default function QuoteWhy() {
                 className="text-xs font-extrabold uppercase tracking-[2.2px] text-[#ffb76a] md:text-base"
               />
               <Reveal delay={0.1}>
-                <h2 className="font-serif text-[28px] font-semibold leading-snug text-white md:whitespace-nowrap md:text-[64px]">
+                <h2 className="font-script text-[28px] font-normal leading-snug text-white md:whitespace-nowrap md:text-[64px]">
                   <span className="md:hidden">&ldquo;Labs are the baseline we optimize from.&rdquo;</span>
                   <span className="hidden md:inline">Labs are the baseline we optimize from.</span>
                 </h2>
@@ -41,7 +41,7 @@ export default function QuoteWhy() {
 
             <Reveal delay={0.3}>
               <motion.a
-                href="#choose-lab-panel"
+                href="/#biomarkers"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.96 }}
                 className="bg-gradient-orange inline-block rounded-full px-7 py-3 text-base font-bold text-white md:px-9 md:py-[18px] md:text-xl"
