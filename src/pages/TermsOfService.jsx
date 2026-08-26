@@ -1,8 +1,8 @@
+import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { ArrowLeft } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Footer from '../components/Footer'
-import logoPart1 from '../assets/figma/logo-part1.svg'
-import logoPart2 from '../assets/figma/logo-part2.svg'
-import logoPart3 from '../assets/figma/logo-part3.svg'
 
 const sections = [
   {
@@ -72,14 +72,21 @@ const sections = [
 ]
 
 export default function TermsOfService() {
+  const navigate = useNavigate()
+
   return (
     <div className="relative min-h-screen bg-cream text-ink">
       <header className="flex w-full items-center justify-between px-6 py-6 md:px-10">
-        <MotionLink to="/" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="relative h-[23px] w-[128px]">
-          <img src={logoPart1} alt="" className="absolute left-0 top-0 h-[23px]" />
-          <img src={logoPart2} alt="protocol" className="absolute left-[33px] top-0 h-[23px]" />
-          <img src={logoPart3} alt="" className="absolute left-[72px] top-0 h-[18px]" />
-        </MotionLink>
+        <motion.button
+          type="button"
+          onClick={() => navigate(-1)}
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+          className="flex items-center gap-2 text-sm font-medium text-ink transition-colors hover:text-orange-2"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back
+        </motion.button>
 
         <MotionLink
           to="/get-started"
