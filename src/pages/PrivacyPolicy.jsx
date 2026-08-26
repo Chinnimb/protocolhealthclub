@@ -328,7 +328,7 @@ export default function PrivacyPolicy() {
             <h3 className="mt-2 text-base font-semibold text-[#233038]">Withdrawal of Consent</h3>
             <p>
               If you no longer wish for us to process your data, please contact us at{' '}
-              <a href="mailto:support@protocolhealthclub.com" className="text-orange-2 underline">support@protocolhealthclub.com</a>.
+              <a href="mailto:support@protocolhealthclub.com" className="text-orange-2 underline">support@protocolhealthclub.com</a>
             </p>
 
             <h3 className="mt-2 text-base font-semibold text-[#233038]">Privacy Policy Updates</h3>
@@ -513,7 +513,7 @@ export default function PrivacyPolicy() {
           <Section title="VIII. How to Exercise Your Rights">
             <p>
               To submit a request to exercise any of your rights, please email us at{' '}
-              <a href="mailto:support@protocolhealthclub.com" className="text-orange-2 underline">support@protocolhealthclub.com</a>.
+              <a href="mailto:support@protocolhealthclub.com" className="text-orange-2 underline">support@protocolhealthclub.com</a>
             </p>
             <p>
               As required under applicable law, we must take steps to verify your request before we can provide
