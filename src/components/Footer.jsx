@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import footerLogo1 from '../assets/figma/footer-logo-part1.svg'
 import footerLogo2 from '../assets/figma/footer-logo-part2.svg'
 import footerLogo3 from '../assets/figma/footer-logo-part3.svg'
@@ -17,7 +18,7 @@ export default function Footer() {
         <div className="flex w-full flex-col items-center justify-between gap-3 text-xs text-white/80 md:flex-row">
           <p className="uppercase tracking-[1px]">© Copyright Protocol Health 2026, All Rights Reserved</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="transition-colors hover:text-white">Terms Of Use</a>
+            <Link to="/terms-of-service" className="transition-colors hover:text-white">Terms Of Use</Link>
             <a href="#" className="transition-colors hover:text-white">Privacy Policy</a>
             <a href="#" className="transition-colors hover:text-white">Refund Policy</a>
           </div>
