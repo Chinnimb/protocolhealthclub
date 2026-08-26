@@ -27,7 +27,7 @@ export default function Footer() {
             <img src={footerLogo3} alt="" className="absolute left-[56.54%] top-0 h-[76.81%]" />
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-2 font-sans text-xs font-medium text-white/60 md:justify-start md:text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-2 font-sans text-xs font-bold text-white/60 md:justify-start md:text-sm">
             <span>Personalized health.</span>
             <span className="h-1 w-1 rounded-full bg-white/30" />
             <span>Elevated Standards.</span>
