@@ -71,7 +71,7 @@ export default function HowItWorks() {
               <span className="font-serif italic text-3xl text-[#5e5e62] md:text-[48px]">4 steps process</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1} as="p" className="max-w-[496px] text-lg text-[#6b6359] md:pt-4">
+          <Reveal delay={0.1} as="p" className="max-w-[496px] text-lg text-[#6b6359] md:pt-4 md:text-2xl">
             Not just steps. A clinical sequence designed to move someone from baseline to measurable progress.
           </Reveal>
         </div>
