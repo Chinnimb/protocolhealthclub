@@ -16,9 +16,9 @@ export default function ChooseLabPanel() {
     <section id="choose-lab-panel" className="bg-cream px-6 py-16 md:px-[80px] md:py-20">
       <div className="mx-auto flex max-w-[1536px] flex-col gap-12">
         <Reveal className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <h2 className="font-sans text-4xl font-bold leading-tight text-[#1a1a1a] md:text-[56px]">
+          <h2 className="font-sans text-4xl font-bold leading-snug text-[#1a1a1a] md:text-[56px]">
             Choose{' '}
-            <FadeIn as="span" className="text-gradient-orange font-serif italic font-semibold" delay={0.3}>
+            <FadeIn as="span" className="text-gradient-orange font-serif italic font-semibold leading-snug" delay={0.3}>
               your lab panel
             </FadeIn>
           </h2>
