@@ -11,7 +11,7 @@ const legalLinks = [
 
 const consentLinks = [
   { label: 'Healthcare Informed Consent', to: '/healthcare-informed-consent' },
-  { label: 'Coaching Consent', href: '#' },
+  { label: 'Coaching Consent', to: '/coaching-consent' },
   { label: 'Telemedicine/Telehealth Consultation', href: '#' },
   { label: 'HIPAA Authorization', href: '#' },
 ]
