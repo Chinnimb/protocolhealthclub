@@ -12,7 +12,7 @@ export default function QuoteWhy() {
   return (
     <section ref={ref} className="px-3 py-6 md:px-10">
       <div className="relative mx-auto h-[420px] max-w-[1536px] overflow-hidden rounded-[20px] sm:h-[520px] md:h-[660px]">
-        <motion.img src={quotePhoto} alt="" style={{ y }} className="absolute inset-0 h-[120%] w-full object-cover" />
+        <motion.img src={quotePhoto} alt="" style={{ y }} className="absolute inset-x-0 top-[-15%] h-[130%] w-full object-cover" />
         <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 flex h-full items-center justify-center px-3 py-8 md:px-6 md:py-16">
@@ -27,7 +27,7 @@ export default function QuoteWhy() {
                 className="text-xs font-extrabold uppercase tracking-[2.2px] text-[#ffb76a] md:text-base"
               />
               <Reveal delay={0.1}>
-                <h2 className="font-script text-[28px] font-normal leading-snug text-white md:whitespace-nowrap md:text-[64px]">
+                <h2 className="font-script text-[30px] font-normal leading-snug text-white md:whitespace-nowrap md:text-[64px]">
                   <span className="md:hidden">&ldquo;Labs are the baseline we optimize from.&rdquo;</span>
                   <span className="hidden md:inline">Labs are the baseline we optimize from.</span>
                 </h2>
