@@ -36,6 +36,8 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="h-px w-full bg-white/10 md:hidden" />
+
         <div className="flex w-full items-start gap-10 sm:w-auto md:gap-16">
           <div className="hidden w-px self-stretch bg-white/10 md:block" />
 
