@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import GetStarted from './pages/GetStarted'
 import TermsOfService from './pages/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import RefundPolicy from './pages/RefundPolicy'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/refund-cancel" element={<RefundPolicy />} />
       </Routes>
     </BrowserRouter>
   )

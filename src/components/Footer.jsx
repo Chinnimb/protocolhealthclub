@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <Link to="/terms-of-service" className="transition-colors hover:text-white">Terms Of Use</Link>
             <Link to="/privacy-policy" className="transition-colors hover:text-white">Privacy Policy</Link>
-            <a href="#" className="transition-colors hover:text-white">Refund Policy</a>
+            <Link to="/refund-cancel" className="transition-colors hover:text-white">Refund Policy</Link>
           </div>
         </div>
       </div>
