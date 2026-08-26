@@ -19,7 +19,7 @@ export default function Footer() {
           <p className="uppercase tracking-[1px]">© Copyright Protocol Health 2026, All Rights Reserved</p>
           <div className="flex items-center gap-6">
             <Link to="/terms-of-service" className="transition-colors hover:text-white">Terms Of Use</Link>
-            <a href="#" className="transition-colors hover:text-white">Privacy Policy</a>
+            <Link to="/privacy-policy" className="transition-colors hover:text-white">Privacy Policy</Link>
             <a href="#" className="transition-colors hover:text-white">Refund Policy</a>
           </div>
         </div>
