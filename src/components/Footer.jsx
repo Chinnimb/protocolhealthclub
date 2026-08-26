@@ -13,7 +13,7 @@ const consentLinks = [
   { label: 'Healthcare Informed Consent', to: '/healthcare-informed-consent' },
   { label: 'Coaching Consent', to: '/coaching-consent' },
   { label: 'Telemedicine/Telehealth Consultation', to: '/telemedicine-telehealth-consultation' },
-  { label: 'HIPAA Authorization', href: '#' },
+  { label: 'HIPAA Authorization', to: '/hipaa-authorization' },
 ]
 
 export default function Footer() {

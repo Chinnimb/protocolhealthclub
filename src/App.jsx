@@ -8,6 +8,7 @@ import RefundPolicy from './pages/RefundPolicy'
 import HealthcareInformedConsent from './pages/HealthcareInformedConsent'
 import CoachingConsent from './pages/CoachingConsent'
 import TelehealthConsultation from './pages/TelehealthConsultation'
+import HipaaAuthorization from './pages/HipaaAuthorization'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/healthcare-informed-consent" element={<HealthcareInformedConsent />} />
         <Route path="/coaching-consent" element={<CoachingConsent />} />
         <Route path="/telemedicine-telehealth-consultation" element={<TelehealthConsultation />} />
+        <Route path="/hipaa-authorization" element={<HipaaAuthorization />} />
       </Routes>
     </BrowserRouter>
   )
