@@ -107,7 +107,7 @@ export default function GetStartedHero() {
               href="#choose-lab-panel"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="bg-gradient-orange flex w-full max-w-[356px] items-center justify-center gap-3 rounded-full px-9 py-[18px] text-lg font-medium text-white sm:w-auto"
+              className="bg-gradient-orange flex w-full max-w-[356px] items-center justify-center gap-3 rounded-full px-9 py-[18px] text-lg font-bold text-white sm:w-auto"
             >
               Choose Your Lab
               <img src={arrowIcon} alt="" className="h-5 w-5" />

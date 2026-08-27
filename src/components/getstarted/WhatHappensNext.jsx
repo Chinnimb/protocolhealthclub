@@ -43,20 +43,23 @@ const CARD_WINDOWS = [
   [0.29, 0.44],
 ]
 
-function TimelineDay({ d, scrollYProgress, windowRange }) {
+function TimelineDay({ d, scrollYProgress, windowRange, position, total }) {
   const opacity = useTransform(scrollYProgress, windowRange, [0, 1])
   const scale = useTransform(scrollYProgress, windowRange, [0.5, 1])
+  const leftPercent = (position / (total - 1)) * 100
+  const badgeTranslateX = position === 0 ? '0%' : position === total - 1 ? '-100%' : '-50%'
 
   return (
-    <motion.div style={{ opacity, scale }} className="flex flex-col items-center gap-3">
+    <motion.div style={{ opacity, scale, left: `${leftPercent}%` }} className="absolute bottom-0">
       <span
-        className={`rounded-full px-4 py-1.5 text-xs font-bold ${
+        style={{ transform: `translateX(${badgeTranslateX})` }}
+        className={`absolute bottom-[22px] whitespace-nowrap rounded-full px-4 py-1.5 text-xs font-bold ${
           d.active ? 'bg-orange-2 text-white' : 'border border-orange-2 bg-cream text-orange-2'
         }`}
       >
         {d.label}
       </span>
-      <img src={timelineNode} alt="" className="h-[10px] w-[10px]" />
+      <img src={timelineNode} alt="" className="absolute bottom-0 h-[10px] w-[10px] max-w-none -translate-x-1/2" />
     </motion.div>
   )
 }
@@ -119,14 +122,21 @@ export default function WhatHappensNext() {
 
         <div ref={blockRef} className="flex w-full flex-col items-center gap-14">
           <div className="w-full px-6 md:px-12">
-            <div className="relative flex h-[70px] items-end justify-between">
+            <div className="relative h-[70px]">
               <div className="absolute bottom-0 left-0 right-0 h-px bg-orange-2/15" />
               <motion.div
                 style={{ scaleX: lineScaleX, transformOrigin: 'left' }}
                 className="absolute bottom-0 left-0 right-0 h-px bg-orange-2/40"
               />
               {days.map((d, i) => (
-                <TimelineDay key={d.label} d={d} scrollYProgress={scrollYProgress} windowRange={DAY_WINDOWS[i]} />
+                <TimelineDay
+                  key={d.label}
+                  d={d}
+                  scrollYProgress={scrollYProgress}
+                  windowRange={DAY_WINDOWS[i]}
+                  position={i}
+                  total={days.length}
+                />
               ))}
             </div>
           </div>
