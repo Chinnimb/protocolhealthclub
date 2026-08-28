@@ -58,8 +58,8 @@ export default function AllProtocols() {
                 className="group relative flex h-[220px] items-center overflow-hidden rounded-[24px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.06)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.2)] sm:h-[240px]"
               >
                 <div className="relative z-10 flex h-full w-[58%] shrink-0 flex-col justify-between py-6 pl-6 pr-2 sm:py-7 sm:pl-8">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-2">
-                    <img src={category.icon} alt="" className="h-5 w-5" />
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-2">
+                    <img src={category.icon} alt="" className="h-3.5 w-3.5" />
                   </span>
 
                   <div className="flex flex-col gap-1.5">
