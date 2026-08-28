@@ -104,11 +104,19 @@ export default function CategoryProducts() {
       </div>
 
       <main className="mx-auto max-w-[1200px] px-6 pb-10 pt-6 md:px-10 md:pb-16">
+        <MotionLink
+          to="/products"
+          whileHover={{ x: -2 }}
+          className="text-xs font-extrabold uppercase tracking-[2.2px] text-orange-2"
+        >
+          All Protocols
+        </MotionLink>
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col gap-2"
+          className="mt-3 flex flex-col gap-2"
         >
           <h1 className="text-3xl font-bold text-[#161b1f] md:text-5xl">{category.name}</h1>
           <p className="max-w-[640px] text-base leading-relaxed text-[#6e6e6e] md:text-lg">{category.blurb}</p>

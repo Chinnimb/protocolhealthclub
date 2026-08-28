@@ -82,6 +82,36 @@ const categoryCoverImage = {
   'Cognitive Focus': cardCognitiveFocus,
 }
 
+import iconFlame from '../assets/figma/icon-flame.svg'
+import iconDumbbell from '../assets/figma/icon-dumbbell.svg'
+import iconZap from '../assets/figma/icon-zap.svg'
+import iconHeart from '../assets/figma/icon-heart.svg'
+import iconSprout from '../assets/figma/icon-sprout.svg'
+import iconStar from '../assets/figma/icon-star.svg'
+import iconBandage from '../assets/figma/icon-bandage.svg'
+import iconClock from '../assets/figma/icon-clock.svg'
+import iconLeaf from '../assets/figma/icon-leaf.svg'
+import iconCombine from '../assets/figma/icon-combine.svg'
+import iconCircleX from '../assets/figma/icon-circle-x.svg'
+import iconBrain from '../assets/figma/icon-brain.svg'
+
+// Icon representing what each category treats, used on the overview cards and
+// as the lead benefit icon on product pages.
+const categoryIcon = {
+  'Fat Loss': iconFlame,
+  'Muscle Growth': iconDumbbell,
+  'Energy Boosting': iconZap,
+  'Sexual Health': iconHeart,
+  Fertility: iconSprout,
+  Skincare: iconStar,
+  'Injury Repair': iconBandage,
+  'Anti-Aging': iconClock,
+  'Gut Health': iconLeaf,
+  'Hair Growth': iconCombine,
+  'Stress Reduction': iconCircleX,
+  'Cognitive Focus': iconBrain,
+}
+
 // Generic, category-level copy — safe placeholder content (no specific dosing, mechanism,
 // or efficacy claims, no pricing). Swap in real per-product copy once the client provides it.
 const categoryContent = {
@@ -274,6 +304,8 @@ export const categories = [
   ...cat,
   slug: slugify(cat.name),
   ...categoryContent[cat.name],
+  icon: categoryIcon[cat.name],
+  coverImage: categoryCoverImage[cat.name],
   products: cat.products.map((p) => ({
     ...p,
     slug: slugify(p.name),

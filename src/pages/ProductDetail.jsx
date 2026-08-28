@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowUpRight, Activity, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Footer from '../components/Footer'
 import { getProduct } from '../data/protocolsData'
 
-const benefitIcons = [Activity, Sparkles, ShieldCheck]
+// benefit[0] is always the category-specific claim, benefit[1] the lifestyle-fit claim,
+// and benefit[2] is always "monitored by your care team" — see protocolsData.js.
+const supportingBenefitIcons = [Sparkles, ShieldCheck]
 
 const trustBadges = [
   { icon: Stethoscope, label: 'Physician supervised' },
@@ -103,17 +105,21 @@ export default function ProductDetail() {
             <p className="text-base leading-relaxed text-[#4a4a4a] md:text-lg">{category.description}</p>
 
             <div className="flex flex-col gap-4">
-              {category.benefits.map((b, i) => {
-                const Icon = benefitIcons[i % benefitIcons.length]
-                return (
-                  <div key={b} className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-2/10 text-orange-2">
-                      <Icon className="h-4 w-4" strokeWidth={2.25} />
-                    </span>
-                    <p className="text-sm text-[#1a1a1a] md:text-base">{b}</p>
-                  </div>
-                )
-              })}
+              {category.benefits.map((b, i) => (
+                <div key={b} className="flex items-center gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-2">
+                    {i === 0 ? (
+                      <img src={category.icon} alt="" className="h-4 w-4" />
+                    ) : (
+                      (() => {
+                        const Icon = supportingBenefitIcons[(i - 1) % supportingBenefitIcons.length]
+                        return <Icon className="h-4 w-4 text-white" strokeWidth={2.25} />
+                      })()
+                    )}
+                  </span>
+                  <p className="text-sm text-[#1a1a1a] md:text-base">{b}</p>
+                </div>
+              ))}
             </div>
 
             <div className="flex flex-wrap gap-x-6 gap-y-3 border-y border-[#e8e8e8] py-5">
