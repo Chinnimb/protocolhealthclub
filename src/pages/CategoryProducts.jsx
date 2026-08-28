@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowUpRight } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Footer from '../components/Footer'
@@ -127,7 +127,7 @@ export default function CategoryProducts() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2"
+          className="mt-10 flex flex-wrap gap-6"
         >
           {category.products.map((p, i) => (
             <motion.div
@@ -135,41 +135,31 @@ export default function CategoryProducts() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -6 }}
+              className="w-[260px]"
             >
               <MotionLink
                 to={`/products/${category.slug}/${p.slug}`}
-                className="group relative flex h-[200px] items-center overflow-hidden rounded-[24px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.06)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.2)] sm:h-[220px]"
+                className="group flex flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
               >
-                <div className="relative z-10 flex h-full w-[58%] shrink-0 flex-col justify-between py-6 pl-6 pr-2 sm:py-7 sm:pl-8">
-                  <div className="flex flex-wrap gap-2">
-                    <span className="rounded-full bg-[#f0ede8] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-[#6e6e6e]">
-                      {category.name}
-                    </span>
-                    <span className="rounded-full bg-[#f0ede8] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-[#6e6e6e]">
-                      {p.form}
-                    </span>
-                  </div>
-
-                  <p className="text-lg font-bold uppercase leading-tight tracking-tight text-[#161b1f] sm:text-xl md:text-2xl">
-                    {p.name}
-                  </p>
-
-                  <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-orange-2 px-4 py-2 text-xs font-bold text-white transition-transform duration-300 group-hover:translate-x-1 sm:px-5 sm:py-2.5 sm:text-sm">
-                    View Protocol
-                    <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={2.5} />
-                  </span>
-                </div>
-
-                <div
-                  className="relative flex h-full flex-1 items-center justify-center overflow-hidden"
-                  style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
-                >
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="relative h-[85%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                <div className="relative flex h-[220px] items-center justify-center overflow-hidden p-8">
+                  <div
+                    className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
+                    style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
                   />
+                  <div
+                    className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    style={{ backgroundImage: 'linear-gradient(90deg, #f45f2b 0%, #f4ac63 100%)' }}
+                  />
+                  <img src={p.image} alt={p.name} className="relative h-[170px] w-[140px] object-contain" />
+                </div>
+                <div className="flex flex-col gap-2 px-6 pb-7 pt-6">
+                  <p className="text-xl font-bold text-[#161b1f]">{p.name}</p>
+                  <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{p.form.toUpperCase()}</p>
+                  <div className="flex items-center gap-1 pt-2 text-[13px] text-orange-2">
+                    <span>LEARN MORE</span>
+                    <span>&rsaquo;</span>
+                  </div>
                 </div>
               </MotionLink>
             </motion.div>

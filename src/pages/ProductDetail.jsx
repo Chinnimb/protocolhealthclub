@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowUpRight, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users } from 'lucide-react'
+import { ArrowLeft, ImagePlus, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Footer from '../components/Footer'
@@ -151,29 +151,24 @@ export default function ProductDetail() {
         {related.length > 0 && (
           <div className="mt-20 flex flex-col gap-6">
             <h2 className="text-2xl font-bold text-[#161b1f]">More in {category.name}</h2>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div className="flex flex-wrap gap-6">
               {related.map((p) => (
                 <MotionLink
                   key={p.name}
                   to={`/products/${category.slug}/${p.slug}`}
-                  whileHover={{ y: -4 }}
-                  className="group relative flex h-[180px] items-center overflow-hidden rounded-[24px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.06)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.2)]"
+                  whileHover={{ y: -6 }}
+                  className="group flex w-[220px] flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                 >
-                  <div className="relative z-10 flex h-full w-[58%] shrink-0 flex-col justify-between py-5 pl-6 pr-2">
-                    <span className="w-fit rounded-full bg-[#f0ede8] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-[#6e6e6e]">
-                      {p.form}
-                    </span>
-                    <p className="text-lg font-bold uppercase leading-tight tracking-tight text-[#161b1f]">{p.name}</p>
-                    <span className="inline-flex w-fit items-center gap-1.5 text-xs font-bold text-orange-2">
-                      View Protocol
-                      <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
-                    </span>
+                  <div className="relative flex h-[180px] items-center justify-center overflow-hidden p-6">
+                    <div
+                      className="absolute inset-0"
+                      style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
+                    />
+                    <img src={p.image} alt={p.name} className="relative h-[130px] w-[110px] object-contain" />
                   </div>
-                  <div
-                    className="relative flex h-full flex-1 items-center justify-center overflow-hidden"
-                    style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
-                  >
-                    <img src={p.image} alt={p.name} className="relative h-[80%] w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+                  <div className="flex flex-col gap-1.5 px-5 pb-6 pt-4">
+                    <p className="text-lg font-bold text-[#161b1f]">{p.name}</p>
+                    <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{p.form.toUpperCase()}</p>
                   </div>
                 </MotionLink>
               ))}
@@ -187,9 +182,14 @@ export default function ProductDetail() {
   )
 }
 
+// Total thumbnail slots shown per product — extra slots render as empty
+// placeholders until more photography is added for that product.
+const GALLERY_SLOTS = 4
+
 function ProductGallery({ images, name }) {
   const [active, setActive] = useState(0)
   const isProductShot = active === 0
+  const placeholderCount = Math.max(0, GALLERY_SLOTS - images.length)
 
   return (
     <Reveal className="flex flex-col gap-3">
@@ -211,22 +211,28 @@ function ProductGallery({ images, name }) {
         )}
       </div>
 
-      {images.length > 1 && (
-        <div className="flex gap-3">
-          {images.map((src, i) => (
-            <button
-              key={src}
-              type="button"
-              onClick={() => setActive(i)}
-              className={`relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-[14px] border-2 transition-colors ${
-                i === 0 ? 'bg-[#fff8f4] p-2' : ''
-              } ${active === i ? 'border-orange-2' : 'border-transparent hover:border-[#e8e8e8]'}`}
-            >
-              <img src={src} alt="" className={i === 0 ? 'h-full w-full object-contain' : 'h-full w-full object-cover'} />
-            </button>
-          ))}
-        </div>
-      )}
+      <div className="flex gap-3">
+        {images.map((src, i) => (
+          <button
+            key={src}
+            type="button"
+            onClick={() => setActive(i)}
+            className={`relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-[14px] border-2 transition-colors ${
+              i === 0 ? 'bg-[#fff8f4] p-2' : ''
+            } ${active === i ? 'border-orange-2' : 'border-transparent hover:border-[#e8e8e8]'}`}
+          >
+            <img src={src} alt="" className={i === 0 ? 'h-full w-full object-contain' : 'h-full w-full object-cover'} />
+          </button>
+        ))}
+        {Array.from({ length: placeholderCount }).map((_, i) => (
+          <div
+            key={`placeholder-${i}`}
+            className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[14px] border-2 border-dashed border-[#d9d5cf] bg-[#faf8f5]"
+          >
+            <ImagePlus className="h-5 w-5 text-[#c4bfb7]" strokeWidth={1.75} />
+          </div>
+        ))}
+      </div>
     </Reveal>
   )
 }
