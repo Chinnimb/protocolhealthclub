@@ -3,6 +3,11 @@ import footerLogo1 from '../assets/figma/footer-logo-part1.svg'
 import footerLogo2 from '../assets/figma/footer-logo-part2.svg'
 import footerLogo3 from '../assets/figma/footer-logo-part3.svg'
 
+const exploreLinks = [
+  { label: 'All Protocols', to: '/products' },
+  { label: 'Get Started', to: '/get-started' },
+]
+
 const legalLinks = [
   { label: 'Terms Of Use', to: '/terms-of-service' },
   { label: 'Privacy Policy', to: '/privacy-policy' },
@@ -42,6 +47,15 @@ export default function Footer() {
           <div className="hidden w-px self-stretch bg-white/10 md:block" />
 
           <div className="grid w-full grid-cols-2 gap-x-6 gap-y-8 text-xs text-white/80 sm:w-auto sm:flex sm:gap-16 md:text-sm">
+            <div className="flex flex-col gap-3">
+              <p className="text-[11px] font-bold uppercase tracking-[1.5px] text-white/40">Explore</p>
+              {exploreLinks.map((l) => (
+                <Link key={l.label} to={l.to} className="transition-colors hover:text-white">
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+
             <div className="flex flex-col gap-3">
               <p className="text-[11px] font-bold uppercase tracking-[1.5px] text-white/40">Legal</p>
               {legalLinks.map((l) => (

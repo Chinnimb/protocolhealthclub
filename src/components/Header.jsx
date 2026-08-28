@@ -8,6 +8,7 @@ const links = [
   { label: 'How it works', href: '/#how-it-works' },
   { label: 'Bio markers', href: '/#biomarkers' },
   { label: 'Protocols', href: '/#protocols' },
+  { label: 'All Protocols', to: '/products' },
   { label: 'Members', href: '/#members' },
 ]
 
@@ -27,15 +28,26 @@ export default function Header() {
         </MotionLink>
 
         <nav className="hidden lg:flex items-center gap-9">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              className="relative text-sm text-[rgba(24,15,13,0.75)] transition-colors hover:text-ink-2 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink-2 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.to ? (
+              <MotionLink
+                key={l.label}
+                to={l.to}
+                whileHover={{ scale: 1.02 }}
+                className="relative text-sm text-[rgba(24,15,13,0.75)] transition-colors hover:text-ink-2 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink-2 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {l.label}
+              </MotionLink>
+            ) : (
+              <a
+                key={l.label}
+                href={l.href}
+                className="relative text-sm text-[rgba(24,15,13,0.75)] transition-colors hover:text-ink-2 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink-2 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {l.label}
+              </a>
+            )
+          )}
         </nav>
 
         <MotionLink
