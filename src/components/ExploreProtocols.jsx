@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react'
 import Reveal from './Reveal'
 import MotionLink from './MotionLink'
 import { categories } from '../data/protocolsData'
@@ -109,34 +109,36 @@ export default function ExploreProtocols() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.07 }}
                   whileHover={{ y: -6 }}
-                  className="group flex w-[260px] shrink-0 snap-center flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)] sm:w-[calc(50%-12px)] sm:shrink sm:snap-none md:w-[300px]"
+                  className="w-[260px] shrink-0 snap-center sm:w-[calc(50%-12px)] sm:shrink sm:snap-none md:w-[300px]"
                 >
-                  <div className="relative flex h-[260px] items-center justify-center overflow-hidden p-8">
-                    <div
-                      className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
-                      style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
-                    />
-                    <div
-                      className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                      style={{ backgroundImage: 'linear-gradient(90deg, #f45f2b 0%, #f4ac63 100%)' }}
-                    />
-                    <motion.img
-                      src={p.image}
-                      alt={p.name}
-                      whileHover={{ rotate: -3, scale: 1.05 }}
-                      transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-                      className="relative h-[200px] w-[160px] object-contain"
-                    />
-                  </div>
                   <MotionLink
                     to={`/products/${activeCategory.slug}/${p.slug}`}
-                    className="flex flex-col gap-2 px-6 pb-7 pt-6"
+                    className="group flex flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                   >
-                    <p className="text-xl font-bold text-[#161b1f]">{p.name}</p>
-                    <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{p.form.toUpperCase()}</p>
-                    <div className="flex items-center gap-1 pt-2 text-[13px] text-orange-2">
-                      <span>LEARN MORE</span>
-                      <span>&rsaquo;</span>
+                    <div className="relative flex h-[260px] items-center justify-center overflow-hidden p-8">
+                      <div
+                        className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
+                        style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
+                      />
+                      <div
+                        className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                        style={{ backgroundImage: 'linear-gradient(90deg, #f45f2b 0%, #f4ac63 100%)' }}
+                      />
+                      <motion.img
+                        src={p.image}
+                        alt={p.name}
+                        whileHover={{ rotate: -3, scale: 1.05 }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                        className="relative h-[200px] w-[160px] object-contain"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2 px-6 pb-7 pt-6">
+                      <p className="text-xl font-bold text-[#161b1f]">{p.name}</p>
+                      <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{p.form.toUpperCase()}</p>
+                      <div className="flex items-center gap-1 pt-2 text-[13px] text-orange-2">
+                        <span>LEARN MORE</span>
+                        <span>&rsaquo;</span>
+                      </div>
                     </div>
                   </MotionLink>
                 </motion.div>
@@ -166,22 +168,15 @@ export default function ExploreProtocols() {
             </motion.button>
         </div>
 
-        <Reveal delay={0.1} className="flex flex-col items-center gap-4">
+        <Reveal delay={0.1}>
           <MotionLink
             to="/products"
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="text-base font-semibold text-orange-2 underline underline-offset-4"
+            className="bg-gradient-orange inline-flex items-center gap-2 rounded-full border-2 border-white px-10 py-4 text-lg font-bold tracking-[0.5px] text-white"
           >
-            View all protocols
-          </MotionLink>
-          <MotionLink
-            to="/get-started"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.96 }}
-            className="bg-gradient-orange inline-block rounded-full border-2 border-white px-12 py-4 text-2xl font-bold tracking-[1.28px] text-white"
-          >
-            Get Started
+            View All Protocols
+            <ArrowUpRight className="h-5 w-5" strokeWidth={2.5} />
           </MotionLink>
         </Reveal>
       </div>

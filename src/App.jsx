@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import GetStarted from './pages/GetStarted'
-import AllProtocols from './pages/AllProtocols'
 import CategoryProducts from './pages/CategoryProducts'
 import ProductDetail from './pages/ProductDetail'
+import { categories } from './data/protocolsData'
 import TermsOfService from './pages/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RefundPolicy from './pages/RefundPolicy'
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/get-started" element={<GetStarted />} />
-        <Route path="/products" element={<AllProtocols />} />
+        <Route path="/products" element={<Navigate to={`/products/${categories[0].slug}`} replace />} />
         <Route path="/products/:categorySlug" element={<CategoryProducts />} />
         <Route path="/products/:categorySlug/:productSlug" element={<ProductDetail />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />

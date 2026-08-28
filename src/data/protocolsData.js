@@ -52,6 +52,36 @@ import cognitiveSemax from '../assets/figma/protocols/cognitive-semax.png'
 import cognitiveDihexa from '../assets/figma/protocols/cognitive-dihexa.png'
 import cognitiveTesofensine from '../assets/figma/protocols/cognitive-tesofensine.png'
 
+import cardFatLoss from '../assets/figma/card-fat-loss.png'
+import cardMuscleGrowth from '../assets/figma/card-muscle-growth.png'
+import cardEnergyBoosting from '../assets/figma/card-energy-boosting.png'
+import cardSexualHealth from '../assets/figma/card-sexual-health.png'
+import cardFertility from '../assets/figma/card-fertility.png'
+import cardSkinCare from '../assets/figma/card-skin-care.png'
+import cardInjuryRepair from '../assets/figma/card-injury-repair.png'
+import cardAntiAging from '../assets/figma/card-anti-aging.png'
+import cardGutHealth from '../assets/figma/card-gut-health.png'
+import cardHairGrowth from '../assets/figma/card-hair-growth.jpg'
+import cardStressReduction from '../assets/figma/card-stress-reduction.jpg'
+import cardCognitiveFocus from '../assets/figma/card-cognitive-focus.png'
+
+// Lifestyle cover photo per category, reused as a second gallery image on product pages
+// until dedicated per-product photography exists.
+const categoryCoverImage = {
+  'Fat Loss': cardFatLoss,
+  'Muscle Growth': cardMuscleGrowth,
+  'Energy Boosting': cardEnergyBoosting,
+  'Sexual Health': cardSexualHealth,
+  Fertility: cardFertility,
+  Skincare: cardSkinCare,
+  'Injury Repair': cardInjuryRepair,
+  'Anti-Aging': cardAntiAging,
+  'Gut Health': cardGutHealth,
+  'Hair Growth': cardHairGrowth,
+  'Stress Reduction': cardStressReduction,
+  'Cognitive Focus': cardCognitiveFocus,
+}
+
 // Generic, category-level copy — safe placeholder content (no specific dosing, mechanism,
 // or efficacy claims, no pricing). Swap in real per-product copy once the client provides it.
 const categoryContent = {
@@ -244,7 +274,11 @@ export const categories = [
   ...cat,
   slug: slugify(cat.name),
   ...categoryContent[cat.name],
-  products: cat.products.map((p) => ({ ...p, slug: slugify(p.name) })),
+  products: cat.products.map((p) => ({
+    ...p,
+    slug: slugify(p.name),
+    images: [p.image, categoryCoverImage[cat.name]].filter(Boolean),
+  })),
 }))
 
 export function getCategory(categorySlug) {
