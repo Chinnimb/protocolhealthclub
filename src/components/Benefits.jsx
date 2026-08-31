@@ -41,7 +41,7 @@ const cards = [
   { title: 'Fertility', icon: iconSprout, image: cardFertility, products: 'hCG, Enclomiphene, rFSH, Glutathione' },
   { title: 'Skin Care', icon: iconStar, image: cardSkinCare, products: 'GHK-Cu, Estradiol, Tretinoin' },
   { title: 'Injury Repair', icon: iconBandage, image: cardInjuryRepair, products: 'BPC-157, TB-500, KPV' },
-  { title: 'Anti-Aging', icon: iconClock, image: cardAntiAging, products: 'NAD, Glutathione, Oxytocin, Methylene Blue' },
+  { title: 'Anti-Aging', icon: iconClock, image: cardAntiAging, products: 'NAD+, Glutathione, Oxytocin, Methylene Blue' },
   { title: 'Gut Health', icon: iconLeaf, image: cardGutHealth, products: 'GI Maps, Gut Barrier Testing, Food Sensitivity Testing' },
   { title: 'Hair Growth', icon: iconCombine, image: cardHairGrowth, products: 'Minoxidil, Dutasteride, Finasteride, GHK-Cu' },
   { title: 'Stress Reduction', icon: iconCircleX, image: cardStressReduction, products: 'Progesterone, Selank' },
