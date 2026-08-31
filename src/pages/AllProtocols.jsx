@@ -43,7 +43,7 @@ export default function AllProtocols() {
           bloodwork to find the plan that fits you.
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
           {categories.map((category, i) => (
             <motion.div
               key={category.slug}
@@ -55,22 +55,31 @@ export default function AllProtocols() {
             >
               <MotionLink
                 to={`/products/${category.slug}`}
-                className="group relative flex h-[220px] items-center overflow-hidden rounded-[24px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.06)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.2)] sm:h-[240px]"
+                className="group relative flex h-[380px] overflow-hidden rounded-[24px] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.1)] transition-shadow duration-500 hover:shadow-[0px_20px_48px_0px_rgba(242,122,46,0.3)] sm:h-[420px]"
               >
-                <div className="relative z-10 flex h-full w-[58%] shrink-0 flex-col justify-between py-6 pl-6 pr-2 sm:py-7 sm:pl-8">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-2">
-                    <img src={category.icon} alt="" className="h-3.5 w-3.5" />
-                  </span>
+                <img
+                  src={category.heroImage}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/25 to-transparent" />
 
-                  <div className="flex flex-col gap-1.5">
-                    <p className="text-lg font-bold uppercase leading-tight tracking-tight text-[#161b1f] sm:text-xl md:text-2xl">
+                <div className="relative z-10 mx-4 mb-4 mt-auto flex w-[calc(100%-2rem)] flex-col gap-3 rounded-[20px] border border-white/50 bg-white/60 p-5 shadow-[0px_8px_24px_rgba(0,0,0,0.1)] backdrop-blur-xl sm:w-[80%] sm:p-6">
+                  <div className="flex items-center gap-2.5">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-2">
+                      <img src={category.icon} alt="" className="h-4 w-4" />
+                    </span>
+                    <p className="text-lg font-bold uppercase leading-tight tracking-tight text-[#161b1f] sm:text-xl">
                       {category.name}
                     </p>
-                    <p className="line-clamp-2 text-xs leading-relaxed text-[#6e6e6e] sm:text-sm">{category.blurb}</p>
                   </div>
 
+                  <p className="line-clamp-2 text-xs leading-relaxed text-[#3a3a3a] sm:text-sm">
+                    {category.products.map((p) => p.name).join(' · ')}
+                  </p>
+
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.5px] text-[#8a8a8a]">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.5px] text-[#5a5a5a]">
                       {category.products.length} protocol{category.products.length === 1 ? '' : 's'}
                     </span>
                     <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-orange-2 px-4 py-2 text-xs font-bold text-white transition-transform duration-300 group-hover:translate-x-1 sm:px-5 sm:py-2.5 sm:text-sm">
@@ -78,17 +87,6 @@ export default function AllProtocols() {
                       <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={2.5} />
                     </span>
                   </div>
-                </div>
-
-                <div
-                  className="relative flex h-full flex-1 items-center justify-center overflow-hidden"
-                  style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
-                >
-                  <img
-                    src={category.products[0].image}
-                    alt=""
-                    className="relative h-[80%] w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
                 </div>
               </MotionLink>
             </motion.div>

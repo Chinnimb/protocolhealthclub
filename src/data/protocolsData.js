@@ -82,6 +82,37 @@ const categoryCoverImage = {
   'Cognitive Focus': cardCognitiveFocus,
 }
 
+import heroFatLoss from '../assets/figma/categories/hero-fat-loss.png'
+import heroMuscleGrowth from '../assets/figma/categories/hero-muscle-growth.png'
+import heroEnergyBoosting from '../assets/figma/categories/hero-energy-boosting.png'
+import heroSexualHealth from '../assets/figma/categories/hero-sexual-health.png'
+import heroFertility from '../assets/figma/categories/hero-fertility.png'
+import heroSkincare from '../assets/figma/categories/hero-skincare.png'
+import heroInjuryRepair from '../assets/figma/categories/hero-injury-repair.png'
+import heroAntiAging from '../assets/figma/categories/hero-anti-aging.png'
+import heroGutHealth from '../assets/figma/categories/hero-gut-health.png'
+import heroHairGrowth from '../assets/figma/categories/hero-hair-growth.png'
+import heroStressReduction from '../assets/figma/categories/hero-stress-reduction.png'
+import heroCognitiveFocus from '../assets/figma/categories/hero-cognitive-focus.png'
+
+// Cinematic AI-generated hero photo per category (Protocol vial in a glass/liquid
+// ribbon, orange-and-white brand lighting), used as the full-bleed image on the
+// All Protocols overview cards.
+const categoryHeroImage = {
+  'Fat Loss': heroFatLoss,
+  'Muscle Growth': heroMuscleGrowth,
+  'Energy Boosting': heroEnergyBoosting,
+  'Sexual Health': heroSexualHealth,
+  Fertility: heroFertility,
+  Skincare: heroSkincare,
+  'Injury Repair': heroInjuryRepair,
+  'Anti-Aging': heroAntiAging,
+  'Gut Health': heroGutHealth,
+  'Hair Growth': heroHairGrowth,
+  'Stress Reduction': heroStressReduction,
+  'Cognitive Focus': heroCognitiveFocus,
+}
+
 import iconFlame from '../assets/figma/icon-flame.svg'
 import iconDumbbell from '../assets/figma/icon-dumbbell.svg'
 import iconZap from '../assets/figma/icon-zap.svg'
@@ -306,6 +337,7 @@ export const categories = [
   ...categoryContent[cat.name],
   icon: categoryIcon[cat.name],
   coverImage: categoryCoverImage[cat.name],
+  heroImage: categoryHeroImage[cat.name],
   products: cat.products.map((p) => ({
     ...p,
     slug: slugify(p.name),
