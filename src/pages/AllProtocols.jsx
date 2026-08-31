@@ -33,29 +33,26 @@ export default function AllProtocols() {
         </MotionLink>
       </header>
 
-      <main className="mx-auto max-w-[1200px] px-6 py-10 md:px-10 md:py-16">
-        <Reveal className="flex items-baseline gap-3">
-          <span className="text-4xl font-bold text-[#161b1f] md:text-[56px]">All</span>
-          <span className="font-serif text-4xl italic text-orange-2 md:text-[56px]">protocols</span>
-        </Reveal>
-        <Reveal delay={0.1} className="mt-4 max-w-[560px] text-base leading-relaxed text-[#6e6e6e] md:text-lg">
-          Every protocol we offer, organized by goal. Pick a category to see what&rsquo;s available, then start with
-          bloodwork to find the plan that fits you.
-        </Reveal>
+      <main className="py-10 md:py-16">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+          <Reveal className="flex items-baseline gap-3">
+            <span className="text-4xl font-bold text-[#161b1f] md:text-[56px]">All</span>
+            <span className="font-serif text-4xl italic text-orange-2 md:text-[56px]">protocols</span>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-4 max-w-[560px] text-base leading-relaxed text-[#6e6e6e] md:text-lg">
+            Every protocol we offer, organized by goal. Pick a category to see what&rsquo;s available, then start
+            with bloodwork to find the plan that fits you.
+          </Reveal>
+        </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category, i) => (
-            <motion.div
-              key={category.slug}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
-              whileHover={{ y: -4 }}
-            >
+        <Reveal delay={0.15} className="mt-14 overflow-hidden">
+          <div className="flex w-max gap-5 px-6 animate-marquee md:px-10">
+            {[...categories, ...categories].map((category, i) => (
               <MotionLink
+                key={`${category.slug}-${i}`}
                 to={`/products/${category.slug}`}
-                className="group relative flex h-[300px] overflow-hidden rounded-[24px] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.1)] transition-shadow duration-500 hover:shadow-[0px_20px_48px_0px_rgba(242,122,46,0.3)] sm:h-[320px]"
+                whileHover={{ y: -4 }}
+                className="group relative flex h-[300px] w-[280px] shrink-0 overflow-hidden rounded-[24px] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.1)] transition-shadow duration-500 hover:shadow-[0px_20px_48px_0px_rgba(242,122,46,0.3)] sm:h-[320px] sm:w-[300px]"
               >
                 <img
                   src={category.heroImage}
@@ -89,21 +86,23 @@ export default function AllProtocols() {
                   </div>
                 </div>
               </MotionLink>
-            </motion.div>
-          ))}
-        </div>
-
-        <Reveal delay={0.1} className="mt-16 flex flex-col items-center gap-4 text-center">
-          <p className="text-lg text-[#6e6e6e]">Not sure where to start?</p>
-          <MotionLink
-            to="/get-started"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.96 }}
-            className="bg-gradient-orange inline-block rounded-full border-2 border-white px-12 py-4 text-2xl font-bold tracking-[1.28px] text-white"
-          >
-            Get Started
-          </MotionLink>
+            ))}
+          </div>
         </Reveal>
+
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+          <Reveal delay={0.1} className="mt-16 flex flex-col items-center gap-4 text-center">
+            <p className="text-lg text-[#6e6e6e]">Not sure where to start?</p>
+            <MotionLink
+              to="/get-started"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.96 }}
+              className="bg-gradient-orange inline-block rounded-full border-2 border-white px-12 py-4 text-2xl font-bold tracking-[1.28px] text-white"
+            >
+              Get Started
+            </MotionLink>
+          </Reveal>
+        </div>
       </main>
 
       <Footer />
