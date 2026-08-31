@@ -103,8 +103,8 @@ export default function Header() {
                       <button
                         type="button"
                         onClick={() => setProtocolsOpen((v) => !v)}
-                        className={`flex w-full items-center justify-between rounded-lg px-2 py-3 text-base font-medium text-ink-2 transition-colors hover:bg-white/60 ${
-                          protocolsOpen ? 'bg-black/5' : ''
+                        className={`flex w-full items-center justify-between rounded-lg px-2 py-3 text-base text-ink-2 transition-colors hover:bg-white/60 ${
+                          protocolsOpen ? 'font-semibold' : 'font-medium'
                         }`}
                       >
                         {l.label}
