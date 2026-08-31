@@ -47,7 +47,7 @@ export default function AllProtocols() {
 
         <Reveal delay={0.15} className="relative mt-14">
           <div className="overflow-hidden">
-            <div className="flex w-max gap-5 px-6 py-6 animate-marquee md:px-10">
+            <div className="flex w-max gap-6 px-6 py-8 animate-marquee md:px-10">
               {[...categories, ...categories].map((category, i) => (
                 <MotionLink
                   key={`${category.slug}-${i}`}

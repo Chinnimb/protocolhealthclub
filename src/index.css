@@ -70,5 +70,5 @@ body {
 }
 
 .protocol-card-shadow:hover {
-  box-shadow: 0px 20px 48px 0px rgba(242, 122, 46, 0.35);
+  box-shadow: 0px 8px 20px 0px rgba(242, 122, 46, 0.45);
 }
