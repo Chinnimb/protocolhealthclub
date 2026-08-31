@@ -63,7 +63,7 @@ export default function CategoryProducts() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-10 flex gap-6 overflow-x-auto px-1 pb-2 [scrollbar-width:none] snap-x snap-mandatory [&::-webkit-scrollbar]:hidden md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:snap-none"
+          className="mt-10 flex gap-6 overflow-x-auto px-1 pb-16 pt-3 [scrollbar-width:none] snap-x snap-mandatory [&::-webkit-scrollbar]:hidden md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:pt-0 md:snap-none"
         >
           {category.products.map((p, i) => (
             <motion.div
