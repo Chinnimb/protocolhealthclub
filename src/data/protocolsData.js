@@ -82,18 +82,18 @@ const categoryCoverImage = {
   'Cognitive Focus': cardCognitiveFocus,
 }
 
-import heroFatLoss from '../assets/figma/categories/concept-fat-loss.jpg'
-import heroMuscleGrowth from '../assets/figma/categories/concept-muscle-growth.jpg'
-import heroEnergyBoosting from '../assets/figma/categories/concept-energy-boosting.jpg'
-import heroSexualHealth from '../assets/figma/categories/concept-sexual-health.jpg'
-import heroFertility from '../assets/figma/categories/concept-fertility.jpg'
-import heroSkincare from '../assets/figma/categories/concept-skincare.jpg'
-import heroInjuryRepair from '../assets/figma/categories/concept-injury-repair.jpg'
-import heroAntiAging from '../assets/figma/categories/concept-anti-aging.jpg'
-import heroGutHealth from '../assets/figma/categories/concept-gut-health.jpg'
-import heroHairGrowth from '../assets/figma/categories/concept-hair-growth.jpg'
-import heroStressReduction from '../assets/figma/categories/concept-stress-reduction.jpg'
-import heroCognitiveFocus from '../assets/figma/categories/concept-cognitive-focus.jpg'
+import heroFatLoss from '../assets/figma/categories/v2-fat-loss.jpg'
+import heroMuscleGrowth from '../assets/figma/categories/v2-muscle-growth.jpg'
+import heroEnergyBoosting from '../assets/figma/categories/v2-energy-boosting.jpg'
+import heroSexualHealth from '../assets/figma/categories/v2-sexual-health.jpg'
+import heroFertility from '../assets/figma/categories/v2-fertility.jpg'
+import heroSkincare from '../assets/figma/categories/v2-skincare.jpg'
+import heroInjuryRepair from '../assets/figma/categories/v2-injury-repair.jpg'
+import heroAntiAging from '../assets/figma/categories/v2-anti-aging.jpg'
+import heroGutHealth from '../assets/figma/categories/v2-gut-health.jpg'
+import heroHairGrowth from '../assets/figma/categories/v2-hair-growth.jpg'
+import heroStressReduction from '../assets/figma/categories/v2-stress-reduction.jpg'
+import heroCognitiveFocus from '../assets/figma/categories/v2-cognitive-focus.jpg'
 
 // Cinematic AI-generated hero photo per category — a concept image representing
 // what the category treats (not a product shot), in Protocol's orange/white
