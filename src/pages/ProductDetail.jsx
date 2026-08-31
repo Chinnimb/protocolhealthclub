@@ -4,6 +4,7 @@ import { ImagePlus, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users } fr
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Header from '../components/Header'
+import BackButton from '../components/BackButton'
 import Footer from '../components/Footer'
 import { getProduct } from '../data/protocolsData'
 
@@ -53,6 +54,8 @@ export default function ProductDetail() {
       <Header />
 
       <main className="mx-auto max-w-[1080px] px-6 pb-10 pt-24 md:px-10 md:pb-16 md:pt-28">
+        <BackButton fallback={`/products/${category.slug}`} className="mb-4" />
+
         <MotionLink
           to={`/products/${category.slug}`}
           whileHover={{ x: -2 }}

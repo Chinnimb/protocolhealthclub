@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Header from '../components/Header'
+import BackButton from '../components/BackButton'
 import Footer from '../components/Footer'
 import { categories, getCategory } from '../data/protocolsData'
 
@@ -14,7 +15,11 @@ export default function CategoryProducts() {
   const activePillRef = useRef(null)
 
   useEffect(() => {
-    activePillRef.current?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+    const pill = activePillRef.current
+    const container = pill?.parentElement
+    if (!pill || !container) return
+    const target = pill.offsetLeft - container.clientWidth / 2 + pill.clientWidth / 2
+    container.scrollTo({ left: target, behavior: 'smooth' })
   }, [categorySlug])
 
   if (!category) {
@@ -44,8 +49,12 @@ export default function CategoryProducts() {
     <div className="relative min-h-screen bg-cream text-ink">
       <Header />
 
+      <div className="mx-auto max-w-[1200px] px-6 pt-24 md:px-10 md:pt-28">
+        <BackButton fallback="/products" />
+      </div>
+
       {/* Category tab bar: scrolls with the page, then sticks just below the fixed header. */}
-      <div className="sticky top-[76px] z-20 mt-20 border-b border-[#e8e8e8] bg-cream/95 py-3 shadow-[0_1px_0_rgba(0,0,0,0.02)] backdrop-blur-sm md:mt-24">
+      <div className="sticky top-[76px] z-20 mt-3 border-b border-[#e8e8e8] bg-cream/95 py-3 shadow-[0_1px_0_rgba(0,0,0,0.02)] backdrop-blur-sm">
         <div className="relative">
           <div className="flex w-full gap-3 overflow-x-auto px-6 [scrollbar-width:none] md:px-10 [&::-webkit-scrollbar]:hidden">
             {categories.map((c) => {
@@ -96,7 +105,7 @@ export default function CategoryProducts() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-10 flex flex-wrap gap-6"
+          className="mt-10 flex flex-wrap justify-center gap-6"
         >
           {category.products.map((p, i) => (
             <motion.div
