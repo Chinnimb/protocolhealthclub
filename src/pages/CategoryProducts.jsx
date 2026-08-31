@@ -63,7 +63,7 @@ export default function CategoryProducts() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-10 flex flex-wrap justify-center gap-6"
+          className="mt-10 flex gap-6 overflow-x-auto px-1 pb-2 [scrollbar-width:none] snap-x snap-mandatory [&::-webkit-scrollbar]:hidden md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:snap-none"
         >
           {category.products.map((p, i) => (
             <motion.div
@@ -72,11 +72,11 @@ export default function CategoryProducts() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
               whileHover={{ y: -6 }}
-              className="w-[260px]"
+              className="w-[240px] shrink-0 snap-center md:w-[260px]"
             >
               <MotionLink
                 to={`/products/${category.slug}/${p.slug}`}
-                className="group flex flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
+                className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
               >
                 <div className="relative flex h-[220px] items-center justify-center overflow-hidden p-8">
                   <div
@@ -89,10 +89,10 @@ export default function CategoryProducts() {
                   />
                   <img src={p.image} alt={p.name} className="relative h-[170px] w-[140px] object-contain" />
                 </div>
-                <div className="flex flex-col gap-2 px-6 pb-7 pt-6">
-                  <p className="text-xl font-bold text-[#161b1f]">{p.name}</p>
+                <div className="flex flex-1 flex-col gap-2 px-6 pb-7 pt-6">
+                  <p className="line-clamp-2 min-h-[56px] text-xl font-bold text-[#161b1f]">{p.name}</p>
                   <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{p.form.toUpperCase()}</p>
-                  <div className="flex items-center gap-1 pt-2 text-[13px] text-orange-2">
+                  <div className="mt-auto flex items-center gap-1 pt-2 text-[13px] text-orange-2">
                     <span>LEARN MORE</span>
                     <span>&rsaquo;</span>
                   </div>

@@ -56,13 +56,13 @@ export default function ProductDetail() {
       <main className="mx-auto max-w-[1080px] px-6 pb-10 pt-24 md:px-10 md:pb-16 md:pt-28">
         <BackButton fallback={`/products/${category.slug}`} className="mb-4" />
 
-        <MotionLink
-          to={`/products/${category.slug}`}
-          whileHover={{ x: -2 }}
-          className="text-xs font-extrabold uppercase tracking-[2.2px] text-orange-2"
-        >
-          {category.name}
-        </MotionLink>
+        <div className="flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-[2.2px]">
+          <MotionLink to={`/products/${category.slug}`} whileHover={{ x: -2 }} className="text-orange-2">
+            {category.name}
+          </MotionLink>
+          <span className="text-[#c8c8c8]">&gt;</span>
+          <span className="text-[#8a8a8a]">{product.name}</span>
+        </div>
 
         <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
           <ProductGallery images={gallery} name={product.name} />
