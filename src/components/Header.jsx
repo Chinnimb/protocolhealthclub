@@ -21,7 +21,7 @@ export default function Header() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="absolute top-0 left-0 right-0 z-30 bg-white/25 backdrop-blur-sm"
+      className="fixed top-0 left-0 right-0 z-30 bg-white/25 backdrop-blur-sm"
     >
       <div className="flex w-full items-center justify-between px-6 py-6 md:px-10">
         <MotionLink to="/" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="relative h-[23px] w-[128px]">
@@ -58,7 +58,7 @@ export default function Header() {
             to="/get-started"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="bg-gradient-orange rounded-[20px] px-4 py-2 text-sm font-medium text-white"
+            className="hidden bg-gradient-orange rounded-[20px] px-4 py-2 text-sm font-medium text-white lg:inline-block"
           >
             Get Started
           </MotionLink>
@@ -106,6 +106,16 @@ export default function Header() {
                   </a>
                 )
               )}
+
+              <MotionLink
+                to="/get-started"
+                onClick={() => setMobileOpen(false)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-gradient-orange mt-2 rounded-[20px] px-4 py-3 text-center text-base font-semibold text-white"
+              >
+                Get Started
+              </MotionLink>
             </nav>
           </motion.div>
         )}

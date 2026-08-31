@@ -37,7 +37,7 @@ export default function SimpleHeader() {
             to="/get-started"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="bg-gradient-orange rounded-[20px] px-4 py-2 text-sm font-medium text-white"
+            className="hidden bg-gradient-orange rounded-[20px] px-4 py-2 text-sm font-medium text-white lg:inline-block"
           >
             Get Started
           </MotionLink>
@@ -85,6 +85,16 @@ export default function SimpleHeader() {
                   </a>
                 )
               )}
+
+              <MotionLink
+                to="/get-started"
+                onClick={() => setMobileOpen(false)}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                className="bg-gradient-orange mt-2 rounded-[20px] px-4 py-3 text-center text-base font-semibold text-white"
+              >
+                Get Started
+              </MotionLink>
             </nav>
           </motion.div>
         )}
