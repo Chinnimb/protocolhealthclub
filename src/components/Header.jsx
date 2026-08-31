@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
 import MotionLink from './MotionLink'
 import { categories } from '../data/protocolsData'
 import logoPart1 from '../assets/figma/logo-part1.svg'
@@ -103,7 +103,9 @@ export default function Header() {
                       <button
                         type="button"
                         onClick={() => setProtocolsOpen((v) => !v)}
-                        className="flex w-full items-center justify-between rounded-lg px-2 py-3 text-base font-medium text-ink-2 transition-colors hover:bg-white/60"
+                        className={`flex w-full items-center justify-between rounded-lg px-2 py-3 text-base font-medium text-ink-2 transition-colors hover:bg-white/60 ${
+                          protocolsOpen ? 'bg-black/5' : ''
+                        }`}
                       >
                         {l.label}
                         <ChevronDown
@@ -129,9 +131,7 @@ export default function Header() {
                                     className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-white/60"
                                   >
                                     {c.name}
-                                    <ChevronDown
-                                      className={`h-3.5 w-3.5 transition-transform duration-300 ${openCategory === c.slug ? 'rotate-180' : ''}`}
-                                    />
+                                    <ChevronRight className="h-3.5 w-3.5" />
                                   </button>
 
                                   <AnimatePresence>
