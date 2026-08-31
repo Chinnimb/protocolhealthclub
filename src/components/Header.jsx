@@ -131,7 +131,9 @@ export default function Header() {
                                     className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-white/60"
                                   >
                                     {c.name}
-                                    <ChevronRight className="h-3.5 w-3.5" />
+                                    <ChevronRight
+                                      className={`h-3.5 w-3.5 transition-transform duration-300 ${openCategory === c.slug ? 'rotate-90' : ''}`}
+                                    />
                                   </button>
 
                                   <AnimatePresence>
