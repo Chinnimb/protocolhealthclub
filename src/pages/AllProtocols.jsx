@@ -45,49 +45,53 @@ export default function AllProtocols() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.15} className="mt-14 overflow-hidden">
-          <div className="flex w-max gap-5 px-6 animate-marquee md:px-10">
-            {[...categories, ...categories].map((category, i) => (
-              <MotionLink
-                key={`${category.slug}-${i}`}
-                to={`/products/${category.slug}`}
-                whileHover={{ y: -4 }}
-                className="group relative flex h-[300px] w-[280px] shrink-0 overflow-hidden rounded-[24px] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.1)] transition-shadow duration-500 hover:shadow-[0px_20px_48px_0px_rgba(242,122,46,0.3)] sm:h-[320px] sm:w-[300px]"
-              >
-                <img
-                  src={category.heroImage}
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/25 to-transparent" />
+        <Reveal delay={0.15} className="relative mt-14">
+          <div className="overflow-hidden">
+            <div className="flex w-max gap-5 px-6 py-6 animate-marquee md:px-10">
+              {[...categories, ...categories].map((category, i) => (
+                <MotionLink
+                  key={`${category.slug}-${i}`}
+                  to={`/products/${category.slug}`}
+                  whileHover={{ y: -4 }}
+                  className="protocol-card-shadow group relative flex h-[300px] w-[280px] shrink-0 overflow-hidden rounded-[24px] sm:h-[320px] sm:w-[300px]"
+                >
+                  <img
+                    src={category.heroImage}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/40 to-transparent" />
 
-                <div className="relative z-10 mt-auto flex w-full flex-col gap-2.5 rounded-t-[20px] border-t border-white/40 bg-white/30 p-4 shadow-[0px_8px_24px_rgba(0,0,0,0.1)] backdrop-blur-lg sm:p-5">
-                  <div className="flex items-center gap-2.5">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-2">
-                      <img src={category.icon} alt="" className="h-4 w-4" />
-                    </span>
-                    <p className="text-base font-bold uppercase leading-tight tracking-tight text-[#161b1f] sm:text-lg">
-                      {category.name}
+                  <div className="relative z-10 mt-auto flex h-[132px] w-full flex-col gap-2 rounded-t-[20px] border-t border-white/20 bg-black/25 p-4 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-lg sm:h-[140px] sm:p-5">
+                    <div className="flex items-center gap-2.5">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-2">
+                        <img src={category.icon} alt="" className="h-4 w-4" />
+                      </span>
+                      <p className="text-base font-bold uppercase leading-tight tracking-tight text-white sm:text-lg">
+                        {category.name}
+                      </p>
+                    </div>
+
+                    <p className="line-clamp-2 text-xs leading-relaxed text-white/85">
+                      {category.products.map((p) => p.name).join(' · ')}
                     </p>
-                  </div>
 
-                  <p className="line-clamp-2 text-xs leading-relaxed text-[#2a2a2a]">
-                    {category.products.map((p) => p.name).join(' · ')}
-                  </p>
-
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.5px] text-[#4a4a4a]">
-                      {category.products.length} protocol{category.products.length === 1 ? '' : 's'}
-                    </span>
-                    <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-orange-2 px-3.5 py-1.5 text-xs font-bold text-white transition-transform duration-300 group-hover:translate-x-1 sm:px-4 sm:py-2">
-                      Explore
-                      <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
-                    </span>
+                    <div className="mt-auto flex items-center justify-between gap-2">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.5px] text-white/70">
+                        {category.products.length} protocol{category.products.length === 1 ? '' : 's'}
+                      </span>
+                      <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-orange-2 px-3.5 py-1.5 text-xs font-bold text-white transition-transform duration-300 group-hover:translate-x-1 sm:px-4 sm:py-2">
+                        Explore
+                        <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </MotionLink>
-            ))}
+                </MotionLink>
+              ))}
+            </div>
           </div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-cream to-transparent md:w-32" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-cream to-transparent md:w-32" />
         </Reveal>
 
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
