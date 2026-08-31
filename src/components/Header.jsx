@@ -21,13 +21,15 @@ export default function Header() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-0 left-0 right-0 z-30 bg-white/25 backdrop-blur-sm"
+      className={`fixed inset-x-4 top-4 z-30 overflow-hidden border border-white/25 bg-white/15 backdrop-blur-md transition-[border-radius] duration-300 lg:inset-x-0 lg:top-0 lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-white/25 lg:backdrop-blur-sm ${
+        mobileOpen ? 'rounded-[28px]' : 'rounded-full'
+      }`}
     >
-      <div className="flex w-full items-center justify-between px-6 py-6 md:px-10">
-        <MotionLink to="/" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="relative h-[23px] w-[128px]">
-          <img src={logoPart1} alt="" className="absolute left-0 top-0 h-[23px]" />
-          <img src={logoPart2} alt="protocol" className="absolute left-[33px] top-0 h-[23px]" />
-          <img src={logoPart3} alt="" className="absolute left-[72px] top-0 h-[18px]" />
+      <div className="flex w-full items-center justify-between px-5 py-3 lg:px-10 lg:py-6">
+        <MotionLink to="/" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="relative h-5 w-[110px] lg:h-[23px] lg:w-[128px]">
+          <img src={logoPart1} alt="" className="absolute left-0 top-0 h-5 lg:h-[23px]" />
+          <img src={logoPart2} alt="protocol" className="absolute left-[29px] top-0 h-5 lg:left-[33px] lg:h-[23px]" />
+          <img src={logoPart3} alt="" className="absolute left-[63px] top-0 h-4 lg:left-[72px] lg:h-[18px]" />
         </MotionLink>
 
         <nav className="hidden lg:flex items-center gap-9">
