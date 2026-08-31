@@ -1,4 +1,4 @@
-import SimpleHeader from '../components/SimpleHeader'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 function Section({ title, children }) {
@@ -23,9 +23,9 @@ function List({ items }) {
 export default function RefundPolicy() {
   return (
     <div className="relative min-h-screen bg-cream text-ink">
-      <SimpleHeader />
+      <Header />
 
-      <main className="mx-auto max-w-[820px] px-6 py-10 md:px-10 md:py-16">
+      <main className="mx-auto max-w-[820px] px-6 pb-10 pt-24 md:px-10 md:pb-16 md:pt-28">
         <p className="text-xs font-extrabold uppercase tracking-[2.2px] text-orange-2">Legal</p>
         <h1 className="mt-2 text-3xl font-bold leading-tight text-[#1a1a1a] md:text-5xl">Refund &amp; Cancellation Policy</h1>
 

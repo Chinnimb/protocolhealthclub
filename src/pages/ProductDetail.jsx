@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { ImagePlus, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
-import SimpleHeader from '../components/SimpleHeader'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { getProduct } from '../data/protocolsData'
 
@@ -24,8 +24,8 @@ export default function ProductDetail() {
   if (!result) {
     return (
       <div className="relative flex min-h-screen flex-col bg-cream text-ink">
-        <SimpleHeader fallback="/products" />
-        <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
+        <Header />
+        <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 pt-24 text-center">
           <h1 className="text-3xl font-bold text-[#1a1a1a]">Protocol not found</h1>
           <p className="max-w-[420px] text-sm leading-relaxed text-[#6e6e6e]">
             We couldn&rsquo;t find that protocol. It may have moved or is no longer offered.
@@ -50,9 +50,9 @@ export default function ProductDetail() {
 
   return (
     <div className="relative min-h-screen bg-cream text-ink">
-      <SimpleHeader fallback={`/products/${category.slug}`} />
+      <Header />
 
-      <main className="mx-auto max-w-[1080px] px-6 py-10 md:px-10 md:py-16">
+      <main className="mx-auto max-w-[1080px] px-6 pb-10 pt-24 md:px-10 md:pb-16 md:pt-28">
         <MotionLink
           to={`/products/${category.slug}`}
           whileHover={{ x: -2 }}

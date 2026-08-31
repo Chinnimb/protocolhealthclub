@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
-import SimpleHeader from '../components/SimpleHeader'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { categories, getCategory } from '../data/protocolsData'
 
@@ -20,8 +20,8 @@ export default function CategoryProducts() {
   if (!category) {
     return (
       <div className="relative flex min-h-screen flex-col bg-cream text-ink">
-        <SimpleHeader fallback="/products" />
-        <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
+        <Header />
+        <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 pt-24 text-center">
           <h1 className="text-3xl font-bold text-[#1a1a1a]">Category not found</h1>
           <p className="max-w-[420px] text-sm leading-relaxed text-[#6e6e6e]">
             We couldn&rsquo;t find that category. It may have moved or is no longer offered.
@@ -42,10 +42,10 @@ export default function CategoryProducts() {
 
   return (
     <div className="relative min-h-screen bg-cream text-ink">
-      <SimpleHeader />
+      <Header />
 
-      {/* Category tab bar: scrolls with the page, then sticks under the header once it reaches the top. */}
-      <div className="sticky top-0 z-20 border-b border-[#e8e8e8] bg-cream/95 py-3 shadow-[0_1px_0_rgba(0,0,0,0.02)] backdrop-blur-sm">
+      {/* Category tab bar: scrolls with the page, then sticks just below the fixed header. */}
+      <div className="sticky top-[76px] z-20 mt-20 border-b border-[#e8e8e8] bg-cream/95 py-3 shadow-[0_1px_0_rgba(0,0,0,0.02)] backdrop-blur-sm md:mt-24">
         <div className="relative">
           <div className="flex w-full gap-3 overflow-x-auto px-6 [scrollbar-width:none] md:px-10 [&::-webkit-scrollbar]:hidden">
             {categories.map((c) => {

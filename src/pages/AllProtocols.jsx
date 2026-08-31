@@ -1,16 +1,16 @@
 import { ArrowUpRight } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
-import SimpleHeader from '../components/SimpleHeader'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { categories } from '../data/protocolsData'
 
 export default function AllProtocols() {
   return (
     <div className="relative min-h-screen bg-cream text-ink">
-      <SimpleHeader />
+      <Header />
 
-      <main className="py-10 md:py-16">
+      <main className="pb-10 pt-24 md:pb-16 md:pt-28">
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           <Reveal className="flex items-baseline gap-3">
             <span className="text-4xl font-bold text-[#161b1f] md:text-[56px]">All</span>
