@@ -1,26 +1,15 @@
-import { useEffect, useRef } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Header from '../components/Header'
 import BackButton from '../components/BackButton'
 import Footer from '../components/Footer'
-import { categories, getCategory } from '../data/protocolsData'
+import { getCategory } from '../data/protocolsData'
 
 export default function CategoryProducts() {
-  const navigate = useNavigate()
   const { categorySlug } = useParams()
   const category = getCategory(categorySlug)
-  const activePillRef = useRef(null)
-
-  useEffect(() => {
-    const pill = activePillRef.current
-    const container = pill?.parentElement
-    if (!pill || !container) return
-    const target = pill.offsetLeft - container.clientWidth / 2 + pill.clientWidth / 2
-    container.scrollTo({ left: target, behavior: 'smooth' })
-  }, [categorySlug])
 
   if (!category) {
     return (
@@ -49,39 +38,8 @@ export default function CategoryProducts() {
     <div className="relative min-h-screen bg-cream text-ink">
       <Header />
 
-      <div className="mx-auto max-w-[1200px] px-6 pt-24 md:px-10 md:pt-28">
-        <BackButton fallback="/products" />
-      </div>
-
-      {/* Category tab bar: scrolls with the page, then sticks just below the fixed header. */}
-      <div className="sticky top-[76px] z-20 mt-3 border-b border-[#e8e8e8] bg-cream/95 py-3 shadow-[0_1px_0_rgba(0,0,0,0.02)] backdrop-blur-sm">
-        <div className="relative">
-          <div className="flex w-full gap-3 overflow-x-auto px-6 [scrollbar-width:none] md:px-10 [&::-webkit-scrollbar]:hidden">
-            {categories.map((c) => {
-              const isSelected = c.slug === category.slug
-              return (
-                <motion.button
-                  key={c.slug}
-                  ref={isSelected ? activePillRef : null}
-                  type="button"
-                  onClick={() => navigate(`/products/${c.slug}`)}
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.96 }}
-                  className={`shrink-0 select-none whitespace-nowrap rounded-full px-[18px] py-[9px] text-sm font-medium tracking-[0.5px] transition-colors ${
-                    isSelected ? 'bg-orange-2 font-bold text-white' : 'border border-[#c8c8c8] text-[#2d2d2d]'
-                  }`}
-                >
-                  {c.name}
-                </motion.button>
-              )
-            })}
-          </div>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-cream to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-cream to-transparent" />
-        </div>
-      </div>
-
-      <main className="mx-auto max-w-[1200px] px-6 pb-10 pt-6 md:px-10 md:pb-16">
+      <main className="mx-auto max-w-[1200px] px-6 pb-10 pt-24 md:px-10 md:pb-16 md:pt-28">
+        <BackButton fallback="/products" className="mb-6" />
         <MotionLink
           to="/products"
           whileHover={{ x: -2 }}
