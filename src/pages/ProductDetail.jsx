@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { ArrowLeft, ImagePlus, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users } from 'lucide-react'
+import { useParams } from 'react-router-dom'
+import { ImagePlus, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
+import SimpleHeader from '../components/SimpleHeader'
 import Footer from '../components/Footer'
 import { getProduct } from '../data/protocolsData'
 
@@ -18,25 +18,13 @@ const trustBadges = [
 ]
 
 export default function ProductDetail() {
-  const navigate = useNavigate()
   const { categorySlug, productSlug } = useParams()
   const result = getProduct(categorySlug, productSlug)
 
   if (!result) {
     return (
       <div className="relative flex min-h-screen flex-col bg-cream text-ink">
-        <header className="flex w-full items-center justify-between px-6 py-6 md:px-10">
-          <motion.button
-            type="button"
-            onClick={() => navigate(-1)}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 text-sm font-medium text-ink transition-colors hover:text-orange-2"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back
-          </motion.button>
-        </header>
+        <SimpleHeader />
         <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
           <h1 className="text-3xl font-bold text-[#1a1a1a]">Protocol not found</h1>
           <p className="max-w-[420px] text-sm leading-relaxed text-[#6e6e6e]">
@@ -62,27 +50,7 @@ export default function ProductDetail() {
 
   return (
     <div className="relative min-h-screen bg-cream text-ink">
-      <header className="flex w-full items-center justify-between px-6 py-6 md:px-10">
-        <motion.button
-          type="button"
-          onClick={() => navigate(-1)}
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-          className="flex items-center gap-2 text-sm font-medium text-ink transition-colors hover:text-orange-2"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back
-        </motion.button>
-
-        <MotionLink
-          to="/get-started"
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-          className="bg-gradient-orange rounded-[20px] px-4 py-2 text-sm font-medium text-white"
-        >
-          Get Started
-        </MotionLink>
-      </header>
+      <SimpleHeader />
 
       <main className="mx-auto max-w-[1080px] px-6 py-10 md:px-10 md:py-16">
         <MotionLink

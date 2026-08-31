@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
+import SimpleHeader from '../components/SimpleHeader'
 import Footer from '../components/Footer'
 import { categories, getCategory } from '../data/protocolsData'
 
@@ -20,18 +20,7 @@ export default function CategoryProducts() {
   if (!category) {
     return (
       <div className="relative flex min-h-screen flex-col bg-cream text-ink">
-        <header className="flex w-full items-center justify-between px-6 py-6 md:px-10">
-          <motion.button
-            type="button"
-            onClick={() => navigate(-1)}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 text-sm font-medium text-ink transition-colors hover:text-orange-2"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back
-          </motion.button>
-        </header>
+        <SimpleHeader />
         <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
           <h1 className="text-3xl font-bold text-[#1a1a1a]">Category not found</h1>
           <p className="max-w-[420px] text-sm leading-relaxed text-[#6e6e6e]">
@@ -53,27 +42,7 @@ export default function CategoryProducts() {
 
   return (
     <div className="relative min-h-screen bg-cream text-ink">
-      <header className="flex w-full items-center justify-between px-6 py-6 md:px-10">
-        <motion.button
-          type="button"
-          onClick={() => navigate(-1)}
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-          className="flex items-center gap-2 text-sm font-medium text-ink transition-colors hover:text-orange-2"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back
-        </motion.button>
-
-        <MotionLink
-          to="/get-started"
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.97 }}
-          className="bg-gradient-orange rounded-[20px] px-4 py-2 text-sm font-medium text-white"
-        >
-          Get Started
-        </MotionLink>
-      </header>
+      <SimpleHeader />
 
       {/* Category tab bar: scrolls with the page, then sticks under the header once it reaches the top. */}
       <div className="sticky top-0 z-20 border-b border-[#e8e8e8] bg-cream/95 py-3 shadow-[0_1px_0_rgba(0,0,0,0.02)] backdrop-blur-sm">
