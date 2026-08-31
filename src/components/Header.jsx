@@ -21,7 +21,7 @@ export default function Header() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed inset-x-4 top-4 z-30 overflow-hidden border border-white/25 bg-white/15 backdrop-blur-md transition-[border-radius] duration-300 lg:inset-x-0 lg:top-0 lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-white/25 lg:backdrop-blur-sm ${
+      className={`fixed inset-x-4 top-4 z-30 overflow-hidden border border-white/25 bg-white/15 backdrop-blur-md lg:inset-x-0 lg:top-0 lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-white/25 lg:backdrop-blur-sm ${
         mobileOpen ? 'rounded-[28px]' : 'rounded-full'
       }`}
     >
