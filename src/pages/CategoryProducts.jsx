@@ -20,7 +20,7 @@ export default function CategoryProducts() {
   if (!category) {
     return (
       <div className="relative flex min-h-screen flex-col bg-cream text-ink">
-        <SimpleHeader />
+        <SimpleHeader fallback="/products" />
         <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
           <h1 className="text-3xl font-bold text-[#1a1a1a]">Category not found</h1>
           <p className="max-w-[420px] text-sm leading-relaxed text-[#6e6e6e]">

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowLeft, Menu, X } from 'lucide-react'
 import MotionLink from './MotionLink'
@@ -14,16 +14,28 @@ const links = [
 // Back + Get Started header used on sub-pages (protocols, legal), with a
 // mobile hamburger menu so those nav destinations stay reachable without a
 // full desktop nav bar.
-export default function SimpleHeader() {
+export default function SimpleHeader({ fallback = '/' }) {
   const navigate = useNavigate()
+  const location = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  // navigate(-1) is a no-op when this page was the first thing loaded in the
+  // tab (shared link, bookmark, fresh app open) — there's no in-app history
+  // to go back to, so fall back to a sensible page instead.
+  const goBack = () => {
+    if (location.key === 'default') {
+      navigate(fallback)
+    } else {
+      navigate(-1)
+    }
+  }
 
   return (
     <div className="relative">
       <header className="flex w-full items-center justify-between px-6 py-6 md:px-10">
         <motion.button
           type="button"
-          onClick={() => navigate(-1)}
+          onClick={goBack}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           className="flex items-center gap-2 text-sm font-medium text-ink transition-colors hover:text-orange-2"
@@ -31,6 +43,29 @@ export default function SimpleHeader() {
           <ArrowLeft className="h-4 w-4" />
           Back
         </motion.button>
+
+        <nav className="hidden lg:flex items-center gap-9">
+          {links.map((l) =>
+            l.to ? (
+              <MotionLink
+                key={l.label}
+                to={l.to}
+                whileHover={{ scale: 1.02 }}
+                className="relative text-sm text-[rgba(24,15,13,0.75)] transition-colors hover:text-ink-2 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink-2 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {l.label}
+              </MotionLink>
+            ) : (
+              <a
+                key={l.label}
+                href={l.href}
+                className="relative text-sm text-[rgba(24,15,13,0.75)] transition-colors hover:text-ink-2 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink-2 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {l.label}
+              </a>
+            )
+          )}
+        </nav>
 
         <div className="flex items-center gap-3">
           <MotionLink

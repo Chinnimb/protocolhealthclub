@@ -24,7 +24,7 @@ export default function ProductDetail() {
   if (!result) {
     return (
       <div className="relative flex min-h-screen flex-col bg-cream text-ink">
-        <SimpleHeader />
+        <SimpleHeader fallback="/products" />
         <main className="flex flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
           <h1 className="text-3xl font-bold text-[#1a1a1a]">Protocol not found</h1>
           <p className="max-w-[420px] text-sm leading-relaxed text-[#6e6e6e]">
@@ -50,7 +50,7 @@ export default function ProductDetail() {
 
   return (
     <div className="relative min-h-screen bg-cream text-ink">
-      <SimpleHeader />
+      <SimpleHeader fallback={`/products/${category.slug}`} />
 
       <main className="mx-auto max-w-[1080px] px-6 py-10 md:px-10 md:py-16">
         <MotionLink
