@@ -40,10 +40,10 @@ import gutGiMaps from '../assets/figma/products/gut-gimaps.jpg'
 import gutBarrierTesting from '../assets/figma/products/gut-barriertesting.jpg'
 import gutFoodSensitivity from '../assets/figma/products/gut-foodsensitivity.jpg'
 
-import hairMinoxidil from '../assets/figma/protocols/hair-minoxidil.png'
-import hairDutasteride from '../assets/figma/protocols/hair-dutasteride.png'
-import hairFinasteride from '../assets/figma/protocols/hair-finasteride.png'
-import hairGhkCu from '../assets/figma/protocols/hair-ghkcu.png'
+import hairMinoxidil from '../assets/figma/products/hair-minoxidil.jpg'
+import hairDutasteride from '../assets/figma/products/hair-dutasteride.jpg'
+import hairFinasteride from '../assets/figma/products/hair-finasteride.jpg'
+import hairGhkCu from '../assets/figma/products/hair-ghkcu.jpg'
 
 import stressProgesterone from '../assets/figma/protocols/stress-progesterone.png'
 import stressSelank from '../assets/figma/protocols/stress-selank.png'
@@ -310,10 +310,10 @@ export const categories = [
   {
     name: 'Hair Growth',
     products: [
-      { name: 'Minoxidil', image: hairMinoxidil, form: 'Topical' },
-      { name: 'Dutasteride', image: hairDutasteride, form: 'Oral', featured: true },
-      { name: 'Finasteride', image: hairFinasteride, form: 'Oral' },
-      { name: 'GHK-Cu', image: hairGhkCu, form: 'Topical' },
+      { name: 'Minoxidil', image: hairMinoxidil, form: 'Injection' },
+      { name: 'Dutasteride', image: hairDutasteride, form: 'Injection', featured: true },
+      { name: 'Finasteride', image: hairFinasteride, form: 'Injection' },
+      { name: 'GHK-Cu', image: hairGhkCu, form: 'Injection' },
     ],
   },
   {
