@@ -18,10 +18,10 @@ import sexualEstrogen from '../assets/figma/products/sexual-estrogen.jpg'
 import sexualTadalafil from '../assets/figma/products/sexual-tadalafil.jpg'
 import sexualSildenafil from '../assets/figma/products/sexual-sildenafil.jpg'
 
-import fertilityHcg from '../assets/figma/protocols/fertility-hcg.png'
-import fertilityEnclomiphene from '../assets/figma/protocols/fertility-enclomiphene.png'
-import fertilityRfsh from '../assets/figma/protocols/fertility-rfsh.png'
-import fertilityGlutathione from '../assets/figma/protocols/fertility-glutathione.png'
+import fertilityHcg from '../assets/figma/products/fertility-hcg.jpg'
+import fertilityEnclomiphene from '../assets/figma/products/fertility-enclomiphene.jpg'
+import fertilityRfsh from '../assets/figma/products/fertility-rfsh.jpg'
+import fertilityGlutathione from '../assets/figma/products/fertility-glutathione.jpg'
 
 import skincareGhkCu from '../assets/figma/protocols/skincare-ghkcu.png'
 import skincareEstradiol from '../assets/figma/protocols/skincare-estradiol.png'
@@ -269,7 +269,7 @@ export const categories = [
     name: 'Fertility',
     products: [
       { name: 'hCG', image: fertilityHcg, form: 'Injection' },
-      { name: 'Enclomiphene', image: fertilityEnclomiphene, form: 'Oral', featured: true },
+      { name: 'Enclomiphene', image: fertilityEnclomiphene, form: 'Injection', featured: true },
       { name: 'rFSH', image: fertilityRfsh, form: 'Injection' },
       { name: 'Glutathione', image: fertilityGlutathione, form: 'Injection' },
     ],
