@@ -44,7 +44,7 @@ export default function AllProtocols() {
                   />
                   <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/40 to-transparent" />
 
-                  <div className="relative z-10 mt-auto flex h-[132px] w-full flex-col gap-2 rounded-t-[20px] border-t border-white/20 bg-black/25 p-4 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-lg sm:h-[140px] sm:p-5">
+                  <div className="relative z-10 mt-auto flex h-[132px] w-full flex-col gap-2 rounded-t-[20px] border-t border-white/20 bg-black/10 p-4 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md sm:h-[140px] sm:p-5">
                     <div className="flex items-center gap-2.5">
                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-2">
                         <img src={category.icon} alt="" className="h-4 w-4" />
