@@ -48,9 +48,9 @@ import hairGhkCu from '../assets/figma/products/hair-ghkcu.jpg'
 import stressProgesterone from '../assets/figma/products/stress-progesterone.jpg'
 import stressSelank from '../assets/figma/products/stress-selank.jpg'
 
-import cognitiveSemax from '../assets/figma/protocols/cognitive-semax.png'
-import cognitiveDihexa from '../assets/figma/protocols/cognitive-dihexa.png'
-import cognitiveTesofensine from '../assets/figma/protocols/cognitive-tesofensine.png'
+import cognitiveSemax from '../assets/figma/products/cognitive-semax.jpg'
+import cognitiveDihexa from '../assets/figma/products/cognitive-dihexa.jpg'
+import cognitiveTesofensine from '../assets/figma/products/cognitive-tesofensine.jpg'
 
 import cardFatLoss from '../assets/figma/card-fat-loss.png'
 import cardMuscleGrowth from '../assets/figma/card-muscle-growth.png'
@@ -326,9 +326,9 @@ export const categories = [
   {
     name: 'Cognitive Focus',
     products: [
-      { name: 'Semax', image: cognitiveSemax, form: 'Nasal' },
-      { name: 'Dihexa', image: cognitiveDihexa, form: 'Oral', featured: true },
-      { name: 'Tesofensine', image: cognitiveTesofensine, form: 'Oral' },
+      { name: 'Semax', image: cognitiveSemax, form: 'Injection' },
+      { name: 'Dihexa', image: cognitiveDihexa, form: 'Injection', featured: true },
+      { name: 'Tesofensine', image: cognitiveTesofensine, form: 'Injection' },
     ],
   },
 ].map((cat) => ({
