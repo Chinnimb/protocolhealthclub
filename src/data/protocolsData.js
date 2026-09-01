@@ -45,8 +45,8 @@ import hairDutasteride from '../assets/figma/products/hair-dutasteride.jpg'
 import hairFinasteride from '../assets/figma/products/hair-finasteride.jpg'
 import hairGhkCu from '../assets/figma/products/hair-ghkcu.jpg'
 
-import stressProgesterone from '../assets/figma/protocols/stress-progesterone.png'
-import stressSelank from '../assets/figma/protocols/stress-selank.png'
+import stressProgesterone from '../assets/figma/products/stress-progesterone.jpg'
+import stressSelank from '../assets/figma/products/stress-selank.jpg'
 
 import cognitiveSemax from '../assets/figma/protocols/cognitive-semax.png'
 import cognitiveDihexa from '../assets/figma/protocols/cognitive-dihexa.png'
@@ -319,8 +319,8 @@ export const categories = [
   {
     name: 'Stress Reduction',
     products: [
-      { name: 'Progesterone', image: stressProgesterone, form: 'Oral' },
-      { name: 'Selank', image: stressSelank, form: 'Nasal', featured: true },
+      { name: 'Progesterone', image: stressProgesterone, form: 'Injection' },
+      { name: 'Selank', image: stressSelank, form: 'Injection', featured: true },
     ],
   },
   {
