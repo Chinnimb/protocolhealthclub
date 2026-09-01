@@ -23,9 +23,9 @@ import fertilityEnclomiphene from '../assets/figma/products/fertility-enclomiphe
 import fertilityRfsh from '../assets/figma/products/fertility-rfsh.jpg'
 import fertilityGlutathione from '../assets/figma/products/fertility-glutathione.jpg'
 
-import skincareGhkCu from '../assets/figma/protocols/skincare-ghkcu.png'
-import skincareEstradiol from '../assets/figma/protocols/skincare-estradiol.png'
-import skincareTretinoin from '../assets/figma/protocols/skincare-tretinoin.png'
+import skincareGhkCu from '../assets/figma/products/skincare-ghkcu.jpg'
+import skincareEstradiol from '../assets/figma/products/skincare-estradiol.jpg'
+import skincareTretinoin from '../assets/figma/products/skincare-tretinoin.jpg'
 
 import injuryBpc157 from '../assets/figma/protocols/injury-bpc157.png'
 import injuryTb500 from '../assets/figma/protocols/injury-tb500.png'
@@ -277,9 +277,9 @@ export const categories = [
   {
     name: 'Skincare',
     products: [
-      { name: 'GHK-Cu', image: skincareGhkCu, form: 'Topical' },
-      { name: 'Estradiol', image: skincareEstradiol, form: 'Topical', featured: true },
-      { name: 'Tretinoin', image: skincareTretinoin, form: 'Topical' },
+      { name: 'GHK-Cu', image: skincareGhkCu, form: 'Injection' },
+      { name: 'Estradiol', image: skincareEstradiol, form: 'Injection', featured: true },
+      { name: 'Tretinoin', image: skincareTretinoin, form: 'Injection' },
     ],
   },
   {
