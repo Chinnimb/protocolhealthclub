@@ -8,10 +8,10 @@ import muscleSermorelin from '../assets/figma/products/muscle-sermorelin.jpg'
 import muscleCjcIpamorelin from '../assets/figma/products/muscle-cjc-ipamorelin.jpg'
 import muscleIgf1Lr3 from '../assets/figma/products/muscle-igf1lr3.jpg'
 
-import energyNad from '../assets/figma/protocols/energy-nad.png'
-import energyGlutathione from '../assets/figma/protocols/energy-glutathione.png'
-import energySs31 from '../assets/figma/protocols/energy-ss31.png'
-import energyThyroid from '../assets/figma/protocols/energy-thyroid.png'
+import energyNad from '../assets/figma/products/energy-nad.jpg'
+import energyGlutathione from '../assets/figma/products/energy-glutathione.jpg'
+import energySs31 from '../assets/figma/products/energy-ss31.jpg'
+import energyThyroid from '../assets/figma/products/energy-thyroid.jpg'
 
 import sexualTestosterone from '../assets/figma/protocols/sexual-testosterone.png'
 import sexualEstrogen from '../assets/figma/protocols/sexual-estrogen.png'
@@ -253,7 +253,7 @@ export const categories = [
       { name: 'NAD+', image: energyNad, form: 'Injection' },
       { name: 'Glutathione', image: energyGlutathione, form: 'Injection', featured: true },
       { name: 'SS-31', image: energySs31, form: 'Injection' },
-      { name: 'Thyroid Supplementation', image: energyThyroid, form: 'Oral' },
+      { name: 'Thyroid Supplementation', image: energyThyroid, form: 'Injection' },
     ],
   },
   {
