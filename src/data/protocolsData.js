@@ -36,9 +36,9 @@ import antiagingGlutathione from '../assets/figma/products/energy-glutathione.jp
 import antiagingOxytocin from '../assets/figma/products/antiaging-oxytocin.jpg'
 import antiagingMethyleneBlue from '../assets/figma/products/antiaging-methyleneblue.jpg'
 
-import gutGiMaps from '../assets/figma/protocols/gut-gimaps.png'
-import gutBarrierTesting from '../assets/figma/protocols/gut-barriertesting.png'
-import gutFoodSensitivity from '../assets/figma/protocols/gut-foodsensitivity.png'
+import gutGiMaps from '../assets/figma/products/gut-gimaps.jpg'
+import gutBarrierTesting from '../assets/figma/products/gut-barriertesting.jpg'
+import gutFoodSensitivity from '../assets/figma/products/gut-foodsensitivity.jpg'
 
 import hairMinoxidil from '../assets/figma/protocols/hair-minoxidil.png'
 import hairDutasteride from '../assets/figma/protocols/hair-dutasteride.png'
