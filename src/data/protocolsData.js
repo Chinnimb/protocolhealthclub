@@ -27,9 +27,9 @@ import skincareGhkCu from '../assets/figma/products/skincare-ghkcu.jpg'
 import skincareEstradiol from '../assets/figma/products/skincare-estradiol.jpg'
 import skincareTretinoin from '../assets/figma/products/skincare-tretinoin.jpg'
 
-import injuryBpc157 from '../assets/figma/protocols/injury-bpc157.png'
-import injuryTb500 from '../assets/figma/protocols/injury-tb500.png'
-import injuryKpv from '../assets/figma/protocols/injury-kpv.png'
+import injuryBpc157 from '../assets/figma/products/injury-bpc157.jpg'
+import injuryTb500 from '../assets/figma/products/injury-tb500.jpg'
+import injuryKpv from '../assets/figma/products/injury-kpv.jpg'
 
 import antiagingNad from '../assets/figma/protocols/antiaging-nad.png'
 import antiagingGlutathione from '../assets/figma/protocols/antiaging-glutathione.png'
