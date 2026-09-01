@@ -1,7 +1,7 @@
-import fatlossSemaglutide from '../assets/figma/protocols/fatloss-semaglutide.png'
-import fatlossTirzepatide from '../assets/figma/protocols/fatloss-tirzepatide.png'
-import fatlossCarnitine from '../assets/figma/protocols/fatloss-carnitine.png'
-import fatlossTesofensine from '../assets/figma/protocols/fatloss-tesofensine.png'
+import fatlossSemaglutide from '../assets/figma/products/fatloss-semaglutide.jpg'
+import fatlossTirzepatide from '../assets/figma/products/fatloss-tirzepatide.jpg'
+import fatlossCarnitine from '../assets/figma/products/fatloss-carnitine.jpg'
+import fatlossTesofensine from '../assets/figma/products/fatloss-tesofensine.jpg'
 
 import muscleTesamorelin from '../assets/figma/protocols/muscle-tesamorelin.png'
 import muscleSermorelin from '../assets/figma/protocols/muscle-sermorelin.png'
