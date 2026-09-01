@@ -13,10 +13,10 @@ import energyGlutathione from '../assets/figma/products/energy-glutathione.jpg'
 import energySs31 from '../assets/figma/products/energy-ss31.jpg'
 import energyThyroid from '../assets/figma/products/energy-thyroid.jpg'
 
-import sexualTestosterone from '../assets/figma/protocols/sexual-testosterone.png'
-import sexualEstrogen from '../assets/figma/protocols/sexual-estrogen.png'
-import sexualTadalafil from '../assets/figma/protocols/sexual-tadalafil.png'
-import sexualSildenafil from '../assets/figma/protocols/sexual-sildenafil.png'
+import sexualTestosterone from '../assets/figma/products/sexual-testosterone.jpg'
+import sexualEstrogen from '../assets/figma/products/sexual-estrogen.jpg'
+import sexualTadalafil from '../assets/figma/products/sexual-tadalafil.jpg'
+import sexualSildenafil from '../assets/figma/products/sexual-sildenafil.jpg'
 
 import fertilityHcg from '../assets/figma/protocols/fertility-hcg.png'
 import fertilityEnclomiphene from '../assets/figma/protocols/fertility-enclomiphene.png'
@@ -260,9 +260,9 @@ export const categories = [
     name: 'Sexual Health',
     products: [
       { name: 'Testosterone', image: sexualTestosterone, form: 'Injection' },
-      { name: 'Estrogen', image: sexualEstrogen, form: 'Topical', featured: true },
-      { name: 'Tadalafil (Cialis)', image: sexualTadalafil, form: 'Oral' },
-      { name: 'Sildenafil (Viagra)', image: sexualSildenafil, form: 'Oral' },
+      { name: 'Estrogen', image: sexualEstrogen, form: 'Injection', featured: true },
+      { name: 'Tadalafil (Cialis)', image: sexualTadalafil, form: 'Injection' },
+      { name: 'Sildenafil (Viagra)', image: sexualSildenafil, form: 'Injection' },
     ],
   },
   {
