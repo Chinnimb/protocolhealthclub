@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
+import { motion } from 'framer-motion'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Header from '../components/Header'
@@ -22,15 +23,19 @@ export default function AllProtocols() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.15} className="relative mt-14">
-          <div className="overflow-hidden">
-            <div className="flex w-max gap-6 px-6 py-8 animate-marquee md:px-10">
-              {[...categories, ...categories].map((category, i) => (
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {categories.map((category, i) => (
+              <motion.div
+                key={category.slug}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: Math.min(i, 6) * 0.06 }}
+              >
                 <MotionLink
-                  key={`${category.slug}-${i}`}
                   to={`/products/${category.slug}`}
                   whileHover={{ y: -4 }}
-                  className="protocol-card-shadow group relative flex h-[300px] w-[280px] shrink-0 overflow-hidden rounded-[24px] sm:h-[320px] sm:w-[300px]"
+                  className="protocol-card-shadow group relative flex h-[300px] w-full overflow-hidden rounded-[24px] sm:h-[320px]"
                 >
                   <img
                     src={category.heroImage}
@@ -64,12 +69,10 @@ export default function AllProtocols() {
                     </div>
                   </div>
                 </MotionLink>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-cream to-transparent md:w-32" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-cream to-transparent md:w-32" />
-        </Reveal>
+        </div>
 
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           <Reveal delay={0.1} className="mt-16 flex flex-col items-center gap-4 text-center">
