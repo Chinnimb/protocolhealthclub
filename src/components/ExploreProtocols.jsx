@@ -115,21 +115,11 @@ export default function ExploreProtocols() {
                     to={`/products/${activeCategory.slug}/${p.slug}`}
                     className="group flex flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                   >
-                    <div className="relative flex h-[260px] items-center justify-center overflow-hidden p-8">
-                      <div
-                        className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
-                        style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
-                      />
-                      <div
-                        className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                        style={{ backgroundImage: 'linear-gradient(90deg, #f45f2b 0%, #f4ac63 100%)' }}
-                      />
-                      <motion.img
+                    <div className="relative h-[260px] w-full overflow-hidden">
+                      <img
                         src={p.image}
                         alt={p.name}
-                        whileHover={{ rotate: -3, scale: 1.05 }}
-                        transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-                        className="relative h-[200px] w-[160px] object-contain"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                     <div className="flex flex-col gap-2 px-6 pb-7 pt-6">

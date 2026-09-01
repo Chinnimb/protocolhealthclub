@@ -130,12 +130,12 @@ export default function ProductDetail() {
                   whileHover={{ y: -6 }}
                   className="group flex w-[220px] flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                 >
-                  <div className="relative flex h-[180px] items-center justify-center overflow-hidden p-6">
-                    <div
-                      className="absolute inset-0"
-                      style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
+                  <div className="relative h-[180px] w-full overflow-hidden">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <img src={p.image} alt={p.name} className="relative h-[130px] w-[110px] object-contain" />
                   </div>
                   <div className="flex flex-col gap-1.5 px-5 pb-6 pt-4">
                     <p className="text-lg font-bold text-[#161b1f]">{p.name}</p>
@@ -159,27 +159,12 @@ const GALLERY_SLOTS = 4
 
 function ProductGallery({ images, name }) {
   const [active, setActive] = useState(0)
-  const isProductShot = active === 0
   const placeholderCount = Math.max(0, GALLERY_SLOTS - images.length)
 
   return (
     <Reveal className="flex flex-col gap-3">
-      <div className="relative flex h-[320px] items-center justify-center overflow-hidden rounded-[24px] md:h-[420px]">
-        {isProductShot ? (
-          <>
-            <div
-              className="absolute inset-0"
-              style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
-            />
-            <img
-              src={images[active]}
-              alt={name}
-              className="relative h-[260px] w-[220px] object-contain md:h-[320px] md:w-[260px]"
-            />
-          </>
-        ) : (
-          <img src={images[active]} alt={name} className="h-full w-full object-cover" />
-        )}
+      <div className="relative h-[320px] w-full overflow-hidden rounded-[24px] md:h-[420px]">
+        <img src={images[active]} alt={name} className="h-full w-full object-cover" />
       </div>
 
       <div className="flex gap-3">
@@ -189,10 +174,10 @@ function ProductGallery({ images, name }) {
             type="button"
             onClick={() => setActive(i)}
             className={`relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-[14px] border-2 transition-colors ${
-              i === 0 ? 'bg-[#fff8f4] p-2' : ''
-            } ${active === i ? 'border-orange-2' : 'border-transparent hover:border-[#e8e8e8]'}`}
+              active === i ? 'border-orange-2' : 'border-transparent hover:border-[#e8e8e8]'
+            }`}
           >
-            <img src={src} alt="" className={i === 0 ? 'h-full w-full object-contain' : 'h-full w-full object-cover'} />
+            <img src={src} alt="" className="h-full w-full object-cover" />
           </button>
         ))}
         {Array.from({ length: placeholderCount }).map((_, i) => (

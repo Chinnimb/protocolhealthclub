@@ -113,16 +113,12 @@ export default function CategoryProducts() {
                   to={`/products/${category.slug}/${p.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                 >
-                  <div className="relative flex h-[220px] items-center justify-center overflow-hidden p-8">
-                    <div
-                      className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
-                      style={{ backgroundImage: 'linear-gradient(175deg, rgb(255,250,247) 5%, rgb(255,243,235) 79%, rgba(255,153,74,0.9) 163%)' }}
+                  <div className="relative h-[220px] w-full overflow-hidden">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div
-                      className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                      style={{ backgroundImage: 'linear-gradient(90deg, #f45f2b 0%, #f4ac63 100%)' }}
-                    />
-                    <img src={p.image} alt={p.name} className="relative h-[170px] w-[140px] object-contain" />
                   </div>
                   <div className="flex flex-1 flex-col gap-2 px-6 pb-7 pt-6">
                     <p className="line-clamp-2 min-h-[56px] text-xl font-bold text-[#161b1f]">{p.name}</p>
