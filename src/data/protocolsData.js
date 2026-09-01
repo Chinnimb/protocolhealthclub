@@ -31,8 +31,8 @@ import injuryBpc157 from '../assets/figma/products/injury-bpc157.jpg'
 import injuryTb500 from '../assets/figma/products/injury-tb500.jpg'
 import injuryKpv from '../assets/figma/products/injury-kpv.jpg'
 
-import antiagingNad from '../assets/figma/protocols/antiaging-nad.png'
-import antiagingGlutathione from '../assets/figma/protocols/antiaging-glutathione.png'
+import antiagingNad from '../assets/figma/products/energy-nad.jpg'
+import antiagingGlutathione from '../assets/figma/products/energy-glutathione.jpg'
 import antiagingOxytocin from '../assets/figma/protocols/antiaging-oxytocin.png'
 import antiagingMethyleneBlue from '../assets/figma/protocols/antiaging-methyleneblue.png'
 
