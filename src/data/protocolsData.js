@@ -235,7 +235,7 @@ export const categories = [
       { name: 'Semaglutide', image: fatlossSemaglutide, form: 'Injection' },
       { name: 'Tirzepatide', image: fatlossTirzepatide, form: 'Injection', featured: true },
       { name: 'Carnitine', image: fatlossCarnitine, form: 'Injection' },
-      { name: 'Tesofensine', image: fatlossTesofensine, form: 'Oral' },
+      { name: 'Tesofensine', image: fatlossTesofensine, form: 'Injection' },
     ],
   },
   {
