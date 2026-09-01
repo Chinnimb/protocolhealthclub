@@ -3,10 +3,10 @@ import fatlossTirzepatide from '../assets/figma/products/fatloss-tirzepatide.jpg
 import fatlossCarnitine from '../assets/figma/products/fatloss-carnitine.jpg'
 import fatlossTesofensine from '../assets/figma/products/fatloss-tesofensine.jpg'
 
-import muscleTesamorelin from '../assets/figma/protocols/muscle-tesamorelin.png'
-import muscleSermorelin from '../assets/figma/protocols/muscle-sermorelin.png'
-import muscleCjcIpamorelin from '../assets/figma/protocols/muscle-cjc-ipamorelin.png'
-import muscleIgf1Lr3 from '../assets/figma/protocols/muscle-igf1lr3.png'
+import muscleTesamorelin from '../assets/figma/products/muscle-tesamorelin.jpg'
+import muscleSermorelin from '../assets/figma/products/muscle-sermorelin.jpg'
+import muscleCjcIpamorelin from '../assets/figma/products/muscle-cjc-ipamorelin.jpg'
+import muscleIgf1Lr3 from '../assets/figma/products/muscle-igf1lr3.jpg'
 
 import energyNad from '../assets/figma/protocols/energy-nad.png'
 import energyGlutathione from '../assets/figma/protocols/energy-glutathione.png'
