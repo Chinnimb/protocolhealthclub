@@ -33,8 +33,8 @@ import injuryKpv from '../assets/figma/products/injury-kpv.jpg'
 
 import antiagingNad from '../assets/figma/products/energy-nad.jpg'
 import antiagingGlutathione from '../assets/figma/products/energy-glutathione.jpg'
-import antiagingOxytocin from '../assets/figma/protocols/antiaging-oxytocin.png'
-import antiagingMethyleneBlue from '../assets/figma/protocols/antiaging-methyleneblue.png'
+import antiagingOxytocin from '../assets/figma/products/antiaging-oxytocin.jpg'
+import antiagingMethyleneBlue from '../assets/figma/products/antiaging-methyleneblue.jpg'
 
 import gutGiMaps from '../assets/figma/protocols/gut-gimaps.png'
 import gutBarrierTesting from '../assets/figma/protocols/gut-barriertesting.png'
@@ -296,7 +296,7 @@ export const categories = [
       { name: 'NAD+', image: antiagingNad, form: 'Injection' },
       { name: 'Glutathione', image: antiagingGlutathione, form: 'Injection', featured: true },
       { name: 'Oxytocin', image: antiagingOxytocin, form: 'Injection' },
-      { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Oral' },
+      { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Injection' },
     ],
   },
   {
