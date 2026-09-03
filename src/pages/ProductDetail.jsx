@@ -155,7 +155,7 @@ export default function ProductDetail() {
 
 // Total thumbnail slots shown per product — extra slots render as empty
 // placeholders until more photography is added for that product.
-const GALLERY_SLOTS = 4
+const GALLERY_SLOTS = 5
 
 function ProductGallery({ images, name }) {
   const [active, setActive] = useState(0)
@@ -167,13 +167,13 @@ function ProductGallery({ images, name }) {
         <img src={images[active]} alt={name} className="h-full w-full object-cover" />
       </div>
 
-      <div className="flex gap-3">
+      <div className="grid grid-cols-5 gap-4">
         {images.map((src, i) => (
           <button
             key={src}
             type="button"
             onClick={() => setActive(i)}
-            className={`relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-[14px] border-2 transition-colors ${
+            className={`relative aspect-square overflow-hidden rounded-[14px] border-2 transition-colors ${
               active === i ? 'border-orange-2' : 'border-transparent hover:border-[#e8e8e8]'
             }`}
           >
@@ -183,7 +183,7 @@ function ProductGallery({ images, name }) {
         {Array.from({ length: placeholderCount }).map((_, i) => (
           <div
             key={`placeholder-${i}`}
-            className="flex h-20 w-20 shrink-0 items-center justify-center rounded-[14px] border-2 border-dashed border-[#d9d5cf] bg-[#faf8f5]"
+            className="flex aspect-square items-center justify-center rounded-[14px] border-2 border-dashed border-[#d9d5cf] bg-[#faf8f5]"
           >
             <ImagePlus className="h-5 w-5 text-[#c4bfb7]" strokeWidth={1.75} />
           </div>
