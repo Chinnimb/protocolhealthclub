@@ -147,14 +147,12 @@ export default function Header() {
                                       >
                                         <div className="flex flex-col gap-0.5 py-1 pl-3">
                                           {c.products.map((p) => (
-                                            <MotionLink
+                                            <span
                                               key={p.slug}
-                                              to={`/products/${c.slug}/${p.slug}`}
-                                              onClick={closeMenu}
-                                              className="rounded-lg px-2 py-2 text-sm text-[#6e6e6e] transition-colors hover:bg-white/60 hover:text-ink-2"
+                                              className="rounded-lg px-2 py-2 text-sm text-[#6e6e6e]"
                                             >
                                               {p.name}
-                                            </MotionLink>
+                                            </span>
                                           ))}
                                         </div>
                                       </motion.div>

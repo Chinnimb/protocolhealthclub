@@ -111,8 +111,7 @@ export default function ExploreProtocols() {
                   whileHover={{ y: -6 }}
                   className="w-[260px] shrink-0 snap-center sm:w-[calc(50%-12px)] sm:shrink sm:snap-none md:w-[300px]"
                 >
-                  <MotionLink
-                    to={`/products/${activeCategory.slug}/${p.slug}`}
+                  <div
                     className="group flex flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                   >
                     <div className="relative h-[260px] w-full overflow-hidden">
@@ -130,7 +129,7 @@ export default function ExploreProtocols() {
                         <span>&rsaquo;</span>
                       </div>
                     </div>
-                  </MotionLink>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
