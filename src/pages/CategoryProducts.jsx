@@ -109,8 +109,7 @@ export default function CategoryProducts() {
                 whileHover={{ y: -6 }}
                 className="w-[240px] shrink-0 snap-center md:w-[260px]"
               >
-                <MotionLink
-                  to={`/products/${category.slug}/${p.slug}`}
+                <div
                   className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                 >
                   <div className="relative h-[220px] w-full overflow-hidden">
@@ -128,7 +127,7 @@ export default function CategoryProducts() {
                       <span>&rsaquo;</span>
                     </div>
                   </div>
-                </MotionLink>
+                </div>
               </motion.div>
             ))}
           </motion.div>
