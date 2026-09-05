@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Reveal from './Reveal'
 import MotionLink from './MotionLink'
 import { categories } from '../data/protocolsData'
@@ -159,13 +159,12 @@ export default function ExploreProtocols() {
 
         <Reveal delay={0.1}>
           <MotionLink
-            to="/products"
+            to="/get-started"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className="bg-gradient-orange inline-flex items-center gap-2 rounded-full border-2 border-white px-10 py-4 text-lg font-bold tracking-[0.5px] text-white"
           >
-            View All Protocols
-            <ArrowUpRight className="h-5 w-5" strokeWidth={2.5} />
+            Get Started
           </MotionLink>
         </Reveal>
       </div>
