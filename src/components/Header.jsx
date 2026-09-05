@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import MotionLink from './MotionLink'
-import { categories } from '../data/protocolsData'
 import logoPart1 from '../assets/figma/logo-part1.svg'
 import logoPart2 from '../assets/figma/logo-part2.svg'
 import logoPart3 from '../assets/figma/logo-part3.svg'
@@ -16,14 +15,8 @@ const links = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [protocolsOpen, setProtocolsOpen] = useState(false)
-  const [openCategory, setOpenCategory] = useState(null)
 
-  const closeMenu = () => {
-    setMobileOpen(false)
-    setProtocolsOpen(false)
-    setOpenCategory(null)
-  }
+  const closeMenu = () => setMobileOpen(false)
 
   return (
     <motion.div
@@ -97,77 +90,6 @@ export default function Header() {
           >
             <nav className="flex flex-col gap-1 px-6 pb-6 pt-2">
               {links.map((l) => {
-                if (l.label === 'Protocols') {
-                  return (
-                    <div key={l.label}>
-                      <button
-                        type="button"
-                        onClick={() => setProtocolsOpen((v) => !v)}
-                        className={`flex w-full items-center justify-between rounded-lg px-2 py-3 text-base text-ink-2 transition-colors hover:bg-white/60 ${
-                          protocolsOpen ? 'font-semibold' : 'font-medium'
-                        }`}
-                      >
-                        {l.label}
-                        <ChevronDown
-                          className={`h-4 w-4 transition-transform duration-300 ${protocolsOpen ? 'rotate-180' : ''}`}
-                        />
-                      </button>
-
-                      <AnimatePresence>
-                        {protocolsOpen && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                            className="overflow-hidden"
-                          >
-                            <div className="flex flex-col gap-0.5 py-1 pl-3">
-                              {categories.map((c) => (
-                                <div key={c.slug}>
-                                  <button
-                                    type="button"
-                                    onClick={() => setOpenCategory((s) => (s === c.slug ? null : c.slug))}
-                                    className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-white/60"
-                                  >
-                                    {c.name}
-                                    <ChevronRight
-                                      className={`h-3.5 w-3.5 transition-transform duration-300 ${openCategory === c.slug ? 'rotate-90' : ''}`}
-                                    />
-                                  </button>
-
-                                  <AnimatePresence>
-                                    {openCategory === c.slug && (
-                                      <motion.div
-                                        initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: 'auto', opacity: 1 }}
-                                        exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                                        className="overflow-hidden"
-                                      >
-                                        <div className="flex flex-col gap-0.5 py-1 pl-3">
-                                          {c.products.map((p) => (
-                                            <span
-                                              key={p.slug}
-                                              className="rounded-lg px-2 py-2 text-sm text-[#6e6e6e]"
-                                            >
-                                              {p.name}
-                                            </span>
-                                          ))}
-                                        </div>
-                                      </motion.div>
-                                    )}
-                                  </AnimatePresence>
-                                </div>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  )
-                }
-
                 return l.to ? (
                   <MotionLink
                     key={l.label}
