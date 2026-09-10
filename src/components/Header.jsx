@@ -65,8 +65,10 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={() => setDesktopProtocolsOpen((v) => !v)}
-                    className={`flex items-center gap-1 text-sm transition-colors hover:text-ink-2 ${
-                      desktopProtocolsOpen ? 'font-semibold text-ink-2' : 'text-[rgba(24,15,13,0.75)]'
+                    className={`relative z-20 -mx-3 -my-2 flex items-center gap-1 rounded-t-2xl px-3 py-2 text-sm transition-colors ${
+                      desktopProtocolsOpen
+                        ? 'bg-white font-semibold text-ink-2'
+                        : 'text-[rgba(24,15,13,0.75)] hover:text-ink-2'
                     }`}
                   >
                     {l.label}
@@ -82,9 +84,9 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                        className="absolute left-1/2 top-full z-20 mt-4 w-[280px] -translate-x-1/2 rounded-[20px] border border-[#e8e8e8] bg-white p-2 shadow-[0px_16px_40px_rgba(0,0,0,0.12)]"
+                        className="absolute left-1/2 top-full z-10 w-[280px] -translate-x-1/2 rounded-b-[20px] rounded-tr-[20px] border border-t-0 border-[#e8e8e8] bg-white p-2 shadow-[0px_16px_40px_rgba(0,0,0,0.12)]"
                       >
-                        <div className="flex max-h-[70vh] flex-col gap-0.5 overflow-y-auto">
+                        <div className="flex flex-col gap-0.5">
                           {categories.map((c) => (
                             <div key={c.slug}>
                               <button
