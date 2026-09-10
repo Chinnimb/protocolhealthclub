@@ -84,7 +84,7 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
                         transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                        className="absolute left-1/2 top-full z-10 w-[280px] -translate-x-1/2 rounded-b-[20px] rounded-tr-[20px] border border-t-0 border-[#e8e8e8] bg-white p-2 shadow-[0px_16px_40px_rgba(0,0,0,0.12)]"
+                        className="absolute left-0 top-full z-10 -ml-3 w-[280px] rounded-b-[20px] rounded-tr-[20px] border border-t-0 border-[#e8e8e8] bg-white p-2 shadow-[0px_16px_40px_rgba(0,0,0,0.12)]"
                       >
                         <div className="flex flex-col gap-0.5">
                           {categories.map((c) => (
