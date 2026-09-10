@@ -182,6 +182,9 @@ export default function ProductDetail() {
                 ))}
               </div>
 
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-cream to-transparent md:hidden" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-cream to-transparent md:hidden" />
+
               <motion.button
                 type="button"
                 onClick={() => scrollRelatedByCard(-1)}
