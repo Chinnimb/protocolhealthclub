@@ -65,7 +65,7 @@ export default function Header() {
                   <button
                     type="button"
                     onClick={() => setDesktopProtocolsOpen((v) => !v)}
-                    className={`relative z-20 -mx-3 -my-2 flex items-center gap-1 rounded-t-2xl px-3 py-2 text-sm transition-colors ${
+                    className={`relative z-20 -mx-3 -my-2 flex items-center gap-1 rounded-t-[20px] px-3 py-2 text-sm transition-colors ${
                       desktopProtocolsOpen
                         ? 'bg-white font-semibold text-ink-2'
                         : 'text-[rgba(24,15,13,0.75)] hover:text-ink-2'
