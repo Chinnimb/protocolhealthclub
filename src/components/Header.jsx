@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
 import MotionLink from './MotionLink'
@@ -19,11 +19,27 @@ export default function Header() {
   const [protocolsOpen, setProtocolsOpen] = useState(false)
   const [openCategory, setOpenCategory] = useState(null)
 
+  const [desktopProtocolsOpen, setDesktopProtocolsOpen] = useState(false)
+  const [desktopOpenCategory, setDesktopOpenCategory] = useState(null)
+  const desktopProtocolsRef = useRef(null)
+
   const closeMenu = () => {
     setMobileOpen(false)
     setProtocolsOpen(false)
     setOpenCategory(null)
   }
+
+  useEffect(() => {
+    if (!desktopProtocolsOpen) return
+    const onClickOutside = (e) => {
+      if (desktopProtocolsRef.current && !desktopProtocolsRef.current.contains(e.target)) {
+        setDesktopProtocolsOpen(false)
+        setDesktopOpenCategory(null)
+      }
+    }
+    document.addEventListener('mousedown', onClickOutside)
+    return () => document.removeEventListener('mousedown', onClickOutside)
+  }, [desktopProtocolsOpen])
 
   return (
     <motion.div
@@ -42,8 +58,78 @@ export default function Header() {
         </MotionLink>
 
         <nav className="hidden lg:flex items-center gap-9">
-          {links.map((l) =>
-            l.to ? (
+          {links.map((l) => {
+            if (l.label === 'Protocols') {
+              return (
+                <div key={l.label} ref={desktopProtocolsRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setDesktopProtocolsOpen((v) => !v)}
+                    className={`flex items-center gap-1 text-sm transition-colors hover:text-ink-2 ${
+                      desktopProtocolsOpen ? 'font-semibold text-ink-2' : 'text-[rgba(24,15,13,0.75)]'
+                    }`}
+                  >
+                    {l.label}
+                    <ChevronDown
+                      className={`h-3.5 w-3.5 transition-transform duration-300 ${desktopProtocolsOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {desktopProtocolsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                        className="absolute left-1/2 top-full z-20 mt-4 w-[280px] -translate-x-1/2 rounded-[20px] border border-[#e8e8e8] bg-white p-2 shadow-[0px_16px_40px_rgba(0,0,0,0.12)]"
+                      >
+                        <div className="flex max-h-[70vh] flex-col gap-0.5 overflow-y-auto">
+                          {categories.map((c) => (
+                            <div key={c.slug}>
+                              <button
+                                type="button"
+                                onClick={() => setDesktopOpenCategory((s) => (s === c.slug ? null : c.slug))}
+                                className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-[#faf8f5]"
+                              >
+                                {c.name}
+                                <ChevronRight
+                                  className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                                    desktopOpenCategory === c.slug ? 'rotate-90' : ''
+                                  }`}
+                                />
+                              </button>
+
+                              <AnimatePresence>
+                                {desktopOpenCategory === c.slug && (
+                                  <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: 'auto', opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                                    className="overflow-hidden"
+                                  >
+                                    <div className="flex flex-col gap-0.5 py-1 pl-4">
+                                      {c.products.map((p) => (
+                                        <span key={p.slug} className="rounded-lg px-3 py-1.5 text-xs text-[#6e6e6e]">
+                                          {p.name}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              )
+            }
+
+            return l.to ? (
               <MotionLink
                 key={l.label}
                 to={l.to}
@@ -61,7 +147,7 @@ export default function Header() {
                 {l.label}
               </a>
             )
-          )}
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
