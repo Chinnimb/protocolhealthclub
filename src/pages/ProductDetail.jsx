@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { ImagePlus, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ImagePlus, Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users, ChevronLeft, ChevronRight } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Header from '../components/Header'
@@ -21,6 +22,37 @@ const trustBadges = [
 export default function ProductDetail() {
   const { categorySlug, productSlug } = useParams()
   const result = getProduct(categorySlug, productSlug)
+  const relatedScrollRef = useRef(null)
+  const [relatedActiveIndex, setRelatedActiveIndex] = useState(0)
+
+  const scrollRelatedByCard = (dir) => {
+    const el = relatedScrollRef.current
+    if (!el) return
+    const card = el.firstElementChild
+    const step = card ? card.getBoundingClientRect().width + 24 : 244
+    el.scrollBy({ left: dir * step, behavior: 'smooth' })
+  }
+
+  const scrollToRelatedCard = (i) => {
+    const el = relatedScrollRef.current
+    const card = el?.children[i]
+    if (!el || !card) return
+    const target = card.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft
+    el.scrollTo({ left: target, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    const el = relatedScrollRef.current
+    if (!el) return
+    setRelatedActiveIndex(0)
+    const onScroll = () => {
+      const card = el.firstElementChild
+      const step = card ? card.getBoundingClientRect().width + 24 : 244
+      setRelatedActiveIndex(Math.round(el.scrollLeft / step))
+    }
+    el.addEventListener('scroll', onScroll, { passive: true })
+    return () => el.removeEventListener('scroll', onScroll)
+  }, [productSlug])
 
   if (!result) {
     return (
@@ -122,26 +154,65 @@ export default function ProductDetail() {
         {related.length > 0 && (
           <div className="mt-20 flex flex-col gap-6">
             <h2 className="text-2xl font-bold text-[#161b1f]">More in {category.name}</h2>
-            <div className="flex flex-wrap gap-6">
-              {related.map((p) => (
-                <MotionLink
-                  key={p.name}
-                  to={`/products/${category.slug}/${p.slug}`}
-                  whileHover={{ y: -6 }}
-                  className="group flex w-[220px] flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
-                >
-                  <div className="relative h-[180px] w-full overflow-hidden">
-                    <img
-                      src={p.image}
-                      alt={p.name}
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1.5 px-5 pb-6 pt-4">
-                    <p className="text-lg font-bold text-[#161b1f]">{p.name}</p>
-                    <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{p.form.toUpperCase()}</p>
-                  </div>
-                </MotionLink>
+
+            <div className="relative">
+              <div
+                ref={relatedScrollRef}
+                className="flex gap-6 overflow-x-auto px-1 pb-16 pt-3 [scrollbar-width:none] snap-x snap-mandatory [&::-webkit-scrollbar]:hidden md:flex-wrap md:overflow-visible md:pb-0 md:pt-0 md:snap-none"
+              >
+                {related.map((p) => (
+                  <MotionLink
+                    key={p.name}
+                    to={`/products/${category.slug}/${p.slug}`}
+                    whileHover={{ y: -6 }}
+                    className="group flex w-[220px] shrink-0 snap-center flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
+                  >
+                    <div className="relative h-[180px] w-full overflow-hidden">
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-1.5 px-5 pb-6 pt-4">
+                      <p className="text-lg font-bold text-[#161b1f]">{p.name}</p>
+                      <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{p.form.toUpperCase()}</p>
+                    </div>
+                  </MotionLink>
+                ))}
+              </div>
+
+              <motion.button
+                type="button"
+                onClick={() => scrollRelatedByCard(-1)}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.94 }}
+                className="absolute left-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md md:hidden"
+              >
+                <ChevronLeft className="h-4 w-4 text-orange-2" strokeWidth={2.5} />
+              </motion.button>
+              <motion.button
+                type="button"
+                onClick={() => scrollRelatedByCard(1)}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.94 }}
+                className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md md:hidden"
+              >
+                <ChevronRight className="h-4 w-4 text-orange-2" strokeWidth={2.5} />
+              </motion.button>
+            </div>
+
+            <div className="flex items-center justify-center gap-2 pt-1 md:hidden">
+              {related.map((p, i) => (
+                <button
+                  key={p.slug}
+                  type="button"
+                  onClick={() => scrollToRelatedCard(i)}
+                  aria-label={`Go to ${p.name}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    relatedActiveIndex === i ? 'w-6 bg-orange-2' : 'w-2 bg-[#d9d5cf]'
+                  }`}
+                />
               ))}
             </div>
           </div>
