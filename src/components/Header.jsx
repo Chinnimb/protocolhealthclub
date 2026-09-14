@@ -147,15 +147,17 @@ export default function Header() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden bg-white/90 backdrop-blur-md lg:hidden"
+            className="overflow-hidden lg:hidden"
           >
-            <nav className="flex flex-col gap-1 px-6 pb-6 pt-2">
+            <nav className="flex flex-col gap-3 px-6 pb-6 pt-2">
               <div>
                 <button
                   type="button"
                   onClick={() => setMobileProtocolsOpen((v) => !v)}
-                  className={`flex w-full items-center justify-between rounded-lg px-2 py-3 text-base text-ink-2 transition-colors hover:bg-white/60 ${
-                    mobileProtocolsOpen ? 'font-semibold' : 'font-medium'
+                  className={`flex w-full items-center justify-between border-2 px-4 py-3 text-base font-medium transition-colors ${
+                    mobileProtocolsOpen
+                      ? 'rounded-t-[20px] rounded-b-none border-[#e8e8e8] border-b-0 bg-white text-ink-2'
+                      : 'rounded-[20px] border-white/70 bg-white/30 text-ink-2 hover:bg-white/50'
                   }`}
                 >
                   Explore Protocols
@@ -171,15 +173,15 @@ export default function Header() {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
+                      className="overflow-hidden rounded-b-[20px] border-2 border-t-0 border-[#e8e8e8] bg-white"
                     >
-                      <div className="flex flex-col gap-0.5 py-1 pl-3">
+                      <div className="flex flex-col gap-0.5 p-2">
                         {categories.map((c) => (
                           <div key={c.slug}>
                             <button
                               type="button"
                               onClick={() => setMobileOpenCategory((s) => (s === c.slug ? null : c.slug))}
-                              className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-white/60"
+                              className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-[#faf8f5]"
                             >
                               {c.name}
                               <ChevronRight
@@ -219,7 +221,7 @@ export default function Header() {
                 onClick={closeMenu}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
-                className="bg-gradient-orange mt-2 rounded-[20px] px-4 py-3 text-center text-base font-semibold text-white"
+                className="bg-gradient-orange rounded-[20px] border-2 border-white/70 px-4 py-3 text-center text-base font-semibold text-white"
               >
                 Get Started
               </MotionLink>
