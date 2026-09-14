@@ -125,7 +125,7 @@ export default function GuidedOptimization() {
 
         <Reveal delay={0.1} className="mt-10 flex justify-center">
           <MotionLink
-            to="/get-started"
+            to="/get-started#choose-lab-panel"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             className="bg-gradient-orange rounded-full px-10 py-4 text-2xl font-bold text-white"

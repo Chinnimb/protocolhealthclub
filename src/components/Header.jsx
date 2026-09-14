@@ -59,7 +59,7 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <MotionLink
-            to="/get-started"
+            to="/get-started#choose-lab-panel"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className="hidden bg-gradient-orange rounded-[20px] px-4 py-2 text-sm font-medium text-white lg:inline-block"
@@ -112,7 +112,7 @@ export default function Header() {
               )}
 
               <MotionLink
-                to="/get-started"
+                to="/get-started#choose-lab-panel"
                 onClick={closeMenu}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}

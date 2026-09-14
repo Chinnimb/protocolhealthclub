@@ -81,7 +81,7 @@ export default function AllProtocols() {
               Our clinical team can help you decide.
             </p>
             <MotionLink
-              to="/get-started"
+              to="/get-started#choose-lab-panel"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
               className="bg-gradient-orange inline-block rounded-full border-2 border-white px-12 py-4 text-2xl font-bold tracking-[1.28px] text-white"

@@ -136,7 +136,7 @@ export default function ProductDetail() {
 
             <div className="flex flex-col gap-3">
               <MotionLink
-                to="/get-started"
+                to="/get-started#choose-lab-panel"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 className="bg-gradient-orange inline-flex w-full items-center justify-center rounded-full border-2 border-white py-4 text-lg font-bold tracking-[1px] text-white sm:w-fit sm:px-10"

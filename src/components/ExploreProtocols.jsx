@@ -159,7 +159,7 @@ export default function ExploreProtocols() {
 
         <Reveal delay={0.1}>
           <MotionLink
-            to="/get-started"
+            to="/get-started#choose-lab-panel"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className="bg-gradient-orange inline-flex items-center gap-2 rounded-full border-2 border-white px-10 py-4 text-lg font-bold tracking-[0.5px] text-white"

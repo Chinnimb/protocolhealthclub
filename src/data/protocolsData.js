@@ -165,25 +165,25 @@ const categoryContent = {
     benefits: ['Supports sustained energy', 'Complements an active lifestyle', 'Monitored by your care team'],
   },
   'Sexual Health': {
-    blurb: 'Protocols designed to support sexual wellness and intimate health.',
+    blurb: 'Designed to support sexual wellness, performance, and intimacy.',
     description:
       'This protocol is designed to support sexual wellness as part of a plan built around your bloodwork and goals.',
     benefits: ['Supports sexual wellness', 'Personalized to your goals', 'Monitored by your care team'],
   },
   Fertility: {
-    blurb: 'Protocols designed to support reproductive health.',
+    blurb: 'Designed to support reproductive health.',
     description:
       'This protocol is designed to support reproductive health as part of a personalized fertility plan built around your bloodwork.',
     benefits: ['Supports reproductive health', 'Personalized to your goals', 'Monitored by your care team'],
   },
   Skincare: {
-    blurb: 'Protocols designed to support skin health and appearance.',
+    blurb: 'Designed to support healthy skin and radiance.',
     description:
       'This protocol is designed to support skin health as part of a personalized skincare plan built around your goals.',
     benefits: ['Supports skin renewal', 'Complements your skincare routine', 'Monitored by your care team'],
   },
   'Injury Repair': {
-    blurb: 'Protocols designed to support the body’s natural recovery process.',
+    blurb: "Designed to amplify the body's natural healing and regenerative properties.",
     description:
       'This protocol is designed to support the body’s natural recovery and repair process as part of a plan built around your goals.',
     benefits: ['Supports tissue recovery', 'Complements rehabilitation', 'Monitored by your care team'],

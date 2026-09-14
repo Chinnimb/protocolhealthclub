@@ -5,7 +5,7 @@ import footerLogo3 from '../assets/figma/footer-logo-part3.svg'
 
 const exploreLinks = [
   { label: 'All Protocols', to: '/products' },
-  { label: 'Get Started', to: '/get-started' },
+  { label: 'Get Started', to: '/get-started#choose-lab-panel' },
 ]
 
 const legalLinks = [

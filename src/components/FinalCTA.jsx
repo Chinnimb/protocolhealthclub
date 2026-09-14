@@ -50,7 +50,7 @@ export default function FinalCTA() {
 
           <Reveal delay={0.3} className="flex justify-center md:block">
             <MotionLink
-              to="/get-started"
+              to="/get-started#choose-lab-panel"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.96 }}
               className="mt-9 inline-block rounded-full bg-[#233038] px-7 py-3.5 text-lg font-semibold text-white"
