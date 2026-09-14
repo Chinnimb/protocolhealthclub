@@ -207,13 +207,13 @@ const categoryContent = {
     benefits: ['Supports hair growth', 'Complements your routine', 'Monitored by your care team'],
   },
   'Stress Reduction': {
-    blurb: 'Protocols designed to support the body’s stress response and overall calm.',
+    blurb: 'Designed to protect your sense of peace from the inside for healthy stress resilience.',
     description:
       'This protocol is designed to support the body’s stress response as part of a plan built around your goals.',
     benefits: ['Supports stress resilience', 'Complements lifestyle changes', 'Monitored by your care team'],
   },
   'Cognitive Focus': {
-    blurb: 'Protocols designed to support mental clarity and focus.',
+    blurb: 'Designed to support cognition, clarity, and focus.',
     description:
       'This protocol is designed to support mental clarity and focus as part of a plan built around your goals.',
     benefits: ['Supports mental clarity', 'Complements daily routines', 'Monitored by your care team'],
