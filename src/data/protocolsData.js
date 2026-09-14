@@ -75,7 +75,7 @@ const categoryCoverImage = {
   Fertility: cardFertility,
   Skincare: cardSkinCare,
   'Injury Repair': cardInjuryRepair,
-  'Anti-Aging': cardAntiAging,
+  'Longevity': cardAntiAging,
   'Gut Health': cardGutHealth,
   'Hair Growth': cardHairGrowth,
   'Stress Reduction': cardStressReduction,
@@ -106,7 +106,7 @@ const categoryHeroImage = {
   Fertility: heroFertility,
   Skincare: heroSkincare,
   'Injury Repair': heroInjuryRepair,
-  'Anti-Aging': heroAntiAging,
+  'Longevity': heroAntiAging,
   'Gut Health': heroGutHealth,
   'Hair Growth': heroHairGrowth,
   'Stress Reduction': heroStressReduction,
@@ -136,7 +136,7 @@ const categoryIcon = {
   Fertility: iconSprout,
   Skincare: iconStar,
   'Injury Repair': iconBandage,
-  'Anti-Aging': iconClock,
+  'Longevity': iconClock,
   'Gut Health': iconLeaf,
   'Hair Growth': iconCombine,
   'Stress Reduction': iconCircleX,
@@ -188,20 +188,20 @@ const categoryContent = {
       'This protocol is designed to support the body’s natural recovery and repair process as part of a plan built around your goals.',
     benefits: ['Supports tissue recovery', 'Complements rehabilitation', 'Monitored by your care team'],
   },
-  'Anti-Aging': {
-    blurb: 'Protocols designed to support long-term cellular health and healthy aging.',
+  'Longevity': {
+    blurb: 'Designed to address aging at the cellular level for sustainable energy and resilience.',
     description:
       'This protocol is designed to support long-term cellular health as part of a personalized longevity plan built around your bloodwork.',
     benefits: ['Supports cellular health', 'Complements a longevity-focused lifestyle', 'Monitored by your care team'],
   },
   'Gut Health': {
-    blurb: 'Protocols designed to support digestive health and gut function.',
+    blurb: 'Designed to support digestive health and gut function.',
     description:
       'This protocol is designed to support digestive health as part of a plan built around your labs and symptoms.',
     benefits: ['Supports digestive health', 'Personalized to your labs', 'Monitored by your care team'],
   },
   'Hair Growth': {
-    blurb: 'Protocols designed to support healthy hair growth.',
+    blurb: 'Designed to support longer, thicker, stronger hair growth.',
     description:
       'This protocol is designed to support healthy hair growth as part of a plan built around your goals.',
     benefits: ['Supports hair growth', 'Complements your routine', 'Monitored by your care team'],
@@ -291,7 +291,7 @@ export const categories = [
     ],
   },
   {
-    name: 'Anti-Aging',
+    name: 'Longevity',
     products: [
       { name: 'NAD+', image: antiagingNad, form: 'Injection' },
       { name: 'Glutathione', image: antiagingGlutathione, form: 'Injection', featured: true },
