@@ -70,7 +70,7 @@ import cardCognitiveFocus from '../assets/figma/card-cognitive-focus.png'
 const categoryCoverImage = {
   'Fat Loss': cardFatLoss,
   'Muscle Growth': cardMuscleGrowth,
-  'Energy Boosting': cardEnergyBoosting,
+  'Energy': cardEnergyBoosting,
   'Sexual Health': cardSexualHealth,
   Fertility: cardFertility,
   Skincare: cardSkinCare,
@@ -101,7 +101,7 @@ import heroCognitiveFocus from '../assets/figma/categories/v2-cognitive-focus.jp
 const categoryHeroImage = {
   'Fat Loss': heroFatLoss,
   'Muscle Growth': heroMuscleGrowth,
-  'Energy Boosting': heroEnergyBoosting,
+  'Energy': heroEnergyBoosting,
   'Sexual Health': heroSexualHealth,
   Fertility: heroFertility,
   Skincare: heroSkincare,
@@ -131,7 +131,7 @@ import iconBrain from '../assets/figma/icon-brain.svg'
 const categoryIcon = {
   'Fat Loss': iconFlame,
   'Muscle Growth': iconDumbbell,
-  'Energy Boosting': iconZap,
+  'Energy': iconZap,
   'Sexual Health': iconHeart,
   Fertility: iconSprout,
   Skincare: iconStar,
@@ -158,7 +158,7 @@ const categoryContent = {
       'This protocol is designed to support lean muscle development and recovery as part of a plan built around your bloodwork.',
     benefits: ['Supports muscle recovery', 'Complements strength training', 'Monitored by your care team'],
   },
-  'Energy Boosting': {
+  'Energy': {
     blurb: 'Protocols designed to support cellular energy production and daily vitality.',
     description:
       'This protocol is designed to support cellular energy production and daily vitality as part of a plan built around your bloodwork.',
@@ -248,7 +248,7 @@ export const categories = [
     ],
   },
   {
-    name: 'Energy Boosting',
+    name: 'Energy',
     products: [
       { name: 'NAD+', image: energyNad, form: 'Injection' },
       { name: 'Glutathione', image: energyGlutathione, form: 'Injection', featured: true },
