@@ -18,8 +18,7 @@ export default function AllProtocols() {
             <span className="font-serif text-4xl italic text-orange-2 md:text-[56px]">protocols</span>
           </Reveal>
           <Reveal delay={0.1} className="mt-4 max-w-[560px] text-base leading-relaxed text-[#6e6e6e] md:text-lg">
-            Every protocol we offer, organized by goal. Pick a category to see what&rsquo;s available, then start
-            with bloodwork to find the plan that fits you.
+            Explore all available protocols, then book a call with our clinical team to get started.
           </Reveal>
         </div>
 
