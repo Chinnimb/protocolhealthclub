@@ -75,7 +75,11 @@ export default function AllProtocols() {
 
         <div className="mx-auto max-w-[1200px] px-6 md:px-10">
           <Reveal delay={0.1} className="mt-16 flex flex-col items-center gap-4 text-center">
-            <p className="text-lg text-[#6e6e6e]">Not sure where to start?</p>
+            <p className="text-lg text-[#6e6e6e]">
+              Not sure where to start?
+              <br />
+              Our clinical team can help you decide.
+            </p>
             <MotionLink
               to="/get-started"
               whileHover={{ scale: 1.05 }}
