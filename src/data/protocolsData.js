@@ -159,7 +159,7 @@ const categoryContent = {
     benefits: ['Supports muscle recovery', 'Complements strength training', 'Monitored by your care team'],
   },
   'Energy': {
-    blurb: 'Protocols designed to support cellular energy production and daily vitality.',
+    blurb: 'Designed to support cellular energy production and consistent stamina.',
     description:
       'This protocol is designed to support cellular energy production and daily vitality as part of a plan built around your bloodwork.',
     benefits: ['Supports sustained energy', 'Complements an active lifestyle', 'Monitored by your care team'],
