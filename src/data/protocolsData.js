@@ -153,7 +153,7 @@ const categoryContent = {
     benefits: ['Supports healthy metabolism', 'Complements lifestyle changes', 'Monitored by your care team'],
   },
   'Muscle Growth': {
-    blurb: 'Protocols designed to support lean muscle development and recovery.',
+    blurb: 'Designed to support lean muscle growth and recovery.',
     description:
       'This protocol is designed to support lean muscle development and recovery as part of a plan built around your bloodwork.',
     benefits: ['Supports muscle recovery', 'Complements strength training', 'Monitored by your care team'],
