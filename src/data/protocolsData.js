@@ -147,7 +147,7 @@ const categoryIcon = {
 // or efficacy claims, no pricing). Swap in real per-product copy once the client provides it.
 const categoryContent = {
   'Fat Loss': {
-    blurb: 'Protocols designed to support fat metabolism and sustainable weight management.',
+    blurb: 'Designed to support fat metabolism and sustainable weight management.',
     description:
       'This protocol is designed to support your body’s fat metabolism and weight management goals as part of a plan built around your bloodwork.',
     benefits: ['Supports healthy metabolism', 'Complements lifestyle changes', 'Monitored by your care team'],

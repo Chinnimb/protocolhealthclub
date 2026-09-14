@@ -122,10 +122,6 @@ export default function CategoryProducts() {
                   <div className="flex flex-1 flex-col gap-2 px-6 pb-7 pt-6">
                     <p className="line-clamp-2 min-h-[56px] text-xl font-bold text-[#161b1f]">{p.name}</p>
                     <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{p.form.toUpperCase()}</p>
-                    <div className="mt-auto flex items-center gap-1 pt-2 text-[13px] text-orange-2">
-                      <span>LEARN MORE</span>
-                      <span>&rsaquo;</span>
-                    </div>
                   </div>
                 </div>
               </motion.div>
