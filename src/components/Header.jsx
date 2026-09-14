@@ -103,9 +103,14 @@ export default function Header() {
                             >
                               <div className="flex flex-col gap-0.5 py-1 pl-4">
                                 {c.products.map((p) => (
-                                  <span key={p.slug} className="rounded-lg px-3 py-1.5 text-xs text-[#6e6e6e]">
+                                  <MotionLink
+                                    key={p.slug}
+                                    to={`/products/${c.slug}/${p.slug}`}
+                                    onClick={() => setDesktopProtocolsOpen(false)}
+                                    className="rounded-lg px-3 py-1.5 text-xs text-[#6e6e6e] transition-colors hover:bg-[#faf8f5] hover:text-ink-2"
+                                  >
                                     {p.name}
-                                  </span>
+                                  </MotionLink>
                                 ))}
                               </div>
                             </motion.div>
@@ -200,9 +205,14 @@ export default function Header() {
                                 >
                                   <div className="flex flex-col gap-0.5 py-1 pl-3">
                                     {c.products.map((p) => (
-                                      <span key={p.slug} className="rounded-lg px-2 py-2 text-sm text-[#6e6e6e]">
+                                      <MotionLink
+                                        key={p.slug}
+                                        to={`/products/${c.slug}/${p.slug}`}
+                                        onClick={closeMenu}
+                                        className="rounded-lg px-2 py-2 text-sm text-[#6e6e6e] transition-colors hover:bg-[#faf8f5] hover:text-ink-2"
+                                      >
                                         {p.name}
-                                      </span>
+                                      </MotionLink>
                                     ))}
                                   </div>
                                 </motion.div>
