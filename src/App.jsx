@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import GetStarted from './pages/GetStarted'
 import AllProtocols from './pages/AllProtocols'
 import CategoryProducts from './pages/CategoryProducts'
+import ProductDetail from './pages/ProductDetail'
 import TermsOfService from './pages/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RefundPolicy from './pages/RefundPolicy'
@@ -29,7 +30,7 @@ function App() {
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/products" element={<AllProtocols />} />
         <Route path="/products/:categorySlug" element={<CategoryProducts />} />
-        <Route path="/products/:categorySlug/:productSlug" element={<ProductDetailRedirect />} />
+        <Route path="/products/:categorySlug/:productSlug" element={<ProductDetail />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-cancel" element={<RefundPolicy />} />
