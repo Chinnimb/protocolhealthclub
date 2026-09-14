@@ -55,10 +55,10 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setDesktopProtocolsOpen((v) => !v)}
-              className={`flex items-center gap-1.5 rounded-[20px] border-2 px-4 py-2 text-sm font-medium transition-colors ${
+              className={`relative z-20 flex items-center gap-1.5 border-2 px-4 py-2 text-sm font-medium transition-colors ${
                 desktopProtocolsOpen
-                  ? 'border-white bg-white text-ink-2'
-                  : 'border-white/70 bg-white/30 text-ink-2 hover:bg-white/50'
+                  ? 'rounded-t-[20px] rounded-b-none border-[#e8e8e8] border-b-0 bg-white text-ink-2'
+                  : 'rounded-[20px] border-white/70 bg-white/30 text-ink-2 hover:bg-white/50'
               }`}
             >
               Explore Protocols
@@ -74,7 +74,7 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute right-0 top-full z-10 mt-2 w-[280px] rounded-[20px] border border-[#e8e8e8] bg-white p-2 shadow-[0px_16px_40px_rgba(0,0,0,0.12)]"
+                  className="absolute right-0 top-full z-10 w-[280px] rounded-b-[20px] rounded-tl-[20px] border border-t-0 border-[#e8e8e8] bg-white p-2 shadow-[0px_16px_40px_rgba(0,0,0,0.12)]"
                 >
                   <div className="flex flex-col gap-0.5">
                     {categories.map((c) => (
