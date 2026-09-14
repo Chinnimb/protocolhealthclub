@@ -157,7 +157,7 @@ export default function Header() {
                   className={`flex w-full items-center justify-between border-2 px-4 py-3 text-base font-medium transition-colors ${
                     mobileProtocolsOpen
                       ? 'rounded-t-[20px] rounded-b-none border-[#e8e8e8] border-b-0 bg-white text-ink-2'
-                      : 'rounded-[20px] border-white/70 bg-white/30 text-ink-2 hover:bg-white/50'
+                      : 'rounded-[20px] border-white/70 bg-white/60 text-ink-2 hover:bg-white/75'
                   }`}
                 >
                   Explore Protocols
