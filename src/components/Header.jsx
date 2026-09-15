@@ -1,38 +1,22 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import MotionLink from './MotionLink'
-import { categories } from '../data/protocolsData'
 import logoPart1 from '../assets/figma/logo-part1.svg'
 import logoPart2 from '../assets/figma/logo-part2.svg'
 import logoPart3 from '../assets/figma/logo-part3.svg'
 
+const links = [
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Bio markers', href: '/#biomarkers' },
+  { label: 'Protocols', to: '/products' },
+  { label: 'Members', href: '/#members' },
+]
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [mobileProtocolsOpen, setMobileProtocolsOpen] = useState(false)
-  const [mobileOpenCategory, setMobileOpenCategory] = useState(null)
 
-  const [desktopProtocolsOpen, setDesktopProtocolsOpen] = useState(false)
-  const [desktopOpenCategory, setDesktopOpenCategory] = useState(null)
-  const desktopProtocolsRef = useRef(null)
-
-  const closeMenu = () => {
-    setMobileOpen(false)
-    setMobileProtocolsOpen(false)
-    setMobileOpenCategory(null)
-  }
-
-  useEffect(() => {
-    if (!desktopProtocolsOpen) return
-    const onClickOutside = (e) => {
-      if (desktopProtocolsRef.current && !desktopProtocolsRef.current.contains(e.target)) {
-        setDesktopProtocolsOpen(false)
-        setDesktopOpenCategory(null)
-      }
-    }
-    document.addEventListener('mousedown', onClickOutside)
-    return () => document.removeEventListener('mousedown', onClickOutside)
-  }, [desktopProtocolsOpen])
+  const closeMenu = () => setMobileOpen(false)
 
   return (
     <motion.div
@@ -50,80 +34,30 @@ export default function Header() {
           <img src={logoPart3} alt="" className="absolute left-[63px] top-0 h-4 lg:left-[72px] lg:h-[18px]" />
         </MotionLink>
 
+        <nav className="hidden lg:flex items-center gap-9">
+          {links.map((l) =>
+            l.to ? (
+              <MotionLink
+                key={l.label}
+                to={l.to}
+                whileHover={{ scale: 1.02 }}
+                className="relative text-sm text-[rgba(24,15,13,0.75)] transition-colors hover:text-ink-2 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink-2 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {l.label}
+              </MotionLink>
+            ) : (
+              <a
+                key={l.label}
+                href={l.href}
+                className="relative text-sm text-[rgba(24,15,13,0.75)] transition-colors hover:text-ink-2 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-ink-2 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {l.label}
+              </a>
+            )
+          )}
+        </nav>
+
         <div className="flex items-center gap-3">
-          <div ref={desktopProtocolsRef} className="relative hidden lg:block">
-            <button
-              type="button"
-              onClick={() => setDesktopProtocolsOpen((v) => !v)}
-              className={`relative z-20 flex items-center gap-1.5 border-2 px-4 py-2 text-sm font-medium transition-colors ${
-                desktopProtocolsOpen
-                  ? 'rounded-t-[20px] rounded-b-none border-[#e8e8e8] border-b-0 bg-white text-ink-2'
-                  : 'rounded-[20px] border-white/70 bg-white/30 text-ink-2 hover:bg-white/50'
-              }`}
-            >
-              Explore Protocols
-              <ChevronDown
-                className={`h-3.5 w-3.5 transition-transform duration-300 ${desktopProtocolsOpen ? 'rotate-180' : ''}`}
-              />
-            </button>
-
-            <AnimatePresence>
-              {desktopProtocolsOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute right-0 top-full z-10 w-[280px] rounded-b-[20px] rounded-tl-[20px] border border-t-0 border-[#e8e8e8] bg-white p-2 shadow-[0px_16px_40px_rgba(0,0,0,0.12)]"
-                >
-                  <div className="flex flex-col gap-0.5">
-                    {categories.map((c) => (
-                      <div key={c.slug}>
-                        <button
-                          type="button"
-                          onClick={() => setDesktopOpenCategory((s) => (s === c.slug ? null : c.slug))}
-                          className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-[#faf8f5]"
-                        >
-                          {c.name}
-                          <ChevronRight
-                            className={`h-3.5 w-3.5 transition-transform duration-300 ${
-                              desktopOpenCategory === c.slug ? 'rotate-90' : ''
-                            }`}
-                          />
-                        </button>
-
-                        <AnimatePresence>
-                          {desktopOpenCategory === c.slug && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                              className="overflow-hidden"
-                            >
-                              <div className="flex flex-col gap-0.5 py-1 pl-4">
-                                {c.products.map((p) => (
-                                  <MotionLink
-                                    key={p.slug}
-                                    to={`/products/${c.slug}/${p.slug}`}
-                                    onClick={() => setDesktopProtocolsOpen(false)}
-                                    className="rounded-lg px-3 py-1.5 text-xs text-[#6e6e6e] transition-colors hover:bg-[#faf8f5] hover:text-ink-2"
-                                  >
-                                    {p.name}
-                                  </MotionLink>
-                                ))}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
           <MotionLink
             to="/get-started#choose-lab-panel"
             whileHover={{ scale: 1.04 }}
@@ -152,86 +86,37 @@ export default function Header() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden lg:hidden"
+            className="overflow-hidden bg-white/90 backdrop-blur-md lg:hidden"
           >
-            <nav className="flex flex-col gap-3 px-6 pb-6 pt-2">
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setMobileProtocolsOpen((v) => !v)}
-                  className={`flex w-full items-center justify-between border-2 px-4 py-3 text-base font-medium transition-colors ${
-                    mobileProtocolsOpen
-                      ? 'rounded-t-[20px] rounded-b-none border-[#e8e8e8] border-b-0 bg-white text-ink-2'
-                      : 'rounded-[20px] border-white/70 bg-white/60 text-ink-2 hover:bg-white/75'
-                  }`}
-                >
-                  Explore Protocols
-                  <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-300 ${mobileProtocolsOpen ? 'rotate-180' : ''}`}
-                  />
-                </button>
-
-                <AnimatePresence>
-                  {mobileProtocolsOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden rounded-b-[20px] border-2 border-t-0 border-[#e8e8e8] bg-white"
-                    >
-                      <div className="flex flex-col gap-0.5 p-2">
-                        {categories.map((c) => (
-                          <div key={c.slug}>
-                            <button
-                              type="button"
-                              onClick={() => setMobileOpenCategory((s) => (s === c.slug ? null : c.slug))}
-                              className="flex w-full items-center justify-between rounded-lg px-2 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-[#faf8f5]"
-                            >
-                              {c.name}
-                              <ChevronRight
-                                className={`h-3.5 w-3.5 transition-transform duration-300 ${mobileOpenCategory === c.slug ? 'rotate-90' : ''}`}
-                              />
-                            </button>
-
-                            <AnimatePresence>
-                              {mobileOpenCategory === c.slug && (
-                                <motion.div
-                                  initial={{ height: 0, opacity: 0 }}
-                                  animate={{ height: 'auto', opacity: 1 }}
-                                  exit={{ height: 0, opacity: 0 }}
-                                  transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                                  className="overflow-hidden"
-                                >
-                                  <div className="flex flex-col gap-0.5 py-1 pl-3">
-                                    {c.products.map((p) => (
-                                      <MotionLink
-                                        key={p.slug}
-                                        to={`/products/${c.slug}/${p.slug}`}
-                                        onClick={closeMenu}
-                                        className="rounded-lg px-2 py-2 text-sm text-[#6e6e6e] transition-colors hover:bg-[#faf8f5] hover:text-ink-2"
-                                      >
-                                        {p.name}
-                                      </MotionLink>
-                                    ))}
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+            <nav className="flex flex-col gap-1 px-6 pb-6 pt-2">
+              {links.map((l) =>
+                l.to ? (
+                  <MotionLink
+                    key={l.label}
+                    to={l.to}
+                    onClick={closeMenu}
+                    className="rounded-lg px-2 py-3 text-base font-medium text-ink-2 transition-colors hover:bg-white/60"
+                  >
+                    {l.label}
+                  </MotionLink>
+                ) : (
+                  <a
+                    key={l.label}
+                    href={l.href}
+                    onClick={closeMenu}
+                    className="rounded-lg px-2 py-3 text-base font-medium text-ink-2 transition-colors hover:bg-white/60"
+                  >
+                    {l.label}
+                  </a>
+                )
+              )}
 
               <MotionLink
                 to="/get-started#choose-lab-panel"
                 onClick={closeMenu}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
-                className="bg-gradient-orange rounded-[20px] border-2 border-white/70 px-4 py-3 text-center text-base font-semibold text-white"
+                className="bg-gradient-orange mt-2 rounded-[20px] px-4 py-3 text-center text-base font-semibold text-white"
               >
                 Get Started
               </MotionLink>
