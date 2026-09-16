@@ -37,15 +37,16 @@ const cards = [
   { title: 'Fat Loss', icon: iconFlame, image: cardFatLoss, products: 'Semaglutide, Tirzepatide, L-Carnitine, Tesofensine' },
   { title: 'Muscle Growth', icon: iconDumbbell, image: cardMuscleGrowth, products: 'Tesamorelin, Sermorelin, CJC / Ipamorelin, IGF-1 LR3' },
   { title: 'Energy', icon: iconZap, image: cardEnergyBoosting, products: 'NAD+, Glutathione, SS-31, Thyroid Supplementation' },
-  { title: 'Sexual Health', icon: iconHeart, image: cardSexualHealth, products: 'Testosterone, Estrogen, Tadalafil (Cialis), Sildenafil (Viagra), Scream Cream, Oxytocin' },
-  { title: 'Fertility', icon: iconSprout, image: cardFertility, products: 'hCG, Enclomiphene, rFSH, Glutathione' },
-  { title: 'Skin Care', icon: iconStar, image: cardSkinCare, products: 'GHK-Cu, Estradiol, Tretinoin' },
-  { title: 'Injury Repair', icon: iconBandage, image: cardInjuryRepair, products: 'BPC-157, TB-500, KPV' },
   { title: 'Longevity', icon: iconClock, image: cardAntiAging, products: 'NAD+, Glutathione, Oxytocin, Methylene Blue' },
+  { title: 'Skin Care', icon: iconStar, image: cardSkinCare, products: 'GHK-Cu, Estradiol, Tretinoin' },
   { title: 'Gut Health', icon: iconLeaf, image: cardGutHealth, products: 'GI Maps, Gut Barrier Testing, Food Sensitivity Testing' },
-  { title: 'Hair Growth', icon: iconCombine, image: cardHairGrowth, products: 'Minoxidil, Dutasteride, Finasteride, GHK-Cu' },
+  { title: 'Injury Repair', icon: iconBandage, image: cardInjuryRepair, products: 'BPC-157, TB-500, KPV' },
   { title: 'Stress Reduction', icon: iconCircleX, image: cardStressReduction, products: 'Progesterone, Selank' },
   { title: 'Cognitive Focus', icon: iconBrain, image: cardCognitiveFocus, products: 'Semax, Dihexa, Tesofensine' },
+  { title: 'Sexual Health', icon: iconHeart, image: cardSexualHealth, products: 'Testosterone, Estrogen, Tadalafil (Cialis), Sildenafil (Viagra), Scream Cream, Oxytocin' },
+  { title: 'Fertility', icon: iconSprout, image: cardFertility, products: 'hCG, Enclomiphene, rFSH, Glutathione' },
+  { title: 'Hair Growth', icon: iconCombine, image: cardHairGrowth, products: 'Minoxidil, Dutasteride, Finasteride, GHK-Cu' },
+  { title: 'Detox', icon: iconLeaf, image: cardGutHealth, products: 'Mycotox Mold Testing, Glutathione' },
 ]
 
 function BenefitCard({ card, delay }) {

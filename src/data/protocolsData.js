@@ -80,6 +80,8 @@ const categoryCoverImage = {
   'Hair Growth': cardHairGrowth,
   'Stress Reduction': cardStressReduction,
   'Cognitive Focus': cardCognitiveFocus,
+  // No dedicated Detox photography yet — reuse the Gut Health cover as a placeholder.
+  Detox: cardGutHealth,
 }
 
 import heroFatLoss from '../assets/figma/categories/v2-fat-loss.jpg'
@@ -111,6 +113,8 @@ const categoryHeroImage = {
   'Hair Growth': heroHairGrowth,
   'Stress Reduction': heroStressReduction,
   'Cognitive Focus': heroCognitiveFocus,
+  // No dedicated Detox photography yet — reuse the Gut Health hero as a placeholder.
+  Detox: heroGutHealth,
 }
 
 import iconFlame from '../assets/figma/icon-flame.svg'
@@ -141,6 +145,8 @@ const categoryIcon = {
   'Hair Growth': iconCombine,
   'Stress Reduction': iconCircleX,
   'Cognitive Focus': iconBrain,
+  // No dedicated Detox icon yet — reuse the Gut Health leaf as a placeholder.
+  Detox: iconLeaf,
 }
 
 // Generic, category-level copy — safe placeholder content (no specific dosing, mechanism,
@@ -218,6 +224,12 @@ const categoryContent = {
       'This protocol is designed to support mental clarity and focus as part of a plan built around your goals.',
     benefits: ['Supports mental clarity', 'Complements daily routines', 'Monitored by your care team'],
   },
+  Detox: {
+    blurb: 'Designed to support the body’s natural detoxification and clearance.',
+    description:
+      'This protocol is designed to support the body’s natural detoxification pathways as part of a plan built around your labs.',
+    benefits: ['Supports detox pathways', 'Personalized to your labs', 'Monitored by your care team'],
+  },
 }
 
 function slugify(str) {
@@ -257,6 +269,54 @@ export const categories = [
     ],
   },
   {
+    name: 'Longevity',
+    products: [
+      { name: 'NAD+', image: antiagingNad, form: 'Injection' },
+      { name: 'Glutathione', image: antiagingGlutathione, form: 'Injection', featured: true },
+      { name: 'Oxytocin', image: antiagingOxytocin, form: 'Injection' },
+      { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Injection' },
+    ],
+  },
+  {
+    name: 'Skincare',
+    products: [
+      { name: 'GHK-Cu', image: skincareGhkCu, form: 'Injection' },
+      { name: 'Estradiol', image: skincareEstradiol, form: 'Injection', featured: true },
+      { name: 'Tretinoin', image: skincareTretinoin, form: 'Injection' },
+    ],
+  },
+  {
+    name: 'Gut Health',
+    products: [
+      { name: 'GI Maps', image: gutGiMaps, form: 'Lab Test' },
+      { name: 'Gut Barrier Testing', image: gutBarrierTesting, form: 'Lab Test', featured: true },
+      { name: 'Food Sensitivity Testing', image: gutFoodSensitivity, form: 'Lab Test' },
+    ],
+  },
+  {
+    name: 'Injury Repair',
+    products: [
+      { name: 'BPC-157', image: injuryBpc157, form: 'Injection' },
+      { name: 'TB-500', image: injuryTb500, form: 'Injection', featured: true },
+      { name: 'KPV', image: injuryKpv, form: 'Injection' },
+    ],
+  },
+  {
+    name: 'Stress Reduction',
+    products: [
+      { name: 'Progesterone', image: stressProgesterone, form: 'Injection' },
+      { name: 'Selank', image: stressSelank, form: 'Injection', featured: true },
+    ],
+  },
+  {
+    name: 'Cognitive Focus',
+    products: [
+      { name: 'Semax', image: cognitiveSemax, form: 'Injection' },
+      { name: 'Dihexa', image: cognitiveDihexa, form: 'Injection', featured: true },
+      { name: 'Tesofensine', image: cognitiveTesofensine, form: 'Injection' },
+    ],
+  },
+  {
     name: 'Sexual Health',
     products: [
       { name: 'Testosterone', image: sexualTestosterone, form: 'Injection' },
@@ -275,39 +335,6 @@ export const categories = [
     ],
   },
   {
-    name: 'Skincare',
-    products: [
-      { name: 'GHK-Cu', image: skincareGhkCu, form: 'Injection' },
-      { name: 'Estradiol', image: skincareEstradiol, form: 'Injection', featured: true },
-      { name: 'Tretinoin', image: skincareTretinoin, form: 'Injection' },
-    ],
-  },
-  {
-    name: 'Injury Repair',
-    products: [
-      { name: 'BPC-157', image: injuryBpc157, form: 'Injection' },
-      { name: 'TB-500', image: injuryTb500, form: 'Injection', featured: true },
-      { name: 'KPV', image: injuryKpv, form: 'Injection' },
-    ],
-  },
-  {
-    name: 'Longevity',
-    products: [
-      { name: 'NAD+', image: antiagingNad, form: 'Injection' },
-      { name: 'Glutathione', image: antiagingGlutathione, form: 'Injection', featured: true },
-      { name: 'Oxytocin', image: antiagingOxytocin, form: 'Injection' },
-      { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Injection' },
-    ],
-  },
-  {
-    name: 'Gut Health',
-    products: [
-      { name: 'GI Maps', image: gutGiMaps, form: 'Lab Test' },
-      { name: 'Gut Barrier Testing', image: gutBarrierTesting, form: 'Lab Test', featured: true },
-      { name: 'Food Sensitivity Testing', image: gutFoodSensitivity, form: 'Lab Test' },
-    ],
-  },
-  {
     name: 'Hair Growth',
     products: [
       { name: 'Minoxidil', image: hairMinoxidil, form: 'Injection' },
@@ -317,18 +344,11 @@ export const categories = [
     ],
   },
   {
-    name: 'Stress Reduction',
+    name: 'Detox',
     products: [
-      { name: 'Progesterone', image: stressProgesterone, form: 'Injection' },
-      { name: 'Selank', image: stressSelank, form: 'Injection', featured: true },
-    ],
-  },
-  {
-    name: 'Cognitive Focus',
-    products: [
-      { name: 'Semax', image: cognitiveSemax, form: 'Injection' },
-      { name: 'Dihexa', image: cognitiveDihexa, form: 'Injection', featured: true },
-      { name: 'Tesofensine', image: cognitiveTesofensine, form: 'Injection' },
+      // Placeholder photo (reused from Gut Health) until real Mycotox Mold Testing photography exists.
+      { name: 'Mycotox Mold Testing', image: gutBarrierTesting, form: 'Lab Test', featured: true },
+      { name: 'Glutathione', image: energyGlutathione, form: 'Injection' },
     ],
   },
 ].map((cat) => ({
