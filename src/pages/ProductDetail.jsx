@@ -85,7 +85,7 @@ export default function ProductDetail() {
     const el = relatedScrollRef.current
     const card = el?.children[i]
     if (!el || !card) return
-    const target = card.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft
+    const target = card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2
     el.scrollTo({ left: target, behavior: 'smooth' })
   }
 
@@ -94,9 +94,29 @@ export default function ProductDetail() {
     if (!el) return
     setRelatedActiveIndex(0)
     const onScroll = () => {
-      const card = el.firstElementChild
-      const step = card ? card.getBoundingClientRect().width + 24 : 244
-      setRelatedActiveIndex(Math.round(el.scrollLeft / step))
+      // At either scroll extreme, several cards can be visible at once (desktop),
+      // so snap straight to the first/last dot instead of whichever card happens
+      // to sit closest to the viewport's center.
+      if (el.scrollLeft <= 1) {
+        setRelatedActiveIndex(0)
+        return
+      }
+      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 1) {
+        setRelatedActiveIndex(el.children.length - 1)
+        return
+      }
+      const containerCenter = el.scrollLeft + el.clientWidth / 2
+      let closestIndex = 0
+      let closestDist = Infinity
+      Array.from(el.children).forEach((child, i) => {
+        const childCenter = child.offsetLeft + child.offsetWidth / 2
+        const dist = Math.abs(childCenter - containerCenter)
+        if (dist < closestDist) {
+          closestDist = dist
+          closestIndex = i
+        }
+      })
+      setRelatedActiveIndex(closestIndex)
     }
     el.addEventListener('scroll', onScroll, { passive: true })
     return () => el.removeEventListener('scroll', onScroll)
