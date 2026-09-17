@@ -406,6 +406,19 @@ export const categories = [
           'Deeper sleep, faster recovery',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'CJC-1295 + Ipamorelin',
+        form: 'Injection',
+        description:
+          'Two separate signals to the same gland. Together they produce a larger, cleaner growth hormone release than either delivers alone.',
+        benefits: [
+          'Triggers growth hormone release',
+          'No rise in appetite',
+          'Deeper sleep and stronger recovery',
+          'Leaner composition over months',
+        ],
+      },
     ],
   },
   {
