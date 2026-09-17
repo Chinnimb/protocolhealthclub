@@ -281,8 +281,8 @@ export const categories = [
         ],
       },
       {
+        // No dedicated photo yet — client will generate one and share it.
         name: 'CJC-1295 / Mod GRF 1-29',
-        image: muscleCjcIpamorelin,
         form: 'Injection',
         description:
           "One nightly injection keeps the growth hormone signal open for hours instead of minutes. A longer recovery window, on your body's schedule.",
@@ -294,7 +294,6 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — reuses the CJC/Ipamorelin combo shot as a placeholder.
         name: 'Ipamorelin',
         image: muscleCjcIpamorelin,
         form: 'Injection',

@@ -115,7 +115,7 @@ export default function CategoryProducts() {
                 >
                   <div className="relative h-[220px] w-full overflow-hidden">
                     <img
-                      src={p.image}
+                      src={p.image || category.coverImage}
                       alt={p.name}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
