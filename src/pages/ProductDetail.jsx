@@ -5,6 +5,8 @@ import {
   Sparkles,
   ShieldCheck,
   Moon,
+  Cloud,
+  EyeOff,
   RefreshCw,
   Bone,
   Flame,
@@ -34,12 +36,14 @@ import ImagePlaceholder from '../components/ImagePlaceholder'
 import { getProduct } from '../data/protocolsData'
 
 // Picks an icon that matches what the benefit text is actually about, instead
-// of cycling through a fixed set regardless of content.
+// of cycling through a fixed set regardless of content. A rule can list
+// several icons — when more than one benefit on the same product matches
+// that rule, each repeat cycles to the rule's next icon instead of repeating.
 const benefitIconRules = [
-  { keywords: ['sleep', 'rest'], icon: Moon },
-  { keywords: ['recovery', 'repair', 'healing'], icon: RefreshCw },
-  { keywords: ['bone', 'joint', 'connective', 'motion', 'mobility', 'flexib'], icon: Bone },
-  { keywords: ['muscle', 'strength', 'tone', 'training', 'pump'], icon: Dumbbell },
+  { keywords: ['sleep', 'rest'], icons: [Moon, Cloud, EyeOff] },
+  { keywords: ['recovery', 'repair', 'healing'], icons: [RefreshCw] },
+  { keywords: ['bone', 'joint', 'connective', 'motion', 'mobility', 'flexib'], icons: [Bone] },
+  { keywords: ['muscle', 'strength', 'tone', 'training', 'pump'], icons: [Dumbbell] },
   {
     keywords: [
       'lean',
@@ -59,26 +63,35 @@ const benefitIconRules = [
       'stall',
       'plateau',
     ],
-    icon: Flame,
+    icons: [Flame],
   },
-  { keywords: ['energy', 'stamina', 'vitality', 'fatigue', 'stimulant', 'crash'], icon: Zap },
-  { keywords: ['focus', 'clarity', 'cognit', 'memory', 'mental', 'brain', 'motivation', 'alertness', 'neural'], icon: Brain },
-  { keywords: ['immune', 'defense', 'inflammat'], icon: ShieldCheck },
-  { keywords: ['digest', 'gut'], icon: Leaf },
-  { keywords: ['stress', 'calm', 'peace', 'anxiety', 'mood', 'resilien'], icon: Wind },
-  { keywords: ['skin', 'radiance', 'glow', 'complexion'], icon: Sun },
-  { keywords: ['hormone', 'balance', 'blood sugar', 'glucose', 'insulin'], icon: Activity },
-  { keywords: ['circulation', 'blood flow', 'cardiovascular'], icon: HeartPulse },
-  { keywords: ['libido', 'sexual', 'performance', 'intimacy', 'desire'], icon: Heart },
-  { keywords: ['detox', 'toxin', 'cleanse', 'clearance'], icon: Droplet },
-  { keywords: ['confiden', 'self-esteem'], icon: Smile },
-  { keywords: ['clinical', 'research', 'studied', 'studies', 'evidence'], icon: FlaskConical },
+  { keywords: ['energy', 'stamina', 'vitality', 'fatigue', 'stimulant', 'crash'], icons: [Zap] },
+  { keywords: ['focus', 'clarity', 'cognit', 'memory', 'mental', 'brain', 'motivation', 'alertness', 'neural'], icons: [Brain] },
+  { keywords: ['immune', 'defense', 'inflammat'], icons: [ShieldCheck] },
+  { keywords: ['digest', 'gut'], icons: [Leaf] },
+  { keywords: ['stress', 'calm', 'peace', 'anxiety', 'mood', 'resilien'], icons: [Wind] },
+  { keywords: ['skin', 'radiance', 'glow', 'complexion'], icons: [Sun] },
+  { keywords: ['hormone', 'balance', 'blood sugar', 'glucose', 'insulin'], icons: [Activity] },
+  { keywords: ['circulation', 'blood flow', 'cardiovascular'], icons: [HeartPulse] },
+  { keywords: ['libido', 'sexual', 'performance', 'intimacy', 'desire'], icons: [Heart] },
+  { keywords: ['detox', 'toxin', 'cleanse', 'clearance'], icons: [Droplet] },
+  { keywords: ['confiden', 'self-esteem'], icons: [Smile] },
+  { keywords: ['clinical', 'research', 'studied', 'studies', 'evidence'], icons: [FlaskConical] },
 ]
 
-function getBenefitIcon(text) {
-  const lower = text.toLowerCase()
-  const match = benefitIconRules.find((r) => r.keywords.some((kw) => new RegExp(`\\b${kw}`).test(lower)))
-  return match ? match.icon : Sparkles
+// Returns one icon per benefit, cycling a rule's icon list when it matches
+// more than once within the same product.
+function getBenefitIcons(benefits) {
+  const ruleUseCount = new Map()
+  return benefits.map((text) => {
+    const lower = text.toLowerCase()
+    const ruleIndex = benefitIconRules.findIndex((r) => r.keywords.some((kw) => new RegExp(`\\b${kw}`).test(lower)))
+    if (ruleIndex === -1) return Sparkles
+    const rule = benefitIconRules[ruleIndex]
+    const count = ruleUseCount.get(ruleIndex) || 0
+    ruleUseCount.set(ruleIndex, count + 1)
+    return rule.icons[count % rule.icons.length]
+  })
 }
 
 const trustBadges = [
@@ -169,6 +182,7 @@ export default function ProductDetail() {
   const related = category.products.filter((p) => p.slug !== product.slug)
   const description = product.description || category.description
   const benefits = product.benefits || category.benefits
+  const benefitIcons = getBenefitIcons(benefits)
 
   return (
     <div className="relative min-h-screen bg-cream text-ink">
@@ -197,8 +211,8 @@ export default function ProductDetail() {
             <p className="text-base leading-relaxed text-[#4a4a4a] md:text-lg">{description}</p>
 
             <div className="flex flex-col gap-4">
-              {benefits.map((b) => {
-                const Icon = getBenefitIcon(b)
+              {benefits.map((b, i) => {
+                const Icon = benefitIcons[i]
                 return (
                   <div key={b} className="flex items-center gap-3">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-2">
