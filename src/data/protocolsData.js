@@ -671,6 +671,19 @@ export const categories = [
           "Works with your body's own hormone pulses",
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'hMG (Human Menopausal Gonadotropin)',
+        form: 'Injection',
+        description:
+          'Carries both fertility signals in a single injection, the pair that drives cell maturation and natural testosterone production.',
+        benefits: [
+          'Both fertility signals in one',
+          'Supports sperm production',
+          'Supports natural testosterone',
+          'Restores fertility after hormone treatments',
+        ],
+      },
     ],
   },
   {
