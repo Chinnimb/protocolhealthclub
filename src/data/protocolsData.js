@@ -270,6 +270,19 @@ export const categories = [
       { name: 'Tirzepatide', image: fatlossTirzepatide, form: 'Injection', featured: true },
       { name: 'Carnitine', image: fatlossCarnitine, form: 'Injection' },
       { name: 'Tesofensine', image: fatlossTesofensine, form: 'Injection' },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'GLP-3',
+        form: 'Injection',
+        description:
+          'Three signals rather than two: it lowers what you eat and raises what you burn at rest. Currently in Phase 3 trials.',
+        benefits: [
+          'Raises energy expenditure',
+          'Works both sides of the weight loss equation',
+          'Combines 3 approaches',
+          'Where the science is heading',
+        ],
+      },
     ],
   },
   {
