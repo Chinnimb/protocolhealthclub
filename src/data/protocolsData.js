@@ -296,6 +296,19 @@ export const categories = [
           'Matches insulin signaling',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'AOD-9604',
+        form: 'Injection',
+        description:
+          'The segment of growth hormone responsible for fat breakdown, isolated from the effects on tissue growth and blood sugar.',
+        benefits: [
+          'Supports fat metabolism',
+          'No effect on blood sugar',
+          'Can combine with other protocols',
+          'Maintains insulin sensitivity',
+        ],
+      },
     ],
   },
   {
