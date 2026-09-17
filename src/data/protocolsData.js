@@ -634,6 +634,19 @@ export const categories = [
       { name: 'Enclomiphene', image: fertilityEnclomiphene, form: 'Injection', featured: true },
       { name: 'rFSH', image: fertilityRfsh, form: 'Injection' },
       { name: 'Glutathione', image: fertilityGlutathione, form: 'Injection' },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Gonadorelin',
+        form: 'Injection',
+        description:
+          'A short signal your brain uses to tell the pituitary to keep the reproductive hormone axis running. Used to keep your own production active.',
+        benefits: [
+          'Supports natural hormone production',
+          'Protects testicular function',
+          'Focus on fertility & reproduction',
+          "Works with your body's own hormone pulses",
+        ],
+      },
     ],
   },
   {
