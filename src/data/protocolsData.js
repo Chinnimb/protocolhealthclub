@@ -516,7 +516,20 @@ export const categories = [
     name: 'Stress Reduction',
     products: [
       { name: 'Progesterone', image: stressProgesterone, form: 'Injection' },
-      { name: 'Selank', image: stressSelank, form: 'Injection', featured: true },
+      {
+        name: 'Selank',
+        image: stressSelank,
+        form: 'Injection',
+        featured: true,
+        description:
+          'Acts on GABA, the system your brain uses to settle itself, without the sedation. A steadier baseline while staying sharp enough to work.',
+        benefits: [
+          'Calm without feeling foggy',
+          'Feel steadier in less than an hour',
+          'Can be used as needed',
+          'Supports focus by quieting mental noise',
+        ],
+      },
     ],
   },
   {
