@@ -27,6 +27,7 @@ import {
   Heart,
   Baby,
   Egg,
+  Sprout,
   Droplet,
   Smile,
   Leaf,
@@ -78,7 +79,7 @@ const benefitIconRules = [
     ],
     icons: [Flame],
   },
-  { keywords: ['fertility', 'reproduct', 'testicular', 'ovarian', 'conception'], icons: [Baby, Egg] },
+  { keywords: ['fertility', 'reproduct', 'testicular', 'ovarian', 'conception', 'sperm', 'egg'], icons: [Baby, Egg, Sprout] },
   {
     keywords: ['focus', 'clarity', 'cognit', 'memory', 'mental', 'brain', 'motivation', 'alertness', 'neural'],
     icons: [Brain, Lightbulb, Puzzle],

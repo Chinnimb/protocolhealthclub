@@ -644,7 +644,19 @@ export const categories = [
         ],
       },
       { name: 'Enclomiphene', image: fertilityEnclomiphene, form: 'Injection', featured: true },
-      { name: 'rFSH', image: fertilityRfsh, form: 'Injection' },
+      {
+        name: 'FSH (Follicle Stimulating Hormone)',
+        image: fertilityRfsh,
+        form: 'Injection',
+        description:
+          'One half of the hormone pair that drives sperm and egg development. Used when the goal is fertility rather than hormone levels.',
+        benefits: [
+          'Supports sperm and egg development',
+          'Works on the fertility directly',
+          'Pairs with other fertility support',
+          'Used under close monitoring',
+        ],
+      },
       { name: 'Glutathione', image: fertilityGlutathione, form: 'Injection' },
       {
         // No dedicated photo yet — client will generate one and share it.
