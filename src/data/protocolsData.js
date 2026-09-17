@@ -590,7 +590,21 @@ export const categories = [
   {
     // Products pending — waiting to confirm with the client what goes under Sleep.
     name: 'Sleep',
-    products: [],
+    products: [
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'DSIP (Delta Sleep-Inducing Peptide)',
+        form: 'Injection',
+        description:
+          'There is a difference between hours asleep and hours of real sleep. DSIP works on the deep stage where your body repairs itself.',
+        benefits: [
+          'Wake up feeling rested',
+          'Better sleep without sleeping longer',
+          'Supports overnight recovery',
+          'Works specifically on deep sleep',
+        ],
+      },
+    ],
   },
 ].map((cat) => ({
   ...cat,
