@@ -394,7 +394,19 @@ export const categories = [
   {
     name: 'Injury Repair',
     products: [
-      { name: 'BPC-157', image: injuryBpc157, form: 'Injection' },
+      {
+        name: 'BPC-157',
+        image: injuryBpc157,
+        form: 'Injection',
+        description:
+          'Tendon and ligament heal slowly because blood barely reaches them. BPC-157 promotes new blood vessel growth into the tissue that needs it.',
+        benefits: [
+          'For slow-healing injuries',
+          'Supports gut lining repair',
+          'Addresses the healing bottleneck',
+          'Works on many tissues and injuries',
+        ],
+      },
       { name: 'TB-500', image: injuryTb500, form: 'Injection', featured: true },
       { name: 'KPV', image: injuryKpv, form: 'Injection' },
     ],
