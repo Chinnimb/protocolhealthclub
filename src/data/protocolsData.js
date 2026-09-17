@@ -322,6 +322,18 @@ export const categories = [
           'Improves blood sugar control',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Tirzepatide + B12',
+        form: 'Injection',
+        description: 'Two fullness signals with B12 added to ease the adjustment period.',
+        benefits: [
+          'Works on two hunger signals',
+          'B12 to maintain energy',
+          'Calms both cravings and appetite',
+          'Improves blood sugar regulation',
+        ],
+      },
     ],
   },
   {
