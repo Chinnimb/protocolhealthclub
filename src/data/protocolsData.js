@@ -432,6 +432,18 @@ export const categories = [
           'Deeper sleep and better recovery',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Sermorelin + GHRP-2',
+        form: 'Troche',
+        description: 'Two growth hormone signals in a dissolvable troche taken at bedtime. No injection required.',
+        benefits: [
+          'Restores deep sleep lost to age',
+          'Builds lean mass and healthy appetite',
+          'Accelerates recovery after training',
+          'Easy troche delivery, no injections',
+        ],
+      },
     ],
   },
   {
