@@ -548,6 +548,19 @@ export const categories = [
           'Promotes intimate desire',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'GLOW (BPC-157 + TB-500 + GHK-Cu)',
+        form: 'Injection',
+        description:
+          'The repair pairing plus the collagen signal. Structural recovery and skin quality worked on at the same time.',
+        benefits: [
+          'Repair plus collagen support',
+          'Firmer, more plump looking skin',
+          'Faster recovery from old injuries',
+          'More complete joint recovery',
+        ],
+      },
     ],
   },
   {
@@ -612,6 +625,19 @@ export const categories = [
           'Faster recovery from stubborn injuries',
           'Promotes mobility and gut health',
           'Stronger effects from both peptides together',
+        ],
+      },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'GLOW (BPC-157 + TB-500 + GHK-Cu)',
+        form: 'Injection',
+        description:
+          'The repair pairing plus the collagen signal. Structural recovery and skin quality worked on at the same time.',
+        benefits: [
+          'Repair plus collagen support',
+          'Firmer, more plump looking skin',
+          'Faster recovery from old injuries',
+          'More complete joint recovery',
         ],
       },
     ],
