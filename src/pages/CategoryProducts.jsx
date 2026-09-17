@@ -131,7 +131,8 @@ export default function CategoryProducts() {
                 whileHover={{ y: -6 }}
                 className="w-[240px] shrink-0 snap-center md:w-[260px]"
               >
-                <div
+                <MotionLink
+                  to={`/products/${category.slug}/${p.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                 >
                   <div className="relative h-[220px] w-full overflow-hidden">
@@ -149,7 +150,7 @@ export default function CategoryProducts() {
                     <p className="line-clamp-2 min-h-[56px] text-xl font-bold text-[#161b1f]">{p.name}</p>
                     <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{p.form.toUpperCase()}</p>
                   </div>
-                </div>
+                </MotionLink>
               </motion.div>
             ))}
           </motion.div>

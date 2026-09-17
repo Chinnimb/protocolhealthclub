@@ -630,7 +630,19 @@ export const categories = [
   {
     name: 'Fertility',
     products: [
-      { name: 'hCG', image: fertilityHcg, form: 'Injection' },
+      {
+        name: 'hCG (Human Chorionic Gonadotropin)',
+        image: fertilityHcg,
+        form: 'Injection',
+        description:
+          'Mimics the pituitary signal that tells the body to produce its own testosterone, rather than replacing it from outside.',
+        benefits: [
+          'Triggers natural testosterone production',
+          'Restores testicular size and function',
+          'Used alongside or in place of TRT',
+          'Focus on fertility & reproduction',
+        ],
+      },
       { name: 'Enclomiphene', image: fertilityEnclomiphene, form: 'Injection', featured: true },
       { name: 'rFSH', image: fertilityRfsh, form: 'Injection' },
       { name: 'Glutathione', image: fertilityGlutathione, form: 'Injection' },

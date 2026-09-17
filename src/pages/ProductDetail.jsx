@@ -87,7 +87,7 @@ const benefitIconRules = [
   { keywords: ['digest', 'gut'], icons: [Leaf] },
   { keywords: ['stress', 'calm', 'peace', 'anxiety', 'mood', 'resilien'], icons: [Wind] },
   { keywords: ['skin', 'radiance', 'glow', 'complexion'], icons: [Sun] },
-  { keywords: ['hormone', 'balance', 'blood sugar', 'glucose', 'insulin'], icons: [Activity, Radio] },
+  { keywords: ['hormone', 'balance', 'blood sugar', 'glucose', 'insulin', 'testosterone', 'trt'], icons: [Activity, Radio] },
   { keywords: ['circulation', 'blood flow', 'bloodflow', 'cardiovascular'], icons: [HeartPulse] },
   { keywords: ['libido', 'sexual', 'performance', 'intimacy', 'desire'], icons: [Heart] },
   { keywords: ['detox', 'toxin', 'cleanse', 'clearance'], icons: [Droplet] },
