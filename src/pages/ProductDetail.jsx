@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Sparkles, ShieldCheck, Stethoscope, FlaskConical, Users, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Sparkles, ShieldCheck, Award, Stethoscope, FlaskConical, Users, ChevronLeft, ChevronRight } from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Header from '../components/Header'
@@ -9,9 +9,8 @@ import BackButton from '../components/BackButton'
 import Footer from '../components/Footer'
 import { getProduct } from '../data/protocolsData'
 
-// benefit[0] is always the category-specific claim, benefit[1] the lifestyle-fit claim,
-// and benefit[2] is always "monitored by your care team" — see protocolsData.js.
-const supportingBenefitIcons = [Sparkles, ShieldCheck]
+// benefit[0] gets the category icon; every other benefit cycles through these.
+const supportingBenefitIcons = [Sparkles, ShieldCheck, Award]
 
 const trustBadges = [
   { icon: Stethoscope, label: 'Physician supervised' },
@@ -80,6 +79,8 @@ export default function ProductDetail() {
   const { category, product } = result
   const related = category.products.filter((p) => p.slug !== product.slug)
   const gallery = product.images?.length ? product.images : [product.image]
+  const description = product.description || category.description
+  const benefits = product.benefits || category.benefits
 
   return (
     <div className="relative min-h-screen bg-cream text-ink">
@@ -105,10 +106,10 @@ export default function ProductDetail() {
               <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{product.form.toUpperCase()}</p>
             </div>
 
-            <p className="text-base leading-relaxed text-[#4a4a4a] md:text-lg">{category.description}</p>
+            <p className="text-base leading-relaxed text-[#4a4a4a] md:text-lg">{description}</p>
 
             <div className="flex flex-col gap-4">
-              {category.benefits.map((b, i) => (
+              {benefits.map((b, i) => (
                 <div key={b} className="flex items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-2">
                     {i === 0 ? (

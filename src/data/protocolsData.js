@@ -254,7 +254,20 @@ export const categories = [
     name: 'Muscle Growth',
     products: [
       { name: 'Tesamorelin', image: muscleTesamorelin, form: 'Injection' },
-      { name: 'Sermorelin', image: muscleSermorelin, form: 'Injection', featured: true },
+      {
+        name: 'Sermorelin',
+        image: muscleSermorelin,
+        form: 'Injection',
+        featured: true,
+        description:
+          'Growth hormone output falls every decade, and recovery slows with it. Sermorelin prompts your body to release its own growth hormone, on its own rhythm.',
+        benefits: [
+          'Deeper, more restorative sleep',
+          'Faster recovery between sessions',
+          'Leaner body composition',
+          'Stronger bone & connective tissue',
+        ],
+      },
       { name: 'CJC, Ipamorelin', image: muscleCjcIpamorelin, form: 'Injection' },
       { name: 'IGF-1 LR3', image: muscleIgf1Lr3, form: 'Injection' },
     ],
