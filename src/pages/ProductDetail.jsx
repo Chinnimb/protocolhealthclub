@@ -5,6 +5,7 @@ import {
   Sparkles,
   ShieldCheck,
   Shield,
+  Bandage,
   Moon,
   Cloud,
   EyeOff,
@@ -54,7 +55,7 @@ import { getProduct } from '../data/protocolsData'
 // that rule, each repeat cycles to the rule's next icon instead of repeating.
 const benefitIconRules = [
   { keywords: ['sleep', 'rested', 'resting'], icons: [Moon, Cloud, EyeOff] },
-  { keywords: ['recovery', 'repair', 'healing'], icons: [RefreshCw] },
+  { keywords: ['recovery', 'repair', 'healing'], icons: [RefreshCw, Bandage] },
   { keywords: ['bone', 'joint', 'connective', 'motion', 'mobility', 'flexib'], icons: [Bone] },
   { keywords: ['muscle', 'strength', 'muscle tone', 'training', 'pump', 'exercise'], icons: [Dumbbell, TrendingUp] },
   {

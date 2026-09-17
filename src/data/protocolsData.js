@@ -601,6 +601,19 @@ export const categories = [
           'Covers what repair misses',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Wolverine (BPC-157 + TB-500)',
+        form: 'Injection',
+        description:
+          'Two repair peptides in one vial. One works at the site that needs it, the other works across the whole body at once.',
+        benefits: [
+          'Site-specific and full-body repair',
+          'Faster recovery from stubborn injuries',
+          'Promotes mobility and gut health',
+          'Stronger effects from both peptides together',
+        ],
+      },
     ],
   },
   {
