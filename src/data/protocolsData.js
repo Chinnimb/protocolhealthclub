@@ -254,7 +254,19 @@ export const categories = [
   {
     name: 'Fat Loss',
     products: [
-      { name: 'Semaglutide', image: fatlossSemaglutide, form: 'Injection' },
+      {
+        name: 'Semaglutide',
+        image: fatlossSemaglutide,
+        form: 'Injection',
+        description:
+          'Copies the hormone your gut releases after eating to tell your brain you have had enough. Appetite quiets at the level of signaling.',
+        benefits: [
+          'Dramatically quiets food noise',
+          'Steady, sustained weight loss',
+          'Improves blood sugar control',
+          'Supports healthy metabolic markers',
+        ],
+      },
       { name: 'Tirzepatide', image: fatlossTirzepatide, form: 'Injection', featured: true },
       { name: 'Carnitine', image: fatlossCarnitine, form: 'Injection' },
       { name: 'Tesofensine', image: fatlossTesofensine, form: 'Injection' },
