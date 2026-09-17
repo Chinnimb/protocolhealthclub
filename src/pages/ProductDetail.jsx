@@ -29,6 +29,8 @@ import {
   Baby,
   Egg,
   Sprout,
+  Target,
+  Layers,
   Droplet,
   Smile,
   Leaf,
@@ -89,6 +91,7 @@ const benefitIconRules = [
   { keywords: ['digest', 'gut'], icons: [Leaf] },
   { keywords: ['stress', 'calm', 'peace', 'anxiety', 'mood', 'resilien'], icons: [Wind] },
   { keywords: ['skin', 'radiance', 'glow', 'complexion'], icons: [Sun] },
+  { keywords: ['hair', 'scalp', 'follicle'], icons: [Sprout, Target, Layers, RefreshCw] },
   { keywords: ['hormone', 'balance', 'blood sugar', 'glucose', 'insulin', 'testosterone', 'trt'], icons: [Activity, Radio] },
   { keywords: ['circulation', 'blood flow', 'bloodflow', 'cardiovascular'], icons: [HeartPulse] },
   {

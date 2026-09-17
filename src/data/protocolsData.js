@@ -743,6 +743,19 @@ export const categories = [
       { name: 'Dutasteride', image: hairDutasteride, form: 'Injection', featured: true },
       { name: 'Finasteride', image: hairFinasteride, form: 'Injection' },
       { name: 'GHK-Cu', image: hairGhkCu, form: 'Injection' },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'PTD-DBM',
+        form: 'Topical',
+        description:
+          'A peptide applied directly to the scalp that works on a signaling pathway involved in the hair growth cycle.',
+        benefits: [
+          'Targets the hair growth cycle',
+          'Applied directly to the scalp',
+          'Layers with existing hair protocols',
+          'Reactivates dormant follicles',
+        ],
+      },
     ],
   },
   {
