@@ -38,7 +38,7 @@ import { getProduct } from '../data/protocolsData'
 const benefitIconRules = [
   { keywords: ['sleep', 'rest'], icon: Moon },
   { keywords: ['recovery', 'repair', 'healing'], icon: RefreshCw },
-  { keywords: ['bone', 'joint', 'connective'], icon: Bone },
+  { keywords: ['bone', 'joint', 'connective', 'motion', 'mobility', 'flexib'], icon: Bone },
   { keywords: ['muscle', 'strength', 'tone', 'training', 'pump'], icon: Dumbbell },
   { keywords: ['lean', 'composition', 'metabolism', 'fat', 'waist', 'weight', 'belly', 'visceral'], icon: Flame },
   { keywords: ['energy', 'stamina', 'vitality', 'fatigue'], icon: Zap },

@@ -407,7 +407,20 @@ export const categories = [
           'Works on many tissues and injuries',
         ],
       },
-      { name: 'TB-500', image: injuryTb500, form: 'Injection', featured: true },
+      {
+        name: 'TB-500 (Thymosin Beta-4)',
+        image: injuryTb500,
+        form: 'Injection',
+        featured: true,
+        description:
+          'Repair depends on resources reaching damaged tissue. TB-500 works on the machinery that moves them, across your whole body at once.',
+        benefits: [
+          'Full-body repair support',
+          'For accumulated and old injuries',
+          'Smoother range of motion',
+          'Naturally present in healing tissue',
+        ],
+      },
       { name: 'KPV', image: injuryKpv, form: 'Injection' },
     ],
   },
