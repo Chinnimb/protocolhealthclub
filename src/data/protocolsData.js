@@ -415,6 +415,19 @@ export const categories = [
       { name: 'Glutathione', image: energyGlutathione, form: 'Injection', featured: true },
       { name: 'SS-31', image: energySs31, form: 'Injection' },
       { name: 'Thyroid Supplementation', image: energyThyroid, form: 'Injection' },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'MOTS-c',
+        form: 'Injection',
+        description:
+          'Made by your own mitochondria, and produced less every year. MOTS-c restores how easily your cells switch between burning fat and burning sugar.',
+        benefits: [
+          'Steadier energy all day',
+          'Same metabolic pathway as exercise',
+          'Amplifies training signal',
+          'Promotes long-term mitochondrial health',
+        ],
+      },
     ],
   },
   {
