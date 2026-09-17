@@ -39,7 +39,7 @@ const benefitIconRules = [
   { keywords: ['sleep', 'rest'], icon: Moon },
   { keywords: ['recovery', 'repair', 'healing'], icon: RefreshCw },
   { keywords: ['bone', 'joint', 'connective'], icon: Bone },
-  { keywords: ['muscle', 'strength', 'tone'], icon: Dumbbell },
+  { keywords: ['muscle', 'strength', 'tone', 'training'], icon: Dumbbell },
   { keywords: ['lean', 'composition', 'metabolism', 'fat', 'waist', 'weight', 'belly', 'visceral'], icon: Flame },
   { keywords: ['energy', 'stamina', 'vitality', 'fatigue'], icon: Zap },
   { keywords: ['focus', 'clarity', 'cognit', 'memory', 'mental', 'brain'], icon: Brain },

@@ -330,6 +330,19 @@ export const categories = [
           'Deeper sleep and faster recovery between sessions',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Hexarelin',
+        form: 'Injection',
+        description:
+          'A powerful growth hormone release, run in short defined blocks. Timed around a training phase where you want maximum output.',
+        benefits: [
+          'Built for peak training',
+          'Short cycles, defined results',
+          'Supports lean mass and strength',
+          'Deeper sleep, faster recovery',
+        ],
+      },
     ],
   },
   {
