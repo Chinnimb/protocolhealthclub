@@ -826,6 +826,18 @@ export const categories = [
           'Takes effect within 60 minutes',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Oxytocin + Sildenafil + B12',
+        form: 'Troche',
+        description: 'Blood flow support paired with the connection hormone, in a dissolvable troche.',
+        benefits: [
+          'Built for performance',
+          'Supports the energy needed for intimacy',
+          'Builds emotional connection with partner',
+          'Increases physical sensitivity',
+        ],
+      },
     ],
   },
   {
