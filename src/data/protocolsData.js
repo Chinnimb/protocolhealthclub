@@ -419,6 +419,19 @@ export const categories = [
           'Leaner composition over months',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Tesamorelin + Ipamorelin',
+        form: 'Injection',
+        description:
+          'The most studied option for deep abdominal fat, paired with a clean growth hormone release. Body composition from two directions.',
+        benefits: [
+          'Targets deep belly fat',
+          'Supports lean mass maintenance',
+          'Burns fat without raising appetite',
+          'Deeper sleep and better recovery',
+        ],
+      },
     ],
   },
   {

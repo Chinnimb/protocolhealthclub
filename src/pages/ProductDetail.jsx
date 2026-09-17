@@ -14,6 +14,7 @@ import {
   Bone,
   Flame,
   Scale,
+  TrendingDown,
   Dumbbell,
   TrendingUp,
   Zap,
@@ -83,7 +84,7 @@ const benefitIconRules = [
       'stall',
       'plateau',
     ],
-    icons: [Flame, Scale],
+    icons: [Flame, Scale, TrendingDown],
   },
   { keywords: ['fertility', 'reproduct', 'testicular', 'ovarian', 'conception', 'sperm', 'egg'], icons: [Baby, Egg, Sprout] },
   {
