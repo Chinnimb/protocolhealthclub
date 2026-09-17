@@ -437,6 +437,21 @@ export const categories = [
       { name: 'Glutathione', image: antiagingGlutathione, form: 'Injection', featured: true },
       { name: 'Oxytocin', image: antiagingOxytocin, form: 'Injection' },
       { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Injection' },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        // Immune-focused product with no clear category fit yet — placed here
+        // for its aging angle, pending confirmation with the client.
+        name: 'Thymosin Alpha-1',
+        form: 'Injection',
+        description:
+          'Your thymus trains the immune cells that recognize threats, and it shrinks from adolescence onward. Thymosin alpha-1 is a copy of what it produces.',
+        benefits: [
+          'Tunes the immune response',
+          'Built for cold & flu season',
+          'Restores immune signals lost through aging',
+          'Lose fewer days to sickness',
+        ],
+      },
     ],
   },
   {

@@ -40,7 +40,7 @@ import { getProduct } from '../data/protocolsData'
 // several icons — when more than one benefit on the same product matches
 // that rule, each repeat cycles to the rule's next icon instead of repeating.
 const benefitIconRules = [
-  { keywords: ['sleep', 'rest'], icons: [Moon, Cloud, EyeOff] },
+  { keywords: ['sleep', 'rested', 'resting'], icons: [Moon, Cloud, EyeOff] },
   { keywords: ['recovery', 'repair', 'healing'], icons: [RefreshCw] },
   { keywords: ['bone', 'joint', 'connective', 'motion', 'mobility', 'flexib'], icons: [Bone] },
   { keywords: ['muscle', 'strength', 'muscle tone', 'training', 'pump'], icons: [Dumbbell] },
