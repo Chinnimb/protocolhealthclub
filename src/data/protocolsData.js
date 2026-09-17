@@ -413,7 +413,19 @@ export const categories = [
     products: [
       { name: 'NAD+', image: energyNad, form: 'Injection' },
       { name: 'Glutathione', image: energyGlutathione, form: 'Injection', featured: true },
-      { name: 'SS-31', image: energySs31, form: 'Injection' },
+      {
+        name: 'SS-31 (Elamipretide)',
+        image: energySs31,
+        form: 'Injection',
+        description:
+          'Energy is produced on a membrane inside your cells that has to hold a precise shape. That structure degrades with age. SS-31 stabilizes it.',
+        benefits: [
+          'Greater exercise tolerance',
+          'Drives ATP energy production',
+          'Works directly in mitochondria',
+          'Recover from persistent fatigue',
+        ],
+      },
       { name: 'Thyroid Supplementation', image: energyThyroid, form: 'Injection' },
       {
         // No dedicated photo yet — client will generate one and share it.

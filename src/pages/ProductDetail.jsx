@@ -12,7 +12,10 @@ import {
   Bone,
   Flame,
   Dumbbell,
+  TrendingUp,
   Zap,
+  BatteryCharging,
+  Gauge,
   Brain,
   Wind,
   Sun,
@@ -44,7 +47,11 @@ const benefitIconRules = [
   { keywords: ['sleep', 'rested', 'resting'], icons: [Moon, Cloud, EyeOff] },
   { keywords: ['recovery', 'repair', 'healing'], icons: [RefreshCw] },
   { keywords: ['bone', 'joint', 'connective', 'motion', 'mobility', 'flexib'], icons: [Bone] },
-  { keywords: ['muscle', 'strength', 'muscle tone', 'training', 'pump'], icons: [Dumbbell] },
+  { keywords: ['muscle', 'strength', 'muscle tone', 'training', 'pump', 'exercise'], icons: [Dumbbell, TrendingUp] },
+  {
+    keywords: ['energy', 'stamina', 'vitality', 'fatigue', 'stimulant', 'crash', 'mitochondria'],
+    icons: [Zap, BatteryCharging, Gauge],
+  },
   {
     keywords: [
       'lean',
@@ -66,7 +73,6 @@ const benefitIconRules = [
     ],
     icons: [Flame],
   },
-  { keywords: ['energy', 'stamina', 'vitality', 'fatigue', 'stimulant', 'crash'], icons: [Zap] },
   { keywords: ['focus', 'clarity', 'cognit', 'memory', 'mental', 'brain', 'motivation', 'alertness', 'neural'], icons: [Brain] },
   { keywords: ['immune', 'defense', 'inflammat', 'antioxidant', 'decline', 'longevity'], icons: [ShieldCheck, Shield] },
   { keywords: ['digest', 'gut'], icons: [Leaf] },
