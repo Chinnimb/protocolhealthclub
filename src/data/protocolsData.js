@@ -317,6 +317,19 @@ export const categories = [
         ],
       },
       { name: 'IGF-1 LR3', image: muscleIgf1Lr3, form: 'Injection' },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'GHRP-2 (Pralmorelin)',
+        form: 'Injection',
+        description:
+          'A powerful growth hormone release with an appetite stimulus to match. For building phases where eating enough has been the hard part.',
+        benefits: [
+          'Strong growth hormone release',
+          'Appetite works in your favor',
+          'Built for gaining phases',
+          'Deeper sleep and faster recovery between sessions',
+        ],
+      },
     ],
   },
   {
