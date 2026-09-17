@@ -561,6 +561,18 @@ export const categories = [
           'More complete joint recovery',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'KLOW (BPC-157 + TB-500 + GHK-Cu + KPV)',
+        form: 'Injection',
+        description: 'The full repair combination, with an anti-inflammatory peptide added for gut and skin.',
+        benefits: [
+          'The most complete repair blend',
+          'Calms systemic inflammation',
+          'For digestion, mobility, and skin',
+          'Soothes pain from aches and injuries',
+        ],
+      },
     ],
   },
   {
@@ -569,6 +581,18 @@ export const categories = [
       { name: 'GI Maps', image: gutGiMaps, form: 'Lab Test' },
       { name: 'Gut Barrier Testing', image: gutBarrierTesting, form: 'Lab Test', featured: true },
       { name: 'Food Sensitivity Testing', image: gutFoodSensitivity, form: 'Lab Test' },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'KLOW (BPC-157 + TB-500 + GHK-Cu + KPV)',
+        form: 'Injection',
+        description: 'The full repair combination, with an anti-inflammatory peptide added for gut and skin.',
+        benefits: [
+          'The most complete repair blend',
+          'Calms systemic inflammation',
+          'For digestion, mobility, and skin',
+          'Soothes pain from aches and injuries',
+        ],
+      },
     ],
   },
   {
@@ -638,6 +662,18 @@ export const categories = [
           'Firmer, more plump looking skin',
           'Faster recovery from old injuries',
           'More complete joint recovery',
+        ],
+      },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'KLOW (BPC-157 + TB-500 + GHK-Cu + KPV)',
+        form: 'Injection',
+        description: 'The full repair combination, with an anti-inflammatory peptide added for gut and skin.',
+        benefits: [
+          'The most complete repair blend',
+          'Calms systemic inflammation',
+          'For digestion, mobility, and skin',
+          'Soothes pain from aches and injuries',
         ],
       },
     ],
