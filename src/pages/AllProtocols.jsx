@@ -54,12 +54,16 @@ export default function AllProtocols() {
                     </div>
 
                     <p className="line-clamp-2 text-xs leading-relaxed text-white/85">
-                      {category.products.map((p) => p.name).join(' · ')}
+                      {category.products.length > 0
+                        ? category.products.map((p) => p.name).join(' · ')
+                        : 'Coming soon'}
                     </p>
 
                     <div className="mt-auto flex items-center justify-between gap-2">
                       <span className="text-[10px] font-semibold uppercase tracking-[0.5px] text-white/70">
-                        {category.products.length} protocol{category.products.length === 1 ? '' : 's'}
+                        {category.products.length > 0
+                          ? `${category.products.length} protocol${category.products.length === 1 ? '' : 's'}`
+                          : 'Coming soon'}
                       </span>
                       <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-orange-2 px-3.5 py-1.5 text-xs font-bold text-white transition-transform duration-300 group-hover:translate-x-1 sm:px-4 sm:py-2">
                         Explore

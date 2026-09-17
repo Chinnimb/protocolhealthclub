@@ -82,6 +82,8 @@ const categoryCoverImage = {
   'Cognitive Focus': cardCognitiveFocus,
   // No dedicated Detox photography yet — reuse the Gut Health cover as a placeholder.
   Detox: cardGutHealth,
+  // No dedicated Sleep photography yet — reuse the Stress Reduction cover as a placeholder.
+  Sleep: cardStressReduction,
 }
 
 import heroFatLoss from '../assets/figma/categories/v2-fat-loss.jpg'
@@ -115,6 +117,8 @@ const categoryHeroImage = {
   'Cognitive Focus': heroCognitiveFocus,
   // No dedicated Detox photography yet — reuse the Gut Health hero as a placeholder.
   Detox: heroGutHealth,
+  // No dedicated Sleep photography yet — reuse the Stress Reduction hero as a placeholder.
+  Sleep: heroStressReduction,
 }
 
 import iconFlame from '../assets/figma/icon-flame.svg'
@@ -147,6 +151,8 @@ const categoryIcon = {
   'Cognitive Focus': iconBrain,
   // No dedicated Detox icon yet — reuse the Gut Health leaf as a placeholder.
   Detox: iconLeaf,
+  // No dedicated Sleep icon yet — reuse the Stress Reduction icon as a placeholder.
+  Sleep: iconCircleX,
 }
 
 // Generic, category-level copy — safe placeholder content (no specific dosing, mechanism,
@@ -229,6 +235,12 @@ const categoryContent = {
     description:
       'This protocol is designed to support the body’s natural detoxification pathways as part of a plan built around your labs.',
     benefits: ['Supports detox pathways', 'Personalized to your labs', 'Monitored by your care team'],
+  },
+  Sleep: {
+    blurb: 'Designed to support deeper, more restorative sleep.',
+    description:
+      'This protocol is designed to support healthy sleep as part of a plan built around your goals.',
+    benefits: ['Supports restorative sleep', 'Complements your routine', 'Monitored by your care team'],
   },
 }
 
@@ -363,6 +375,11 @@ export const categories = [
       { name: 'Mycotox Mold Testing', image: gutBarrierTesting, form: 'Lab Test', featured: true },
       { name: 'Glutathione', image: energyGlutathione, form: 'Injection' },
     ],
+  },
+  {
+    // Products pending — waiting to confirm with the client what goes under Sleep.
+    name: 'Sleep',
+    products: [],
   },
 ].map((cat) => ({
   ...cat,

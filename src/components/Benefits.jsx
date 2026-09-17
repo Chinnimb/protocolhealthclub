@@ -47,6 +47,7 @@ const cards = [
   { title: 'Fertility', icon: iconSprout, image: cardFertility, products: 'hCG, Enclomiphene, rFSH, Glutathione' },
   { title: 'Hair Growth', icon: iconCombine, image: cardHairGrowth, products: 'Minoxidil, Dutasteride, Finasteride, GHK-Cu' },
   { title: 'Detox', icon: iconLeaf, image: cardGutHealth, products: 'Mycotox Mold Testing, Glutathione' },
+  { title: 'Sleep', icon: iconCircleX, image: cardStressReduction, products: 'Coming soon' },
 ]
 
 function BenefitCard({ card, delay }) {
