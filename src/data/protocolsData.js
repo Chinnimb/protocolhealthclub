@@ -378,7 +378,19 @@ export const categories = [
   {
     name: 'Skincare',
     products: [
-      { name: 'GHK-Cu', image: skincareGhkCu, form: 'Injection' },
+      {
+        name: 'GHK-Cu (Copper Peptide)',
+        image: skincareGhkCu,
+        form: 'Injection',
+        description:
+          "Aging decreases your body's natural collagen signal. GHK-Cu tells cells to build collagen and delivers the copper they need.",
+        benefits: [
+          'Firmer skin, better texture',
+          'A healing signal, not a surface treatment',
+          'Promotes wound and tissue repair',
+          'Antioxidant and anti-inflammatory',
+        ],
+      },
       { name: 'Estradiol', image: skincareEstradiol, form: 'Injection', featured: true },
       { name: 'Tretinoin', image: skincareTretinoin, form: 'Injection' },
     ],
