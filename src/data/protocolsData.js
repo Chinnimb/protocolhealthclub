@@ -316,7 +316,19 @@ export const categories = [
           'Less bloating, leaner look',
         ],
       },
-      { name: 'IGF-1 LR3', image: muscleIgf1Lr3, form: 'Injection' },
+      {
+        name: 'IGF-1 LR3',
+        image: muscleIgf1Lr3,
+        form: 'Injection',
+        description:
+          'Growth hormone builds muscle by prompting your liver to make IGF-1. This delivers that messenger directly, on a timeline of weeks.',
+        benefits: [
+          'Direct signal to muscle',
+          'Visible change in weeks',
+          'Fullness and pump from the first sessions',
+          'Triggers muscle cell formation',
+        ],
+      },
       {
         // No dedicated photo yet — client will generate one and share it.
         name: 'GHRP-2 (Pralmorelin)',
