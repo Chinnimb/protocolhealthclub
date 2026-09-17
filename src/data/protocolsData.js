@@ -447,7 +447,19 @@ export const categories = [
     products: [
       { name: 'NAD+', image: antiagingNad, form: 'Injection' },
       { name: 'Glutathione', image: antiagingGlutathione, form: 'Injection', featured: true },
-      { name: 'Oxytocin', image: antiagingOxytocin, form: 'Injection' },
+      {
+        name: 'Oxytocin',
+        image: antiagingOxytocin,
+        form: 'Troche / Nasal',
+        description:
+          'The hormone your body releases during closeness and physical connection. Used to support intimacy and the feeling of bonding.',
+        benefits: [
+          'Supports feelings of closeness',
+          'Taken before intimacy',
+          'Deepens feelings of connection',
+          'Softens stress and anxiety',
+        ],
+      },
       { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Injection' },
       {
         // No dedicated photo yet — client will generate one and share it.
