@@ -412,7 +412,20 @@ export const categories = [
     name: 'Energy',
     products: [
       { name: 'NAD+', image: energyNad, form: 'Injection' },
-      { name: 'Glutathione', image: energyGlutathione, form: 'Injection', featured: true },
+      {
+        name: 'Glutathione',
+        image: energyGlutathione,
+        form: 'Injection',
+        featured: true,
+        description:
+          "Your body's primary antioxidant, built from three amino acids. Levels fall with age, alcohol, and sustained stress.",
+        benefits: [
+          "Your body's primary antioxidant",
+          'Bypasses digestion for bioavailability',
+          "Supports the liver's clearance pathways",
+          'Replaces what age and stress deplete',
+        ],
+      },
       {
         name: 'SS-31 (Elamipretide)',
         image: energySs31,
@@ -446,7 +459,20 @@ export const categories = [
     name: 'Longevity',
     products: [
       { name: 'NAD+', image: antiagingNad, form: 'Injection' },
-      { name: 'Glutathione', image: antiagingGlutathione, form: 'Injection', featured: true },
+      {
+        name: 'Glutathione',
+        image: antiagingGlutathione,
+        form: 'Injection',
+        featured: true,
+        description:
+          "Your body's primary antioxidant, built from three amino acids. Levels fall with age, alcohol, and sustained stress.",
+        benefits: [
+          "Your body's primary antioxidant",
+          'Bypasses digestion for bioavailability',
+          "Supports the liver's clearance pathways",
+          'Replaces what age and stress deplete',
+        ],
+      },
       {
         name: 'Oxytocin',
         image: antiagingOxytocin,
@@ -669,7 +695,19 @@ export const categories = [
           'Used under close monitoring',
         ],
       },
-      { name: 'Glutathione', image: fertilityGlutathione, form: 'Injection' },
+      {
+        name: 'Glutathione',
+        image: fertilityGlutathione,
+        form: 'Injection',
+        description:
+          "Your body's primary antioxidant, built from three amino acids. Levels fall with age, alcohol, and sustained stress.",
+        benefits: [
+          "Your body's primary antioxidant",
+          'Bypasses digestion for bioavailability',
+          "Supports the liver's clearance pathways",
+          'Replaces what age and stress deplete',
+        ],
+      },
       {
         // No dedicated photo yet — client will generate one and share it.
         name: 'Gonadorelin',
@@ -712,7 +750,19 @@ export const categories = [
     products: [
       // No dedicated photo yet — will render a placeholder until real photography exists.
       { name: 'Mycotox Mold Testing', form: 'Lab Test', featured: true },
-      { name: 'Glutathione', image: energyGlutathione, form: 'Injection' },
+      {
+        name: 'Glutathione',
+        image: energyGlutathione,
+        form: 'Injection',
+        description:
+          "Your body's primary antioxidant, built from three amino acids. Levels fall with age, alcohol, and sustained stress.",
+        benefits: [
+          "Your body's primary antioxidant",
+          'Bypasses digestion for bioavailability',
+          "Supports the liver's clearance pathways",
+          'Replaces what age and stress deplete',
+        ],
+      },
     ],
   },
   {
