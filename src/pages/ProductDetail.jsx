@@ -72,7 +72,7 @@ const benefitIconRules = [
   { keywords: ['stress', 'calm', 'peace', 'anxiety', 'mood', 'resilien'], icons: [Wind] },
   { keywords: ['skin', 'radiance', 'glow', 'complexion'], icons: [Sun] },
   { keywords: ['hormone', 'balance', 'blood sugar', 'glucose', 'insulin'], icons: [Activity] },
-  { keywords: ['circulation', 'blood flow', 'cardiovascular'], icons: [HeartPulse] },
+  { keywords: ['circulation', 'blood flow', 'bloodflow', 'cardiovascular'], icons: [HeartPulse] },
   { keywords: ['libido', 'sexual', 'performance', 'intimacy', 'desire'], icons: [Heart] },
   { keywords: ['detox', 'toxin', 'cleanse', 'clearance'], icons: [Droplet] },
   { keywords: ['confiden', 'self-esteem'], icons: [Smile] },

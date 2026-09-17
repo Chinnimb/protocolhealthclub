@@ -559,6 +559,19 @@ export const categories = [
       { name: 'Estrogen', image: sexualEstrogen, form: 'Injection', featured: true },
       { name: 'Tadalafil (Cialis)', image: sexualTadalafil, form: 'Injection' },
       { name: 'Sildenafil (Viagra)', image: sexualSildenafil, form: 'Injection' },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'PT-141 (Bremelanotide)',
+        form: 'Injection',
+        description:
+          "Blood flow medications work on the body's response once desire is there. PT-141 works in the brain, on desire itself.",
+        benefits: [
+          'Works on desire, not just performance',
+          'For women and men',
+          'Promotes arousal in the brain',
+          'Does not rely on bloodflow',
+        ],
+      },
     ],
   },
   {
