@@ -36,7 +36,7 @@ import { getProduct } from '../data/protocolsData'
 // of cycling through a fixed set regardless of content.
 const benefitIconRules = [
   { keywords: ['sleep', 'rest'], icon: Moon },
-  { keywords: ['recovery', 'repair', 'heal'], icon: RefreshCw },
+  { keywords: ['recovery', 'repair', 'healing'], icon: RefreshCw },
   { keywords: ['bone', 'joint', 'connective'], icon: Bone },
   { keywords: ['muscle', 'strength', 'tone'], icon: Dumbbell },
   { keywords: ['lean', 'composition', 'metabolism', 'fat'], icon: Flame },
@@ -55,7 +55,7 @@ const benefitIconRules = [
 
 function getBenefitIcon(text) {
   const lower = text.toLowerCase()
-  const match = benefitIconRules.find((r) => r.keywords.some((kw) => lower.includes(kw)))
+  const match = benefitIconRules.find((r) => r.keywords.some((kw) => new RegExp(`\\b${kw}`).test(lower)))
   return match ? match.icon : Sparkles
 }
 

@@ -280,7 +280,19 @@ export const categories = [
           'Stronger bone & connective tissue',
         ],
       },
-      { name: 'CJC, Ipamorelin', image: muscleCjcIpamorelin, form: 'Injection' },
+      {
+        name: 'CJC-1295 / Mod GRF 1-29',
+        image: muscleCjcIpamorelin,
+        form: 'Injection',
+        description:
+          "One nightly injection keeps the growth hormone signal open for hours instead of minutes. A longer recovery window, on your body's schedule.",
+        benefits: [
+          'Stronger overnight recovery',
+          'Healthier body composition',
+          'Deeper, more consistent sleep',
+          'Firmer skin, stronger hair',
+        ],
+      },
       { name: 'IGF-1 LR3', image: muscleIgf1Lr3, form: 'Injection' },
     ],
   },
