@@ -433,7 +433,19 @@ export const categories = [
           'Naturally present in healing tissue',
         ],
       },
-      { name: 'KPV', image: injuryKpv, form: 'Injection' },
+      {
+        name: 'KPV',
+        image: injuryKpv,
+        form: 'Injection',
+        description:
+          "Your body's own anti-inflammatory signal, isolated from a larger form of the molecule. For gut or skin that is inflamed rather than injured.",
+        benefits: [
+          'Calms gut inflammation',
+          'Soothes inflamed skin',
+          'Targeted, not systemic',
+          'Covers what repair misses',
+        ],
+      },
     ],
   },
   {
