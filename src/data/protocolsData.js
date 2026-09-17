@@ -522,7 +522,19 @@ export const categories = [
   {
     name: 'Cognitive Focus',
     products: [
-      { name: 'Semax', image: cognitiveSemax, form: 'Injection' },
+      {
+        name: 'Semax',
+        image: cognitiveSemax,
+        form: 'Injection',
+        description:
+          'Raises BDNF, the protein that builds neural connections, and lifts dopamine. Focus and drive without a stimulant.',
+        benefits: [
+          'Motivation, not just alertness',
+          'Not a stimulant, no crash',
+          'All-day focus',
+          'Supports making new connections in the brain',
+        ],
+      },
       { name: 'Dihexa', image: cognitiveDihexa, form: 'Injection', featured: true },
       { name: 'Tesofensine', image: cognitiveTesofensine, form: 'Injection' },
     ],
