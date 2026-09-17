@@ -7,6 +7,7 @@ import Reveal from '../components/Reveal'
 import Header from '../components/Header'
 import BackButton from '../components/BackButton'
 import Footer from '../components/Footer'
+import ImagePlaceholder from '../components/ImagePlaceholder'
 import { getCategory } from '../data/protocolsData'
 
 export default function CategoryProducts() {
@@ -98,7 +99,7 @@ export default function CategoryProducts() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="flex gap-6 overflow-x-auto px-1 pb-16 pt-3 [scrollbar-width:none] snap-x snap-mandatory [&::-webkit-scrollbar]:hidden md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:pt-0 md:snap-none"
+            className="flex gap-6 overflow-x-auto px-1 pb-16 pt-3 [scrollbar-width:none] snap-x snap-mandatory [&::-webkit-scrollbar]:hidden"
           >
             {category.products.map((p, i) => (
               <motion.div
@@ -114,11 +115,15 @@ export default function CategoryProducts() {
                   className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                 >
                   <div className="relative h-[220px] w-full overflow-hidden">
-                    <img
-                      src={p.image || category.coverImage}
-                      alt={p.name}
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    {p.image ? (
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <ImagePlaceholder className="absolute inset-0 h-full w-full border-0" />
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col gap-2 px-6 pb-7 pt-6">
                     <p className="line-clamp-2 min-h-[56px] text-xl font-bold text-[#161b1f]">{p.name}</p>
@@ -129,12 +134,15 @@ export default function CategoryProducts() {
             ))}
           </motion.div>
 
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-cream to-transparent md:w-20" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-cream to-transparent md:w-20" />
+
           <motion.button
             type="button"
             onClick={() => scrollByCard(-1)}
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.94 }}
-            className="absolute left-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md md:hidden"
+            className="absolute left-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md"
           >
             <ChevronLeft className="h-4 w-4 text-orange-2" strokeWidth={2.5} />
           </motion.button>
@@ -143,13 +151,13 @@ export default function CategoryProducts() {
             onClick={() => scrollByCard(1)}
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.94 }}
-            className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md md:hidden"
+            className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-2 bg-white/70 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md"
           >
             <ChevronRight className="h-4 w-4 text-orange-2" strokeWidth={2.5} />
           </motion.button>
         </div>
 
-        <div className="flex items-center justify-center gap-2 pt-1 md:hidden">
+        <div className="flex items-center justify-center gap-2 pt-1">
           {category.products.map((p, i) => (
             <button
               key={p.slug}

@@ -30,6 +30,7 @@ import Reveal from '../components/Reveal'
 import Header from '../components/Header'
 import BackButton from '../components/BackButton'
 import Footer from '../components/Footer'
+import ImagePlaceholder from '../components/ImagePlaceholder'
 import { getProduct } from '../data/protocolsData'
 
 // Picks an icon that matches what the benefit text is actually about, instead
@@ -125,7 +126,6 @@ export default function ProductDetail() {
 
   const { category, product } = result
   const related = category.products.filter((p) => p.slug !== product.slug)
-  const gallery = product.images?.length ? product.images : [product.image]
   const description = product.description || category.description
   const benefits = product.benefits || category.benefits
 
@@ -145,7 +145,7 @@ export default function ProductDetail() {
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
-          <ProductGallery images={gallery} name={product.name} />
+          <ProductGallery image={product.image} name={product.name} />
 
           <Reveal delay={0.1} className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
@@ -212,11 +212,15 @@ export default function ProductDetail() {
                     className="group flex w-[220px] shrink-0 snap-center flex-col overflow-hidden rounded-[20px] border border-[#e8e8e8] bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.07)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,122,46,0.25)]"
                   >
                     <div className="relative h-[180px] w-full overflow-hidden">
-                      <img
-                        src={p.image || category.coverImage}
-                        alt={p.name}
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
+                      {p.image ? (
+                        <img
+                          src={p.image}
+                          alt={p.name}
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <ImagePlaceholder className="absolute inset-0 h-full w-full border-0" />
+                      )}
                     </div>
                     <div className="flex flex-col gap-1.5 px-5 pb-6 pt-4">
                       <p className="text-lg font-bold text-[#161b1f]">{p.name}</p>
@@ -271,11 +275,15 @@ export default function ProductDetail() {
   )
 }
 
-function ProductGallery({ images, name }) {
+function ProductGallery({ image, name }) {
   return (
     <Reveal className="flex flex-col gap-3">
       <div className="relative h-[320px] w-full overflow-hidden rounded-[24px] md:h-[420px]">
-        <img src={images[0]} alt={name} className="h-full w-full object-cover" />
+        {image ? (
+          <img src={image} alt={name} className="h-full w-full object-cover" />
+        ) : (
+          <ImagePlaceholder className="h-full w-full border-0" />
+        )}
       </div>
     </Reveal>
   )

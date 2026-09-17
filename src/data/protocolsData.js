@@ -80,10 +80,9 @@ const categoryCoverImage = {
   'Hair Growth': cardHairGrowth,
   'Stress Reduction': cardStressReduction,
   'Cognitive Focus': cardCognitiveFocus,
-  // No dedicated Detox photography yet — reuse the Gut Health cover as a placeholder.
-  Detox: cardGutHealth,
-  // No dedicated Sleep photography yet — reuse the Stress Reduction cover as a placeholder.
-  Sleep: cardStressReduction,
+  // No dedicated Detox/Sleep photography yet — render a placeholder instead of a real photo.
+  Detox: null,
+  Sleep: null,
 }
 
 import heroFatLoss from '../assets/figma/categories/v2-fat-loss.jpg'
@@ -115,10 +114,9 @@ const categoryHeroImage = {
   'Hair Growth': heroHairGrowth,
   'Stress Reduction': heroStressReduction,
   'Cognitive Focus': heroCognitiveFocus,
-  // No dedicated Detox photography yet — reuse the Gut Health hero as a placeholder.
-  Detox: heroGutHealth,
-  // No dedicated Sleep photography yet — reuse the Stress Reduction hero as a placeholder.
-  Sleep: heroStressReduction,
+  // No dedicated Detox/Sleep photography yet — render a placeholder instead of a real photo.
+  Detox: null,
+  Sleep: null,
 }
 
 import iconFlame from '../assets/figma/icon-flame.svg'
@@ -396,8 +394,8 @@ export const categories = [
   {
     name: 'Detox',
     products: [
-      // Placeholder photo (reused from Gut Health) until real Mycotox Mold Testing photography exists.
-      { name: 'Mycotox Mold Testing', image: gutBarrierTesting, form: 'Lab Test', featured: true },
+      // No dedicated photo yet — will render a placeholder until real photography exists.
+      { name: 'Mycotox Mold Testing', form: 'Lab Test', featured: true },
       { name: 'Glutathione', image: energyGlutathione, form: 'Injection' },
     ],
   },
@@ -416,7 +414,6 @@ export const categories = [
   products: cat.products.map((p) => ({
     ...p,
     slug: slugify(p.name),
-    images: [p.image, categoryCoverImage[cat.name]].filter(Boolean),
   })),
 }))
 

@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Reveal from './Reveal'
 import FadeIn from './FadeIn'
 import Typewriter from './Typewriter'
+import ImagePlaceholder from './ImagePlaceholder'
 import glowLeft from '../assets/figma/benefits-glow-left.svg'
 import glowRight from '../assets/figma/benefits-glow-right.svg'
 
@@ -46,8 +47,8 @@ const cards = [
   { title: 'Sexual Health', icon: iconHeart, image: cardSexualHealth, products: 'Testosterone, Estrogen, Tadalafil (Cialis), Sildenafil (Viagra), Scream Cream, Oxytocin' },
   { title: 'Fertility', icon: iconSprout, image: cardFertility, products: 'hCG, Enclomiphene, rFSH, Glutathione' },
   { title: 'Hair Growth', icon: iconCombine, image: cardHairGrowth, products: 'Minoxidil, Dutasteride, Finasteride, GHK-Cu' },
-  { title: 'Detox', icon: iconLeaf, image: cardGutHealth, products: 'Mycotox Mold Testing, Glutathione' },
-  { title: 'Sleep', icon: iconCircleX, image: cardStressReduction, products: 'Coming soon' },
+  { title: 'Detox', icon: iconLeaf, image: null, products: 'Mycotox Mold Testing, Glutathione' },
+  { title: 'Sleep', icon: iconCircleX, image: null, products: 'Coming soon' },
 ]
 
 function BenefitCard({ card, delay }) {
@@ -63,11 +64,15 @@ function BenefitCard({ card, delay }) {
       whileHover={{ y: -6 }}
       className="group relative h-[420px] w-[260px] shrink-0 snap-center overflow-hidden rounded-[24px] border border-white/10 shadow-[0px_12px_24px_0px_rgba(22,32,37,0.08)] transition-shadow duration-500 hover:shadow-[0px_16px_40px_0px_rgba(242,95,43,0.35)] sm:h-[480px] sm:w-[320px]"
     >
-      <img
-        src={card.image}
-        alt={card.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-      />
+      {card.image ? (
+        <img
+          src={card.image}
+          alt={card.title}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      ) : (
+        <ImagePlaceholder className="absolute inset-0 h-full w-full border-0" />
+      )}
       <div
         className="absolute inset-0"
         style={{

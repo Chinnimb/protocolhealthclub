@@ -4,6 +4,7 @@ import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import ImagePlaceholder from '../components/ImagePlaceholder'
 import { categories } from '../data/protocolsData'
 
 export default function AllProtocols() {
@@ -36,11 +37,15 @@ export default function AllProtocols() {
                   whileHover={{ y: -4 }}
                   className="protocol-card-shadow group relative flex h-[300px] w-full overflow-hidden rounded-[24px] sm:h-[320px]"
                 >
-                  <img
-                    src={category.heroImage}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                  {category.heroImage ? (
+                    <img
+                      src={category.heroImage}
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <ImagePlaceholder className="absolute inset-0 h-full w-full border-0" />
+                  )}
                   <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/40 to-transparent" />
 
                   <div className="relative z-10 mt-auto flex h-[132px] w-full flex-col gap-2 rounded-t-[20px] border-t border-white/20 bg-black/10 p-4 shadow-[0px_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-md sm:h-[140px] sm:p-5">
