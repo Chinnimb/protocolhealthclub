@@ -283,6 +283,19 @@ export const categories = [
           'Where the science is heading',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Protocol C',
+        form: 'Injection',
+        description:
+          'A second fullness hormone on a separate pathway from the incretins. For protocols that have stalled and need a different angle, not a higher dose.',
+        benefits: [
+          'Works through a different hunger signal',
+          'Slows gastric emptying for longer fullness',
+          'Breaks stalls from other protocols',
+          'Matches insulin signaling',
+        ],
+      },
     ],
   },
   {
