@@ -293,6 +293,20 @@ export const categories = [
           'Firmer skin, stronger hair',
         ],
       },
+      {
+        // No dedicated photo yet — reuses the CJC/Ipamorelin combo shot as a placeholder.
+        name: 'Ipamorelin',
+        image: muscleCjcIpamorelin,
+        form: 'Injection',
+        description:
+          'Releases your own growth hormone without raising appetite or stress hormones. Built for people already eating in a deficit.',
+        benefits: [
+          'Recovery without the hunger',
+          'Deeper sleep, steadier energy',
+          'Flexible dosing on your schedule',
+          'Less bloating, leaner look',
+        ],
+      },
       { name: 'IGF-1 LR3', image: muscleIgf1Lr3, form: 'Injection' },
     ],
   },
