@@ -309,6 +309,19 @@ export const categories = [
           'Maintains insulin sensitivity',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Semaglutide + B12',
+        form: 'Injection',
+        description:
+          'The appetite signal with B12 added, which many people find eases the digestive side of getting started.',
+        benefits: [
+          'Quiets food noise',
+          'Supports energy in a calorie deficit',
+          'Drives steady, sustained weight loss',
+          'Improves blood sugar control',
+        ],
+      },
     ],
   },
   {
