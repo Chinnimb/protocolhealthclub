@@ -814,6 +814,18 @@ export const categories = [
           'Does not rely on bloodflow',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Oxytocin + Tadalafil + PT-141',
+        form: 'Troche',
+        description: 'Three mechanisms in one dissolvable troche: connection, blood flow, and desire.',
+        benefits: [
+          'Increase feelings of intimacy and desire',
+          'Raises blood flow',
+          'Stimulates arousal',
+          'Takes effect within 60 minutes',
+        ],
+      },
     ],
   },
   {

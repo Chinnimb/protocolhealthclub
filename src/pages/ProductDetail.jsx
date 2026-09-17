@@ -99,7 +99,7 @@ const benefitIconRules = [
   { keywords: ['hormone', 'balance', 'blood sugar', 'glucose', 'insulin', 'testosterone', 'trt'], icons: [Activity, Radio] },
   { keywords: ['circulation', 'blood flow', 'bloodflow', 'cardiovascular'], icons: [HeartPulse] },
   {
-    keywords: ['libido', 'sexual', 'performance', 'intimacy', 'desire', 'closeness', 'connection', 'bonding'],
+    keywords: ['libido', 'sexual', 'performance', 'intimacy', 'desire', 'closeness', 'connection', 'bonding', 'arousal'],
     icons: [Heart, HeartHandshake, Users],
   },
   { keywords: ['detox', 'toxin', 'cleanse', 'clearance'], icons: [Droplet] },
