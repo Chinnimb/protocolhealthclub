@@ -1,7 +1,30 @@
 import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Sparkles, ShieldCheck, Award, Stethoscope, FlaskConical, Users, ChevronLeft, ChevronRight } from 'lucide-react'
+import {
+  Sparkles,
+  ShieldCheck,
+  Moon,
+  RefreshCw,
+  Bone,
+  Flame,
+  Dumbbell,
+  Zap,
+  Brain,
+  Wind,
+  Sun,
+  Activity,
+  HeartPulse,
+  Heart,
+  Droplet,
+  Smile,
+  Leaf,
+  Stethoscope,
+  FlaskConical,
+  Users,
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react'
 import MotionLink from '../components/MotionLink'
 import Reveal from '../components/Reveal'
 import Header from '../components/Header'
@@ -9,8 +32,32 @@ import BackButton from '../components/BackButton'
 import Footer from '../components/Footer'
 import { getProduct } from '../data/protocolsData'
 
-// benefit[0] gets the category icon; every other benefit cycles through these.
-const supportingBenefitIcons = [Sparkles, ShieldCheck, Award]
+// Picks an icon that matches what the benefit text is actually about, instead
+// of cycling through a fixed set regardless of content.
+const benefitIconRules = [
+  { keywords: ['sleep', 'rest'], icon: Moon },
+  { keywords: ['recovery', 'repair', 'heal'], icon: RefreshCw },
+  { keywords: ['bone', 'joint', 'connective'], icon: Bone },
+  { keywords: ['muscle', 'strength', 'tone'], icon: Dumbbell },
+  { keywords: ['lean', 'composition', 'metabolism', 'fat'], icon: Flame },
+  { keywords: ['energy', 'stamina', 'vitality', 'fatigue'], icon: Zap },
+  { keywords: ['focus', 'clarity', 'cognit', 'memory', 'mental', 'brain'], icon: Brain },
+  { keywords: ['stress', 'calm', 'peace', 'anxiety', 'mood', 'resilien'], icon: Wind },
+  { keywords: ['skin', 'radiance', 'glow', 'complexion'], icon: Sun },
+  { keywords: ['immune', 'defense', 'inflammat'], icon: ShieldCheck },
+  { keywords: ['hormone', 'balance'], icon: Activity },
+  { keywords: ['circulation', 'blood flow', 'cardiovascular'], icon: HeartPulse },
+  { keywords: ['libido', 'sexual', 'performance', 'intimacy', 'desire'], icon: Heart },
+  { keywords: ['digest', 'gut'], icon: Leaf },
+  { keywords: ['detox', 'toxin', 'cleanse', 'clearance'], icon: Droplet },
+  { keywords: ['confiden', 'self-esteem'], icon: Smile },
+]
+
+function getBenefitIcon(text) {
+  const lower = text.toLowerCase()
+  const match = benefitIconRules.find((r) => r.keywords.some((kw) => lower.includes(kw)))
+  return match ? match.icon : Sparkles
+}
 
 const trustBadges = [
   { icon: Stethoscope, label: 'Physician supervised' },
@@ -109,21 +156,17 @@ export default function ProductDetail() {
             <p className="text-base leading-relaxed text-[#4a4a4a] md:text-lg">{description}</p>
 
             <div className="flex flex-col gap-4">
-              {benefits.map((b, i) => (
-                <div key={b} className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-2">
-                    {i === 0 ? (
-                      <img src={category.icon} alt="" className="h-4 w-4" />
-                    ) : (
-                      (() => {
-                        const Icon = supportingBenefitIcons[(i - 1) % supportingBenefitIcons.length]
-                        return <Icon className="h-4 w-4 text-white" strokeWidth={2.25} />
-                      })()
-                    )}
-                  </span>
-                  <p className="text-sm text-[#1a1a1a] md:text-base">{b}</p>
-                </div>
-              ))}
+              {benefits.map((b) => {
+                const Icon = getBenefitIcon(b)
+                return (
+                  <div key={b} className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-2">
+                      <Icon className="h-4 w-4 text-white" strokeWidth={2.25} />
+                    </span>
+                    <p className="text-sm text-[#1a1a1a] md:text-base">{b}</p>
+                  </div>
+                )
+              })}
             </div>
 
             <div className="flex flex-wrap gap-x-6 gap-y-3 border-y border-[#e8e8e8] py-5">
