@@ -631,6 +631,19 @@ export const categories = [
           'Soothes pain from aches and injuries',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'BPC-157 + KPV',
+        form: 'Oral',
+        description:
+          'A repair peptide and an anti-inflammatory peptide together, taken by mouth. Built for the gut specifically.',
+        benefits: [
+          'Built to repair gut integrity',
+          'Works on gut-specific inflammation',
+          'Taken by mouth, no injection',
+          'Soothes digestion while repairing gut barrier',
+        ],
+      },
     ],
   },
   {
