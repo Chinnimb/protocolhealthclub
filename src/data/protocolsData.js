@@ -452,6 +452,19 @@ export const categories = [
           'Lose fewer days to sickness',
         ],
       },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Epitalon',
+        form: 'Injection',
+        description:
+          'Based on a peptide from the pineal gland, the part of the brain that sets your body clock. Run for ten days, twice a year.',
+        benefits: [
+          'Protects against age related decline',
+          'Powerful antioxidant activity',
+          'Deeper, more restorative sleep',
+          'Supports cognitive resilience',
+        ],
+      },
     ],
   },
   {

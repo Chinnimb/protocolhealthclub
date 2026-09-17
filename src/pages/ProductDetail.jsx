@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import {
   Sparkles,
   ShieldCheck,
+  Shield,
   Moon,
   Cloud,
   EyeOff,
@@ -67,7 +68,7 @@ const benefitIconRules = [
   },
   { keywords: ['energy', 'stamina', 'vitality', 'fatigue', 'stimulant', 'crash'], icons: [Zap] },
   { keywords: ['focus', 'clarity', 'cognit', 'memory', 'mental', 'brain', 'motivation', 'alertness', 'neural'], icons: [Brain] },
-  { keywords: ['immune', 'defense', 'inflammat'], icons: [ShieldCheck] },
+  { keywords: ['immune', 'defense', 'inflammat', 'antioxidant', 'decline', 'longevity'], icons: [ShieldCheck, Shield] },
   { keywords: ['digest', 'gut'], icons: [Leaf] },
   { keywords: ['stress', 'calm', 'peace', 'anxiety', 'mood', 'resilien'], icons: [Wind] },
   { keywords: ['skin', 'radiance', 'glow', 'complexion'], icons: [Sun] },
