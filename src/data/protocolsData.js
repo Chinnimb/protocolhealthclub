@@ -263,7 +263,19 @@ export const categories = [
   {
     name: 'Muscle Growth',
     products: [
-      { name: 'Tesamorelin', image: muscleTesamorelin, form: 'Injection' },
+      {
+        name: 'Tesamorelin',
+        image: muscleTesamorelin,
+        form: 'Injection',
+        description:
+          'Deep abdominal fat sits around your organs and resists diet and training. Tesamorelin raises your own growth hormone and targets that layer.',
+        benefits: [
+          'Targets deep belly fat',
+          'Backed by clinical research',
+          'Works on harmful visceral fat',
+          'Smaller waist size before weight loss',
+        ],
+      },
       {
         name: 'Sermorelin',
         image: muscleSermorelin,

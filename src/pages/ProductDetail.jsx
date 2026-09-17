@@ -40,7 +40,7 @@ const benefitIconRules = [
   { keywords: ['recovery', 'repair', 'healing'], icon: RefreshCw },
   { keywords: ['bone', 'joint', 'connective'], icon: Bone },
   { keywords: ['muscle', 'strength', 'tone'], icon: Dumbbell },
-  { keywords: ['lean', 'composition', 'metabolism', 'fat'], icon: Flame },
+  { keywords: ['lean', 'composition', 'metabolism', 'fat', 'waist', 'weight', 'belly', 'visceral'], icon: Flame },
   { keywords: ['energy', 'stamina', 'vitality', 'fatigue'], icon: Zap },
   { keywords: ['focus', 'clarity', 'cognit', 'memory', 'mental', 'brain'], icon: Brain },
   { keywords: ['stress', 'calm', 'peace', 'anxiety', 'mood', 'resilien'], icon: Wind },
@@ -52,6 +52,7 @@ const benefitIconRules = [
   { keywords: ['digest', 'gut'], icon: Leaf },
   { keywords: ['detox', 'toxin', 'cleanse', 'clearance'], icon: Droplet },
   { keywords: ['confiden', 'self-esteem'], icon: Smile },
+  { keywords: ['clinical', 'research', 'studied', 'studies', 'evidence'], icon: FlaskConical },
 ]
 
 function getBenefitIcon(text) {
