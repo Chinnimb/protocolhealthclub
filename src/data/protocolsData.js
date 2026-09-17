@@ -457,6 +457,19 @@ export const categories = [
       },
       { name: 'Estradiol', image: skincareEstradiol, form: 'Injection', featured: true },
       { name: 'Tretinoin', image: skincareTretinoin, form: 'Injection' },
+      {
+        // No dedicated photo yet — client will generate one and share it.
+        name: 'Melanotan II',
+        form: 'Injection',
+        description:
+          'Acts on two receptors that control unrelated things: skin pigment and sexual desire. One compound, both effects.',
+        benefits: [
+          'Deeper skin tone without the sun',
+          'Effects build gradually over time',
+          "Works with skin's pigment pathway",
+          'Promotes intimate desire',
+        ],
+      },
     ],
   },
   {

@@ -43,7 +43,7 @@ const benefitIconRules = [
   { keywords: ['sleep', 'rest'], icons: [Moon, Cloud, EyeOff] },
   { keywords: ['recovery', 'repair', 'healing'], icons: [RefreshCw] },
   { keywords: ['bone', 'joint', 'connective', 'motion', 'mobility', 'flexib'], icons: [Bone] },
-  { keywords: ['muscle', 'strength', 'tone', 'training', 'pump'], icons: [Dumbbell] },
+  { keywords: ['muscle', 'strength', 'muscle tone', 'training', 'pump'], icons: [Dumbbell] },
   {
     keywords: [
       'lean',
