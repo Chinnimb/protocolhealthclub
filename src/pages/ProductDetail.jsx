@@ -232,7 +232,14 @@ export default function ProductDetail() {
 
           <Reveal delay={0.1} className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
-              <h1 className="text-3xl font-bold leading-tight text-[#1a1a1a] md:text-5xl">{product.name}</h1>
+              <h1 className="text-balance text-3xl font-bold leading-tight text-[#1a1a1a] md:text-5xl">
+                {product.name.split(' ').map((word, i, words) => (
+                  <span key={i}>
+                    <span className="whitespace-nowrap">{word}</span>
+                    {i < words.length - 1 ? ' ' : ''}
+                  </span>
+                ))}
+              </h1>
               <p className="text-[11px] tracking-[0.88px] text-[#8a8a8a]">{product.form.toUpperCase()}</p>
             </div>
 
