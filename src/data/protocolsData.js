@@ -52,6 +52,28 @@ import cognitiveSemax from '../assets/figma/products/cognitive-semax.jpg'
 import cognitiveDihexa from '../assets/figma/products/cognitive-dihexa.jpg'
 import cognitiveTesofensine from '../assets/figma/products/cognitive-tesofensine.jpg'
 
+import fatlossGlp3 from '../assets/figma/products/fatloss-glp3.jpg'
+import fatlossProtocolC from '../assets/figma/products/fatloss-protocolc.jpg'
+import fatlossAod9604 from '../assets/figma/products/fatloss-aod9604.jpg'
+import fatlossSemaglutideB12 from '../assets/figma/products/fatloss-semaglutide-b12.jpg'
+import fatlossTirzepatideB12 from '../assets/figma/products/fatloss-tirzepatide-b12.jpg'
+import muscleCjc1295 from '../assets/figma/products/muscle-cjc1295.jpg'
+import muscleGhrp2 from '../assets/figma/products/muscle-ghrp2.jpg'
+import muscleHexarelin from '../assets/figma/products/muscle-hexarelin.jpg'
+import muscleCjc1295Ipamorelin from '../assets/figma/products/muscle-cjc1295-ipamorelin.jpg'
+import muscleTesamorelinIpamorelin from '../assets/figma/products/muscle-tesamorelin-ipamorelin.jpg'
+import energyMotsC from '../assets/figma/products/energy-motsc.jpg'
+import antiagingThymosinAlpha1 from '../assets/figma/products/antiaging-thymosinalpha1.jpg'
+import antiagingEpitalon from '../assets/figma/products/antiaging-epitalon.jpg'
+import skincareMelanotan2 from '../assets/figma/products/skincare-melanotan2.jpg'
+import injuryGlow from '../assets/figma/products/injury-glow.jpg'
+import injuryKlow from '../assets/figma/products/injury-klow.jpg'
+import injuryWolverine from '../assets/figma/products/injury-wolverine.jpg'
+import sexualPt141 from '../assets/figma/products/sexual-pt141.jpg'
+import fertilityGonadorelin from '../assets/figma/products/fertility-gonadorelin.jpg'
+import fertilityHmg from '../assets/figma/products/fertility-hmg.jpg'
+import sleepDsip from '../assets/figma/products/sleep-dsip.jpg'
+
 import cardFatLoss from '../assets/figma/card-fat-loss.png'
 import cardMuscleGrowth from '../assets/figma/card-muscle-growth.png'
 import cardEnergyBoosting from '../assets/figma/card-energy-boosting.png'
@@ -271,8 +293,8 @@ export const categories = [
       { name: 'Carnitine', image: fatlossCarnitine, form: 'Injection' },
       { name: 'Tesofensine', image: fatlossTesofensine, form: 'Injection' },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'GLP-3',
+        image: fatlossGlp3,
         form: 'Injection',
         description:
           'Three signals rather than two: it lowers what you eat and raises what you burn at rest. Currently in Phase 3 trials.',
@@ -284,8 +306,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Protocol C',
+        image: fatlossProtocolC,
         form: 'Injection',
         description:
           'A second fullness hormone on a separate pathway from the incretins. For protocols that have stalled and need a different angle, not a higher dose.',
@@ -297,8 +319,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'AOD-9604',
+        image: fatlossAod9604,
         form: 'Injection',
         description:
           'The segment of growth hormone responsible for fat breakdown, isolated from the effects on tissue growth and blood sugar.',
@@ -310,8 +332,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Semaglutide + B12',
+        image: fatlossSemaglutideB12,
         form: 'Injection',
         description:
           'The appetite signal with B12 added, which many people find eases the digestive side of getting started.',
@@ -323,8 +345,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Tirzepatide + B12',
+        image: fatlossTirzepatideB12,
         form: 'Injection',
         description: 'Two fullness signals with B12 added to ease the adjustment period.',
         benefits: [
@@ -367,8 +389,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'CJC-1295 / Mod GRF 1-29',
+        image: muscleCjc1295,
         form: 'Injection',
         description:
           "One nightly injection keeps the growth hormone signal open for hours instead of minutes. A longer recovery window, on your body's schedule.",
@@ -406,8 +428,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'GHRP-2 (Pralmorelin)',
+        image: muscleGhrp2,
         form: 'Injection',
         description:
           'A powerful growth hormone release with an appetite stimulus to match. For building phases where eating enough has been the hard part.',
@@ -419,8 +441,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Hexarelin',
+        image: muscleHexarelin,
         form: 'Injection',
         description:
           'A powerful growth hormone release, run in short defined blocks. Timed around a training phase where you want maximum output.',
@@ -432,8 +454,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'CJC-1295 + Ipamorelin',
+        image: muscleCjc1295Ipamorelin,
         form: 'Injection',
         description:
           'Two separate signals to the same gland. Together they produce a larger, cleaner growth hormone release than either delivers alone.',
@@ -445,8 +467,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Tesamorelin + Ipamorelin',
+        image: muscleTesamorelinIpamorelin,
         form: 'Injection',
         description:
           'The most studied option for deep abdominal fat, paired with a clean growth hormone release. Body composition from two directions.',
@@ -504,8 +526,8 @@ export const categories = [
       },
       { name: 'Thyroid Supplementation', image: energyThyroid, form: 'Injection' },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'MOTS-c',
+        image: energyMotsC,
         form: 'Injection',
         description:
           'Made by your own mitochondria, and produced less every year. MOTS-c restores how easily your cells switch between burning fat and burning sugar.',
@@ -551,10 +573,10 @@ export const categories = [
       },
       { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Injection' },
       {
-        // No dedicated photo yet — client will generate one and share it.
         // Immune-focused product with no clear category fit yet — placed here
         // for its aging angle, pending confirmation with the client.
         name: 'Thymosin Alpha-1',
+        image: antiagingThymosinAlpha1,
         form: 'Injection',
         description:
           'Your thymus trains the immune cells that recognize threats, and it shrinks from adolescence onward. Thymosin alpha-1 is a copy of what it produces.',
@@ -566,8 +588,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Epitalon',
+        image: antiagingEpitalon,
         form: 'Injection',
         description:
           'Based on a peptide from the pineal gland, the part of the brain that sets your body clock. Run for ten days, twice a year.',
@@ -599,8 +621,8 @@ export const categories = [
       { name: 'Estradiol', image: skincareEstradiol, form: 'Injection', featured: true },
       { name: 'Tretinoin', image: skincareTretinoin, form: 'Injection' },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Melanotan II',
+        image: skincareMelanotan2,
         form: 'Injection',
         description:
           'Acts on two receptors that control unrelated things: skin pigment and sexual desire. One compound, both effects.',
@@ -612,8 +634,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'GLOW (BPC-157 + TB-500 + GHK-Cu)',
+        image: injuryGlow,
         form: 'Injection',
         description:
           'The repair pairing plus the collagen signal. Structural recovery and skin quality worked on at the same time.',
@@ -625,8 +647,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'KLOW (BPC-157 + TB-500 + GHK-Cu + KPV)',
+        image: injuryKlow,
         form: 'Injection',
         description: 'The full repair combination, with an anti-inflammatory peptide added for gut and skin.',
         benefits: [
@@ -645,8 +667,8 @@ export const categories = [
       { name: 'Gut Barrier Testing', image: gutBarrierTesting, form: 'Lab Test', featured: true },
       { name: 'Food Sensitivity Testing', image: gutFoodSensitivity, form: 'Lab Test' },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'KLOW (BPC-157 + TB-500 + GHK-Cu + KPV)',
+        image: injuryKlow,
         form: 'Injection',
         description: 'The full repair combination, with an anti-inflammatory peptide added for gut and skin.',
         benefits: [
@@ -715,8 +737,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Wolverine (BPC-157 + TB-500)',
+        image: injuryWolverine,
         form: 'Injection',
         description:
           'Two repair peptides in one vial. One works at the site that needs it, the other works across the whole body at once.',
@@ -728,8 +750,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'GLOW (BPC-157 + TB-500 + GHK-Cu)',
+        image: injuryGlow,
         form: 'Injection',
         description:
           'The repair pairing plus the collagen signal. Structural recovery and skin quality worked on at the same time.',
@@ -741,8 +763,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'KLOW (BPC-157 + TB-500 + GHK-Cu + KPV)',
+        image: injuryKlow,
         form: 'Injection',
         description: 'The full repair combination, with an anti-inflammatory peptide added for gut and skin.',
         benefits: [
@@ -802,8 +824,8 @@ export const categories = [
       { name: 'Tadalafil (Cialis)', image: sexualTadalafil, form: 'Injection' },
       { name: 'Sildenafil (Viagra)', image: sexualSildenafil, form: 'Injection' },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'PT-141 (Bremelanotide)',
+        image: sexualPt141,
         form: 'Injection',
         description:
           "Blood flow medications work on the body's response once desire is there. PT-141 works in the brain, on desire itself.",
@@ -884,8 +906,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Gonadorelin',
+        image: fertilityGonadorelin,
         form: 'Injection',
         description:
           'A short signal your brain uses to tell the pituitary to keep the reproductive hormone axis running. Used to keep your own production active.',
@@ -897,8 +919,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'hMG (Human Menopausal Gonadotropin)',
+        image: fertilityHmg,
         form: 'Injection',
         description:
           'Carries both fertility signals in a single injection, the pair that drives cell maturation and natural testosterone production.',
@@ -958,8 +980,8 @@ export const categories = [
     name: 'Sleep',
     products: [
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'DSIP (Delta Sleep-Inducing Peptide)',
+        image: sleepDsip,
         form: 'Injection',
         description:
           'There is a difference between hours asleep and hours of real sleep. DSIP works on the deep stage where your body repairs itself.',
