@@ -73,6 +73,12 @@ import sexualPt141 from '../assets/figma/products/sexual-pt141.jpg'
 import fertilityGonadorelin from '../assets/figma/products/fertility-gonadorelin.jpg'
 import fertilityHmg from '../assets/figma/products/fertility-hmg.jpg'
 import sleepDsip from '../assets/figma/products/sleep-dsip.jpg'
+import muscleSermorelinGhrp2 from '../assets/figma/products/muscle-sermorelin-ghrp2.jpg'
+import gutBpc157Kpv from '../assets/figma/products/gut-bpc157-kpv.jpg'
+import sexualOxytocinTadalafilPt141 from '../assets/figma/products/sexual-oxytocin-tadalafil-pt141.jpg'
+import sexualOxytocinSildenafilB12 from '../assets/figma/products/sexual-oxytocin-sildenafil-b12.jpg'
+import hairPtdDbm from '../assets/figma/products/hair-ptddbm.jpg'
+import detoxMycotox from '../assets/figma/products/detox-mycotox.jpg'
 
 import cardFatLoss from '../assets/figma/card-fat-loss.png'
 import cardMuscleGrowth from '../assets/figma/card-muscle-growth.png'
@@ -480,8 +486,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Sermorelin + GHRP-2',
+        image: muscleSermorelinGhrp2,
         form: 'Troche',
         description: 'Two growth hormone signals in a dissolvable troche taken at bedtime. No injection required.',
         benefits: [
@@ -679,8 +685,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'BPC-157 + KPV',
+        image: gutBpc157Kpv,
         form: 'Oral',
         description:
           'A repair peptide and an anti-inflammatory peptide together, taken by mouth. Built for the gut specifically.',
@@ -837,8 +843,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Oxytocin + Tadalafil + PT-141',
+        image: sexualOxytocinTadalafilPt141,
         form: 'Troche',
         description: 'Three mechanisms in one dissolvable troche: connection, blood flow, and desire.',
         benefits: [
@@ -849,8 +855,8 @@ export const categories = [
         ],
       },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'Oxytocin + Sildenafil + B12',
+        image: sexualOxytocinSildenafilB12,
         form: 'Troche',
         description: 'Blood flow support paired with the connection hormone, in a dissolvable troche.',
         benefits: [
@@ -941,8 +947,8 @@ export const categories = [
       { name: 'Finasteride', image: hairFinasteride, form: 'Injection' },
       { name: 'GHK-Cu', image: hairGhkCu, form: 'Injection' },
       {
-        // No dedicated photo yet — client will generate one and share it.
         name: 'PTD-DBM',
+        image: hairPtdDbm,
         form: 'Topical',
         description:
           'A peptide applied directly to the scalp that works on a signaling pathway involved in the hair growth cycle.',
@@ -958,8 +964,7 @@ export const categories = [
   {
     name: 'Detox',
     products: [
-      // No dedicated photo yet — will render a placeholder until real photography exists.
-      { name: 'Mycotox Mold Testing', form: 'Lab Test', featured: true },
+      { name: 'Mycotox Mold Testing', image: detoxMycotox, form: 'Lab Test', featured: true },
       {
         name: 'Glutathione',
         image: energyGlutathione,
