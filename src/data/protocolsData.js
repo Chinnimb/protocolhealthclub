@@ -295,7 +295,20 @@ export const categories = [
           'Supports healthy metabolic markers',
         ],
       },
-      { name: 'Tirzepatide', image: fatlossTirzepatide, form: 'Injection', featured: true },
+      {
+        name: 'Tirzepatide',
+        image: fatlossTirzepatide,
+        form: 'Injection',
+        featured: true,
+        description:
+          'Your gut releases more than one fullness hormone. Tirzepatide copies two of them, quieting appetite further than a single signal can.',
+        benefits: [
+          'Quiets two hunger signals, not one',
+          'Greater weight loss in head to head trials',
+          'Steadier blood sugar',
+          'Built for stubborn weight',
+        ],
+      },
       { name: 'Carnitine', image: fatlossCarnitine, form: 'Injection' },
       { name: 'Tesofensine', image: fatlossTesofensine, form: 'Injection' },
       {
@@ -945,7 +958,19 @@ export const categories = [
       { name: 'Minoxidil', image: hairMinoxidil, form: 'Injection' },
       { name: 'Dutasteride', image: hairDutasteride, form: 'Injection', featured: true },
       { name: 'Finasteride', image: hairFinasteride, form: 'Injection' },
-      { name: 'GHK-Cu', image: hairGhkCu, form: 'Injection' },
+      {
+        name: 'GHK-Cu',
+        image: hairGhkCu,
+        form: 'Injection',
+        description:
+          "Aging decreases your body's natural collagen signal. GHK-Cu tells cells to build collagen and delivers the copper they need.",
+        benefits: [
+          'Firmer skin, better texture',
+          'A healing signal, not a surface treatment',
+          'Promotes wound and tissue repair',
+          'Antioxidant and anti-inflammatory',
+        ],
+      },
       {
         name: 'PTD-DBM',
         image: hairPtdDbm,
