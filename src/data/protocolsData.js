@@ -56,7 +56,6 @@ import cognitiveSemax from '../assets/figma/products/cognitive-semax.jpg'
 import cognitiveDihexa from '../assets/figma/products/cognitive-dihexa.jpg'
 import cognitiveTesofensine from '../assets/figma/products/cognitive-tesofensine.jpg'
 
-import fatlossGlp3 from '../assets/figma/products/fatloss-glp3.jpg'
 import fatlossProtocolC from '../assets/figma/products/fatloss-protocolc.jpg'
 import fatlossAod9604 from '../assets/figma/products/fatloss-aod9604.jpg'
 import fatlossSemaglutideB12 from '../assets/figma/products/fatloss-semaglutide-b12.jpg'
@@ -327,19 +326,6 @@ export const categories = [
         ],
       },
       { name: 'Tesofensine', image: fatlossTesofensine, form: 'Injection' },
-      {
-        name: 'GLP-3',
-        image: fatlossGlp3,
-        form: 'Injection',
-        description:
-          'Three signals rather than two: it lowers what you eat and raises what you burn at rest. Currently in Phase 3 trials.',
-        benefits: [
-          'Raises energy expenditure',
-          'Works both sides of the weight loss equation',
-          'Combines 3 approaches',
-          'Where the science is heading',
-        ],
-      },
       {
         name: 'Protocol C',
         image: fatlossProtocolC,
