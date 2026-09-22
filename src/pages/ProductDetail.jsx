@@ -40,6 +40,8 @@ import {
   Leaf,
   Stethoscope,
   FlaskConical,
+  Microscope,
+  ClipboardList,
   Users,
   ChevronLeft,
   ChevronRight,
@@ -92,11 +94,14 @@ const benefitIconRules = [
     icons: [Brain, Lightbulb, Puzzle],
   },
   { keywords: ['immune', 'defense', 'inflammat', 'antioxidant', 'decline', 'longevity'], icons: [ShieldCheck, Shield] },
-  { keywords: ['digest', 'gut'], icons: [Leaf] },
+  { keywords: ['digest', 'gut'], icons: [Leaf, Droplet] },
   { keywords: ['stress', 'calm', 'peace', 'anxiety', 'mood', 'resilien'], icons: [Wind] },
   { keywords: ['skin', 'radiance', 'glow', 'complexion'], icons: [Sun] },
   { keywords: ['hair', 'scalp', 'follicle'], icons: [Sprout, Target, Layers, RefreshCw] },
-  { keywords: ['hormone', 'balance', 'blood sugar', 'glucose', 'insulin', 'testosterone', 'trt'], icons: [Activity, Radio] },
+  {
+    keywords: ['hormone', 'balance', 'blood sugar', 'glucose', 'insulin', 'testosterone', 'estrogen', 'trt'],
+    icons: [Activity, Radio],
+  },
   { keywords: ['circulation', 'blood flow', 'bloodflow', 'cardiovascular'], icons: [HeartPulse] },
   {
     keywords: ['libido', 'sexual', 'performance', 'intimacy', 'desire', 'closeness', 'connection', 'bonding', 'arousal'],
@@ -105,6 +110,25 @@ const benefitIconRules = [
   { keywords: ['detox', 'toxin', 'cleanse', 'clearance'], icons: [Droplet] },
   { keywords: ['confiden', 'self-esteem'], icons: [Smile] },
   { keywords: ['clinical', 'research', 'studied', 'studies', 'evidence'], icons: [FlaskConical] },
+  {
+    keywords: [
+      'test',
+      'panel',
+      'screen',
+      'diagnos',
+      'marker',
+      'pathogen',
+      'sample',
+      'dna',
+      'stool',
+      'urine',
+      'elimination',
+      'narrows',
+      'foods',
+      'additives',
+    ],
+    icons: [FlaskConical, Microscope, ClipboardList],
+  },
 ]
 
 // Returns one icon per benefit, cycling a rule's icon list when it matches

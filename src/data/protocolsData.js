@@ -309,7 +309,19 @@ export const categories = [
           'Built for stubborn weight',
         ],
       },
-      { name: 'Carnitine', image: fatlossCarnitine, form: 'Injection' },
+      {
+        name: 'Carnitine',
+        image: fatlossCarnitine,
+        form: 'Injection',
+        description:
+          'Carnitine is the shuttle that moves fat into your mitochondria to be burned for energy. Taken before training, it is available when demand is highest.',
+        benefits: [
+          'Moves stored fat into your energy supply',
+          'Supports fat burning during workouts',
+          'Speeds recovery after hard sessions',
+          'Bypasses the gut for full absorption',
+        ],
+      },
       { name: 'Tesofensine', image: fatlossTesofensine, form: 'Injection' },
       {
         name: 'GLP-3',
@@ -515,7 +527,19 @@ export const categories = [
   {
     name: 'Energy',
     products: [
-      { name: 'NAD+', image: energyNad, form: 'Injection' },
+      {
+        name: 'NAD+',
+        image: energyNad,
+        form: 'Injection',
+        description:
+          'NAD+ powers the reactions your cells use to make energy and repair DNA, and levels fall steadily with age. Injection delivers it directly instead of relying on a precursor.',
+        benefits: [
+          'Replenishes a molecule that declines with age',
+          'Fuels cellular energy production',
+          'Supports DNA repair and cellular maintenance',
+          'Delivers NAD+ directly, not a precursor',
+        ],
+      },
       {
         name: 'Glutathione',
         image: energyGlutathione,
@@ -562,7 +586,19 @@ export const categories = [
   {
     name: 'Longevity',
     products: [
-      { name: 'NAD+', image: antiagingNad, form: 'Injection' },
+      {
+        name: 'NAD+',
+        image: antiagingNad,
+        form: 'Injection',
+        description:
+          'NAD+ powers the reactions your cells use to make energy and repair DNA, and levels fall steadily with age. Injection delivers it directly instead of relying on a precursor.',
+        benefits: [
+          'Replenishes a molecule that declines with age',
+          'Fuels cellular energy production',
+          'Supports DNA repair and cellular maintenance',
+          'Delivers NAD+ directly, not a precursor',
+        ],
+      },
       {
         name: 'Glutathione',
         image: antiagingGlutathione,
@@ -619,6 +655,35 @@ export const categories = [
           'Supports cognitive resilience',
         ],
       },
+      {
+        name: 'Performance Panel',
+        form: 'Lab Test',
+        // New product from Heather's spreadsheet update — no photo yet,
+        // placed here as a general baseline panel pending client confirmation.
+        description:
+          'Key hormones, thyroid, metabolic health, and organ function in one draw. The baseline your protocol is built on and measured against.',
+        benefits: [
+          'Shows your ratio of sex hormones',
+          'Measures inflammation and muscle stress',
+          'Checks thyroid hormones, a hidden cause of fatigue',
+          'Catches metabolic changes early',
+        ],
+      },
+      {
+        name: 'Pinnacle Panel',
+        form: 'Lab Test',
+        // New product from Heather's spreadsheet update — no photo yet,
+        // placed here for its explicit longevity-tracking framing pending
+        // client confirmation.
+        description:
+          'Everything in the Performance Panel plus heart health, urinalysis, and recovery markers. The fullest picture of where your health stands and where it is heading.',
+        benefits: [
+          'Adds full cardiovascular and lipid markers',
+          'Measures insulin before blood sugar changes',
+          'Screens kidney function more accurately',
+          'Your baseline for long-term longevity tracking',
+        ],
+      },
     ],
   },
   {
@@ -637,7 +702,20 @@ export const categories = [
           'Antioxidant and anti-inflammatory',
         ],
       },
-      { name: 'Estradiol', image: skincareEstradiol, form: 'Injection', featured: true },
+      {
+        name: 'Estradiol',
+        image: skincareEstradiol,
+        form: 'Injection',
+        featured: true,
+        description:
+          'Estradiol is the primary estrogen your body makes before menopause. Replacing it at levels matched to your bloodwork addresses the changes that come when production drops.',
+        benefits: [
+          'Eases hot flashes and night sweats',
+          'Restores deeper, uninterrupted sleep',
+          'Supports bone density as estrogen declines',
+          'Supports skin hydration and elasticity',
+        ],
+      },
       { name: 'Tretinoin', image: skincareTretinoin, form: 'Injection' },
       {
         name: 'Melanotan II',
@@ -682,9 +760,33 @@ export const categories = [
   {
     name: 'Gut Health',
     products: [
-      { name: 'GI Maps', image: gutGiMaps, form: 'Lab Test' },
+      {
+        name: 'GI Maps',
+        image: gutGiMaps,
+        form: 'Lab Test',
+        description:
+          'A DNA-based stool test that measures gut bacteria, pathogens, parasites, and markers of digestion and inflammation.',
+        benefits: [
+          'Identifies what is living in your gut',
+          'Detects pathogens and parasites by DNA',
+          'Measures digestion and inflammation markers',
+          'Guides gut protocols with real data',
+        ],
+      },
       { name: 'Gut Barrier Testing', image: gutBarrierTesting, form: 'Lab Test', featured: true },
-      { name: 'Food Sensitivity Testing', image: gutFoodSensitivity, form: 'Lab Test' },
+      {
+        name: 'Food Sensitivity Testing',
+        image: gutFoodSensitivity,
+        form: 'Lab Test',
+        description:
+          'Measures your immune response to 132 foods and additives, plus markers of gut barrier health, to narrow down what your diet may be reacting to.',
+        benefits: [
+          'Tests 132 foods and additives at once',
+          'Narrows down what to remove first',
+          'Includes gut barrier markers',
+          'Gives an elimination diet a starting point',
+        ],
+      },
       {
         name: 'KLOW (BPC-157 + TB-500 + GHK-Cu + KPV)',
         image: injuryKlow,
@@ -813,6 +915,21 @@ export const categories = [
           'Supports focus by quieting mental noise',
         ],
       },
+      {
+        name: 'DUTCH Test',
+        form: 'Lab Test',
+        // New product from Heather's spreadsheet update — no photo yet,
+        // placed here for its cortisol/stress focus pending client
+        // confirmation on category.
+        description:
+          'Measures your hormones, how your body breaks them down, and your cortisol pattern across the day, from dried urine samples collected at home.',
+        benefits: [
+          'Maps your cortisol rhythm across the day',
+          'Shows how your body processes estrogen',
+          'Hormone metabolites a blood test cannot show',
+          'Explains stress symptoms bloodwork does not',
+        ],
+      },
     ],
   },
   {
@@ -838,7 +955,34 @@ export const categories = [
   {
     name: 'Sexual Health',
     products: [
-      { name: 'Testosterone', image: sexualTestosterone, form: 'Injection' },
+      {
+        name: 'Testosterone',
+        image: sexualTestosterone,
+        form: 'Injection',
+        description:
+          'Testosterone drives energy, motivation, and the ability to build and keep muscle, and levels fall with age. Replacement is dosed to your bloodwork and adjusted as it changes.',
+        benefits: [
+          'Restores energy and motivation',
+          'Builds and preserves lean muscle',
+          'Revives libido and sexual function',
+          'Lifts mood and mental sharpness',
+        ],
+      },
+      {
+        name: 'Testosterone for Women',
+        form: 'Cream / Injection',
+        // New product from Heather's spreadsheet update — no photo yet, and
+        // placed here to pair with the existing Testosterone entry pending
+        // client confirmation on category.
+        description:
+          'Women make testosterone too, and it declines in the years around menopause. Low-dose replacement supports what estrogen alone does not reach.',
+        benefits: [
+          'Restores libido lost in midlife',
+          'Supports energy and motivation',
+          'Helps maintain lean muscle and strength',
+          "Dosed for a woman's physiology, not a man's",
+        ],
+      },
       { name: 'Estrogen', image: sexualEstrogen, form: 'Injection', featured: true },
       { name: 'Tadalafil (Cialis)', image: sexualTadalafil, form: 'Injection' },
       { name: 'Sildenafil (Viagra)', image: sexualSildenafil, form: 'Injection' },
@@ -989,7 +1133,20 @@ export const categories = [
   {
     name: 'Detox',
     products: [
-      { name: 'Mycotox Mold Testing', image: detoxMycotox, form: 'Lab Test', featured: true },
+      {
+        name: 'Mycotox Mold Testing',
+        image: detoxMycotox,
+        form: 'Lab Test',
+        featured: true,
+        description:
+          'Measures mold toxins in urine to check whether environmental exposure may be a factor in symptoms that have not been explained.',
+        benefits: [
+          'Screens for common mold toxins',
+          'Checks a cause most labs never test',
+          'Useful after water damage or mold exposure',
+          'Simple urine sample collected at home',
+        ],
+      },
       {
         name: 'Glutathione',
         image: energyGlutathione,
