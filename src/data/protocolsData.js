@@ -385,7 +385,7 @@ export const categories = [
         image: muscleTesamorelin,
         form: 'Injection',
         description:
-          'Deep abdominal fat sits around your organs and resists diet and training. Tesamorelin raises your own growth hormone and targets that layer.',
+          'Support lean muscle mass growth and recovery. Especially useful for those on GLP-1s.',
         benefits: [
           'Targets deep belly fat',
           'Backed by clinical research',
@@ -438,7 +438,7 @@ export const categories = [
         image: muscleIgf1Lr3,
         form: 'Injection',
         description:
-          'Growth hormone builds muscle by prompting your liver to make IGF-1. This delivers that messenger directly, on a timeline of weeks.',
+          'Growth hormone builds muscle by prompting your liver to make IGF-1. This triggers that message, starting to make a difference in only weeks.',
         benefits: [
           'Direct signal to muscle',
           'Visible change in weeks',
