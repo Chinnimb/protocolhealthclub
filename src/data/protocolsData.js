@@ -1,4 +1,8 @@
 import fatlossSemaglutide from '../assets/figma/products/fatloss-semaglutide.jpg'
+import sexualTestosteroneWomen from '../assets/figma/products/sexual-testosteronewomen.jpg'
+import antiagingPerformancePanel from '../assets/figma/products/antiaging-performancepanel.jpg'
+import antiagingPinnaclePanel from '../assets/figma/products/antiaging-pinnaclepanel.jpg'
+import stressDutchTest from '../assets/figma/products/stress-dutchtest.jpg'
 import fatlossTirzepatide from '../assets/figma/products/fatloss-tirzepatide.jpg'
 import fatlossCarnitine from '../assets/figma/products/fatloss-carnitine.jpg'
 import fatlossTesofensine from '../assets/figma/products/fatloss-tesofensine.jpg'
@@ -657,9 +661,10 @@ export const categories = [
       },
       {
         name: 'Performance Panel',
+        image: antiagingPerformancePanel,
         form: 'Lab Test',
-        // New product from Heather's spreadsheet update — no photo yet,
-        // placed here as a general baseline panel pending client confirmation.
+        // New product from Heather's spreadsheet update, placed here as a
+        // general baseline panel pending client confirmation on category.
         description:
           'Key hormones, thyroid, metabolic health, and organ function in one draw. The baseline your protocol is built on and measured against.',
         benefits: [
@@ -671,10 +676,10 @@ export const categories = [
       },
       {
         name: 'Pinnacle Panel',
+        image: antiagingPinnaclePanel,
         form: 'Lab Test',
-        // New product from Heather's spreadsheet update — no photo yet,
-        // placed here for its explicit longevity-tracking framing pending
-        // client confirmation.
+        // New product from Heather's spreadsheet update, placed here for its
+        // explicit longevity-tracking framing pending client confirmation.
         description:
           'Everything in the Performance Panel plus heart health, urinalysis, and recovery markers. The fullest picture of where your health stands and where it is heading.',
         benefits: [
@@ -917,10 +922,10 @@ export const categories = [
       },
       {
         name: 'DUTCH Test',
+        image: stressDutchTest,
         form: 'Lab Test',
-        // New product from Heather's spreadsheet update — no photo yet,
-        // placed here for its cortisol/stress focus pending client
-        // confirmation on category.
+        // New product from Heather's spreadsheet update, placed here for its
+        // cortisol/stress focus pending client confirmation on category.
         description:
           'Measures your hormones, how your body breaks them down, and your cortisol pattern across the day, from dried urine samples collected at home.',
         benefits: [
@@ -970,10 +975,11 @@ export const categories = [
       },
       {
         name: 'Testosterone for Women',
+        image: sexualTestosteroneWomen,
         form: 'Cream / Injection',
-        // New product from Heather's spreadsheet update — no photo yet, and
-        // placed here to pair with the existing Testosterone entry pending
-        // client confirmation on category.
+        // New product from Heather's spreadsheet update, placed here to pair
+        // with the existing Testosterone entry pending client confirmation
+        // on category.
         description:
           'Women make testosterone too, and it declines in the years around menopause. Low-dose replacement supports what estrogen alone does not reach.',
         benefits: [
