@@ -56,7 +56,6 @@ import cognitiveSemax from '../assets/figma/products/cognitive-semax.jpg'
 import cognitiveDihexa from '../assets/figma/products/cognitive-dihexa.jpg'
 import cognitiveTesofensine from '../assets/figma/products/cognitive-tesofensine.jpg'
 
-import fatlossProtocolC from '../assets/figma/products/fatloss-protocolc.jpg'
 import fatlossAod9604 from '../assets/figma/products/fatloss-aod9604.jpg'
 import fatlossSemaglutideB12 from '../assets/figma/products/fatloss-semaglutide-b12.jpg'
 import fatlossTirzepatideB12 from '../assets/figma/products/fatloss-tirzepatide-b12.jpg'
@@ -326,19 +325,6 @@ export const categories = [
         ],
       },
       { name: 'Tesofensine', image: fatlossTesofensine, form: 'Injection' },
-      {
-        name: 'Protocol C',
-        image: fatlossProtocolC,
-        form: 'Injection',
-        description:
-          'A second fullness hormone on a separate pathway from the incretins. For protocols that have stalled and need a different angle, not a higher dose.',
-        benefits: [
-          'Works through a different hunger signal',
-          'Slows gastric emptying for longer fullness',
-          'Breaks stalls from other protocols',
-          'Matches insulin signaling',
-        ],
-      },
       {
         name: 'AOD-9604',
         image: fatlossAod9604,
