@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import GetStarted from './pages/GetStarted'
+import OrderConfirmed from './pages/OrderConfirmed'
 import TermsOfService from './pages/TermsOfService'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RefundPolicy from './pages/RefundPolicy'
@@ -17,6 +18,10 @@ function ProductsRedirect() {
   return <Navigate to="/" replace />
 }
 
+// Post-purchase confirmation page — a design proposal for the client, hidden (redirects
+// home) until it's approved. Flip to true to show it at /order-confirmed.
+const SHOW_ORDER_CONFIRMED = false
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/get-started" element={<GetStarted />} />
+        <Route path="/order-confirmed" element={SHOW_ORDER_CONFIRMED ? <OrderConfirmed /> : <Navigate to="/" replace />} />
         <Route path="/products" element={<ProductsRedirect />} />
         <Route path="/products/:categorySlug" element={<ProductsRedirect />} />
         <Route path="/products/:categorySlug/:productSlug" element={<ProductsRedirect />} />
