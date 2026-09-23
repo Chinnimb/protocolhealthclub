@@ -33,7 +33,7 @@ const ease = [0.22, 1, 0.36, 1]
 
 function AnimatedCheck() {
   return (
-    <div className="relative flex h-24 w-24 items-center justify-center md:h-28 md:w-28">
+    <div className="relative flex h-28 w-28 items-center justify-center md:h-36 md:w-36">
       {/* soft pulsing halo behind the badge */}
       <motion.span
         aria-hidden
@@ -106,14 +106,14 @@ export default function OrderConfirmed() {
 
         <Header />
 
-        <div className="relative z-10 mx-auto flex min-h-[560px] max-w-[900px] flex-col items-center justify-center px-6 pb-20 pt-36 text-center md:min-h-[680px] md:pt-40">
+        <div className="relative z-10 mx-auto flex min-h-[600px] max-w-[1100px] flex-col items-center justify-center px-6 pb-24 pt-36 text-center md:min-h-[820px] md:pt-44">
           <AnimatedCheck />
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease }}
-            className="mt-10 text-5xl font-bold leading-[1.04] text-white md:text-[64px] md:tracking-[-1.8px]"
+            className="mt-12 text-[46px] font-bold leading-[1.02] text-white md:text-[92px] md:tracking-[-3px]"
           >
             Your order is{' '}
             <span className="font-serif font-normal italic text-gradient-orange">confirmed</span>
@@ -123,9 +123,9 @@ export default function OrderConfirmed() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7, ease }}
-            className="mt-6 max-w-[560px] text-lg leading-relaxed text-white/85"
+            className="mt-8 max-w-[620px] text-lg leading-relaxed text-white/85 md:text-xl"
           >
-            Welcome to Protocol. Your journey starts now &mdash; here&rsquo;s exactly what comes next.
+            Welcome to Protocol. Your health journey starts today, and here&rsquo;s exactly what comes next.
           </motion.p>
         </div>
       </section>
@@ -133,47 +133,35 @@ export default function OrderConfirmed() {
       {/* What happens next */}
       <section className="bg-white px-6 py-16 md:px-[120px] md:py-24">
         <div className="mx-auto flex max-w-[1240px] flex-col items-center gap-14">
-          <div className="flex flex-col items-center gap-3 text-center">
+          {/* headline action: one plain line, no card */}
+          <Reveal delay={0.05} className="w-full">
+            <p className="mx-auto flex max-w-[1000px] flex-col items-center gap-4 text-center font-serif text-[26px] font-medium leading-snug text-[#1c1c1e] md:flex-row md:justify-center md:gap-5 md:whitespace-nowrap md:text-[34px]">
+              <span className="flex shrink-0 items-center gap-2 text-orange-2">
+                <Mail className="h-6 w-6 md:h-7 md:w-7" />
+                <MessageSquare className="h-6 w-6 md:h-7 md:w-7" />
+              </span>
+              <span>Your link to book bloodwork is on its way, by email and text.</span>
+            </p>
+          </Reveal>
+
+          <div className="flex flex-col items-center gap-2 text-center">
             <Typewriter
               as="p"
               triggerOnView
               startDelay={150}
               speed={35}
               text="NEXT STEPS"
-              className="text-base font-bold uppercase tracking-[1.5px] text-orange-3"
+              className="text-sm font-bold uppercase tracking-[1.5px] text-orange-3"
             />
             <Reveal delay={0.1}>
-              <h2 className="text-4xl font-bold leading-tight text-[#1c1c1e] md:text-[56px]">
-                What happens{' '}
+              <h2 className="text-2xl font-bold leading-tight text-[#1c1c1e] md:text-[32px]">
+                Here&rsquo;s what happens{' '}
                 <FadeIn as="span" className="font-serif font-medium text-orange-2" delay={0.3}>
                   next
                 </FadeIn>
               </h2>
             </Reveal>
           </div>
-
-          {/* headline action */}
-          <Reveal delay={0.1} className="w-full">
-            <div className="relative mx-auto w-full max-w-[820px] overflow-hidden rounded-3xl border border-[#f4ac63] bg-cream p-8 text-center shadow-[0px_12px_16px_rgba(245,79,43,0.06)] md:p-12">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -top-24 left-1/2 h-48 w-[70%] -translate-x-1/2 rounded-full bg-orange/15 blur-3xl"
-              />
-              <div className="relative flex flex-col items-center gap-5">
-                <div className="flex items-center gap-3 text-orange-2">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-orange/10">
-                    <Mail className="h-5 w-5" />
-                  </span>
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-orange/10">
-                    <MessageSquare className="h-5 w-5" />
-                  </span>
-                </div>
-                <p className="font-serif text-3xl font-medium leading-snug text-[#1c1c1e] md:text-[40px]">
-                  You&rsquo;ll get a link to book your bloodwork by email and text.
-                </p>
-              </div>
-            </div>
-          </Reveal>
 
           {/* three steps */}
           <div className="grid w-full gap-6 md:grid-cols-3">
