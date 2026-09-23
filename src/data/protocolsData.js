@@ -104,6 +104,7 @@ const categoryCoverImage = {
   'Sexual Health': cardSexualHealth,
   Fertility: cardFertility,
   Skincare: cardSkinCare,
+  'Skin and Hair': cardSkinCare,
   'Injury Repair': cardInjuryRepair,
   'Longevity': cardAntiAging,
   'Gut Health': cardGutHealth,
@@ -138,6 +139,7 @@ const categoryHeroImage = {
   'Sexual Health': heroSexualHealth,
   Fertility: heroFertility,
   Skincare: heroSkincare,
+  'Skin and Hair': heroSkincare,
   'Injury Repair': heroInjuryRepair,
   'Longevity': heroAntiAging,
   'Gut Health': heroGutHealth,
@@ -171,6 +173,7 @@ const categoryIcon = {
   'Sexual Health': iconHeart,
   Fertility: iconSprout,
   Skincare: iconStar,
+  'Skin and Hair': iconStar,
   'Injury Repair': iconBandage,
   'Longevity': iconClock,
   'Gut Health': iconLeaf,
@@ -240,6 +243,12 @@ const categoryContent = {
       'This protocol is designed to support digestive health as part of a plan built around your labs and symptoms.',
     benefits: ['Supports digestive health', 'Personalized to your labs', 'Monitored by your care team'],
   },
+  'Skin and Hair': {
+    blurb: 'Designed to support healthy skin, radiance, and stronger hair growth.',
+    description:
+      'This protocol is designed to support skin and hair health as part of a personalized plan built around your goals.',
+    benefits: ['Supports skin and hair health', 'Complements your routine', 'Monitored by your care team'],
+  },
   'Hair Growth': {
     blurb: 'Designed to support longer, thicker, stronger hair growth.',
     description:
@@ -280,7 +289,11 @@ function slugify(str) {
     .replace(/(^-|-$)/g, '')
 }
 
-export const categories = [
+// Full catalog of everything built so far (copy, photos, forms). Not shown as-is:
+// `layout` below decides which of these appear in which category, per the client's
+// "Explore Protocols" list (Sam Beckmann, 2026-09-23). Anything not in the layout
+// stays here, hidden, so its copy and photos aren't lost if the client asks for it back.
+const rawCategories = [
   {
     name: 'Fat Loss',
     products: [
@@ -1159,7 +1172,96 @@ export const categories = [
       },
     ],
   },
-].map((cat) => ({
+]
+
+const productKey = (name) => name.toLowerCase().replace(/\(.*?\)/g, '').replace(/[^a-z0-9]+/g, '')
+
+// Every product already built, by normalized name (first occurrence wins — repeated
+// products like Glutathione or Testosterone carry identical copy in every category).
+const productPool = new Map()
+for (const cat of rawCategories) {
+  for (const p of cat.products) {
+    if (!productPool.has(productKey(p.name))) productPool.set(productKey(p.name), p)
+  }
+}
+
+// Products the client listed that have no copy or photo yet. They show the generic
+// category copy and an image placeholder until real content arrives. Routes are a
+// best guess and should be confirmed with the client.
+const newProducts = {
+  'Growth Hormone': { form: 'Injection' },
+  'B12': { form: 'Injection' },
+  'Vitamin D': { form: 'Oral' },
+  'Metformin': { form: 'Oral' },
+  'Clindamycin': { form: 'Topical' },
+  'Ketoconazole Shampoo': { form: 'Topical' },
+  'Trimix': { form: 'Injection' },
+  'Quadmix': { form: 'Injection' },
+  'Cabergoline': { form: 'Oral' },
+  'Custom Supplement Plans': { form: 'Custom Plan' },
+}
+
+// The client's "Explore Protocols" list, in their order. A plain string uses the
+// product's existing name; { name, from } shows the client's name on an existing product.
+const layout = [
+  {
+    name: 'Fat Loss',
+    products: ['Semaglutide', 'Tirzepatide', { name: 'Thyroid', from: 'Thyroid Supplementation' }, { name: 'L-Carnitine', from: 'Carnitine' }, 'Tesofensine', 'Tesamorelin'],
+  },
+  {
+    name: 'Muscle Growth',
+    products: ['Testosterone', 'Enclomiphene', 'Tesamorelin', 'Sermorelin', 'IGF-1 LR3', 'Growth Hormone'],
+  },
+  {
+    name: 'Energy',
+    products: ['Testosterone', { name: 'Thyroid', from: 'Thyroid Supplementation' }, 'NAD+', 'Glutathione', 'SS-31 (Elamipretide)', 'Tesofensine', 'AOD-9604', 'B12', 'Custom Supplement Plans'],
+  },
+  {
+    name: 'Longevity',
+    products: [
+      'Testosterone', 'Estrogen', 'Progesterone', 'NAD+', 'Glutathione', 'Oxytocin', 'Methylene Blue', 'Tadalafil (Cialis)',
+      'Thymosin Alpha-1', 'Vitamin D', 'Metformin', 'DUTCH Test', { name: 'GI Map', from: 'GI Maps' }, 'Food Sensitivity Testing',
+      'Gut Barrier Testing', 'Mycotox Mold Testing', 'Custom Supplement Plans',
+    ],
+  },
+  {
+    name: 'Skin and Hair',
+    products: ['Estrogen', { name: 'GHK-Cu', from: 'GHK-Cu' }, 'Tretinoin', 'Clindamycin', 'Finasteride', 'Dutasteride', 'Minoxidil', 'Ketoconazole Shampoo'],
+  },
+  {
+    name: 'Gut Health',
+    products: [{ name: 'GI Map', from: 'GI Maps' }, 'Food Sensitivity Testing', 'Gut Barrier Testing', 'Mycotox Mold Testing', 'KPV', 'BPC-157', 'Custom Supplement Plans'],
+  },
+  {
+    name: 'Injury Repair',
+    products: ['BPC-157', 'TB-500 (Thymosin Beta-4)', { name: 'GHK-Cu', from: 'GHK-Cu' }, 'Tesamorelin', 'Sermorelin', 'KPV'],
+  },
+  {
+    name: 'Stress Reduction',
+    products: ['Testosterone', 'Estrogen', 'Progesterone', 'Selank', 'DUTCH Test'],
+  },
+  {
+    name: 'Cognitive Focus',
+    products: ['Semax', 'Dihexa', 'Testosterone', 'Tesofensine', 'Methylene Blue'],
+  },
+  {
+    name: 'Sexual Health',
+    products: ['Testosterone', 'Estrogen', 'Progesterone', 'Oxytocin', 'Tadalafil (Cialis)', 'Sildenafil (Viagra)', 'Trimix', 'Quadmix', 'Cabergoline'],
+  },
+]
+
+const layoutCategories = layout.map((cat) => ({
+  name: cat.name,
+  products: cat.products.map((entry) => {
+    const name = typeof entry === 'string' ? entry : entry.name
+    const from = typeof entry === 'string' ? entry : entry.from
+    const existing = productPool.get(productKey(from))
+    if (existing) return { ...existing, name }
+    return { name, ...newProducts[name] }
+  }),
+}))
+
+export const categories = layoutCategories.map((cat) => ({
   ...cat,
   slug: slugify(cat.name),
   ...categoryContent[cat.name],

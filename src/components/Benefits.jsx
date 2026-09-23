@@ -12,12 +12,10 @@ import cardFatLoss from '../assets/figma/card-fat-loss.png'
 import cardMuscleGrowth from '../assets/figma/card-muscle-growth.png'
 import cardEnergyBoosting from '../assets/figma/card-energy-boosting.png'
 import cardSexualHealth from '../assets/figma/card-sexual-health.png'
-import cardFertility from '../assets/figma/card-fertility.png'
 import cardSkinCare from '../assets/figma/card-skin-care.png'
 import cardInjuryRepair from '../assets/figma/card-injury-repair.png'
 import cardAntiAging from '../assets/figma/card-anti-aging.png'
 import cardGutHealth from '../assets/figma/card-gut-health.png'
-import cardHairGrowth from '../assets/figma/card-hair-growth.jpg'
 import cardStressReduction from '../assets/figma/card-stress-reduction.jpg'
 import cardCognitiveFocus from '../assets/figma/card-cognitive-focus.png'
 
@@ -25,30 +23,24 @@ import iconFlame from '../assets/figma/icon-flame.svg'
 import iconDumbbell from '../assets/figma/icon-dumbbell.svg'
 import iconZap from '../assets/figma/icon-zap.svg'
 import iconHeart from '../assets/figma/icon-heart.svg'
-import iconSprout from '../assets/figma/icon-sprout.svg'
 import iconStar from '../assets/figma/icon-star.svg'
 import iconBandage from '../assets/figma/icon-bandage.svg'
 import iconClock from '../assets/figma/icon-clock.svg'
 import iconLeaf from '../assets/figma/icon-leaf.svg'
-import iconCombine from '../assets/figma/icon-combine.svg'
 import iconCircleX from '../assets/figma/icon-circle-x.svg'
 import iconBrain from '../assets/figma/icon-brain.svg'
 
 const cards = [
-  { title: 'Fat Loss', icon: iconFlame, image: cardFatLoss, products: 'Semaglutide, Tirzepatide, L-Carnitine, Tesofensine' },
-  { title: 'Muscle Growth', icon: iconDumbbell, image: cardMuscleGrowth, products: 'Tesamorelin, Sermorelin, CJC / Ipamorelin, IGF-1 LR3' },
-  { title: 'Energy', icon: iconZap, image: cardEnergyBoosting, products: 'NAD+, Glutathione, SS-31, Thyroid Supplementation' },
+  { title: 'Fat Loss', icon: iconFlame, image: cardFatLoss, products: 'Semaglutide, Tirzepatide, Thyroid, L-Carnitine' },
+  { title: 'Muscle Growth', icon: iconDumbbell, image: cardMuscleGrowth, products: 'Testosterone, Tesamorelin, Sermorelin, IGF-1 LR3' },
+  { title: 'Energy', icon: iconZap, image: cardEnergyBoosting, products: 'NAD+, Glutathione, SS-31, Thyroid' },
   { title: 'Longevity', icon: iconClock, image: cardAntiAging, products: 'NAD+, Glutathione, Oxytocin, Methylene Blue' },
-  { title: 'Skin Care', icon: iconStar, image: cardSkinCare, products: 'GHK-Cu, Estradiol, Tretinoin' },
-  { title: 'Gut Health', icon: iconLeaf, image: cardGutHealth, products: 'GI Maps, Gut Barrier Testing, Food Sensitivity Testing' },
+  { title: 'Skin and Hair', icon: iconStar, image: cardSkinCare, products: 'GHK-Cu, Tretinoin, Finasteride, Minoxidil' },
+  { title: 'Gut Health', icon: iconLeaf, image: cardGutHealth, products: 'GI Map, Gut Barrier Testing, Food Sensitivity Testing' },
   { title: 'Injury Repair', icon: iconBandage, image: cardInjuryRepair, products: 'BPC-157, TB-500, KPV' },
-  { title: 'Stress Reduction', icon: iconCircleX, image: cardStressReduction, products: 'Progesterone, Selank' },
+  { title: 'Stress Reduction', icon: iconCircleX, image: cardStressReduction, products: 'Progesterone, Selank, DUTCH Test' },
   { title: 'Cognitive Focus', icon: iconBrain, image: cardCognitiveFocus, products: 'Semax, Dihexa, Tesofensine' },
-  { title: 'Sexual Health', icon: iconHeart, image: cardSexualHealth, products: 'Testosterone, Estrogen, Tadalafil (Cialis), Sildenafil (Viagra), Scream Cream, Oxytocin' },
-  { title: 'Fertility', icon: iconSprout, image: cardFertility, products: 'hCG, Enclomiphene, rFSH, Glutathione' },
-  { title: 'Hair Growth', icon: iconCombine, image: cardHairGrowth, products: 'Minoxidil, Dutasteride, Finasteride, GHK-Cu' },
-  { title: 'Detox', icon: iconLeaf, image: null, products: 'Mycotox Mold Testing, Glutathione' },
-  { title: 'Sleep', icon: iconCircleX, image: null, products: 'Coming soon' },
+  { title: 'Sexual Health', icon: iconHeart, image: cardSexualHealth, products: 'Testosterone, Oxytocin, Tadalafil, Sildenafil' },
 ]
 
 function BenefitCard({ card, delay }) {
