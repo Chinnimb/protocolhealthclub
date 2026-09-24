@@ -8,6 +8,7 @@ import Typewriter from '../components/Typewriter'
 import MotionLink from '../components/MotionLink'
 import stepCheck from '../assets/figma/getstarted/step-check.svg'
 import arrowIcon from '../assets/figma/hero-arrow-icon.svg'
+import heroPhoto from '../assets/figma/getstarted/getstarted-hero-photo.jpg'
 
 // Post-purchase confirmation screen. Same three steps the Get Started page already
 // promises, so the two never contradict each other.
@@ -82,51 +83,77 @@ function AnimatedCheck() {
 export default function OrderConfirmed() {
   return (
     <div className="relative min-h-screen bg-cream text-ink">
-      {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-[#1a0f08]">
-        {/* rising orange light, same bloom as the Get Started hero */}
+      {/* Hero: dark cinematic photo, confirmation in a glass card */}
+      <section className="relative isolate overflow-hidden bg-[#0a0605]">
+        {/* slow cinematic push-in on the photo, graded dark */}
         <motion.div
-          aria-hidden
-          initial={{ opacity: 0.15, scale: 0.6 }}
-          animate={{ opacity: 0.85, scale: 1 }}
-          transition={{ duration: 3, ease: [0.16, 1, 0.3, 1] }}
-          className="pointer-events-none absolute inset-0"
+          className="absolute inset-0"
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.08 }}
+          transition={{ duration: 12, ease: [0.16, 1, 0.3, 1] }}
         >
-          <motion.div
-            className="h-full w-full"
-            animate={{ scale: [1, 1.15, 1] }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-            style={{
-              background:
-                'radial-gradient(44% 58% at 50% 30%, rgba(255,150,60,0.55) 0%, rgba(255,110,30,0.22) 45%, rgba(255,100,20,0) 74%)',
-            }}
+          <img
+            src={heroPhoto}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-[62%_35%] brightness-[0.42] contrast-[1.15] saturate-[0.85] sm:object-center"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+
+        {/* letterbox-style darkness: vignette + top/bottom fades */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(85% 75% at 50% 45%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.9) 100%)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/10 to-black/85" />
+
+        {/* faint warm bloom behind the card so the glass has something to refract */}
+        <motion.div
+          aria-hidden
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full mix-blend-screen"
+          animate={{ opacity: [0.35, 0.6, 0.35], scale: [1, 1.12, 1] }}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+          style={{ background: 'radial-gradient(closest-side, rgba(244,95,43,0.45), rgba(244,95,43,0))' }}
+        />
 
         <Header />
 
-        <div className="relative z-10 mx-auto flex min-h-[600px] max-w-[1100px] flex-col items-center justify-center px-6 pb-24 pt-36 text-center md:min-h-[820px] md:pt-44">
-          <AnimatedCheck />
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease }}
-            className="mt-12 text-[46px] font-bold leading-[1.02] text-white md:text-[92px] md:tracking-[-3px]"
+        <div className="relative z-10 mx-auto flex min-h-[640px] max-w-[1100px] items-center justify-center px-5 pb-20 pt-32 md:min-h-[860px] md:pt-40">
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2, ease }}
+            className="relative w-full max-w-[880px] overflow-hidden rounded-[32px] border border-white/20 bg-white/[0.07] px-6 py-12 text-center shadow-[0_30px_80px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.25)] backdrop-blur-2xl md:px-16 md:py-16"
           >
-            Your order is{' '}
-            <span className="font-serif font-normal italic text-gradient-orange">confirmed</span>
-          </motion.h1>
+            {/* glass sheen */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.03) 38%, rgba(255,255,255,0) 60%)' }}
+            />
+            <div className="relative flex flex-col items-center">
+              <AnimatedCheck />
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7, ease }}
-            className="mt-8 max-w-[620px] text-lg leading-relaxed text-white/85 md:text-xl"
-          >
-            Welcome to Protocol. Your health journey starts today, and here&rsquo;s exactly what comes next.
-          </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7, ease }}
+                className="mt-10 text-[42px] font-bold leading-[1.02] text-white md:text-[80px] md:tracking-[-2.5px]"
+              >
+                Your order is{' '}
+                <span className="font-serif font-normal italic text-gradient-orange">confirmed</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9, ease }}
+                className="mt-7 max-w-[560px] text-lg leading-relaxed text-white/85 md:text-xl"
+              >
+                Welcome to Protocol. Your health journey starts today, and here&rsquo;s exactly what comes next.
+              </motion.p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
