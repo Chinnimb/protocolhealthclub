@@ -31,49 +31,89 @@ const steps = [
 
 const ease = [0.22, 1, 0.36, 1]
 
+// Confirmation badge: the ring draws, fills with the brand gradient, then the check
+// draws and breaks out past the ring's edge, followed by a spark burst and soft ripples.
+const SPARKS = [
+  { x: 112, y: 14, d: 10 },
+  { x: 118, y: 40, d: 7 },
+  { x: 92, y: 6, d: 7 },
+  { x: 104, y: 30, d: 5 },
+]
+
 function AnimatedCheck() {
   return (
-    <div className="relative flex h-28 w-28 items-center justify-center md:h-36 md:w-36">
+    <div className="relative flex h-40 w-40 items-center justify-center md:h-52 md:w-52">
       {/* soft pulsing halo behind the badge */}
       <motion.span
         aria-hidden
-        className="absolute inset-0 rounded-full bg-orange/30 blur-2xl"
-        animate={{ scale: [1, 1.25, 1], opacity: [0.5, 0.9, 0.5] }}
+        className="absolute inset-4 rounded-full bg-orange/40 blur-3xl"
+        animate={{ scale: [1, 1.3, 1], opacity: [0.45, 0.85, 0.45] }}
         transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
       />
-      <motion.svg
-        viewBox="0 0 96 96"
-        className="relative h-full w-full"
-        initial="hidden"
-        animate="visible"
-      >
+      <motion.svg viewBox="0 0 120 120" className="relative h-full w-full overflow-visible" initial="hidden" animate="visible">
         <defs>
           <linearGradient id="confirmGradient" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#f45f2b" />
             <stop offset="100%" stopColor="#f4ac63" />
           </linearGradient>
         </defs>
+
+        {/* ripples that keep radiating from the ring */}
+        {[0, 1].map((i) => (
+          <motion.circle
+            key={i}
+            cx="54"
+            cy="66"
+            r="40"
+            fill="none"
+            stroke="#f4ac63"
+            strokeWidth="1.5"
+            initial={{ opacity: 0, r: 40 }}
+            animate={{ opacity: [0, 0.55, 0], r: [40, 66] }}
+            transition={{ duration: 2.6, delay: 1.7 + i * 1.3, repeat: Infinity, repeatDelay: 0.4, ease: 'easeOut' }}
+          />
+        ))}
+
+        {/* ring draws, then fills */}
         <motion.circle
-          cx="48"
-          cy="48"
-          r="42"
-          fill="rgba(255,255,255,0.04)"
+          cx="54"
+          cy="66"
+          r="40"
+          fill="url(#confirmGradient)"
           stroke="url(#confirmGradient)"
           strokeWidth="4"
           strokeLinecap="round"
-          variants={{ hidden: { pathLength: 0 }, visible: { pathLength: 1 } }}
-          transition={{ duration: 1.1, ease: 'easeInOut' }}
+          variants={{
+            hidden: { pathLength: 0, fillOpacity: 0 },
+            visible: { pathLength: 1, fillOpacity: 0.92 },
+          }}
+          transition={{ pathLength: { duration: 0.9, ease: 'easeInOut' }, fillOpacity: { duration: 0.5, delay: 0.85 } }}
         />
+
+        {/* check that breaks out of the ring at the top right */}
         <motion.path
-          d="M30 50 L43 63 L67 35"
+          d="M31 68 L48 85 L101 27"
           fill="none"
           stroke="#ffffff"
-          strokeWidth="6"
+          strokeWidth="9"
           strokeLinecap="round"
           strokeLinejoin="round"
+          style={{ filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.45))' }}
           variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1 } }}
-          transition={{ duration: 0.6, delay: 0.9, ease: 'easeOut' }}
+          transition={{ pathLength: { duration: 0.55, delay: 1.1, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: 0.01, delay: 1.1 } }}
         />
+
+        {/* spark burst off the check's tip */}
+        {SPARKS.map((p, i) => (
+          <motion.circle
+            key={i}
+            r={p.d / 2}
+            fill="#f4ac63"
+            initial={{ cx: 101, cy: 27, opacity: 0, scale: 0 }}
+            animate={{ cx: p.x, cy: p.y, opacity: [0, 1, 0], scale: [0, 1.2, 0.4] }}
+            transition={{ duration: 0.9, delay: 1.6 + i * 0.05, repeat: Infinity, repeatDelay: 2.6, ease: 'easeOut' }}
+          />
+        ))}
       </motion.svg>
     </div>
   )
