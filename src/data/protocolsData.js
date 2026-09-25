@@ -1,4 +1,12 @@
 import fatlossSemaglutide from '../assets/figma/products/fatloss-semaglutide.jpg'
+import muscleGrowthHormone from '../assets/figma/products/muscle-growthhormone.jpg'
+import energyB12 from '../assets/figma/products/energy-b12.jpg'
+import sexualTrimix from '../assets/figma/products/sexual-trimix.jpg'
+import sexualQuadmix from '../assets/figma/products/sexual-quadmix.jpg'
+import antiagingMetformin from '../assets/figma/products/antiaging-metformin.jpg'
+import sexualCabergoline from '../assets/figma/products/sexual-cabergoline.jpg'
+import energyCustomSupplementPlans from '../assets/figma/products/energy-customsupplementplans.jpg'
+import antiagingVitaminD from '../assets/figma/products/antiaging-vitamind.jpg'
 import sexualTestosteroneWomen from '../assets/figma/products/sexual-testosteronewomen.jpg'
 import antiagingPerformancePanel from '../assets/figma/products/antiaging-performancepanel.jpg'
 import antiagingPinnaclePanel from '../assets/figma/products/antiaging-pinnaclepanel.jpg'
@@ -1189,16 +1197,16 @@ for (const cat of rawCategories) {
 // category copy and an image placeholder until real content arrives. Routes were
 // confirmed by Sam Beckmann (2026-09-24): oral = pill container, topical = cream.
 const newProducts = {
-  'Growth Hormone': { form: 'Injection' },
-  'B12': { form: 'Injection' },
-  'Vitamin D': { form: 'Oral / Injection' },
-  'Metformin': { form: 'Oral' },
+  'Growth Hormone': { image: muscleGrowthHormone, form: 'Injection' },
+  'B12': { image: energyB12, form: 'Injection' },
+  'Vitamin D': { image: antiagingVitaminD, form: 'Oral / Injection' },
+  'Metformin': { image: antiagingMetformin, form: 'Oral' },
   'Clindamycin': { form: 'Topical' },
   'Ketoconazole Shampoo': { form: 'Topical' },
-  'Trimix': { form: 'Injection' },
-  'Quadmix': { form: 'Injection' },
-  'Cabergoline': { form: 'Oral' },
-  'Custom Supplement Plans': { form: 'Oral' },
+  'Trimix': { image: sexualTrimix, form: 'Injection' },
+  'Quadmix': { image: sexualQuadmix, form: 'Injection' },
+  'Cabergoline': { image: sexualCabergoline, form: 'Oral' },
+  'Custom Supplement Plans': { image: energyCustomSupplementPlans, form: 'Oral' },
 }
 
 // The client's "Explore Protocols" list, in their order. A plain string uses the
