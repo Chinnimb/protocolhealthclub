@@ -1186,19 +1186,19 @@ for (const cat of rawCategories) {
 }
 
 // Products the client listed that have no copy or photo yet. They show the generic
-// category copy and an image placeholder until real content arrives. Routes are a
-// best guess and should be confirmed with the client.
+// category copy and an image placeholder until real content arrives. Routes were
+// confirmed by Sam Beckmann (2026-09-24): oral = pill container, topical = cream.
 const newProducts = {
   'Growth Hormone': { form: 'Injection' },
   'B12': { form: 'Injection' },
-  'Vitamin D': { form: 'Oral' },
+  'Vitamin D': { form: 'Oral / Injection' },
   'Metformin': { form: 'Oral' },
   'Clindamycin': { form: 'Topical' },
   'Ketoconazole Shampoo': { form: 'Topical' },
   'Trimix': { form: 'Injection' },
   'Quadmix': { form: 'Injection' },
   'Cabergoline': { form: 'Oral' },
-  'Custom Supplement Plans': { form: 'Custom Plan' },
+  'Custom Supplement Plans': { form: 'Oral' },
 }
 
 // The client's "Explore Protocols" list, in their order. A plain string uses the
