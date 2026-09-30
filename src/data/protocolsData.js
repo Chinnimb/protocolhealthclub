@@ -345,11 +345,11 @@ const rawCategories = [
           'Bypasses the gut for full absorption',
         ],
       },
-      { name: 'Tesofensine', image: fatlossTesofensine, form: 'Injection' },
+      { name: 'Tesofensine', image: fatlossTesofensine, form: 'Oral' },
       {
         name: 'AOD-9604',
         image: fatlossAod9604,
-        form: 'Injection',
+        form: 'Oral',
         description:
           'The segment of growth hormone responsible for fat breakdown, isolated from the effects on tissue growth and blood sugar.',
         benefits: [
@@ -564,7 +564,7 @@ const rawCategories = [
           'Recover from persistent fatigue',
         ],
       },
-      { name: 'Thyroid Supplementation', image: energyThyroid, form: 'Injection' },
+      { name: 'Thyroid Supplementation', image: energyThyroid, form: 'Oral' },
       {
         name: 'MOTS-c',
         image: energyMotsC,
@@ -611,6 +611,10 @@ const rawCategories = [
         ],
       },
       {
+        // CONFLICT (unresolved, ask Sam): 2026-09-30 message (Chester, via Sam) lists
+        // Oxytocin as "oral" twice, which would erase the more specific Troche/Nasal
+        // route already established with copy and photos. Left unchanged pending
+        // confirmation on whether "oral" was meant literally or as a loose bucket.
         name: 'Oxytocin',
         image: antiagingOxytocin,
         form: 'Troche / Nasal',
@@ -623,7 +627,7 @@ const rawCategories = [
           'Softens stress and anxiety',
         ],
       },
-      { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Injection' },
+      { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Oral' },
       {
         // Immune-focused product with no clear category fit yet — placed here
         // for its aging angle, pending confirmation with the client.
@@ -690,7 +694,7 @@ const rawCategories = [
       {
         name: 'GHK-Cu (Copper Peptide)',
         image: skincareGhkCu,
-        form: 'Injection',
+        form: 'Cream / Oral / Injection',
         description:
           "Aging decreases your body's natural collagen signal. GHK-Cu tells cells to build collagen and delivers the copper they need.",
         benefits: [
@@ -714,7 +718,7 @@ const rawCategories = [
           'Supports skin hydration and elasticity',
         ],
       },
-      { name: 'Tretinoin', image: skincareTretinoin, form: 'Injection' },
+      { name: 'Tretinoin', image: skincareTretinoin, form: 'Cream' },
       {
         name: 'Melanotan II',
         image: skincareMelanotan2,
@@ -818,7 +822,7 @@ const rawCategories = [
       {
         name: 'BPC-157',
         image: injuryBpc157,
-        form: 'Injection',
+        form: 'Oral / Injection',
         description:
           'Tendon and ligament heal slowly because blood barely reaches them. BPC-157 promotes new blood vessel growth into the tissue that needs it.',
         benefits: [
@@ -845,7 +849,7 @@ const rawCategories = [
       {
         name: 'KPV',
         image: injuryKpv,
-        form: 'Injection',
+        form: 'Oral / Injection',
         description:
           "Your body's own anti-inflammatory signal, isolated from a larger form of the molecule. For gut or skin that is inflamed rather than injured.",
         benefits: [
@@ -898,7 +902,7 @@ const rawCategories = [
   {
     name: 'Stress Reduction',
     products: [
-      { name: 'Progesterone', image: stressProgesterone, form: 'Injection' },
+      { name: 'Progesterone', image: stressProgesterone, form: 'Oral' },
       {
         name: 'Selank',
         image: stressSelank,
@@ -946,7 +950,7 @@ const rawCategories = [
           'Supports making new connections in the brain',
         ],
       },
-      { name: 'Dihexa', image: cognitiveDihexa, form: 'Injection', featured: true },
+      { name: 'Dihexa', image: cognitiveDihexa, form: 'Oral', featured: true },
       { name: 'Tesofensine', image: cognitiveTesofensine, form: 'Injection' },
     ],
   },
@@ -956,7 +960,7 @@ const rawCategories = [
       {
         name: 'Testosterone',
         image: sexualTestosterone,
-        form: 'Injection',
+        form: 'Cream / Injection',
         description:
           'Testosterone drives energy, motivation, and the ability to build and keep muscle, and levels fall with age. Replacement is dosed to your bloodwork and adjusted as it changes.',
         benefits: [
@@ -982,9 +986,9 @@ const rawCategories = [
           "Dosed for a woman's physiology, not a man's",
         ],
       },
-      { name: 'Estrogen', image: sexualEstrogen, form: 'Injection', featured: true },
-      { name: 'Tadalafil (Cialis)', image: sexualTadalafil, form: 'Injection' },
-      { name: 'Sildenafil (Viagra)', image: sexualSildenafil, form: 'Injection' },
+      { name: 'Estrogen', image: sexualEstrogen, form: 'Cream / Injection / Oral', featured: true },
+      { name: 'Tadalafil (Cialis)', image: sexualTadalafil, form: 'Oral' },
+      { name: 'Sildenafil (Viagra)', image: sexualSildenafil, form: 'Oral' },
       {
         name: 'PT-141 (Bremelanotide)',
         image: sexualPt141,
@@ -1040,7 +1044,7 @@ const rawCategories = [
           'Focus on fertility & reproduction',
         ],
       },
-      { name: 'Enclomiphene', image: fertilityEnclomiphene, form: 'Injection', featured: true },
+      { name: 'Enclomiphene', image: fertilityEnclomiphene, form: 'Oral', featured: true },
       {
         name: 'FSH (Follicle Stimulating Hormone)',
         image: fertilityRfsh,
@@ -1098,13 +1102,13 @@ const rawCategories = [
   {
     name: 'Hair Growth',
     products: [
-      { name: 'Minoxidil', image: hairMinoxidil, form: 'Injection' },
-      { name: 'Dutasteride', image: hairDutasteride, form: 'Injection', featured: true },
-      { name: 'Finasteride', image: hairFinasteride, form: 'Injection' },
+      { name: 'Minoxidil', image: hairMinoxidil, form: 'Oral / Spray' },
+      { name: 'Dutasteride', image: hairDutasteride, form: 'Oral / Spray', featured: true },
+      { name: 'Finasteride', image: hairFinasteride, form: 'Oral / Spray' },
       {
         name: 'GHK-Cu',
         image: hairGhkCu,
-        form: 'Injection',
+        form: 'Cream / Oral / Injection',
         description:
           "Aging decreases your body's natural collagen signal. GHK-Cu tells cells to build collagen and delivers the copper they need.",
         benefits: [
@@ -1199,10 +1203,13 @@ for (const cat of rawCategories) {
 const newProducts = {
   'Growth Hormone': { image: muscleGrowthHormone, form: 'Injection' },
   'B12': { image: energyB12, form: 'Injection' },
+  // CONFLICT (unresolved, ask Sam): 2026-09-24 breakdown said "oral and injectable";
+  // 2026-09-30 message (Chester, via Sam) lists Vitamin D under "Orals" only. Left as
+  // the fuller/older value pending confirmation.
   'Vitamin D': { image: antiagingVitaminD, form: 'Oral / Injection' },
   'Metformin': { image: antiagingMetformin, form: 'Oral' },
-  'Clindamycin': { form: 'Topical' },
-  'Ketoconazole Shampoo': { form: 'Topical' },
+  'Clindamycin': { form: 'Cream' },
+  'Ketoconazole Shampoo': { form: 'Cream' },
   'Trimix': { image: sexualTrimix, form: 'Injection' },
   'Quadmix': { image: sexualQuadmix, form: 'Injection' },
   'Cabergoline': { image: sexualCabergoline, form: 'Oral' },
@@ -1242,7 +1249,17 @@ const layout = [
   },
   {
     name: 'Injury Repair',
-    products: ['BPC-157', 'TB-500 (Thymosin Beta-4)', { name: 'GHK-Cu', from: 'GHK-Cu' }, 'Tesamorelin', 'Sermorelin', 'KPV'],
+    // Sam Beckmann, 2026-09-30: "Injury - fine as is. Don't adjust BPC or KPV. You want
+    // to do injectable only there" — BPC-157, KPV and GHK-Cu are broader (oral/cream)
+    // elsewhere, but stay injectable-only in this category.
+    products: [
+      { name: 'BPC-157', from: 'BPC-157', form: 'Injection' },
+      'TB-500 (Thymosin Beta-4)',
+      { name: 'GHK-Cu', from: 'GHK-Cu', form: 'Injection' },
+      'Tesamorelin',
+      'Sermorelin',
+      { name: 'KPV', from: 'KPV', form: 'Injection' },
+    ],
   },
   {
     name: 'Stress Reduction',
@@ -1263,9 +1280,13 @@ const layoutCategories = layout.map((cat) => ({
   products: cat.products.map((entry) => {
     const name = typeof entry === 'string' ? entry : entry.name
     const from = typeof entry === 'string' ? entry : entry.from
+    // A layout entry can override `form` on top of the pooled product — needed when the
+    // same product is sold through a broader route in most categories but stays
+    // injectable-only in Injury Repair (client instruction, 2026-09-30).
+    const formOverride = typeof entry === 'object' && entry.form ? { form: entry.form } : {}
     const existing = productPool.get(productKey(from))
-    if (existing) return { ...existing, name }
-    return { name, ...newProducts[name] }
+    if (existing) return { ...existing, name, ...formOverride }
+    return { name, ...newProducts[name], ...formOverride }
   }),
 }))
 
