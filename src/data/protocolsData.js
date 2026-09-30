@@ -611,10 +611,11 @@ const rawCategories = [
         ],
       },
       {
-        // CONFLICT (unresolved, ask Sam): 2026-09-30 message (Chester, via Sam) lists
-        // Oxytocin as "oral" twice, which would erase the more specific Troche/Nasal
-        // route already established with copy and photos. Left unchanged pending
-        // confirmation on whether "oral" was meant literally or as a loose bucket.
+        // Kept as Troche/Nasal despite the 2026-09-30 message (Chester, via Sam)
+        // listing Oxytocin as "oral" twice — it's a sublingual troche, not a swallowed
+        // capsule, and the existing copy/photo already reflect that. Flag with Sam:
+        // confirm whether Chester wants it literally relabeled Oral (would also need a
+        // new pill-bottle photo) or was just bucketing it as "non-injectable."
         name: 'Oxytocin',
         image: antiagingOxytocin,
         form: 'Troche / Nasal',
@@ -1203,10 +1204,10 @@ for (const cat of rawCategories) {
 const newProducts = {
   'Growth Hormone': { image: muscleGrowthHormone, form: 'Injection' },
   'B12': { image: energyB12, form: 'Injection' },
-  // CONFLICT (unresolved, ask Sam): 2026-09-24 breakdown said "oral and injectable";
-  // 2026-09-30 message (Chester, via Sam) lists Vitamin D under "Orals" only. Left as
-  // the fuller/older value pending confirmation.
-  'Vitamin D': { image: antiagingVitaminD, form: 'Oral / Injection' },
+  // 2026-09-24 breakdown said "oral and injectable"; 2026-09-30 message (Chester, via
+  // Sam) lists Vitamin D under "Orals" only — went with the newer, more detailed
+  // clinical pass.
+  'Vitamin D': { image: antiagingVitaminD, form: 'Oral' },
   'Metformin': { image: antiagingMetformin, form: 'Oral' },
   'Clindamycin': { form: 'Cream' },
   'Ketoconazole Shampoo': { form: 'Cream' },
