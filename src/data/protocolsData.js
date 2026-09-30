@@ -345,7 +345,19 @@ const rawCategories = [
           'Bypasses the gut for full absorption',
         ],
       },
-      { name: 'Tesofensine', image: fatlossTesofensine, form: 'Oral' },
+            {
+        name: 'Tesofensine',
+        image: fatlossTesofensine,
+        form: 'Oral',
+        description:
+          'Appetite is decided in the brain, not just the gut. Tesofensine is a capsule that turns hunger down at the source, so you eat less without the constant pull, for people who would rather not inject.',
+        benefits: [
+          'Appetite control without injections',
+          'Works in the brain, not the gut',
+          '9 to 10% weight loss at 24 weeks in trials',
+          "An oral option when injectables don't fit",
+        ],
+      },
       {
         name: 'AOD-9604',
         image: fatlossAod9604,
@@ -564,7 +576,19 @@ const rawCategories = [
           'Recover from persistent fatigue',
         ],
       },
-      { name: 'Thyroid Supplementation', image: energyThyroid, form: 'Oral' },
+            {
+        name: 'Thyroid Supplementation',
+        image: energyThyroid,
+        form: 'Oral',
+        description:
+          'Your thyroid sets the speed your whole body runs at, and when it runs low, so do you: energy, focus, warmth, mood. When a full panel confirms it, replacement is dosed to those numbers, not TSH alone.',
+        benefits: [
+          'Dosed to your full panel, not TSH alone',
+          'Brings energy back when thyroid is low',
+          'Clears brain fog and the "slow" feeling',
+          'Supports healthy metabolism, energy, and mood',
+        ],
+      },
       {
         name: 'MOTS-c',
         image: energyMotsC,
@@ -628,7 +652,19 @@ const rawCategories = [
           'Softens stress and anxiety',
         ],
       },
-      { name: 'Methylene Blue', image: antiagingMethyleneBlue, form: 'Oral' },
+            {
+        name: 'Methylene Blue',
+        image: antiagingMethyleneBlue,
+        form: 'Oral',
+        description:
+          'Methylene blue helps your mitochondria pass electrons along and make energy, including in brain cells. A low dose is used for afternoon clarity and steady energy.',
+        benefits: [
+          'Works inside the mitochondria',
+          'Sharper attention in a placebo-controlled imaging study',
+          'Clearer afternoons, no stimulant',
+          'Low dose, once in the morning',
+        ],
+      },
       {
         // Immune-focused product with no clear category fit yet — placed here
         // for its aging angle, pending confirmation with the client.
@@ -719,7 +755,19 @@ const rawCategories = [
           'Supports skin hydration and elasticity',
         ],
       },
-      { name: 'Tretinoin', image: skincareTretinoin, form: 'Cream' },
+            {
+        name: 'Tretinoin',
+        image: skincareTretinoin,
+        form: 'Cream',
+        description:
+          'Tretinoin speeds up how fast your skin replaces itself. Lines, texture, sun spots, and breakouts all respond, which is why it is the most studied retinoid.',
+        benefits: [
+          'Smooths fine lines and texture',
+          'Clears breakouts and keeps pores open',
+          'Fades sun spots over months',
+          'The most researched retinoid',
+        ],
+      },
       {
         name: 'Melanotan II',
         image: skincareMelanotan2,
@@ -776,7 +824,20 @@ const rawCategories = [
           'Guides gut protocols with real data',
         ],
       },
-      { name: 'Gut Barrier Testing', image: gutBarrierTesting, form: 'Lab Test', featured: true },
+            {
+        name: 'Gut Barrier Testing',
+        image: gutBarrierTesting,
+        form: 'Lab Test',
+        featured: true,
+        description:
+          'Your gut lining decides what gets into your blood. This test shows whether it is intact or leaking, and gives your gut protocol a number to move.',
+        benefits: [
+          'Shows if the barrier is strong or leaking',
+          "Explains symptoms diet changes didn't fix",
+          'A starting number for your gut protocol',
+          'Retested to assess progress',
+        ],
+      },
       {
         name: 'Food Sensitivity Testing',
         image: gutFoodSensitivity,
@@ -903,7 +964,19 @@ const rawCategories = [
   {
     name: 'Stress Reduction',
     products: [
-      { name: 'Progesterone', image: stressProgesterone, form: 'Oral' },
+            {
+        name: 'Progesterone',
+        image: stressProgesterone,
+        form: 'Oral',
+        description:
+          'Progesterone is the calming half of the pair with estrogen, and usually the first to fall in your late thirties. Taken at bedtime, most women notice the sleep first.',
+        benefits: [
+          'Deeper sleep, taken at bedtime',
+          'Fewer night sweats in perimenopause',
+          'Protects the uterine lining on estrogen',
+          'Useful on its own before menopause',
+        ],
+      },
       {
         name: 'Selank',
         image: stressSelank,
@@ -951,7 +1024,20 @@ const rawCategories = [
           'Supports making new connections in the brain',
         ],
       },
-      { name: 'Dihexa', image: cognitiveDihexa, form: 'Oral', featured: true },
+            {
+        name: 'Dihexa',
+        image: cognitiveDihexa,
+        form: 'Oral',
+        featured: true,
+        description:
+          "Dihexa is studied for helping brain cells form new connections: long-term capacity, not today's focus.",
+        benefits: [
+          'Aimed at new connections, not a stimulant',
+          'Long-term capacity, not same-day focus',
+          'Promising early study data',
+          'Used under clinician guidance',
+        ],
+      },
       { name: 'Tesofensine', image: cognitiveTesofensine, form: 'Injection' },
     ],
   },
@@ -987,9 +1073,46 @@ const rawCategories = [
           "Dosed for a woman's physiology, not a man's",
         ],
       },
-      { name: 'Estrogen', image: sexualEstrogen, form: 'Cream / Injection / Oral', featured: true },
-      { name: 'Tadalafil (Cialis)', image: sexualTadalafil, form: 'Oral' },
-      { name: 'Sildenafil (Viagra)', image: sexualSildenafil, form: 'Oral' },
+            {
+        name: 'Estrogen',
+        image: sexualEstrogen,
+        form: 'Cream / Injection / Oral',
+        featured: true,
+        description:
+          'Hot flashes, broken sleep, and drier skin show up when estrogen production drops. Replacement is dosed to your bloodwork and adjusted as you go, in the form that fits you.',
+        benefits: [
+          'Eases hot flashes and night sweats',
+          'Promotes deeper, longer sleep cycles',
+          'Protects bone as estrogen falls',
+          'Capsule, cream, or injection',
+        ],
+      },
+            {
+        name: 'Tadalafil (Cialis)',
+        image: sexualTadalafil,
+        form: 'Oral',
+        description:
+          'Tadalafil improves blood flow where it matters, so arousal turns into a firm, reliable response. It stays active up to 36 hours, so intimacy happens when the moment is right, not on a schedule.',
+        benefits: [
+          'A firmer, more reliable response',
+          'Works for up to 36 hours',
+          'Low daily dose: always ready, no planning',
+          'Over twenty years of clinical use',
+        ],
+      },
+            {
+        name: 'Sildenafil (Viagra)',
+        image: sexualSildenafil,
+        form: 'Oral',
+        description:
+          'The original. Sildenafil improves blood flow so stimulation turns into a firm response and holds it. Take it about an hour ahead and you have a four to six hour window.',
+        benefits: [
+          'A firmer response to stimulation',
+          'Effects begin within about an hour',
+          'Four to six hour window',
+          'Nearly thirty years of use',
+        ],
+      },
       {
         name: 'PT-141 (Bremelanotide)',
         image: sexualPt141,
@@ -1045,7 +1168,20 @@ const rawCategories = [
           'Focus on fertility & reproduction',
         ],
       },
-      { name: 'Enclomiphene', image: fertilityEnclomiphene, form: 'Oral', featured: true },
+            {
+        name: 'Enclomiphene',
+        image: fertilityEnclomiphene,
+        form: 'Oral',
+        featured: true,
+        description:
+          'TRT replaces testosterone when your own production shuts down. Enclomiphene tells your brain to make more, so levels rise, and the energy and drive that ride on them, while fertility stays intact.',
+        benefits: [
+          'Raises your own testosterone',
+          'Keeps sperm count and testicular size',
+          'A capsule, no injections',
+          'The step before TRT for many men',
+        ],
+      },
       {
         name: 'FSH (Follicle Stimulating Hormone)',
         image: fertilityRfsh,
@@ -1103,9 +1239,46 @@ const rawCategories = [
   {
     name: 'Hair Growth',
     products: [
-      { name: 'Minoxidil', image: hairMinoxidil, form: 'Oral / Spray' },
-      { name: 'Dutasteride', image: hairDutasteride, form: 'Oral / Spray', featured: true },
-      { name: 'Finasteride', image: hairFinasteride, form: 'Oral / Spray' },
+            {
+        name: 'Minoxidil',
+        image: hairMinoxidil,
+        form: 'Oral / Spray',
+        description:
+          'Minoxidil widens the blood vessels feeding the follicle and keeps hair in its growth phase longer. Topical, or a low-dose daily tablet, whichever you will actually stick with.',
+        benefits: [
+          'Longer growth phase, thicker hair',
+          'Fills thinning areas over months',
+          'Low-dose oral for easy consistency',
+          'Works alongside finasteride or dutasteride',
+        ],
+      },
+            {
+        name: 'Dutasteride',
+        image: hairDutasteride,
+        form: 'Oral / Spray',
+        featured: true,
+        description:
+          'DHT is the hormone that shrinks hair follicles, and finasteride blocks one of the two enzymes that make it. Dutasteride blocks both, for men whose hair loss kept going on finasteride.',
+        benefits: [
+          'Blocks both DHT enzymes',
+          'Lowers DHT further than finasteride',
+          'For men finasteride did not help',
+          'Once daily by mouth',
+        ],
+      },
+            {
+        name: 'Finasteride',
+        image: hairFinasteride,
+        form: 'Oral / Spray',
+        description:
+          'Hair loss in men runs on DHT, made from testosterone. Finasteride blocks that conversion, which slows the loss and lets follicles recover over months.',
+        benefits: [
+          'Stops hair loss at the hormonal cause',
+          'Regrowth over six to twelve months',
+          'Topical option limits full-body exposure',
+          'Nearly thirty years of clinical use',
+        ],
+      },
       {
         name: 'GHK-Cu',
         image: hairGhkCu,
@@ -1202,19 +1375,127 @@ for (const cat of rawCategories) {
 // category copy and an image placeholder until real content arrives. Routes were
 // confirmed by Sam Beckmann (2026-09-24): oral = pill container, topical = cream.
 const newProducts = {
-  'Growth Hormone': { image: muscleGrowthHormone, form: 'Injection' },
-  'B12': { image: energyB12, form: 'Injection' },
+    'Growth Hormone': {
+    image: muscleGrowthHormone,
+    form: 'Injection',
+    description:
+      'Growth hormone is the repair signal your body sends while you sleep. Some adults stop making enough, and recovery, lean muscle, and energy slide with it. When labs confirm a deficiency, this replaces it directly, under close monitoring.',
+    benefits: [
+      'Prescribed only when labs confirm deficiency',
+      'Rebuilds lean mass, trims deep belly fat',
+      'Stronger bones over time',
+      'Retested and adjusted, never guessed',
+    ],
+  },
+    'B12': {
+    image: energyB12,
+    form: 'Injection',
+    description:
+      'You can eat plenty of B12 and still run low if your gut does not absorb it, and low B12 feels like tiredness and fog that sleep does not fix. An injection skips digestion, so the correction reaches your blood on the first dose.',
+    benefits: [
+      'Skips the gut, reaches the blood directly',
+      'Brings energy back when levels are low',
+      'Clearer thinking once levels recover',
+      'Supports nerves and red blood cells',
+    ],
+  },
   // 2026-09-24 breakdown said "oral and injectable"; 2026-09-30 message (Chester, via
   // Sam) lists Vitamin D under "Orals" only — went with the newer, more detailed
   // clinical pass.
-  'Vitamin D': { image: antiagingVitaminD, form: 'Oral' },
-  'Metformin': { image: antiagingMetformin, form: 'Oral' },
-  'Clindamycin': { form: 'Cream' },
-  'Ketoconazole Shampoo': { form: 'Cream' },
-  'Trimix': { image: sexualTrimix, form: 'Injection' },
-  'Quadmix': { image: sexualQuadmix, form: 'Injection' },
-  'Cabergoline': { image: sexualCabergoline, form: 'Oral' },
-  'Custom Supplement Plans': { image: energyCustomSupplementPlans, form: 'Oral' },
+    'Vitamin D': {
+    image: antiagingVitaminD,
+    form: 'Oral',
+    description:
+      'Vitamin D runs your bones, muscles, and immune defenses, and low D is the gap we find most often on bloodwork. A store-bought bottle is a guess; we dose to your level, then retest.',
+    benefits: [
+      'Dosed to your labs, then retested',
+      'Supports immune function year-round',
+      'Stronger bones, steadier muscle function',
+      'The most common gap we find',
+    ],
+  },
+    'Metformin': {
+    image: antiagingMetformin,
+    form: 'Oral',
+    description:
+      'Metformin has been used to keep blood sugar steady for sixty years. Off label, it helps your body use glucose instead of storing it, which means fewer spikes and crashes after meals, and it is being studied for what that does to aging itself.',
+    benefits: [
+      'Improves how your body handles glucose',
+      'Lowers fasting insulin over time',
+      'Sixty years of safety data',
+      'Being studied as a longevity drug (TAME trial)',
+    ],
+  },
+    'Clindamycin': {
+    form: 'Cream',
+    description:
+      'Inflamed breakouts are driven by bacteria living in the pore. Clindamycin goes on the skin and works there, without an antibiotic circulating through your whole body.',
+    benefits: [
+      'Clears inflamed breakouts',
+      'Kills acne bacteria where they live',
+      'Works on the skin, not your whole body',
+      'Pairs with tretinoin or benzoyl peroxide',
+    ],
+  },
+    'Ketoconazole Shampoo': {
+    form: 'Cream',
+    description:
+      "A flaky, inflamed scalp doesn't grow hair well. This antifungal shampoo calms the irritation around the follicle, on its own or under a hair protocol.",
+    benefits: [
+      'Clears flaking and itch',
+      'Calms inflammation around the follicle',
+      'Improved hair density with long-term use',
+      'Two to three washes a week',
+    ],
+  },
+    'Trimix': {
+    image: sexualTrimix,
+    form: 'Injection',
+    description:
+      'Pills depend on arousal and healthy nerve signals. Trimix works locally and directly, producing a firm, lasting response within minutes, so it works when pills have not.',
+    benefits: [
+      'Works when pills have not',
+      'Effect within 5 to 20 minutes',
+      'Does not depend on arousal',
+      'Dose set and adjusted with your clinician',
+    ],
+  },
+    'Quadmix': {
+    image: sexualQuadmix,
+    form: 'Injection',
+    description:
+      'Four compounds working locally to produce a firm, lasting response. For men who needed more than the three-compound version.',
+    benefits: [
+      'Stronger, longer response than Trimix',
+      'For men Trimix did not fully help',
+      'Works within minutes',
+      'Titrated carefully, starting low',
+    ],
+  },
+    'Cabergoline': {
+    image: sexualCabergoline,
+    form: 'Oral',
+    description:
+      'After orgasm, a hormone called prolactin surges and switches desire off: the waiting period before you can go again. Cabergoline is a pill that keeps prolactin low, so desire comes back sooner and stays higher between.',
+    benefits: [
+      'Shorter wait before you can go again',
+      'Stronger, more frequent desire',
+      'One pill, twice a week',
+      'Supports mood and motivation',
+    ],
+  },
+    'Custom Supplement Plans': {
+    image: energyCustomSupplementPlans,
+    form: 'Oral',
+    description:
+      'Most supplement routines are guesses stacked on guesses. Yours is built from your bloodwork: what your labs show you are missing, and nothing you are not.',
+    benefits: [
+      'Built from your labs, for your goals',
+      'Corrects the gaps your bloodwork shows',
+      'Removes guesswork and generic plans',
+      'Adjusted at every retest',
+    ],
+  },
 }
 
 // The client's "Explore Protocols" list, in their order. A plain string uses the

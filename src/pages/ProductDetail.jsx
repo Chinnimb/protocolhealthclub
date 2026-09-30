@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   Sparkles,
+  Star,
+  CheckCircle2,
+  ThumbsUp,
   ShieldCheck,
   Shield,
   Bandage,
@@ -133,12 +136,19 @@ const benefitIconRules = [
 
 // Returns one icon per benefit, cycling a rule's icon list when it matches
 // more than once within the same product.
+// Benefit lines that don't match any rule above (conversational copy like "One pill,
+// twice a week" or "Over twenty years of clinical use") fall back to this set, cycled
+// the same way a matched rule's icons are — so a product with several unmatched
+// benefits doesn't show the same generic icon twice.
+const fallbackIcons = [Sparkles, Star, CheckCircle2, ThumbsUp]
+
 function getBenefitIcons(benefits) {
   const ruleUseCount = new Map()
+  let fallbackUseCount = 0
   return benefits.map((text) => {
     const lower = text.toLowerCase()
     const ruleIndex = benefitIconRules.findIndex((r) => r.keywords.some((kw) => new RegExp(`\\b${kw}`).test(lower)))
-    if (ruleIndex === -1) return Sparkles
+    if (ruleIndex === -1) return fallbackIcons[fallbackUseCount++ % fallbackIcons.length]
     const rule = benefitIconRules[ruleIndex]
     const count = ruleUseCount.get(ruleIndex) || 0
     ruleUseCount.set(ruleIndex, count + 1)
